@@ -43,8 +43,8 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: NicoResta
-          project_id: 7
+          user: GameRule13
+          project_id: 3
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.todo }}
 
@@ -57,8 +57,8 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: NicoResta
-          project_id: 7
+          user: GameRule13
+          project_id: 3
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.in_progress }}
 
@@ -71,8 +71,8 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: NicoResta
-          project_id: 7
+          user: GameRule13
+          project_id: 3
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.ready }}
 
@@ -85,8 +85,8 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: NicoResta
-          project_id: 7
+          user: GameRule13
+          project_id: 3
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.in_review }}
           move_related_issues: true
@@ -100,8 +100,8 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: NicoResta
-          project_id: 7
+          user: GameRule13
+          project_id: 3
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.done }}
           move_related_issues: true # possibile bug esegue job dell'issue closed e questo
@@ -116,9 +116,9 @@ jobs:
   #       uses: leonsteinhaeuser/project-beta-automations@v2.1.0
   #       with:
   #         gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-  #         user: NicoResta
+  #         user: GameRule13
   #         # organization: sample-org
-  #         project_id: 7
+  #         project_id: 3
   #         resource_node_id: ${{ github.event.pull_request.node_id }}
   #         status_value: ${{ env.failed }} # Target status
 
@@ -132,8 +132,8 @@ jobs:
   #       uses: leonsteinhaeuser/project-beta-automations@v2.1.0
   #       with:
   #         gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-  #         user: NicoResta
+  #         user: GameRule13
   #         # organization: sample-org
-  #         project_id: 7
+  #         project_id: 3
   #         resource_node_id: ${{ github.event.pull_request_review.pull_request.node_id }}
   #         status_value: ${{ env.in_review }} # Target status
