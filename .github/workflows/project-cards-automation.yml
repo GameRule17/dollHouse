@@ -1,0 +1,139 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Project Cards automation
+
+on:
+  issues:
+    types:
+      - opened
+      - reopened
+      - assigned
+      - unassigned
+      - closed
+  pull_request:
+    types:
+      - opened
+      - review_requested
+      - ready_for_review
+      - closed
+      - reopened
+  # pull_request_review:
+    #   types:
+    #     - submitted
+
+# map fields with customized labels
+env:
+  todo:         Todo
+  in_progress:  In Progress
+  in_review:    In Review
+  ready:        Ready
+  done:         Done
+
+jobs:
+
+  issue_opened_or_reopened_or_unassigned:
+    name: issue_opened_or_reopened
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' && github.event.issues.issue.assignees == null && github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'unassigned'
+    steps:
+      - name: Move issue to ${{ env.todo }}
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+        with:
+          gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: GameRule13
+          project_id: 3
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: ${{ env.todo }}
+
+  issue_assigned:
+    name: issue_assigned
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' && github.event.issues.issue.assignees == null && github.event.action == 'assigned'
+    steps:
+      - name: Move issue to ${{ env.in_progress }}
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+        with:
+          gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: GameRule13
+          project_id: 3
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: ${{ env.in_progress }}
+
+  issue_closed:
+    name: issue_closed
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' && github.event.action == 'closed'
+    steps:
+      - name: Move issue to ${{ env.Ready }}
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+        with:
+          gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: GameRule13
+          project_id: 3
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: ${{ env.ready }}
+
+  pr_opened_or_reviewrequested_or_readyforreview_or_reopened:
+    name: pr_opened_or_reviewrequested
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && ( github.event.action == 'opened' || github.event.action == 'review_requested' || github.event.action == 'ready_for_review' || github.event.action == 'reopened')
+    steps:
+      - name: Move PR to ${{ env.in_review }}
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+        with:
+          gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: GameRule13
+          project_id: 3
+          resource_node_id: ${{ github.event.pull_request.node_id }}
+          status_value: ${{ env.in_review }}
+          move_related_issues: true
+
+  pr_closed_and_merged:
+    name: pr_closed_and_merged
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && github.event_name == 'pull_request' && github.event.action == 'closed'
+    steps:
+      - name: Move PR to ${{ env.done }}
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+        with:
+          gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: GameRule13
+          project_id: 3
+          resource_node_id: ${{ github.event.pull_request.node_id }}
+          status_value: ${{ env.done }}
+          move_related_issues: true # possibile bug esegue job dell'issue closed e questo
+
+  # se la pr viene chiusa ma non mergiata va in Failed? Archiviata?
+  # pr_closed:
+  #   name: pr_closed
+  #   runs-on: ubuntu-latest
+  #   if: github.event.pull_request.merged == false && github.event_name == 'pull_request' && github.event.action == 'closed'
+  #   steps:
+  #     - name: Move PR to ${{ env.failed }}
+  #       uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+  #       with:
+  #         gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+  #         user: GameRule13
+  #         # organization: sample-org
+  #         project_id: 3
+  #         resource_node_id: ${{ github.event.pull_request.node_id }}
+  #         status_value: ${{ env.failed }} # Target status
+
+  # se vengono richiesti cambiamenti nella pr, va In Progress?
+  # requested_changes_in_pr:
+  #   name: move pr in In progress
+  #   runs-on: ubuntu-latest
+  #   if: github.event_name == 'pull_request_review' && github.event.action == 'submitted' && github.event.pull_request_review.state == 'changes_requested'
+  #   steps:
+  #     - name: Move PR to ${{ env.in_review }}
+  #       uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+  #       with:
+  #         gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+  #         user: GameRule13
+  #         # organization: sample-org
+  #         project_id: 3
+  #         resource_node_id: ${{ github.event.pull_request_review.pull_request.node_id }}
+  #         status_value: ${{ env.in_review }} # Target status
