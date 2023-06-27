@@ -43,7 +43,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: GameRule13
+          user: GameRule17
           project_id: 3
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.todo }}
@@ -57,7 +57,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: GameRule13
+          user: GameRule17
           project_id: 3
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.in_progress }}
@@ -71,7 +71,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: GameRule13
+          user: GameRule17
           project_id: 3
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.ready }}
@@ -85,7 +85,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: GameRule13
+          user: GameRule17
           project_id: 3
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.in_review }}
@@ -100,7 +100,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: GameRule13
+          user: GameRule17
           project_id: 3
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.done }}
@@ -116,7 +116,7 @@ jobs:
   #       uses: leonsteinhaeuser/project-beta-automations@v2.1.0
   #       with:
   #         gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-  #         user: GameRule13
+  #         user: GameRule17
   #         # organization: sample-org
   #         project_id: 3
   #         resource_node_id: ${{ github.event.pull_request.node_id }}
@@ -132,7 +132,7 @@ jobs:
   #       uses: leonsteinhaeuser/project-beta-automations@v2.1.0
   #       with:
   #         gh_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-  #         user: GameRule13
+  #         user: GameRule17
   #         # organization: sample-org
   #         project_id: 3
   #         resource_node_id: ${{ github.event.pull_request_review.pull_request.node_id }}
