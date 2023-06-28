@@ -9,6 +9,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <exec.mainClass>dijkstra.dollhouse.Mavenproject1</exec.mainClass>
+        <exec.mainClass>dijkstra.dollhouse.GameLauncher</exec.mainClass>
     </properties>
 </project>

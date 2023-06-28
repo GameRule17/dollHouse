@@ -1,5 +1,4 @@
-BUILD_DIR := ./build
-# SRC_DIR := ./src
+BUILD_DIR := ./target/classes
 SRC_DIR := ./src/main/java
 
 SRCS := $(shell find $(SRC_DIR) -name '*.java')
@@ -34,4 +33,4 @@ clean:
 	@echo -n "\033[0m"
 
 run:
-	@java -cp ./build dijkstra.dollhouse.GameLauncher
+	@java -cp $(BUILD_DIR) dijkstra.dollhouse.GameLauncher
