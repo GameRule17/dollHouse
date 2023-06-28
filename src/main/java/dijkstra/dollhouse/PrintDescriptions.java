@@ -17,19 +17,19 @@ public final class PrintDescriptions {
         try {
             File file = new File(filePath);
             Scanner fileScanner = new Scanner(file);
-            String riga;
+            String line;
             Boolean exit = false;
             // scan file line by line
             while (fileScanner.hasNextLine() || !exit) {
-                riga = fileScanner.nextLine();
+                line = fileScanner.nextLine();
                 // check if line contains searchedWord
-                if (riga.startsWith(searchedWord)) {
+                if (line.startsWith(searchedWord)) {
                     exit = true;
                     // remove searchedWord from line
-                    riga = riga.replace(searchedWord + " ", "");
-                    while (!riga.contains("#")) {
-                        System.out.println(riga);
-                        riga = fileScanner.nextLine();
+                    line = line.replace(searchedWord + " ", "");
+                    while (!line.contains("#")) {
+                        System.out.println(line);
+                        line = fileScanner.nextLine();
                     }
                 }
             }
