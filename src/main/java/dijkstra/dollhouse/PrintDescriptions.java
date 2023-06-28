@@ -13,21 +13,20 @@ public final class PrintDescriptions {
     /**
      *
      */
-    public static void print(final String parolaDaCercare, final String percorsoFile) {
+    public static void print(final String searchedWord, final String filePath) {
         try {
-            // Apre il file per la lettura
-            File file = new File(percorsoFile);
+            File file = new File(filePath);
             Scanner fileScanner = new Scanner(file);
             String riga;
             Boolean exit = false;
-            // Scannerizza il file riga per riga
+            // scan file line by line
             while (fileScanner.hasNextLine() || !exit) {
                 riga = fileScanner.nextLine();
-                // Verifica se la riga inizia con la parola desiderata
-                if (riga.startsWith(parolaDaCercare)) {
+                // check if line contains searchedWord
+                if (riga.startsWith(searchedWord)) {
                     exit = true;
-                    // Rimuovo la parola iniziale in maiuscolo
-                    riga = riga.replace(parolaDaCercare + " ", "");
+                    // remove searchedWord from line
+                    riga = riga.replace(searchedWord + " ", "");
                     while (!riga.contains("#")) {
                         System.out.println(riga);
                         riga = fileScanner.nextLine();
@@ -35,10 +34,9 @@ public final class PrintDescriptions {
                 }
             }
 
-            // Chiude lo scanner del file
             fileScanner.close();
         } catch (FileNotFoundException e) {
-            System.out.println("File non trovato: " + percorsoFile);
+            System.out.println("File non trovato: " + filePath);
             e.printStackTrace();
         }
     }
