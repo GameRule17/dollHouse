@@ -1,0 +1,31 @@
+SCANTINATO Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.
+Una debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.
+Il pavimento di terra battuta e' coperto di polvere e tracce di umidita'.
+Guardando meglio puoi notare: delle gabbie, una botola, un calderone, un grande tavolo in legno.
+#
+SALOTTO L'ambiente e' caratterizzato da un'atmosfera che sembra essere accogliente e familiare.
+Le pareti sono adornate con tonalita' calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.
+La stanza e' arredata con mobili antichi e un caminetto, che aggiungono un tocco di eleganza.
+Noti inoltre un pianoforte e una sedia a dondolo.
+#
+SALADAPRANZO La sala da pranzo e' un ambiente sinistro e affascinante. Le pareti sono adornate da tappezzerie scure e tende pesanti che nascondono il chiaro della luna.
+Un'atmosfera di mistero e magia permea l'ambiente, suggerendo che qualcosa di sinistro potrebbe accadere a coloro che osano avventurarsi in questa casa incantata.
+#
+CUCINA E' un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.
+Le pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, 
+dando un tocco "magico" al cibo. Sei sicuro di voler accettare l'invito a cena?
+Guardando meglio, puoi notare: un tagliere su cui e' poggiato un manico di coltello, un fornello, una bottiglia di whisky, un lavabo.
+Nell'angolo a sinistra si erge un grande armadio ripieno di cibo ormai andato in malora.
+#
+CORRIDOIO Un labirinto di oscurita' e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.
+Guardando meglio, puoi notare: un attaccapanni, un tris di quadri raffiguranti la strega e delle scale in fondo al corridoio.
+#
+SCALE Si ergono maestose, conducendo a un regno misterioso al di la'.
+Tuttavia, un cancello sottile, come un lucchetto incantato, blocca l'accesso.
+#
+PRIMOPIANO Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra esserci un bagno.
+#
+BAGNO Fai molta attenzione perche' un bagno così decadente difficilmente lo rivedrai nella tua vita!
+Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro.
+Noti la presenza di uno specchio, un priso, un secchio, una vecchia caldaia e una vasca.
+#
