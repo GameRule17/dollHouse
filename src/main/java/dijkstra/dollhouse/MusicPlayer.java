@@ -24,7 +24,7 @@ public class MusicPlayer extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Metodo richiesto dall'estensione di Application
+        // Method required by the extension of Application
     }
 
     public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class MusicPlayer extends Application {
 
 
 /*
-OPERAZIONI IN MAIN:
+IN THE MAIN:
 
 public class Main {
     public static void main(String[] args) {
@@ -42,7 +42,7 @@ public class Main {
         String filePath = "path_to_your_mp3_file.mp3";
         player.playMusic(filePath);
 
-        // Per interrompere la riproduzione
+        // Stops the music
         player.stopMusic();
     }
 }
