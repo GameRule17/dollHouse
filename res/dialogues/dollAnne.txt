@@ -1,0 +1,17 @@
+SALAPRIMAVOLTA Ciao, sono Anne, una bambola dalla dolce apparenza. 
+Sono qui per portare gioia e felicita' a chi mi circonda.
+Come hai fatto ad arrivare sin qui? Perche' sai, c'e' qualcosa di speciale in me. Sono posseduta dalla strega!
+(STREGA): Non ti farò sconti. La mia forza e' implacabile, e non conosco il perdono.
+Presto, il destino ci mettera' di fronte l'uno all'altro. Sara' una battaglia epica in cui non sopravviverai.
+Ti conviene essere preparato, perché i miei poteri non hanno limiti!
+#
+SALOTTOPRIMAVOLTA Adoro dondolare su questa sedia mentre osservo il mondo intorno a me. 
+E' rilassante e mi fa sentire al sicuro.
+Come hai fatto ad arrivare sin qui? Perche' sai, c'e' qualcosa di speciale in me. Sono posseduta dalla strega!
+(STREGA): Non ti farò sconti. La mia forza e' implacabile, e non conosco il perdono.
+Presto, il destino ci mettera' di fronte l'uno all'altro. Sara' una battaglia epica in cui non sopravviverai.
+Ti conviene essere preparato, perché i miei poteri non hanno limiti!
+#
+GIAPARLATO La strega aspetta paziente il momento di liberarsi e rivelare il suo vero potere.
+Sara' una battaglia epica in cui non credo sopravviverai...
+#

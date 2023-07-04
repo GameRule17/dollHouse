@@ -2,7 +2,7 @@ package dijkstra.dollhouse;
 
 /**
  *
- * @author nicol
+ * @author nicola
  */
 public class GameLauncher {
 
