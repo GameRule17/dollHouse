@@ -27,5 +27,5 @@ PRIMOPIANO Salendo al primo piano noti due porte, una a destra e una a sinistra.
 #
 BAGNO Fai molta attenzione perche' un bagno così decadente difficilmente lo rivedrai nella tua vita!
 Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro.
-Noti la presenza di uno specchio, un priso, un secchio, una vecchia caldaia e una vasca.
+Noti la presenza di uno specchio, un secchio, una vecchia caldaia e una vasca.
 #
