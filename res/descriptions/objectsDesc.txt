@@ -67,3 +67,5 @@ VECCHIACALDAIA Una vecchia caldaia si trova vicino alla parete, emanando rumori 
 VASCA Una vasca da bagno colma di acqua fredda e stagnante.
 Le sue dimensioni imponenti e il bordo logoro danno l'impressione di un luogo che e' stato testimone di eventi sconvolgenti.
 #
+SPECCHIOSCHEGGIATO Uno specchio scheggiato con una grande scheggia rimovibile che può essere sollevata per ripristinare l'integrità della superficie riflettente.
+#
