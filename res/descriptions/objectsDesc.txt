@@ -17,8 +17,10 @@ I suoi vetri opachi nascondono una luce che non brilla più.
 #
 MASCHERA Scolpita con maestria, presenta dettagli intricati che si intrecciano tra loro, evocando un senso di magia e incanto.
 #
-SEDIA A DONDOLO Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.
+SEDIAADONDOLO Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.
 E' invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato lì forse da qualcuno che ha trascorso del tempo qui. Potrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilita' dello shampo a casa di Claudio Bisio.
+#
+GOMITOLODILANA Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio.
 #
 PIANOFORTE Al centro del salotto, trovi un maestoso pianoforte a coda.
 Le sue eleganti tastiere invitano a produrre meravigliose melodie.
@@ -66,4 +68,6 @@ VECCHIACALDAIA Una vecchia caldaia si trova vicino alla parete, emanando rumori 
 #
 VASCA Una vasca da bagno colma di acqua fredda e stagnante.
 Le sue dimensioni imponenti e il bordo logoro danno l'impressione di un luogo che e' stato testimone di eventi sconvolgenti.
+#
+SPECCHIOSCHEGGIATO Uno specchio scheggiato con una grande scheggia rimovibile che può essere sollevata per ripristinare l'integrità della superficie riflettente.
 #
