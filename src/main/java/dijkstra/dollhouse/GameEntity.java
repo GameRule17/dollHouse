@@ -12,7 +12,7 @@ public abstract class GameEntity {
   private String[] actionsOutput;
 
   /**
-   * Enum for all possible actions to be performed on entities.
+   * Enum for all possible actions to be performed on entities (DA RIVEDERE).
    */
   public enum Action {
     EXAMINE, INTERACT, PICK, DROP
@@ -45,7 +45,7 @@ public abstract class GameEntity {
     for (int i = 0; i <  NUMBER_OF_ACTIONS; i++) {
       s.append(Action.values()[i] + ": " + actionsOutput[i] + "\n");
     }
-    s.append("\n\n");
+    s.append("\n");
     return s.toString();
   }
 }
