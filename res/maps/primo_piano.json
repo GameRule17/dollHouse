@@ -1,0 +1,78 @@
+{
+    "name": "Primo piano",
+    "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
+    "number_of_gamerooms": 2,
+    "gamerooms": [
+      {
+        "id": 0,
+        "name": "Bagno",
+        "description": "Fai molta attenzione perche' un bagno così decadente difficilmente lo rivedrai nella tua vita! Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro. Noti la presenza di uno specchio, un secchio, una vecchia caldaia e una vasca.",
+        "north": null,
+        "south": null,
+        "east": null,
+        "west": null,
+        "objects": [
+          {
+            "name": "Secchio",
+            "aliases": "",
+            "pickupable": true,
+            "craftable": false,
+            "actions": [
+              "Un secchio rugginoso, probabilmente usato per lavarsi.",
+              "Pur cercando di riempire il secchio dal rubinetto della vasca, sembra che l'acqua scorra inesorabilmente da qualche via di fuga segreta. E' come se il secchio avesse acquisito il potere di evitare qualsiasi tentativo di riempimento, lasciandoti con un senso di frustrazione idraulica.",
+              "Decidi di prendere il secchio, sperando che si presenti un'occasione utile per usarlo.",
+              "L'oggetto e' rimosso dall'inventario"
+            ]
+          },
+          {
+            "name": "Vecchia caldaia",
+            "aliases": "Caldaia",
+            "pickupable": true,
+            "craftable": false,
+            "actions": [
+              "Una vecchia caldaia si trova vicino alla parete, emanando rumori inquietanti e rilasciando vapore attraverso le sue fessure.",
+              "La caldaia, ormai cosi' vecchia e arrugginita, si rifiuta categoricamente di essere riportata in vita.",
+              "La caldaia e' fissata alla parete e non puo' essere rimossa.",
+              "L'oggetto non e' contenuto nell'inventario"
+            ]
+          },
+          {
+            "name": "Vasca",
+            "aliases": "Vasca da bagno",
+            "pickupable": false,
+            "craftable": false,
+            "actions": [
+              "Una vasca da bagno colma di acqua fredda e stagnante. Le sue dimensioni imponenti e il bordo logoro danno l'impressione di un luogo che e' stato testimone di eventi sconvolgenti.",
+              "La vasca e' talmente piena che sembra sfidare ogni legge di fisica. Il rubinetto appare come bloccato, come se temesse di innescare una catastrofe acquatica e preferisse rimanere saggio e asciutto.",
+              "In quale mondo una vasca da bagno puo' essere raccolta?",
+              "L'oggetto non e' contenuto nell'inventario"
+            ]
+          },
+          {
+            "name": "Specchio Scheggiato",
+            "aliases": "Specchio",
+            "pickupable": false,
+            "craftable": false,
+            "actions": [
+              "Uno specchio scheggiato con una grande scheggia rimovibile che puo' essere sollevata per ripristinare l'integrita' della superficie riflettente.",
+              "Nonostante l'impiego di tutta la forza disponibile, lo specchio rimane intatto.",
+              "Hai un momento di concentrazione e precisione chirurgica, mentre stacchi con successo la scheggia di vetro dal suo rifugio, come un vero esperto artigiano. Riponi la scheggia di vetro nel tuo inventario.",
+              "L'oggetto non e' contenuto nell'inventario"
+            ]
+          },
+          {
+            "name": "Scheggia",
+            "aliases": "",
+            "pickupable": true,
+            "craftable": true,
+            "actions": [
+              "Una scheggia di vetro così affilata che potrebbe essere usata come arma.",
+              "Provi ad agitare la scheggia su e giu' per rimuoverla dallo specchio, ma gli unici risultati sono dei piccoli graffi sulla tua mano. Fa' attenzione!",
+              "Hai un momento di concentrazione e precisione chirurgica, mentre stacchi con successo la scheggia di vetro dal suo rifugio, come un vero esperto artigiano. Riponi la scheggia di vetro nel tuo inventario.",
+              "L'oggetto e' rimosso dall'inventario"
+            ]
+          }
+        ]
+      }
+    ]
+}
