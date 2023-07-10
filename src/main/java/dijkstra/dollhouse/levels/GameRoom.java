@@ -1,10 +1,14 @@
-package dijkstra.dollhouse;
+package dijkstra.dollhouse.levels;
 
-import java.util.HashMap;
-import java.util.Map;
+import dijkstra.dollhouse.entities.GameEntity;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
- * Class representing a room of one map.
+ * A GameRoom represents a room of a GameMap.
+ * GameRoom is responsible for managing all information about it,
+ * about all entities in the room and about all four possible links
+ * with other rooms.
  */
 public class GameRoom {
   private GameRoom north;
@@ -13,8 +17,7 @@ public class GameRoom {
   private GameRoom west;
   private String name;
   private String description;
-  private Map<String, GameEntity> entities;
-  // Actions Set
+  private Collection<GameEntity> entities;
 
   /**
    * Default constructor.
@@ -26,32 +29,19 @@ public class GameRoom {
     west = null;
     name = null;
     description = null;
-    entities = new HashMap<>();
+    entities = new ArrayList<>();
   }
 
-  /**
-   * Public GameRoom constructor.
-   * Sets the room at north, south, east and west positions.
-
-   * @param north - north room
-   * @param south - south room
-   * @param east - east room
-   * @param west - west room
-   */
-  public GameRoom(final GameRoom north, final GameRoom south,
-                  final GameRoom east, final GameRoom west) {
-    this.north = north;
-    this.south = south;
-    this.east = east;
-    this.west = west;
-  }
-
-  public Map<String, GameEntity> getEntities() {
+  public Collection<GameEntity> getEntities() {
     return entities;
   }
 
   public void addEntity(final GameEntity entity) {
-    entities.put(entity.getName(), entity);
+    entities.add(entity);
+  }
+
+  public void removeEntity(final GameEntity entity) {
+    entities.remove(entity);
   }
 
   public void setName(final String name) {

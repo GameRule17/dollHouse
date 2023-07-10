@@ -1,6 +1,4 @@
 {
-    "name": "Piano Terra",
-    "number_of_gamerooms": 3,
     "gamerooms": [
       {
         "id": 0,
@@ -13,258 +11,102 @@
         "objects": [
           {
             "name": "Sedia a Dondolo",
-            "aliases": "Sedia",
-            "pickupable": false,
+            "aliases": ["sedia"],
             "craftable": false,
             "actions": [
               {
-                "examine":"Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nE' invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato li' forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilita' dello shampo a casa di Claudio Bisio.",
-                "sit down":"Non appena ti siedi sulla sedia, cadi immediatamente in un sonno profondo, come se essa avesse il potere di indurre un sonno istantaneo e irresistibile.\n(ti svegli dopo 5 secondi) Ti risveglia da un sonno che sembra essere durato 5 secondi e 50 anni contemporaneamente, confuso e disorientato dalla sensazione di aver vissuto un'intera epoca in un breve istante.",
-                "pick":"Sebbene sia incredibilmente comoda, non puoi portare con te la sedia a dondolo. Sarebbe troppo ingombrante. Potresti farci un pensierino se avessi un camioncino per il trasloco.",
-                "remove":"L'oggetto non e' contenuto nell'inventario"
+                "aliases": ["esamina"],
+                "output": "Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nE' invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato li' forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilita' dello shampo a casa di Claudio Bisio."
+              },
+              {
+                "aliases": ["siediti"],
+                "output": "Non appena ti siedi sulla sedia, cadi immediatamente in un sonno profondo, come se essa avesse il potere di indurre un sonno istantaneo e irresistibile.\n(ti svegli dopo 5 secondi) Ti risveglia da un sonno che sembra essere durato 5 secondi e 50 anni contemporaneamente, confuso e disorientato dalla sensazione di aver vissuto un'intera epoca in un breve istante."
+              },
+              {
+                "aliases": ["prendi"],
+                "output": "Sebbene sia incredibilmente comoda, non puoi portare con te la sedia a dondolo. Sarebbe troppo ingombrante. Potresti farci un pensierino se avessi un camioncino per il trasloco."
+              },
+              {
+                "aliases": ["rimuovi"],
+                "output": "L'oggetto non e' contenuto nell'inventario"
               }
             ]
           },
           {
             "name": "Gomitolo di Lana",
-            "aliases": "Gomitolo",
-            "pickupable": true,
+            "aliases": ["gomitolo"],
             "craftable": false,
             "actions": [
               {
-                "examine":"Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio.",
-                "throw":"Lanci il gomitolo con convinzione, sperando che un gatto lo inseguira'. Tuttavia, il gomitolo rotola sul pavimento senza suscitare alcun interesse felino.",
-                "pick":"Hai preso il gomitolo di lana, ora e' nel tuo inventario.",
-                "remove":"L'oggetto e' rimosso dall'inventario"
+                "aliases": ["esamina"],
+                "output": "Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio."
+              },
+              {
+                "aliases": ["lancia"],
+                "output": "Lanci il gomitolo con convinzione, sperando che un gatto lo inseguira'. Tuttavia, il gomitolo rotola sul pavimento senza suscitare alcun interesse felino.",
+                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+              },
+              {
+                "aliases": ["prendi"],
+                "output": "Hai preso il gomitolo di lana, ora e' nel tuo inventario.",
+                "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+              },
+              {
+                "aliases": ["rimuovi"],
+                "output": "L'oggetto e' rimosso dall'inventario",
+                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
               }
             ]
           },
           {
             "name": "Pianoforte",
-            "aliases": "",
-            "pickupable": false,
+            "aliases": ["pianoforte"],
             "craftable": false,
             "actions": [
               {
-                "examine":"Al centro del salotto, trovi un maestoso pianoforte a coda.\nLe sue eleganti tastiere invitano a produrre meravigliose melodie.\nPotresti scoprire qualcosa di speciale interagendo con il pianoforte o sperimentando con le sue note. Ma non crederti il nuovo Mozart.",
-                "play":"Seleziona quale melodia suonare:\n1) Melodia Uno\n2) Melodia Due",
-                "pick":"Il pianoforte sarebbe molto utile se messo nel soggiorno di casa tua, ma non puoi portarlo con te.",
-                "remove":"L'oggetto non e' contenuto nell'inventario",
-                "break":"Non puoi distruggere uno strumento musicale cosi' bello. Non sei un mostro."
+                "aliases": ["esamina"],
+                "output": "Al centro del salotto, trovi un maestoso pianoforte a coda.\nLe sue eleganti tastiere invitano a produrre meravigliose melodie.\nPotresti scoprire qualcosa di speciale interagendo con il pianoforte o sperimentando con le sue note. Ma non crederti il nuovo Mozart."
+              },
+              {
+                "aliases": ["suona"],
+                "output": "Seleziona quale melodia suonare:\n1) Melodia Uno\n2) Melodia Due",
+                "script": "dijkstra.dollhouse.entities.actions.extra.PlayPiano"
+              },
+              {
+                "aliases": ["prendi"],
+                "output": "Il pianoforte sarebbe molto utile se messo nel soggiorno di casa tua, ma non puoi portarlo con te."
+              },
+              {
+                "aliases": ["rimuovi"],
+                "output": "L'oggetto non e' contenuto nell'inventario"
+              },
+              {
+                "aliases": ["rompi"],
+                "output": "Non puoi distruggere uno strumento musicale cosi' bello. Non sei un mostro."
               }
             ]
           },
           {
-            "name": "Finestra",
-            "aliases": "",
-            "pickupable": false,
+            "name": "./res/maps/primo_piano.json",
+            "aliases": ["primo piano", "piano di sopra", "sopra", "porta"],
             "craftable": false,
             "actions": [
               {
-                "examine":"Il buio della notte inonda la stanza attraverso una grande finestra.\nOsservi l'esterno e noti che la luna e' piena e luminosa.",
-                "open":"La finestra che stai cercando di aprire e' irremovibilmente bloccata da un incantesimo, sfidando ogni tentativo di aprirla, come se fosse sigillata da una magia inespugnabile.",
-                "close":"La finestra e' gia' chiusa.",
-                "pick":"A cosa potrebbe mai servirti una finestra?",
-                "remove":"L'oggetto non e' contenuto nell'inventario",
-                "break":"Nonostante l'impiego di tutta la forza disponibile, la finestra rimane intatta e immutabile, come se fosse protetta da un incantesimo che la rende intangibile, sfidando ogni tentativo di danneggiarla."
-              }
-            ]
-          },
-          {
-            "name": "Caminetto",
-            "aliases": "Camino",
-            "pickupable": false,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"Il caminetto e' un punto focale del salotto, emanando un calore accogliente.\nPotresti sentirne il crepitio dei tronchi bruciati e ammirare le fiamme danzanti.\nA sinistra del caminetto, puoi notare un ramoscello secco posizionato con cura.",
-                "turn off":"Non puoi spegnere il fuoco del caminetto. Non hai gli strumenti adatti per farlo.",
-                "pick":"Come sarebbe fisicamente possibile portare con se' un caminetto?",
-                "remove":"L'oggetto non e' contenuto nell'inventario",
-                "light":"Il fuoco del caminetto e' gia' acceso."
-              }
-            ]
-          },
-          {
-            "name": "Ramoscello",
-            "aliases": "",
-            "pickupable": false,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"Un ramoscello secco, probabilmente caduto da un albero.\nNon sembra avere alcun valore.",
-                "use":"Dopo aver preso il ramoscello, lo agiti speranzoso, come se stessi facendo un'esibizione magica da 'Il mago incapace', ma alla fine rimani deluso nel vedere che il solo effetto magico ottenuto era far tremare qualche foglia spaventata.",
-                "pick":"Hai preso il ramoscello, ora e' nel tuo inventario.",
-                "remove":"L'oggetto e' rimosso dall'inventario",
-                "light":"Avvicini il ramoscello al caminetto e in poco tempo questo prende fuoco. Ora hai un bastoncino infuocato."
+                "aliases": ["vai", "sali", "apri"],
+                "output": "",
+                "script": "dijkstra.dollhouse.entities.actions.predefined.ChangeMap"
               }
             ]
           }
-        ]
-      },
-      {
-        "id": 1,
-        "name": "Cucina",
-        "description": "E' un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magico' al cibo. Sei sicuro di voler accettare l'invito a cena?\nGuardando meglio, puoi notare: un tagliere su cui e' poggiato un manico di coltello, un fornello, una bottiglia di whisky, un lavabo.\nNell'angolo a sinistra si erge un grande armadio ripieno di cibo ormai andato in malora.",
-        "north": null,
-        "south": null,
-        "east": null,
-        "west": null,
-        "objects": [
+        ],
+        "npcs": [
           {
-            "name": "Tavolo",
-            "aliases": "",
-            "pickupable": false,
-            "craftable": false,
+            "name": "Ciro",
+            "aliases": ["Ciruzzo"],
             "actions": [
               {
-                "examine":"Attorno al tavolo, sedute in silenzio, ci sono tre bambole dall'aspetto inquietante.\nLe loro espressioni di porcellana sembrano custodire segreti oscuri e gli occhi di vetro sembrano scrutare ogni movimento.",
-                "sit down":"Sarebbe piacevole sedersi al tavolo, ma tutti i posti sono gia' occupati.",
-                "pick":"Meglio non prendere il tavolo, le bambole potrebbero prendersela con te",
-                "remove":"L'oggetto non e' contenuto nell'inventario",
-                "break":"Meglio non rompere il tavolo, la bambole portrebbero farti a pezzi"
-              } 
-            ]
-          },
-          {
-            "name": "Tagliere",
-            "aliases": "",
-            "pickupable": true,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"Il tagliere e' fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche.\nLa tua attenzione e' attirata dal manico di un coltello senza lama, piantato nel tagliere come se fosse un piccolo trofeo.\nE' come se il/la padrone/a avesse un senso dell'umorismo strano e un po' tagliente, lasciando che il manico di coltello svolga un ruolo puramente decorativo nella cucina.\nForse e' una forma di deterrente per i visitatori troppo curiosi o una strana scelta di design che solo pochi potrebbero comprendere appieno.",
-                "use":"Senza un coltello affilato, il tagliere non e' molto utile.",
-                "pick":"Hai preso il tagliere, ora e' nel tuo inventario.",
-                "remove":"L'oggetto e' rimosso dall'inventario"
-              }
-            ]
-          },
-          {
-            "name": "Manico Coltello",
-            "aliases": "Manico",
-            "pickupable": true,
-            "craftable": true,
-            "actions": [
-              {
-                "examine":"Cio' che resta di un vecchio coltello usato dal padrone di casa. La lama e' stata rimossa, lasciando solo il manico di legno.",
-                "use":"Dopo aver preso in mano il manico del coltello, ti senti quasi come il famoso chef Cannavacciuolo.\nTuttavia, senza una lama affilata, le tue abilita' culinarie si riducono a un semplice gesto teatrale, lasciando le pietanze tagliate in maniera piu' simile a un'opera d'arte astratta che a un piatto prelibato.",
-                "pick":"Hai preso il manico del coltello, ora e' nel tuo inventario.",
-                "remove":"L'oggetto e' rimosso dall'inventario"
-              }
-            ]
-          },
-          {
-            "name": "Fornello",
-            "aliases": "",
-            "pickupable": false,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"Il fornello sembra essere un pezzo di arredamento 'vintage' dall'aspetto un po' trasandato.\nLe sue superfici arrugginite conferiscono un tocco di charme rustico, ma potrebbe essere meglio tenerlo come elemento decorativo anziche' cucinare su di esso.",
-                "turn on":"Non appena accendi il fornello, questo emette un flebile bagliore di vita per soli due istanti, come se volesse fare un'ultima chiamata prima di lasciare questo mondo.",
-                "pick":"Anche se con evidente difficolta', riusciresti a prendere il fornello, ma non sembra una buona idea.",
-                "remove":"L'oggetto non e' contenuto nell'inventario",
-                "turn off":"Il fornello e' gia' spento"
-              }
-            ]
-          },
-          {
-            "name": "Bottiglia di Whisky",
-            "aliases": "Bottiglia",
-            "pickupable": true,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"Questa bottiglia e' un'aggiunta sorprendente. Il suo aspetto elegante e invitante sembra fuori luogo tra pozioni e ingredienti magici.\nForse il padrone di casa apprezza un buon sorso di whisky per rilassarsi dopo una lunga giornata.",
-                "drink":"Pur cercando di bere dalla bottiglia di whisky, nonostante sembri piena fino all'orlo, ogni sorso si rivela una mera illusione.\nE' come se il suo contenuto si nascondesse, sfuggendo al palato come un mago che gioca con le papille gustative, lasciandoti con la frustrazione di un desiderio non soddisfatto e la bocca piu' secca del deserto del Sahara.",
-                "pick":"Decidi di prendere la bottiglia di wisky, ora e' nel tuo inventario.",
-                "remove":"L'oggetto e' rimosso dall'inventario",
-                "break":"Perché dovresti rompere un oggetto cosi' bello? Potrebbe servirti per qualcosa di utile."
-              }
-            ]
-          },
-          {
-            "name": "Lavabo",
-            "aliases": "",
-            "pickupable": false,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"Il lavabo e' come un'oasi magica per lavare le mani, con un tocco di incantesimi che rende ogni lavaggio un'esperienza indimenticabile.",
-                "use":"Ogni tentativo di utilizzare il lavabo per lavarsi le mani si traduce in un'esperienza futile, poiché l'acqua sembra evitare con astuzia di scorrere dal rubinetto, come se il lavabo fosse stato creato per sfidare le leggi della fisica e rendere impossibile ogni forma di pulizia.",
-                "open":"Ogni tentativo di utilizzare il lavabo per lavarsi le mani si traduce in un'esperienza futile, poiché l'acqua sembra evitare con astuzia di scorrere dal rubinetto, come se il lavabo fosse stato creato per sfidare le leggi della fisica e rendere impossibile ogni forma di pulizia.",
-                "pick":"Non e' possibile prendere il lavabo, e' troppo pesante.",
-                "remove":"L'oggetto non e' contenuto nell'inventario"
-              }
-            ]
-          },
-          {
-            "name": "Armadio",
-            "aliases": "",
-            "pickupable": false,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"L'armadio che ti si presenta davanti e' una dispensa incantata, ricolma di prelibatezze magiche.\nOgni porta che si apre rivela un'esplosione di sapori e profumi che incantano il palato. Appare come un tesoro gastronomico che sfida ogni norma culinaria. Le ante sono appena aperte",
-                "eat":"Riesci a prendere qualcosa dall'armadio. Dopo averlo assaggiato, il sapore si rivela un autentico insulto al palato. Il cibo li' dentro rivela avere un gusto cosi' orrendo che farebbe venire l'acquolina solo a un cestino dell'immondizia.",
-                "open":"L'armadio non riesce ad aprirsi, come se fosse bloccato da un incantesimo del padrone per evitare che qualcuno rubi il suo cibo",
-                "pick":"Non riusciresti a spostare un armadio cosi' ricolmo di cibo neanche di un centimetro!",
-                "remove":"L'oggetto non e' contenuto nell'inventario"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Corridoio",
-        "description": "Un labirinto di oscurita' e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.\nGuardando meglio, puoi notare: un attaccapanni, un tris di quadri raffiguranti la strega e delle scale in fondo al corridoio bloccate da un cancello.",
-        "north": null,
-        "south": null,
-        "east": null,
-        "west": null,
-        "objects": [
-          {
-            "name": "Attaccapanni",
-            "aliases": "Appendino",
-            "pickupable": false,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"L'attaccapanni sembra essere un'ombra di abiti appesi, emanando un'aura tetro e malinconica.",
-                "pick":"L'attaccapanni sembra essere fissato a terra, non riesci a spostarlo",
-                "remove":"L'oggetto non e' contenuto nell'inventario"
-              }
-            ]
-          },
-          {
-            "name": "Quadri",
-            "aliases": "Quadro",
-            "pickupable": false,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"Nel primo quadreo la strega e' raffigurata in tutta la sua maestosita', con un'espressione maliziosa e uno sguardo penetrante.\nLa sua figura si staglia contro un cielo tempestoso, mentre tiene in mano un calderone ribollente. E' un'immagine che trasmette un senso di potere oscuro e mistero.\nNel secondo quadro la strega e' circondata da una foresta cosi' fitta che nemmeno il suo gatto nero riesce a trovarla.\nCon un libro in mano e uno sguardo da 'non disturbare, sto incantando', sembra che stia cercando disperatamente di ricordare la formula giusta per far funzionare la sua scopa volante.\nForse dovrebbe prendere un po' di lezioni da Mary Poppins! Nell'ultimo quadro la strega e' ritratta mentre vola su una scopa sopra un paesaggio montuoso.\nIl suo cappello a punta si staglia contro un cielo stellato, mentre i suoi capelli rossi ondeggiano al vento.\nL'espressione sul suo viso e' di pura euforia, come se si stesse godendo una notte di avventure incantate.",
-                "break":"Nonostante i ripetuti tentativi di rompere i quadri, questi una volta danneggiati, magicamente ritornano al loro stato originale.",
-                "pick":"Meglio non prendere questi quadri. La strega potrebbe andare su tutte le furie!",
-                "remove":"L'oggetto non e' contenuto nell'inventario",
-                "detach":"Pur provandoci con tutte le tue forze non riesci a staccare i quadri dalla parete. Sembra che siano incollati con un incantesimo potente."
-              }
-            ]
-          },
-          {
-            "name": "Cancello",
-            "aliases": "",
-            "pickupable": false,
-            "craftable": false,
-            "actions": [
-              {
-                "examine":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e la', testimone degli anni trascorsi, ma cio' non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di la'.",
-                "open":"Il cancello e' impossibile da aprire, poiche' e' bloccato da una magia potente.",
-                "pick":"Non e' possibile prendere il cancello",
-                "remove":"L'oggetto non e' contenuto nell'inventario",
-                "break":"Il cancello e' troppo solido per essere rotto con le tue mani."
+                "aliases": ["parla", "discuti"],
+                "output": "Ue uagliù"
               }
             ]
           }
