@@ -14,72 +14,122 @@
       "objects": [
         {
           "name": "Secchio",
-          "aliases": "",
-          "pickupable": true,
           "craftable": false,
           "actions": [
             {
-              "examine":"Un secchio rugginoso, probabilmente usato per lavarsi.",
-              "fill":"Pur cercando di riempire il secchio dal rubinetto della vasca, sembra che l'acqua scorra inesorabilmente da qualche via di fuga segreta. E' come se il secchio avesse acquisito il potere di evitare qualsiasi tentativo di riempimento, lasciandoti con un senso di frustrazione idraulica.",
-              "pick":"Decidi di prendere il secchio, sperando che si presenti un'occasione utile per usarlo.",
-              "remove":"L'oggetto e' rimosso dall'inventario"
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Un secchio rugginoso, probabilmente usato per lavarsi."
+            },
+            {
+              "aliases":["riempi","riempire"],
+              "output":"Pur cercando di riempire il secchio dal rubinetto della vasca, sembra che l'acqua scorra inesorabilmente da qualche via di fuga segreta. E' come se il secchio avesse acquisito il potere di evitare qualsiasi tentativo di riempimento, lasciandoti con un senso di frustrazione idraulica."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Decidi di prendere il secchio, sperando che si presenti un'occasione utile per usarlo.",
+              "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto e' rimosso dall'inventario",
+              "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
             }
           ]
         },
         {
           "name": "Vecchia caldaia",
-          "aliases": "Caldaia",
-          "pickupable": true,
+          "aliases": ["Caldaia"],
           "craftable": false,
           "actions": [
             {
-              "examine":"Una vecchia caldaia si trova vicino alla parete, emanando rumori inquietanti e rilasciando vapore attraverso le sue fessure.",
-              "turn on":"La caldaia, ormai cosi' vecchia e arrugginita, si rifiuta categoricamente di essere riportata in vita.",
-              "pick":"La caldaia e' fissata alla parete e non puo' essere rimossa.",
-              "remove":"L'oggetto non e' contenuto nell'inventario",
-              "turn off":"La caldaia e' gia' spenta."
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Una vecchia caldaia si trova vicino alla parete, emanando rumori inquietanti e rilasciando vapore attraverso le sue fessure."
+            },
+            {
+              "aliases":["accendi","accendere","riaccendi","riaccendere"],
+              "output":"La caldaia, ormai cosi' vecchia e arrugginita, si rifiuta categoricamente di essere riportata in vita."
+            },
+            {
+              "aliases":["spegni","spegnere"],
+              "output":"La caldaia e' gia' spenta."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"La caldaia e' fissata alla parete e non puo' essere rimossa."
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto non e' contenuto nell'inventario."
             }
           ]
         },
         {
           "name": "Vasca",
-          "aliases": "Vasca da bagno",
-          "pickupable": false,
+          "aliases": ["Vasca bagno"],
           "craftable": false,
           "actions": [
             {
-              "examine":"Una vasca da bagno colma di acqua fredda e stagnante. Le sue dimensioni imponenti e il bordo logoro danno l'impressione di un luogo che e' stato testimone di eventi sconvolgenti.",
-              "enter":"Pur immergendosi nella vasca, non si ha la sensazione di fare un vero bagno, come se l'acqua avesse un'affinita' speciale solo con la padrona di casa. Deluso decidi di uscire dalla vasca. Mai una gioia.",
-              "fill":"La vasca e' talmente piena che sembra sfidare ogni legge di fisica. Il rubinetto appare come bloccato, come se temesse di innescare una catastrofe acquatica e preferisse rimanere saggio e asciutto.",
-              "pick":"In quale mondo una vasca da bagno puo' essere raccolta?",
-              "remove":"L'oggetto non e' contenuto nell'inventario"
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Una vasca da bagno colma di acqua fredda e stagnante. Le sue dimensioni imponenti e il bordo logoro danno l'impressione di un luogo che e' stato testimone di eventi sconvolgenti."
+            },
+            {
+              "aliases":["entra","entrare","immergiti","immergere"],
+              "output":"Pur immergendosi nella vasca, non si ha la sensazione di fare un vero bagno, come se l'acqua avesse un'affinita' speciale solo con la padrona di casa. Deluso decidi di uscire dalla vasca. Mai una gioia."
+            },
+            {
+              "aliases":["riempi","riempire"],
+              "output":"La vasca e' talmente piena che sembra sfidare ogni legge di fisica. Il rubinetto appare come bloccato, come se temesse di innescare una catastrofe acquatica e preferisse rimanere saggio e asciutto."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"In quale mondo una vasca da bagno puo' essere raccolta?"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto non e' contenuto nell'inventario."
             }
           ]
         },
         {
-          "name": "Specchio Scheggiato",
-          "aliases": "Specchio",
-          "pickupable": false,
+          "name": "Specchio",
+          "aliases": ["Specchio","Specchio scheggiato"],
           "craftable": false,
           "actions": [
             {
-              "examine":"Uno specchio scheggiato con una grande scheggia rimovibile che puo' essere sollevata per ripristinare l'integrita' della superficie riflettente.",
-              "break":"Nonostante l'impiego di tutta la forza disponibile, lo specchio rimane intatto.",
-              "pick":"Non puoi prendere l'intero specchio!",
-              "remove":"L'oggetto non e' contenuto nell'inventario"
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Uno specchio scheggiato con una grande scheggia rimovibile che puo' essere sollevata per ripristinare l'integrita' della superficie riflettente."
+            },
+            {
+              "aliases":["rompi","distruggi"],
+              "output":"Nonostante l'impiego di tutta la forza disponibile, lo specchio rimane intatto."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Non puoi prendere l'intero specchio!"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto non e' contenuto nell'inventario."
             }
           ]
         },
         {
           "name": "Scheggia",
-          "aliases": "",
-          "pickupable": true,
           "craftable": true,
           "actions": [
             {
-              "examine":"Una scheggia di vetro cosi' affilata che potrebbe essere usata come arma.",
-              "pick":"Hai un momento di concentrazione e precisione chirurgica, mentre stacchi con successo la scheggia di vetro dal suo rifugio, come un vero esperto artigiano. Riponi la scheggia di vetro nel tuo inventario.",
-              "remove":"L'oggetto e' rimosso dall'inventario"
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Una scheggia di vetro cosi' affilata che potrebbe essere usata come arma."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Hai un momento di concentrazione e precisione chirurgica, mentre stacchi con successo la scheggia di vetro dal suo rifugio, come un vero esperto artigiano. Riponi la scheggia di vetro nel tuo inventario.",
+              "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto e' rimosso dall'inventario.",
+              "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
             }
           ]
         }
