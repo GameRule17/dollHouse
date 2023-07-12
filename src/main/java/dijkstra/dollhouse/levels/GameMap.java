@@ -1,11 +1,14 @@
 package dijkstra.dollhouse.levels;
 
+import dijkstra.dollhouse.entities.GameDialogue;
 import dijkstra.dollhouse.entities.GameEntity;
+import dijkstra.dollhouse.entities.GameNpc;
 import dijkstra.dollhouse.entities.GameObject;
 import dijkstra.dollhouse.entities.actions.GameAction;
-import dijkstra.dollhouse.entities.actions.InteractGameAction;
+import dijkstra.dollhouse.entities.actions.GameScriptedAction;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
@@ -17,7 +20,7 @@ import org.json.simple.parser.JSONParser;
 /**
  * Class for representing the Map of the current game level.
  */
-public class GameMap {
+public class GameMap implements Serializable {
 
   private GameRoom currentRoom;
 
@@ -113,6 +116,44 @@ public class GameMap {
     return rooms;
   }
 
+  private GameNpc getGameNpc(final JSONObject jsonNpc)
+                            throws ClassNotFoundException, NoSuchMethodException,
+                            InstantiationException, IllegalAccessException,
+                            IllegalArgumentException, InvocationTargetException {
+    String name = (String) ((JSONObject) jsonNpc).get("name");
+    GameNpc gameNpc = new GameNpc(name);
+    JSONArray jsonArray = (JSONArray) ((JSONObject) jsonNpc).get("aliases");
+    String question;
+    String answer;
+
+    for (Object alias : jsonArray) {
+      gameNpc.addAlias(alias.toString());
+    }
+
+    jsonArray = (JSONArray) ((JSONObject) jsonNpc).get("actions");
+    for (Object action : jsonArray) {
+      gameNpc.addAction(getGameAction((JSONObject) action));
+    }
+
+    jsonArray = (JSONArray) ((JSONObject) jsonNpc).get("dialogues");
+    for (Object dialogue : jsonArray) {
+      question = ((JSONObject) dialogue).get("question").toString();
+      answer = ((JSONObject) dialogue).get("answer").toString();
+      gameNpc.addDialogue(new GameDialogue(question, answer));
+    }
+
+    return gameNpc;
+  }
+
+  private void setNpcs(final JSONArray jsonNpcs, final GameRoom room)
+                      throws ClassNotFoundException, NoSuchMethodException,
+                      InstantiationException, IllegalAccessException,
+                      IllegalArgumentException, InvocationTargetException {
+    for (Object npc : jsonNpcs) {
+      room.addEntity(getGameNpc((JSONObject) npc));
+    }
+  }
+
   /**
    * Public constructor for the game map.
 
@@ -149,7 +190,7 @@ public class GameMap {
         rooms[i].setDescription((String) jsonRoom.get("description"));
         setAdjacentRooms(jsonRoom, rooms[i], rooms);
         setRoomObjects((JSONArray) jsonRoom.get("objects"), rooms[i]);
-        // set npcs
+        setNpcs((JSONArray) jsonRoom.get("npcs"), rooms[i]);
       }
 
       currentRoom = rooms[0];
@@ -178,9 +219,9 @@ public class GameMap {
       System.out.println(entity.toString());
       for (GameAction action : entity.getActions()) {
         // System.out.print(action.toString());
-        if (action instanceof InteractGameAction) {
+        if (action instanceof GameScriptedAction) {
           System.out.println("\033[32m");
-          ((InteractGameAction) action).execute(this, entity);
+          System.out.println(((GameScriptedAction) action).toString());
           System.out.println("\033[0m");
         }
       }

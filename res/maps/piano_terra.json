@@ -97,6 +97,18 @@
                 "script": "dijkstra.dollhouse.entities.actions.predefined.ChangeMap"
               }
             ]
+          },
+          {
+            "name": "<id della GameRoom in cui si vuole entrare>",
+            "aliases": ["<aliases della GameRoom in cui si vuole entrare>"],
+            "craftable": false,
+            "actions": [
+              {
+                "aliases": ["vai", "apri"],
+                "output": "",
+                "script": "dijkstra.dollhouse.entities.actions.predefined.ChangeRoom"
+              }
+            ]
           }
         ],
         "npcs": [
@@ -106,7 +118,18 @@
             "actions": [
               {
                 "aliases": ["parla", "discuti"],
-                "output": "Ue uagliù"
+                "output": "",
+                "script": "dijkstra.dollhouse.entities.actions.predefined.TalkToNpc"
+              }
+            ],
+            "dialogues": [
+              {
+                "question": "Cos'hai oggi?",
+                "answer": "Sono triste :("
+              },
+              {
+                "question": "Ciao",
+                "answer": "Ue uagliù"
               }
             ]
           }

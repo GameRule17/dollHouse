@@ -1,8 +1,10 @@
 package dijkstra.dollhouse.levels;
 
 import dijkstra.dollhouse.entities.GameEntity;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * A GameRoom represents a room of a GameMap.
@@ -10,7 +12,12 @@ import java.util.Collection;
  * about all entities in the room and about all four possible links
  * with other rooms.
  */
-public class GameRoom {
+public class GameRoom implements Serializable {
+  /*
+   * nel caso del json potrebbe convenire salvare le stanze adiacenti
+   * in un vettore e identificarle mediante id così che nel json sia possibile
+   * referenziarle per lo script ChangeRoom
+   */
   private GameRoom north;
   private GameRoom south;
   private GameRoom east;
@@ -30,6 +37,25 @@ public class GameRoom {
     name = null;
     description = null;
     entities = new ArrayList<>();
+  }
+
+  /**
+   * Finds an Entity with the name specified by "name" argument.
+   * If this Entity does not exist, returns null
+   *
+   * @param name - the name of the entity to find
+   * @return - the entity to find or null instead
+   */
+  public GameEntity findEntity(final String name) {
+    Iterator<GameEntity> iterator = entities.iterator();
+    GameEntity entity;
+    while (iterator.hasNext()) {
+      entity = iterator.next();
+      if (entity.getName().compareToIgnoreCase(name) == 0) {
+        return entity;
+      }
+    }
+    return null;
   }
 
   public Collection<GameEntity> getEntities() {

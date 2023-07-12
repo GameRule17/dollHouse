@@ -30,7 +30,6 @@ public class GameObject extends GameEntity {
     for (GameAction action : actions) {
       s.append(action.toString());
     }
-    s.append("\n");
     return s.toString();
   }
 }

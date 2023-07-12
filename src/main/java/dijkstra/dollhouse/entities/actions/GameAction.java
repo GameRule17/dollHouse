@@ -1,14 +1,15 @@
 package dijkstra.dollhouse.entities.actions;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
 /**
  * Class for represents all simple Actions in the game.
  */
-public class GameAction {
+public class GameAction implements Serializable {
   private Collection<String> aliases;
-  private String output;
+  protected String output;
 
   /**
    * GameAction constructor.
