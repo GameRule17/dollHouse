@@ -1,5 +1,6 @@
 package dijkstra.dollhouse;
 
+import dijkstra.dollhouse.entities.GamePlayer;
 import dijkstra.dollhouse.levels.GameMap;
 import java.io.IOException;
 import java.io.Serializable;

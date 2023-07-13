@@ -50,7 +50,7 @@ public class GameAction implements Serializable {
     for (String string : aliases) {
       s.append(string + " ");
     }
-    s.append("\nOutput: " + output + "\n");
+    s.append("\nOutput: " + output);
     return s.toString();
   }
 }

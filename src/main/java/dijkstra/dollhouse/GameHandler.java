@@ -19,6 +19,7 @@ public class GameHandler {
   private static final String savedGameUrl = "./res/savings/saved_game.dat";
   private Game game;
   // parser
+  // stato attuale del comando
 
   public void newGame()
                       throws ClassNotFoundException, NoSuchMethodException,

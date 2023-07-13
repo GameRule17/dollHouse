@@ -1,4 +1,4 @@
-package dijkstra.dollhouse.entities;
+package dijkstra.dollhouse.entities.details;
 
 import java.io.Serializable;
 

@@ -12,7 +12,7 @@
           {
             "name": "Sedia a Dondolo",
             "aliases": ["sedia"],
-            "craftable": false,
+            "recipe": null,
             "actions": [
               {
                 "aliases": ["esamina"],
@@ -35,7 +35,7 @@
           {
             "name": "Gomitolo di Lana",
             "aliases": ["gomitolo"],
-            "craftable": false,
+            "recipe": null,
             "actions": [
               {
                 "aliases": ["esamina"],
@@ -61,7 +61,7 @@
           {
             "name": "Pianoforte",
             "aliases": ["pianoforte"],
-            "craftable": false,
+            "recipe": null,
             "actions": [
               {
                 "aliases": ["esamina"],
@@ -89,7 +89,7 @@
           {
             "name": "./res/maps/primo_piano.json",
             "aliases": ["primo piano", "piano di sopra", "sopra", "porta"],
-            "craftable": false,
+            "recipe": null,
             "actions": [
               {
                 "aliases": ["vai", "sali", "apri"],
@@ -101,7 +101,6 @@
           {
             "name": "<id della GameRoom in cui si vuole entrare>",
             "aliases": ["<aliases della GameRoom in cui si vuole entrare>"],
-            "craftable": false,
             "actions": [
               {
                 "aliases": ["vai", "apri"],

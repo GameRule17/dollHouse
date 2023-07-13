@@ -11,7 +11,7 @@ public abstract class GameScriptedAction extends GameAction implements GameScrip
 
   @Override
   public String toString() {
-    return super.toString() + "\nClass: " + this.getClass().getName();
+    return super.toString() + "\n\033[32mClass: " + this.getClass().getName() + "\033[0m";
   }
 
 }

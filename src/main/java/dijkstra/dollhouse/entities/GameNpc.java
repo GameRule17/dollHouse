@@ -1,5 +1,6 @@
 package dijkstra.dollhouse.entities;
 
+import dijkstra.dollhouse.entities.details.GameDialogue;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,11 +27,7 @@ public class GameNpc extends GameEntity {
 
   @Override
   public String toString() {
-    StringBuilder s = new StringBuilder("Name: " + name + "\n");
-    s.append("Aliases: ");
-    for (String alias : aliases) {
-      s.append(alias + " ");
-    }
+    StringBuilder s = new StringBuilder(super.toString());
     s.append("\nDialogues: \n");
     for (GameDialogue dialogue : dialogues) {
       s.append(dialogue.toString() + "\n");

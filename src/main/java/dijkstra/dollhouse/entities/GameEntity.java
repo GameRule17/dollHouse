@@ -9,7 +9,7 @@ import java.util.Iterator;
 /**
  * Class for representing Entities in game (like NPCs, Objects . . .).
  */
-public abstract class GameEntity implements Serializable {
+public class GameEntity implements Serializable {
 
   protected String name;
   protected Collection<GameAction> actions;
@@ -63,6 +63,20 @@ public abstract class GameEntity implements Serializable {
 
   public String getName() {
     return name;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder s = new StringBuilder("Name: " + name + "\n");
+    s.append("Aliases: ");
+    for (String alias : aliases) {
+      s.append(alias + " ");
+    }
+    s.append("\n");
+    for (GameAction action : actions) {
+      s.append("\n" + action.toString());
+    }
+    return s.toString();
   }
   
 }

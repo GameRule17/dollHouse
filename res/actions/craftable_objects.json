@@ -1,0 +1,27 @@
+{
+    "craftable_objects": [
+        {
+            "name": "Coltello magico",
+            "aliases": ["coltello"],
+            "recipe": ["manico", "vetro"],
+            "actions": [
+              {
+                "aliases": ["esamina"],
+                "output": "Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nE' invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato li' forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilita' dello shampo a casa di Claudio Bisio."
+              },
+              {
+                "aliases": ["siediti"],
+                "output": "Non appena ti siedi sulla sedia, cadi immediatamente in un sonno profondo, come se essa avesse il potere di indurre un sonno istantaneo e irresistibile.\n(ti svegli dopo 5 secondi) Ti risveglia da un sonno che sembra essere durato 5 secondi e 50 anni contemporaneamente, confuso e disorientato dalla sensazione di aver vissuto un'intera epoca in un breve istante."
+              },
+              {
+                "aliases": ["prendi"],
+                "output": "Sebbene sia incredibilmente comoda, non puoi portare con te la sedia a dondolo. Sarebbe troppo ingombrante. Potresti farci un pensierino se avessi un camioncino per il trasloco."
+              },
+              {
+                "aliases": ["rimuovi"],
+                "output": "L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+        }
+    ]
+}
