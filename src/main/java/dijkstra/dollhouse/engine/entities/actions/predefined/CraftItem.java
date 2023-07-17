@@ -1,9 +1,9 @@
-package dijkstra.dollhouse.entities.actions.predefined;
+package dijkstra.dollhouse.engine.entities.actions.predefined;
 
-import dijkstra.dollhouse.Game;
-import dijkstra.dollhouse.JSONLoader;
-import dijkstra.dollhouse.entities.GameCraftableObject;
-import dijkstra.dollhouse.entities.actions.GameScriptedAction;
+import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.entities.GameCraftableObject;
+import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -47,30 +47,18 @@ public class CraftItem extends GameScriptedAction {
     }
   }
 
-  public CraftItem(String output)
-                  throws IOException, ParseException,
-                  ClassNotFoundException, NoSuchMethodException,
-                  InstantiationException, IllegalAccessException,
-                  IllegalArgumentException, InvocationTargetException {
+  public CraftItem(final String output) {
     super(output);
   }
 
   @Override
-  public boolean execute(Game game) {
-    // TODO Auto-generated method stub
+  public void execute() {
     throw new UnsupportedOperationException("Unimplemented method 'execute'");
   }
 
   @Override
   public boolean isOver() {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'isOver'");
-  }
-
-  @Override
-  public Exception getException() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getException'");
   }
   
   // public static void main(String[] args) {

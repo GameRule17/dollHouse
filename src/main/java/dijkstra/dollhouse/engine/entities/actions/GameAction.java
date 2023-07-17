@@ -1,11 +1,15 @@
-package dijkstra.dollhouse.entities.actions;
+package dijkstra.dollhouse.engine.entities.actions;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Class for represents all simple Actions in the game.
+ * An istance of GameAction represents one simple action to be performed in game.
+ * All GameAction istances have a Collection of aliases representing
+ * all possible names for the action represented by this istance.
+ * Aliases are used to identify an action.
+ * The output of an action corresponds to the output returned after the execution.
  */
 public class GameAction implements Serializable {
   private Collection<String> aliases;
@@ -13,6 +17,7 @@ public class GameAction implements Serializable {
 
   /**
    * GameAction constructor.
+   * Here the collection of aliases is initialized.
    *
    * @param output - the string representing the output of the action execution
    */
@@ -27,13 +32,13 @@ public class GameAction implements Serializable {
 
   /**
    * Checks if the parameter is an alias of this GameAction object.
-
+   *
    * @param alias - the alias to check
-   * @return true if is an alias, false otherwise
+   * @return true if "alias" is an alias of this istance, false otherwise
    */
   public boolean isAliasOf(final String alias) {
     for (String string : aliases) {
-      if (string.equals(alias)) {
+      if (string.compareToIgnoreCase(alias) == 0) {
         return true;
       }
     }
@@ -50,7 +55,7 @@ public class GameAction implements Serializable {
     for (String string : aliases) {
       s.append(string + " ");
     }
-    s.append("\nOutput: " + output);
+    // s.append("\nOutput: " + output);
     return s.toString();
   }
 }

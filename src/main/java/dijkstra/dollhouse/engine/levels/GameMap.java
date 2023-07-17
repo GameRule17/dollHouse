@@ -1,19 +1,22 @@
-package dijkstra.dollhouse.levels;
+package dijkstra.dollhouse.engine.levels;
 
-import dijkstra.dollhouse.JSONLoader;
-import dijkstra.dollhouse.entities.GameEntity;
+import dijkstra.dollhouse.engine.JSONLoader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Stack;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 /**
- * Class for representing the Map of the current game level.
+ * An istance of a GameMap represents the current map that a player
+ * is playing. It has a current room which is the place where
+ * the player is currently in.
  */
 public class GameMap implements Serializable {
 
@@ -21,21 +24,14 @@ public class GameMap implements Serializable {
 
   private void setAdjacentRooms(final JSONObject jsonRoom, final GameRoom room,
                                 final GameRoom[] rooms) {
-    Long index = ((Long) jsonRoom.get("east"));
-    if (index != null) {
-      room.setEast(rooms[index.intValue()]);
+    JSONArray adjacentRooms = ((JSONArray) jsonRoom.get("adjacentRooms"));
+    int index;
+    if (adjacentRooms == null) {
+      return;
     }
-    index = ((Long) jsonRoom.get("west"));
-    if (index != null) {
-      room.setWest(rooms[index.intValue()]);
-    }
-    index = ((Long) jsonRoom.get("north"));
-    if (index != null) {
-      room.setNorth(rooms[index.intValue()]);
-    }
-    index = ((Long) jsonRoom.get("south"));
-    if (index != null) {
-      room.setSouth(rooms[index.intValue()]);
+    for (Object adjacentRoom : adjacentRooms) {
+      index = Integer.valueOf(adjacentRoom.toString());
+      room.addAdjacentRoom(rooms[index]);
     }
   }
 
@@ -61,16 +57,22 @@ public class GameMap implements Serializable {
                       InstantiationException, IllegalAccessException,
                       IllegalArgumentException, InvocationTargetException {
     for (Object npc : jsonNpcs) {
-      room.addEntity(JSONLoader.getGameNpc((JSONObject) npc));
+      if (((JSONObject) npc).get("script") == null) {
+        room.addEntity(JSONLoader.getGameNpc((JSONObject) npc));
+      } else {
+        room.addBehavioralNpc(JSONLoader.getGameBehavioralNpc((JSONObject) npc));
+      }
     }
   }
 
   /**
    * Public constructor for the game map.
-
-   * @param url - the path where is located the json file
-   * @throws IOException due to the file
-   * @throws org.json.simple.parser.ParseException parser exception
+   * It takes the JSON file describing the map and tries to
+   * parse, extract and load all data needed by the map.
+   *
+   * @param url - the path where is located the JSON file describing the map.
+   * @throws IOException .
+   * @throws org.json.simple.parser.ParseException .
    * @throws InvocationTargetException .
    * @throws IllegalArgumentException .
    * @throws IllegalAccessException .
@@ -119,29 +121,64 @@ public class GameMap implements Serializable {
   }
 
   /**
-   * .
-
-   * @param room - dv
+   * This method invoke the run method of all GameBehavioralNpcs
+   * present in the map.
    */
-  public void printObject(GameRoom room) {
-    Collection<GameEntity> entities = room.getEntities();
-    System.out.println("Puoi vedere " + entities.size() + " entità, ossia: ");
-    for (GameEntity entity : entities) {
-      System.out.println(entity.toString());
+  public void runAllBehavioralNpcs() {
+    Stack<GameRoom> toBeProcessed = new Stack<>();
+    Collection<GameRoom> processed = new HashSet<>();
+    GameRoom gameRoom;
+    toBeProcessed.add(currentRoom);
+    while (!toBeProcessed.isEmpty()) {
+      gameRoom = toBeProcessed.pop();
+      processed.add(gameRoom);
+      gameRoom.runBehavioralNpcs();
+      for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
+        if (!processed.contains(adjacent)) {
+          toBeProcessed.add(gameRoom);
+        }
+      }
     }
   }
 
   /**
-   * .
-
-   * @param args .
+   * This method invoke the stop method of all GameBehavioralNpcs
+   * present in the map.
    */
-  public static void main(String[] args) {
-    try {
-      GameMap map = new GameMap("./res/maps/piano_terra.json");
-      map.printObject(map.getCurrentRoom());
-    } catch (Exception e) {
-      e.printStackTrace();
+  public void stopAllBehavioralNpcs() {
+    Stack<GameRoom> toBeProcessed = new Stack<>();
+    Collection<GameRoom> processed = new HashSet<>();
+    GameRoom gameRoom;
+    toBeProcessed.add(currentRoom);
+    while (!toBeProcessed.isEmpty()) {
+      gameRoom = toBeProcessed.pop();
+      gameRoom.stopBehavioralNpcs();
+      for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
+        if (!processed.contains(adjacent)) {
+          toBeProcessed.add(gameRoom);
+        }
+      }
+      processed.add(gameRoom);
     }
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder s = new StringBuilder();
+    Stack<GameRoom> toBeProcessed = new Stack<>();
+    Collection<GameRoom> processed = new HashSet<>();
+    GameRoom gameRoom;
+    toBeProcessed.add(currentRoom);
+    while (!toBeProcessed.isEmpty()) {
+      gameRoom = toBeProcessed.pop();
+      s.append(gameRoom.toString());
+      for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
+        if (!processed.contains(adjacent)) {
+          toBeProcessed.add(gameRoom);
+        }
+      }
+      processed.add(gameRoom);
+    }
+    return s.toString();
   }
 }

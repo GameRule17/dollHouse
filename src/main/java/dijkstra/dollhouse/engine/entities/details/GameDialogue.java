@@ -1,9 +1,9 @@
-package dijkstra.dollhouse.entities.details;
+package dijkstra.dollhouse.engine.entities.details;
 
 import java.io.Serializable;
 
 /**
- * .
+ * An istance of GameDialogue represents a possible question followed by its answer.
  */
 public class GameDialogue implements Serializable {
   private String question;

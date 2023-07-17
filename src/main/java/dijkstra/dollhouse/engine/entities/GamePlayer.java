@@ -1,8 +1,8 @@
-package dijkstra.dollhouse.entities;
+package dijkstra.dollhouse.engine.entities;
 
-import dijkstra.dollhouse.JSONLoader;
-import dijkstra.dollhouse.entities.actions.GameAction;
-import dijkstra.dollhouse.entities.details.GameInventory;
+import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
+import dijkstra.dollhouse.engine.entities.details.GameInventory;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -13,7 +13,9 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * Manages all about the player of one game run.
+ * An istance of a player represent a player in a game.
+ * A player has an inventory and its game statistics liked
+ * to its game run.
  */
 public class GamePlayer extends GameEntity {
   private static final String actionsUrl = "./res/actions/player_actions.json";
@@ -21,7 +23,7 @@ public class GamePlayer extends GameEntity {
   // statistiche di gioco
 
   /**
-   * Constructor.
+   * Public constructor for GamePlayer.
    *
    * @param name - sets the player name.
    * @throws InvocationTargetException . 
@@ -40,17 +42,22 @@ public class GamePlayer extends GameEntity {
                     IOException, ParseException {
     super(name);
     inventory = new GameInventory();
-    FileReader fileReader = new FileReader(actionsUrl, Charset.defaultCharset());
-    JSONParser parser = new JSONParser();
-    JSONObject json = (JSONObject) parser.parse(fileReader);
-    JSONArray jsonActions = (JSONArray) json.get("actions");
+    FileReader fileReader = null;
+    try {
+      fileReader = new FileReader(actionsUrl, Charset.defaultCharset());
+      JSONParser parser = new JSONParser();
+      JSONObject json = (JSONObject) parser.parse(fileReader);
+      JSONArray jsonActions = (JSONArray) json.get("actions");
 
-    for (Object object : jsonActions) {
-      actions.add(JSONLoader.getGameAction((JSONObject) object));
-    }
-
-    if (fileReader != null) {
-      fileReader.close();
+      for (Object object : jsonActions) {
+        actions.add(JSONLoader.getGameAction((JSONObject) object));
+      }
+    } catch (Exception e) {
+      throw e;
+    } finally {
+      if (fileReader != null) {
+        fileReader.close();
+      }
     }
   }
 

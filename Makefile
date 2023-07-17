@@ -33,4 +33,4 @@ clean:
 	@echo -n "\033[0m"
 
 run:
-	@java -cp $(BUILD_DIR) dijkstra.dollhouse.GameLauncher
+	@java -cp $(BUILD_DIR) dijkstra.dollhouse.engine.GameLauncher

@@ -4,10 +4,7 @@
         "id": 0,
         "name": "Salotto",
         "description": "L'ambiente e' caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalita' calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza e' arredata con mobili antichi e un caminetto, che aggiungono un tocco di eleganza.\nNoti inoltre un pianoforte e una sedia a dondolo.",
-        "north": null,
-        "south": null,
-        "east": null,
-        "west": null,
+        "adjacentRooms": [0],
         "objects": [
           {
             "name": "Sedia a Dondolo",
@@ -44,17 +41,17 @@
               {
                 "aliases": ["lancia"],
                 "output": "Lanci il gomitolo con convinzione, sperando che un gatto lo inseguira'. Tuttavia, il gomitolo rotola sul pavimento senza suscitare alcun interesse felino.",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               },
               {
                 "aliases": ["prendi"],
                 "output": "Hai preso il gomitolo di lana, ora e' nel tuo inventario.",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases": ["rimuovi"],
                 "output": "L'oggetto e' rimosso dall'inventario",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
           },
@@ -70,7 +67,7 @@
               {
                 "aliases": ["suona"],
                 "output": "Seleziona quale melodia suonare:\n1) Melodia Uno\n2) Melodia Due",
-                "script": "dijkstra.dollhouse.entities.actions.extra.PlayPiano"
+                "script": "dijkstra.dollhouse.engine.entities.actions.extra.PlayPiano"
               },
               {
                 "aliases": ["prendi"],
@@ -94,7 +91,7 @@
               {
                 "aliases": ["vai", "sali", "apri"],
                 "output": "",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.ChangeMap"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
               }
             ]
           },
@@ -105,7 +102,7 @@
               {
                 "aliases": ["vai", "apri"],
                 "output": "",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.ChangeRoom"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
               }
             ]
           }
@@ -114,11 +111,12 @@
           {
             "name": "Ciro",
             "aliases": ["Ciruzzo"],
+            "script": "dijkstra.dollhouse.engine.entities.scripts.extra.CiroScript",
             "actions": [
               {
                 "aliases": ["parla", "discuti"],
                 "output": "",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.TalkToNpc"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
               }
             ],
             "dialogues": [

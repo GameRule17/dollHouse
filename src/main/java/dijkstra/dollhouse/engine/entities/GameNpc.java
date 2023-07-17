@@ -1,17 +1,25 @@
-package dijkstra.dollhouse.entities;
+package dijkstra.dollhouse.engine.entities;
 
-import dijkstra.dollhouse.entities.details.GameDialogue;
+import dijkstra.dollhouse.engine.entities.details.GameDialogue;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class that represents npcs in game.
+ * Class that represents NPCs in game.
+ * NPCs are all those entities which players can dialogue with.
+ * All NPCs have a list of dialogues that a player can choose
+ * in order to get informations about the game.
  */
 public class GameNpc extends GameEntity {
 
   private List<GameDialogue> dialogues;
-  // quest
 
+  /**
+   * Public constructor for GameNpc.
+   * Here the list of dialogues is initialized as an empty list.
+   *
+   * @param name - the name of this NPC.
+   */
   public GameNpc(String name) {
     super(name);
     dialogues = new ArrayList<>();
@@ -34,6 +42,4 @@ public class GameNpc extends GameEntity {
     }
     return s.toString();
   }
-
-  // get questions and answers
 }

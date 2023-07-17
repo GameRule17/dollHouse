@@ -1,14 +1,15 @@
-package dijkstra.dollhouse.entities.details;
+package dijkstra.dollhouse.engine.entities.details;
 
-import dijkstra.dollhouse.entities.GameEntity;
+import dijkstra.dollhouse.engine.entities.GameEntity;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 /**
- * .
+ * An istance of GameInventory represents a player inventory.
  */
-public class GameInventory {
+public class GameInventory implements Serializable {
   private List<GameEntity> inventory;
 
   public GameInventory() {
@@ -27,7 +28,7 @@ public class GameInventory {
     GameEntity object;
     while (iterator.hasNext()) {
       object = iterator.next();
-      if (object.getName().compareToIgnoreCase(name) == 0) {
+      if (object.isAliasOf(name)) {
         return object;
       }
     }

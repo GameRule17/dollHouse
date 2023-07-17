@@ -1,14 +1,16 @@
-package dijkstra.dollhouse;
+package dijkstra.dollhouse.engine;
 
-import dijkstra.dollhouse.entities.GamePlayer;
-import dijkstra.dollhouse.levels.GameMap;
+import dijkstra.dollhouse.engine.entities.GamePlayer;
+import dijkstra.dollhouse.engine.levels.GameMap;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import org.json.simple.parser.ParseException;
 
 /**
- * Manages all about a player run of the game.
+ * An istance of Game represents a game run of a player.
+ * It has a map in which the player has played and the istance
+ * of the player. It can be saved/load in/by a file.
  */
 public class Game implements Serializable {
   private GameMap map;

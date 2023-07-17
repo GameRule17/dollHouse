@@ -3,7 +3,7 @@
         {
             "aliases": ["costruisci", "crafta"],
             "output": "hai craftato l'oggetto",
-            "script": "dijkstra.dollhouse.entities.actions.predefined.CraftItem"
+            "script": "dijkstra.dollhouse.engine.entities.actions.predefined.CraftItem"
         }
     ]
 }

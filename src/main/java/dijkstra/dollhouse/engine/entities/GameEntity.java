@@ -1,13 +1,17 @@
-package dijkstra.dollhouse.entities;
+package dijkstra.dollhouse.engine.entities;
 
-import dijkstra.dollhouse.entities.actions.GameAction;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * Class for representing Entities in game (like NPCs, Objects . . .).
+ * An istance of GameEntity represents all possible entities in game
+ * like npcs, objects and players.
+ * All entities have a name and a collection of aliases that can be used to
+ * indentify the entity.
+ * All entities have a collection of actions that can be performed on them.
  */
 public class GameEntity implements Serializable {
 
@@ -16,7 +20,9 @@ public class GameEntity implements Serializable {
   protected Collection<String> aliases;
 
   /**
-   * Constructor for GameEnetity.
+   * Public constructor for GameEntity.
+   * Here the collection of actions and aliases are
+   * initialized as empty collections.
    *
    * @param name - sets the name of this entity.
    */
@@ -24,6 +30,21 @@ public class GameEntity implements Serializable {
     this.name = name;
     this.actions = new ArrayList<>();
     this.aliases = new ArrayList<>();
+  }
+
+  /**
+   * Checks if the parameter is an alias of this GameAction object.
+   *
+   * @param alias - the alias to check
+   * @return true if is an alias, false otherwise
+   */
+  public boolean isAliasOf(final String alias) {
+    for (String string : aliases) {
+      if (string.compareToIgnoreCase(alias) == 0) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
@@ -49,12 +70,12 @@ public class GameEntity implements Serializable {
     actions.add(action);
   }
 
-  public void addAlias(final String alias) {
-    aliases.add(alias);
+  public void removeAction(final GameAction action) {
+    actions.remove(action);
   }
 
-  public Collection<GameAction> getActions() {
-    return actions;
+  public void addAlias(final String alias) {
+    aliases.add(alias);
   }
 
   public void setName(final String name) {
