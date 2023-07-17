@@ -33,6 +33,21 @@ public class GameNpc extends GameEntity {
     return dialogues.get(position);
   }
 
+  /**
+   * Returns all dialogues to be printed.
+   *
+   * @return String.
+   */
+  public String getStringDialogues() {
+    StringBuilder s = new StringBuilder();
+    int i = 1;
+    for (GameDialogue dialogue : dialogues) {
+      s.append(i++);
+      s.append(") " + dialogue.getQuestion() + "\n");
+    }
+    return s.toString();
+  }
+
   @Override
   public String toString() {
     StringBuilder s = new StringBuilder(super.toString());

@@ -14,8 +14,8 @@ public class CiroScript implements GameScript, Serializable {
   }
 
   @Override
-  public void execute() {
-    System.out.println("CIROOOOO");
+  public String execute() {
+    return "CIROOOO";
   }
 
   @Override
@@ -24,8 +24,9 @@ public class CiroScript implements GameScript, Serializable {
   }
 
   @Override
-  public String getOutput() {
-    throw new UnsupportedOperationException("Unimplemented method 'getOutput'");
+  public Exception getException() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getException'");
   }
     
 }

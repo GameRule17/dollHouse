@@ -29,9 +29,17 @@ public class GameMap implements Serializable {
     if (adjacentRooms == null) {
       return;
     }
+    // System.out.println(rooms.length);
+    int size = rooms.length;
     for (Object adjacentRoom : adjacentRooms) {
-      index = Integer.valueOf(adjacentRoom.toString());
-      room.addAdjacentRoom(rooms[index]);
+      // index = Integer.valueOf(adjacentRoom.toString());
+      for (index = 0; index < size; index++) {
+        // System.out.println(rooms[index].getName() + " " + adjacentRoom.toString());
+        if (rooms[index].getName().compareToIgnoreCase(adjacentRoom.toString()) == 0) {
+          room.addAdjacentRoom(rooms[index]);
+        }
+      }
+      // room.addAdjacentRoom(rooms[index]);
     }
   }
 
@@ -44,10 +52,15 @@ public class GameMap implements Serializable {
     }
   }
 
-  private GameRoom[] getInitializedGameRooms(final int numberOfGameRooms) {
+  private GameRoom[] getInitializedGameRooms(final int numberOfGameRooms,
+                                            final JSONArray jsonRooms) {
     GameRoom[] rooms = new GameRoom[numberOfGameRooms];
+    JSONObject jsonRoom;
     for (int i = 0; i < numberOfGameRooms; i++) {
       rooms[i] = new GameRoom();
+      jsonRoom = (JSONObject) jsonRooms.get(i);
+      rooms[i].setName((String) jsonRoom.get("name"));
+      rooms[i].setDescription((String) jsonRoom.get("description"));
     }
     return rooms;
   }
@@ -56,11 +69,13 @@ public class GameMap implements Serializable {
                       throws ClassNotFoundException, NoSuchMethodException,
                       InstantiationException, IllegalAccessException,
                       IllegalArgumentException, InvocationTargetException {
-    for (Object npc : jsonNpcs) {
-      if (((JSONObject) npc).get("script") == null) {
-        room.addEntity(JSONLoader.getGameNpc((JSONObject) npc));
-      } else {
-        room.addBehavioralNpc(JSONLoader.getGameBehavioralNpc((JSONObject) npc));
+    if (jsonNpcs != null) {
+      for (Object npc : jsonNpcs) {
+        if (((JSONObject) npc).get("script") == null) {
+          room.addEntity(JSONLoader.getGameNpc((JSONObject) npc));
+        } else {
+          room.addBehavioralNpc(JSONLoader.getGameBehavioralNpc((JSONObject) npc));
+        }
       }
     }
   }
@@ -95,7 +110,7 @@ public class GameMap implements Serializable {
       JSONArray jsonRooms = (JSONArray) jsonMap.get("gamerooms");
       JSONObject jsonRoom;
       int numberOfGameRooms = jsonRooms.size();
-      GameRoom[] rooms = getInitializedGameRooms(numberOfGameRooms);
+      GameRoom[] rooms = getInitializedGameRooms(numberOfGameRooms, jsonRooms);
 
       for (int i = 0; i < numberOfGameRooms; i++) {
         jsonRoom = (JSONObject) jsonRooms.get(i);
@@ -120,6 +135,36 @@ public class GameMap implements Serializable {
     return currentRoom;
   }
 
+  public void setCurrentRoom(final GameRoom room) {
+    currentRoom = room;
+  }
+
+  /**
+   * Returns the room with name "name".
+   *
+   * @param name - the name of room to find.
+   * @return GameRoom
+   */
+  public GameRoom getRoom(final String name) {
+    Stack<GameRoom> toBeProcessed = new Stack<>();
+    Collection<GameRoom> processed = new HashSet<>();
+    GameRoom gameRoom;
+    toBeProcessed.add(currentRoom);
+    while (!toBeProcessed.isEmpty()) {
+      gameRoom = toBeProcessed.pop();
+      processed.add(gameRoom);
+      if (gameRoom.getName().compareToIgnoreCase(name) == 0) {
+        return gameRoom;
+      }
+      for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
+        if (!processed.contains(adjacent)) {
+          toBeProcessed.add(adjacent);
+        }
+      }
+    }
+    return null;
+  }
+
   /**
    * This method invoke the run method of all GameBehavioralNpcs
    * present in the map.
@@ -135,7 +180,7 @@ public class GameMap implements Serializable {
       gameRoom.runBehavioralNpcs();
       for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
         if (!processed.contains(adjacent)) {
-          toBeProcessed.add(gameRoom);
+          toBeProcessed.add(adjacent);
         }
       }
     }
@@ -155,7 +200,7 @@ public class GameMap implements Serializable {
       gameRoom.stopBehavioralNpcs();
       for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
         if (!processed.contains(adjacent)) {
-          toBeProcessed.add(gameRoom);
+          toBeProcessed.add(adjacent);
         }
       }
       processed.add(gameRoom);
@@ -174,7 +219,7 @@ public class GameMap implements Serializable {
       s.append(gameRoom.toString());
       for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
         if (!processed.contains(adjacent)) {
-          toBeProcessed.add(gameRoom);
+          toBeProcessed.add(adjacent);
         }
       }
       processed.add(gameRoom);

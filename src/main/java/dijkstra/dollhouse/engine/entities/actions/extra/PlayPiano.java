@@ -12,12 +12,19 @@ public class PlayPiano extends GameScriptedAction {
   }
 
   @Override
-  public void execute() {
+  public String execute() {
+    return null;
   }
 
   @Override
   public boolean isOver() {
     throw new UnsupportedOperationException("Unimplemented method 'isOver'");
+  }
+
+  @Override
+  public Exception getException() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getException'");
   }
     
 }

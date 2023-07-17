@@ -5,6 +5,7 @@ import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GamePlayer;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,11 +21,12 @@ import java.util.Scanner;
  * per ottenere le informazioni necesarie per la loro esecuzione.
  */
 public final class GameHandler {
-  private static final String initUrl = "./res/maps/piano_terra.json";
+  private static final String initUrl = "./res/maps/primo_piano.json";
   private static final String savedGameUrl = "./res/savings/saved_game.dat";
   private static Game game = null;
   private static GameEntity currentEntity = null;
   private static GameAction currentAction = null;
+  private static ParsedInput parsedInput = null;
   private static GameParser parser;
   // parser
   // stato attuale del comando
@@ -50,6 +52,10 @@ public final class GameHandler {
     return game;
   }
 
+  public static ParsedInput getParsedInput() {
+    return parsedInput;
+  }
+
   public static GameEntity getCurrentEntity() {
     return currentEntity;
   }
@@ -59,12 +65,13 @@ public final class GameHandler {
   }
 
   public static String executeCommand(final String command) {
-    ParsedInput parsedInput = parser.parse(command);
+    parsedInput = parser.parse(command);
     GameRoom room = game.getMap().getCurrentRoom();
     String entityName = parsedInput.getEntity();
     String actionName = parsedInput.getAction();
     GamePlayer player = game.getPlayer();
     String output = "Comando inesistente!";
+    Exception exception;
 
     // System.out.println(parsedInput);
 
@@ -87,10 +94,13 @@ public final class GameHandler {
 
     // System.out.println(currentEntity);
 
-    if (currentAction instanceof GameScriptedAction) {
-      ((GameScriptedAction) currentAction).execute();
-      if (((GameScriptedAction) currentAction).isOver()) {
-        output = currentAction.getOutput();
+    if (currentAction instanceof GameScript) {
+      output = ((GameScript) currentAction).execute();
+      exception = ((GameScript) currentAction).getException();
+      if (exception != null) {
+        exception.printStackTrace();
+      }
+      if (((GameScript) currentAction).isOver()) {
         currentAction = null;
         currentEntity = null;
       }
@@ -177,8 +187,10 @@ public final class GameHandler {
       initParser();
       // GameHandler.loadGame();
       do {
-        System.out.println(GameHandler.getGame().getMap().toString());
-        System.out.print("\033[44m$ ");
+        // System.out.println(GameHandler.getGame().getMap().toString());
+        // System.out.print("\033[44m$ ");
+        System.out.println(GameHandler.getGame().getMap().getCurrentRoom().getAdjacentRooms());
+        System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "~$ "); 
         input = in.nextLine();
         // System.out.print("\033[0m");
         System.out.print(executeCommand(input));

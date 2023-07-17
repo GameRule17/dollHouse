@@ -6,12 +6,12 @@ package dijkstra.dollhouse.engine.entities.scripts;
  */
 public interface GameScript {
 
-  public abstract void execute();
+  public abstract String execute();
 
   public abstract boolean isOver();
 
-  public abstract String getOutput();
+  // public abstract String getOutput();
 
-  // public abstract Exception getException();
+  public abstract Exception getException();
 
 }

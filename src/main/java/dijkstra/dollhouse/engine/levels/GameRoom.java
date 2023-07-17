@@ -43,6 +43,25 @@ public class GameRoom implements Serializable {
   }
 
   /**
+   * Finds a GameRoom with the name specified by "name" argument.
+   * If this GameRoom does not exist, returns null.
+   *
+   * @param name - the name of the GameRoom to find.
+   * @return - the GameRoom to find or null instead.
+   */
+  public GameRoom getAdjacentRoom(final String name) {
+    Iterator<GameRoom> iterator = adjacentRooms.iterator();
+    GameRoom room;
+    while (iterator.hasNext()) {
+      room = iterator.next();
+      if (room.getName().compareToIgnoreCase(name) == 0) {
+        return room;
+      }
+    }
+    return null;
+  }
+
+  /**
    * Finds an Entity with the name specified by "name" argument.
    * If this Entity does not exist, returns null.
    *
@@ -134,14 +153,16 @@ public class GameRoom implements Serializable {
 
   @Override
   public String toString() {
-    StringBuilder s = new StringBuilder("Puoi vedere " + entities.size() + " entità, ossia: \n\n");
-    for (GameEntity entity : entities) {
-      s.append(entity.toString() + "\n");
-    }
-    for (GameBehavioralNpc npc : npcs) {
-      s.append(npc.toString() + "\n");
-    }
-    return s.toString();
+    // StringBuilder s = new StringBuilder("Puoi vedere "
+    //                                    + entities.size() + " entità, ossia: \n\n");
+    // for (GameEntity entity : entities) {
+    //   s.append(entity.toString() + "\n");
+    // }
+    // for (GameBehavioralNpc npc : npcs) {
+    //   s.append(npc.toString() + "\n");
+    // }
+    // return s.toString();
+    return name;
   }
 
 }

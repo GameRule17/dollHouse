@@ -1,22 +1,45 @@
 package dijkstra.dollhouse.engine.entities.actions.predefined;
 
+import dijkstra.dollhouse.GameHandler;
+import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
+import dijkstra.dollhouse.engine.levels.GameRoom;
 
 /**
  * .
  */
 public class ChangeRoom extends GameScriptedAction {
+
+  private Exception exception;
+
   public ChangeRoom(final String output) {
     super(output);
+    exception = null;
   }
 
   @Override
-  public void execute() {
-    throw new UnsupportedOperationException("Unimplemented method 'execute'");
+  public String execute() {
+    GameEntity entity = GameHandler.getCurrentEntity();
+    GameRoom room = GameHandler.getGame().getMap().getCurrentRoom()
+                              .getAdjacentRoom(entity.getName());
+    String output = null;
+    if (room != null) {
+      GameHandler.getGame().getMap().setCurrentRoom(room);
+      exception = null;
+      output = room.getDescription();
+    } else {
+      exception = new Exception("The room named " + entity.getName() + " does not exist!");
+    }
+    return output;
   }
 
   @Override
   public boolean isOver() {
-    throw new UnsupportedOperationException("Unimplemented method 'isOver'");
+    return true;
+  }
+
+  @Override
+  public Exception getException() {
+    return exception;
   }
 }

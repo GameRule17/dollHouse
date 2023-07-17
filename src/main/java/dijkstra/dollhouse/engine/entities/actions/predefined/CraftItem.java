@@ -52,13 +52,19 @@ public class CraftItem extends GameScriptedAction {
   }
 
   @Override
-  public void execute() {
+  public String execute() {
     throw new UnsupportedOperationException("Unimplemented method 'execute'");
   }
 
   @Override
   public boolean isOver() {
     throw new UnsupportedOperationException("Unimplemented method 'isOver'");
+  }
+
+  @Override
+  public Exception getException() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getException'");
   }
   
   // public static void main(String[] args) {

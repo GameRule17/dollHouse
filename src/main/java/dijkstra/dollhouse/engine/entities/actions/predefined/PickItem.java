@@ -2,6 +2,7 @@ package dijkstra.dollhouse.engine.entities.actions.predefined;
 
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.entities.GameEntity;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
 import dijkstra.dollhouse.engine.levels.GameRoom;
@@ -11,27 +12,49 @@ import dijkstra.dollhouse.engine.levels.GameRoom;
  * and add it in the player inventory.
  */
 public class PickItem extends GameScriptedAction {
+
+  private boolean isExecutable;
+
   public PickItem(final String output) {
     super(output);
+    isExecutable = true;
+  }
+
+  public void setExecutable(final boolean executable) {
+    isExecutable = executable;
   }
 
   @Override
-  public void execute() {
+  public String execute() {
     GameEntity entity = GameHandler.getCurrentEntity();
     GameRoom room = GameHandler.getGame().getMap().getCurrentRoom();
     GameInventory inventory = GameHandler.getGame().getPlayer().getGameInventory();
-    DropItem drop = new DropItem("L'oggetto è stato lasciato in questa stanza!");
-    drop.addAlias("lascia");
+    String output;
+    GameAction drop;
 
-    room.removeEntity(entity);
-    inventory.add(entity);
+    if (isExecutable) {
+      room.removeEntity(entity);
+      inventory.add(entity);
+      drop = entity.findAction("lascia");
+      if (drop instanceof DropItem) {
+        ((DropItem) drop).setExecutable(true);
+      }
+      isExecutable = false;
+      output = this.output;
+    } else {
+      output = "Questa entita' e' già presente nell'inventario!";
+    }
 
-    entity.removeAction(GameHandler.getCurrentAction());
-    entity.addAction(drop);
+    return output;
   }
 
   @Override
   public boolean isOver() {
     return true;
+  }
+
+  @Override
+  public Exception getException() {
+    return null;
   }
 }
