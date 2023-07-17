@@ -6,11 +6,8 @@
     {
       "id": 0,
       "name": "Bagno",
+      "adjacentRooms": [1],
       "description": "Fai molta attenzione perche' un bagno cosi' decadente difficilmente lo rivedrai nella tua vita! Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro. Noti la presenza di uno specchio, un secchio, una vecchia caldaia e una vasca.",
-      "north": null,
-      "south": null,
-      "east": null,
-      "west": null,
       "objects": [
         {
           "name": "Secchio",
@@ -100,7 +97,7 @@
               "output":"Uno specchio scheggiato con una grande scheggia rimovibile che puo' essere sollevata per ripristinare l'integrita' della superficie riflettente."
             },
             {
-              "aliases":["rompi","distruggi"],
+              "aliases":["rompi","rompere","distruggi","distruggere"],
               "output":"Nonostante l'impiego di tutta la forza disponibile, lo specchio rimane intatto."
             },
             {
@@ -130,6 +127,36 @@
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
               "output":"L'oggetto e' rimosso dall'inventario.",
               "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "aliases": ["Corridoio"],
+          "actions": [
+            {
+              "aliases": ["vai", "apri","aprire","entra","entrare"],
+              "output": "",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Corridoio",
+      "adjacentRooms": [0],
+      "description": "Noti due porte intorno a te: la porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
+      "objects": [
+        {
+          "name": "0",
+          "aliases": ["Bagno"],
+          "actions": [
+            {
+              "aliases": ["vai", "apri","aprire","entra","entrare"],
+              "output": "",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
             }
           ]
         }

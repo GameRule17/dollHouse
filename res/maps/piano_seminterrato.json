@@ -9,15 +9,15 @@
       "objects": [
         {
           "name": "Maschera",
-          "craftable": false,
+          "recipe": null,
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Scolpita con maestria, presenta dettagli intricati che si intrecciano tra loro, evocando un senso di magia e incanto.",
+              "output":"Scolpita con maestria, presenta dettagli intricati che si intrecciano tra loro, evocando un senso di magia e incanto."
             },
             {
-              "aliases":["indossa","metti"],
-              "output":"Dopo aver indossato la maschera, si avverte una sensazione di forza crescente, pronti a fronteggiare qualsiasi nemico che si manifesti, sicuri di poterli sconfiggere senza esitazione.",
+              "aliases":["indossa","indossare","metti","mettere"],
+              "output":"Dopo aver indossato la maschera, si avverte una sensazione di forza crescente, pronti a fronteggiare qualsiasi nemico che si manifesti, sicuri di poterli sconfiggere senza esitazione."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -33,14 +33,14 @@
         {
           "name": "Gabbie",
           "aliases": ["gabbia"],
-          "craftable": false,
+          "recipe": null,
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
               "output":"Le gabbie vuote emanano un'atmosfera inquietante, come se fossero state recentemente abitate da creature misteriose.\nLe sbarre di ferro sono arrugginite e mostrano segni di utilizzo."
             },
             {
-              "aliases":["rompi","distruggi","spacca","colpisci","calcia"],
+              "aliases":["rompi","rompere","distruggi","distruggere"],
               "output":"Dai un calcio alle gabbie con tutte le tue forze, ma non riesci a romperle."
             },
             {
@@ -55,14 +55,14 @@
         },
         {
           "name": "Botola",
-          "craftable": false,
+          "recipe": null,
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
               "output":"La botola nel centro dello scantinato e' un'entrata vetusta e logora verso l'ignoto.\nRealizzata in legno consunto, offre un passaggio misterioso al piano superiore, suggerendo segreti sinistri e avventure inquietanti."
             },
             {
-              "aliases":["apri","entra","salta","usa"],
+              "aliases":["apri","aprire","entra","entrare","usa","usare","utilizza"],
               "output":"Stai salendo verso il piano superiore..."
             },
             {
@@ -77,14 +77,14 @@
         },
         {
           "name": "Calderone",
-          "craftable": false,
+          "recipe": null,
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
               "output":"Il calderone emana un'aria di mistero e potere oscuro. E' un imponente recipiente di ferro nero, con pareti robuste e segni di bruciature passate.\nResidui di fumo secco si insinuano tra le sue crepe, evocando immagini di incantesimi e pozioni magiche. Attorno al calderone, boccette vuote giacciono a terra, testimoni di antichi elisir e miscele misteriose."
             },
             {
-              "aliases":["usa"],
+              "aliases":["usa","usare","utilizza"],
               "output":"Ti accorgi che e' vuoto! Sembra che qualcuno abbia gia' fatto incantesimi di sparizione sulla pozione che conteneva!"
             },
             {
@@ -99,14 +99,14 @@
         },
         {
           "name": "Tavolo",
-          "craftable": false,
+          "recipe": null,
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
               "output":"Antico mobile di legno intagliato, segnato dal passare del tempo.\nLa sua superficie e' cosi' ben coperta che potrebbe essere un concorrente al titolo di 'Miglior tavolo coperto di polvere del decennio'."
             },
             {
-              "aliases":["muovi","sposta","spingi","trascina"],
+              "aliases":["muovi","muovere","sposta","spostare","spingi","spingere","trascina","trascinare"],
               "output":"Il tavolo e' cosi' carico di oggetti che anche un leggero spostamento potrebbe scatenare una catastrofe a effetto domino! Meglio lasciarlo stare!"
             },
             {
@@ -133,7 +133,7 @@
               "output":"Posizionato al centro del tavolo ha un aspetto usurato, con pagine ingiallite e bordi consumati, testimoni del suo utilizzo intenso nel corso degli anni.\nForse bisognerebbe sfogliarlo..."
             },
             {
-              "aliases":["apri","leggi","usa"],
+              "aliases":["apri","aprire","leggi","leggere","usa","usare","utilizza"],
               "output":"Man mano che si sfoglia il libro, diventa evidente che i caratteri utilizzati per la scrittura sono del tutto incomprensibili, come se appartenessero a una lingua sconosciuta."
             },
             {
@@ -151,15 +151,19 @@
         {
           "name": "Lanterna Spenta",
           "aliases": ["Lanterna"],
-          "craftable": false, 
+          "recipe": null, 
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
               "output":"Questa lanterna appare come un oggetto ormai dimenticato, coperto di polvere.\nI suoi vetri opachi nascondono una luce che non brilla piu'."
             },
             {
-              "aliases":["accendi","usa"],
+              "aliases":["accendi","accendere","usa","usare","utilizza"],
               "output":"Cerchi di accendere la lanterna, ma non hai alcuno strumento per farlo."
+            },
+            {
+              "aliases":["spegni","spegnere"],
+              "output":"La lanterna e' gia' spenta."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -170,10 +174,18 @@
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
               "output":"L'oggetto e' rimosso dall'inventario.",
               "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
-            },
+            }
+          ]
+        },
+        {
+          "name": "./res/maps/piano_terra.json",
+          "aliases": ["piano terra", "piano di sopra", "sopra", "botola"],
+          "recipe": null,
+          "actions": [
             {
-              "aliases":["spegni"],
-              "output":"La lanterna e' gia' spenta."
+              "aliases": ["vai", "sali","salire","apri","aprire"],
+              "output": "",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
             }
           ]
         }
@@ -182,9 +194,30 @@
         {
           "name": "Guardiano",
           "aliases": ["figura umanoide","figura"],
+          "dialogues": [
+            {
+              "question": "Qual è il tuo vero nome",
+              "answer": "Il mio vero nome e' Albus"
+            },
+            {
+              "question": "Da quanti anni ti trovi qui?",
+              "answer": "Da 127 anni..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Scantinato",
+      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nNoti una strana figura umanoide che ti fissa.",
+      "npcs": [
+        {
+          "name": "Guardiano",
+          "aliases": ["figura umanoide","figura"],
           "actions": [
             {
-              "aliases":["parla","discuti"],
+              "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
               "script": "dijkstra.dollhouse.entities.actions.predefined.TalkToGuardiano"
             }
           ]
