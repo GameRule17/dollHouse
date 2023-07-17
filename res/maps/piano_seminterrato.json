@@ -1,9 +1,7 @@
 {
   "name": "Piano Seminterrato",
-  "number_of_gamerooms": 2,
   "gamerooms": [
     {
-      "id": 0,
       "name": "Scantinato",
       "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nGuardando meglio puoi notare: delle gabbie, una botola, un calderone, un grande tavolo in legno, un libro incantato, una lanterna spenta e una maschera.",
       "objects": [
@@ -204,7 +202,6 @@
       ]
     },
     {
-      "id": 1,
       "name": "Finto Scantinato",
       "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nNoti una strana figura umanoide che ti fissa.",
       "npcs": [

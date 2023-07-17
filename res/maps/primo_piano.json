@@ -1,12 +1,10 @@
 {
   "name": "Primo piano",
   "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
-  "number_of_gamerooms": 2,
   "gamerooms": [
     {
-      "id": 0,
       "name": "Bagno",
-      "adjacentRooms": [1],
+      "adjacentRooms": ["Corridoio"],
       "description": "Fai molta attenzione perche' un bagno cosi' decadente difficilmente lo rivedrai nella tua vita! Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro. Noti la presenza di uno specchio, un secchio, una vecchia caldaia e una vasca.",
       "objects": [
         {
@@ -152,9 +150,8 @@
       ]
     },
     {
-      "id": 1,
       "name": "Corridoio",
-      "adjacentRooms": [0],
+      "adjacentRooms": ["Bagno"],
       "description": "Noti due porte intorno a te: la porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
       "objects": [
         {
