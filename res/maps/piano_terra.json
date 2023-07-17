@@ -10,8 +10,7 @@
         "objects": [
           {
             "name": "Sedia",
-            "aliases": ["Sedia dondolo"],
-            "recipe": null,
+            "aliases": ["sedia a dondolo, sedia, dondolo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -33,8 +32,7 @@
           },
           {
             "name": "Gomitolo",
-            "aliases": ["Gomitolo lana"],
-            "recipe": null,
+            "aliases": ["gomitolo di lana, gomitolo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -43,24 +41,23 @@
               {
                 "aliases":["lancia","lanciare","getta","gettare","butta","buttare"],
                 "output":"Lanci il gomitolo con convinzione, sperando che un gatto lo inseguira'. Tuttavia, il gomitolo rotola sul pavimento senza suscitare alcun interesse felino.",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
                 "output":"Hai preso il gomitolo di lana, ora e' nel tuo inventario.",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto e' rimosso dall'inventario",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
           },
           {
             "name": "Pianoforte",
-            "aliases": ["Piano","Tastiera"],
-            "recipe": null,
+            "aliases": ["piano","tastiera","pianoforte"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -69,7 +66,7 @@
               {
                 "aliases":["suona","suonare","interagisci","interagire"],
                 "output": "Seleziona quale melodia suonare:\n1) Melodia Uno\n2) Melodia Due",
-                "script": "dijkstra.dollhouse.entities.actions.extra.PlayPiano"
+                "script": "dijkstra.dollhouse.engine.entities.actions.extra.PlayPiano"
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -87,7 +84,7 @@
           },
           {
             "name": "Finestra",
-            "recipe": null,
+            "aliases": ["finestra"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -117,8 +114,7 @@
           },
           {
             "name": "Caminetto",
-            "aliases": "Camino",
-            "recipe": null,
+            "aliases": ["camino","caminetto","focolare"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -144,8 +140,7 @@
           },
           {
             "name": "Ramoscello",
-            "aliases": ["Ramo"],
-            "recipe": null,
+            "aliases": ["ramo","ramoscello","rametto"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -162,18 +157,18 @@
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
                 "output":"Hai preso il ramoscello, ora e' nel tuo inventario.",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto e' rimosso dall'inventario",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }              
             ]
           },
           {
-            "name": "2",
-            "aliases": ["Corridoio"],
+            "name": "Corridoio",
+            "aliases": ["corridoio"],
             "actions": [
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -185,7 +180,6 @@
           {
             "name": "./res/maps/piano_seminterrato.json",
             "aliases": ["seminterrato", "piano di sotto", "sotto", "botola"],
-            "recipe": null,
             "actions": [
               {
                 "aliases": ["vai", "scendi","scendere", "apri","aprire"],
@@ -204,7 +198,7 @@
         "objects": [
           {
             "name": "Tavolo",
-            "recipe": null,
+            "aliases": ["tavolo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -230,7 +224,7 @@
           },
           {
             "name": "Tagliere",
-            "recipe": null,
+            "aliases": ["tagliere","tagliere di legno","tagliere in legno"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -243,19 +237,18 @@
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
                 "output":"Hai preso il tagliere, ora e' nel tuo inventario.",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto e' rimosso dall'inventario",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
           },
           {
             "name": "Manico",
-            "aliases": ["Manico coltello"],
-            "recipe": true,
+            "aliases": ["manico coltello","manico","manico di coltello"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -268,18 +261,18 @@
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
                 "output":"Hai preso il manico del coltello, ora e' nel tuo inventario.",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto e' rimosso dall'inventario",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
           },
           {
             "name": "Fornello",
-            "recipe": null,
+            "aliases": ["fornello","fornetto","fornellino","forno"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -305,8 +298,7 @@
           },
           {
             "name": "Bottiglia ",
-            "aliases": ["Bottiglia Whisky"],
-            "recipe": null,
+            "aliases": ["bottiglia whisky","bottiglia di whisky","bottiglia","bottiglia di alcool","whisky","alcool"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -323,18 +315,18 @@
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
                 "output":"Hai preso la bottiglia di whisky, ora e' nel tuo inventario.",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto e' rimosso dall'inventario",
-                "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
           },
           {
             "name": "Lavabo",
-            "recipe": null,
+            "aliases": ["lavabo","lavandino"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -356,7 +348,7 @@
           },
           {
             "name": "Armadio",
-            "recipe": null,
+            "aliases": ["armadio","armadio di cibo","armadio con cibo","dispensa"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -381,8 +373,8 @@
             ]
           },
           {
-            "name": "2",
-            "aliases": ["Corridoio"],
+            "name": "Corridoio",
+            "aliases": ["corridoio"],
             "actions": [
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -395,13 +387,13 @@
           "npcs": [
             {
               "name": "Ciro",
-              "aliases": ["Ciruzzo"],
+              "aliases": ["Ciruzzo","bambola ciro","bambola ciruzzo"],
               "behaviour": "dijkstra.dollhouse.engine.entities.scripts.extra.CiroScript",
               "actions": [
                 {
                   "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],
                   "output":"",
-                  "script": "dijkstra.dollhouse.entities.actions.predefined.TalkToCiro"
+                  "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToCiro"
                 }
               ],
               "dialogues": [
@@ -417,13 +409,12 @@
             },
             {
               "name": "Ann",
-              "aliases": ["bambola Ann"],
-              "behaviour": "dijkstra.dollhouse.engine.entities.scripts.extra.AnnScript",
+              "aliases": ["bambola Ann","Ann"],
               "actions": [
                 {
                   "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],
                   "output":"",
-                  "script": "dijkstra.dollhouse.entities.actions.predefined.TalkToNpc"
+                  "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
                 }
               ],
               "dialogues": [
@@ -447,13 +438,12 @@
             },
             {
               "name": "Mery",
-              "aliases": ["bambola Mery"],
-              "behaviour": "dijkstra.dollhouse.engine.entities.scripts.extra.MeryScript",
+              "aliases": ["bambola Mery","Mery"],
               "actions": [
                 {
                   "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],
                   "output":"",
-                  "script": "dijkstra.dollhouse.entities.actions.predefined.TalkToNpc"
+                  "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
                 }
               ],
               "dialogues": [
@@ -486,8 +476,7 @@
         "objects": [
           {
             "name": "Attaccapanni",
-            "aliases": ["Appendino"],
-            "recipe": null,
+            "aliases": ["appendino","attaccapanni","appendiabiti"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -505,8 +494,7 @@
           },
           {
             "name": "Quadri",
-            "aliases": ["Quadro","quadro strega"],
-            "recipe": null,
+            "aliases": ["quadro","quadro strega","quadri","quadri della strega","quadri con strega"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -531,8 +519,8 @@
             ]
           },
           {
-            "name": "0",
-            "aliases": ["Cucina"],
+            "name": "Cucina",
+            "aliases": ["cucina"],
             "actions": [
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -542,8 +530,8 @@
             ]
           },
           {
-            "name": "1",
-            "aliases": ["Salotto"],
+            "name": "Salotto",
+            "aliases": ["salotto"],
             "actions": [
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -554,16 +542,14 @@
           },
           {
             "name": "Cancello",
-            "aliases": "",
-            "recipe": null,
+            "aliases": ["cancello","cancello di ferro","cancello di metallo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
                 "output":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e la', testimone degli anni trascorsi, ma cio' non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di la'."
               },
               {
-                "aliases":["usa","usare","utilizza","apri","aprire"],
-                "script":"dijkstra.dollhouse.entities.actions.extra.OpenGate"
+                "aliases":["usa","usare","utilizza","apri","aprire"]
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],

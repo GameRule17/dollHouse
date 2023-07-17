@@ -9,7 +9,7 @@
       "objects": [
         {
           "name": "Maschera",
-          "recipe": null,
+          "aliases":["maschera"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -22,7 +22,7 @@
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
               "output":"Dopo aver preso la maschera, la tua mano ha cominciato a muoversi autonomamente, come se fosse controllata da una forza misteriosa.\nSenza poter resistere, la mano ha avvicinato la maschera al volto del protagonista, quasi imitando il gesto iconico di Jim Carrey in The Mask, invitandolo a indossarla con una simpatia irresistibile.",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
@@ -32,8 +32,7 @@
         },
         {
           "name": "Gabbie",
-          "aliases": ["gabbia"],
-          "recipe": null,
+          "aliases": ["gabbia","gabbie","gabbia di metallo","gabbie di metallo","gabbia in metallo","gabbie in metallo"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -55,7 +54,7 @@
         },
         {
           "name": "Botola",
-          "recipe": null,
+          "aliases": ["botola","botola segreta","botola per piano terra"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -77,7 +76,7 @@
         },
         {
           "name": "Calderone",
-          "recipe": null,
+          "aliases": ["calderone"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -99,7 +98,7 @@
         },
         {
           "name": "Tavolo",
-          "recipe": null,
+          "aliases": ["tavolo","tavolo nello scantinato","tavolo dello scantinato","tavolo di legno","tavolo in legno"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -125,8 +124,7 @@
         },
         {
           "name": "Libro Incantato",
-          "aliases": ["Libro"],
-          "craftable": true, 
+          "aliases": ["libro","libro magico","libro incantato"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -139,19 +137,18 @@
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
               "output":"Questo potrebbe essere utile in seguito, il libro e' inserito nell'inventario.",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
               "output":"L'oggetto e' rimosso dall'inventario.",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
         },
         {
           "name": "Lanterna Spenta",
-          "aliases": ["Lanterna"],
-          "recipe": null, 
+          "aliases": ["lanterna","lanterna spenta"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -168,19 +165,18 @@
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
               "output":"Anche se spenta, potrebbe tornare utile in seguito, la lanterna e' inserita nell'inventario.",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
               "output":"L'oggetto e' rimosso dall'inventario.",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
         },
         {
           "name": "./res/maps/piano_terra.json",
-          "aliases": ["piano terra", "piano di sopra", "sopra", "botola"],
-          "recipe": null,
+          "aliases": ["piano terra", "piano di sopra", "sopra", "botola","botola per il piano superiore","botola per il piano di sopra"],
           "actions": [
             {
               "aliases": ["vai", "sali","salire","apri","aprire"],
@@ -193,7 +189,7 @@
       "npcs": [
         {
           "name": "Guardiano",
-          "aliases": ["figura umanoide","figura"],
+          "aliases": ["figura umanoide","figura","guardiano","guardiano dello scantinato","mostro"],
           "dialogues": [
             {
               "question": "Qual è il tuo vero nome",
@@ -214,11 +210,11 @@
       "npcs": [
         {
           "name": "Guardiano",
-          "aliases": ["figura umanoide","figura"],
+          "aliases": ["figura umanoide","figura","guardiano","guardiano dello scantinato","mostro"],
           "actions": [
             {
               "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
-              "script": "dijkstra.dollhouse.entities.actions.predefined.TalkToGuardiano"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
             }
           ]
         }

@@ -11,7 +11,7 @@
       "objects": [
         {
           "name": "Secchio",
-          "craftable": false,
+          "aliases": ["secchio","secchio rugginoso","secchio arrugginito","secchio di ferro"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -24,19 +24,18 @@
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
               "output":"Decidi di prendere il secchio, sperando che si presenti un'occasione utile per usarlo.",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
               "output":"L'oggetto e' rimosso dall'inventario",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
         },
         {
           "name": "Vecchia caldaia",
-          "aliases": ["Caldaia"],
-          "craftable": false,
+          "aliases": ["caldaia","vecchia caldaia"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -62,8 +61,7 @@
         },
         {
           "name": "Vasca",
-          "aliases": ["Vasca bagno"],
-          "craftable": false,
+          "aliases": ["vasca da bagno","vasca","vasca per il bagno"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -89,8 +87,7 @@
         },
         {
           "name": "Specchio",
-          "aliases": ["Specchio","Specchio scheggiato"],
-          "craftable": false,
+          "aliases": ["specchio","specchio scheggiato","specchio rotto","specchio con scheggia"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -112,7 +109,7 @@
         },
         {
           "name": "Scheggia",
-          "craftable": true,
+          "aliases": ["scheggia","scheggia affilata","scheggia di vetro","scheggia di vetro affilata"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -121,18 +118,18 @@
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
               "output":"Hai un momento di concentrazione e precisione chirurgica, mentre stacchi con successo la scheggia di vetro dal suo rifugio, come un vero esperto artigiano. Riponi la scheggia di vetro nel tuo inventario.",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.PickItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
               "output":"L'oggetto e' rimosso dall'inventario.",
-              "script": "dijkstra.dollhouse.entities.actions.predefined.DropItem"
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
         },
         {
-          "name": "1",
-          "aliases": ["Corridoio"],
+          "name": "Corridoio",
+          "aliases": ["corridoio"],
           "actions": [
             {
               "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -150,8 +147,8 @@
       "description": "Noti due porte intorno a te: la porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
       "objects": [
         {
-          "name": "0",
-          "aliases": ["Bagno"],
+          "name": "Bagno",
+          "aliases": ["bagno"],
           "actions": [
             {
               "aliases": ["vai", "apri","aprire","entra","entrare"],
