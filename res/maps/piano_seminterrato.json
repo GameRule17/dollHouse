@@ -175,7 +175,7 @@
           ]
         },
         {
-          "name": "./res/maps/piano_terra.json",
+          "name": "./res/maps/piano_terra.json Salotto",
           "aliases": ["piano terra", "piano di sopra", "sopra", "botola","botola per il piano superiore","botola per il piano di sopra"],
           "actions": [
             {
@@ -205,7 +205,7 @@
     },
     {
       "id": 1,
-      "name": "Scantinato",
+      "name": "Finto Scantinato",
       "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nNoti una strana figura umanoide che ti fissa.",
       "npcs": [
         {

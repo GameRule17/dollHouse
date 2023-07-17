@@ -137,6 +137,17 @@
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
             }
           ]
+        },
+        {
+          "name": "./res/maps/piano_terra.json Corridoio",
+          "aliases": ["piano terra", "piano di sotto", "sotto", "scale","scale per il piano inferiore"],
+          "actions": [
+            {
+              "aliases": ["vai", "sali","salire","apri","aprire"],
+              "output": "",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
+            }
+          ]
         }
       ]
     },

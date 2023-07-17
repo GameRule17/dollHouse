@@ -178,7 +178,7 @@
             ]
           },
           {
-            "name": "./res/maps/piano_seminterrato.json",
+            "name": "./res/maps/piano_seminterrato.json Scantinato",
             "aliases": ["seminterrato", "piano di sotto", "sotto", "botola"],
             "actions": [
               {
@@ -297,7 +297,7 @@
             ]
           },
           {
-            "name": "Bottiglia ",
+            "name": "Bottiglia",
             "aliases": ["bottiglia whisky","bottiglia di whisky","bottiglia","bottiglia di alcool","whisky","alcool"],
             "actions": [
               {
