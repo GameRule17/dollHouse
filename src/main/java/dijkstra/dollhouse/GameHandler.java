@@ -191,7 +191,7 @@ public final class GameHandler {
       GameHandler.saveGame();
       initParser();
       // GameHandler.loadGame();
-      GameHandler.getGame().getMap().runAllBehavioralNpcs();
+      // GameHandler.getGame().getMap().runAllBehavioralNpcs();
       do {
         // System.out.println(GameHandler.getGame().getMap().toString());
         // System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "\033[44m$ ");

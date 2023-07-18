@@ -1,0 +1,10 @@
+{
+  "name": "Melodia di Ciro",
+  "aliases": ["melodia"],
+  "actions": [
+    {
+      "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+      "output":"Melodia figa"
+    }
+  ]
+}

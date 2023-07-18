@@ -14,6 +14,10 @@ public class GameDialogue implements Serializable {
     this.answer = answer;
   }
 
+  public void setAnswer(final String answer) {
+    this.answer = answer;
+  }
+
   public String getQuestion() {
     return question;
   }

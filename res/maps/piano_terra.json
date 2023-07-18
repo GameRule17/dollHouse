@@ -390,7 +390,7 @@
                 {
                   "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],
                   "output": "",
-                  "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
+                  "script": "dijkstra.dollhouse.engine.entities.actions.extra.CiroScript"
                 }
               ],
               "dialogues": [
@@ -402,6 +402,12 @@
                   "question": "Come posso scappare da qui?",
                   "answer": "Nun se pote. L'uneca manera è accidere chella maledetta ma s'è chiusa nt'a' sua stanza. Però ogni vota ca sale ncoppa, senghe na melodia ca però mo nun me ricorde. Forse na bottiglia e wisky putesse aiutarmi! A cambio e 'chess te putess da 'cchiu informazioni. Daje guaglione!"
                 }
+              ],
+              "phrases": [
+                "Ue ugaliu", "pisello", "CIROOOO"
+              ],
+              "rooms": [
+                "Cucina", "Salotto", "Corridoio"
               ]
             },
             {

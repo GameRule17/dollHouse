@@ -67,14 +67,13 @@ public class CraftItem extends GameScriptedAction {
         for (String needed : object.getRecipe()) {
           if (inventory.findGameObject(needed) == null) {
             return "Mancano gli oggetti necessari per costruire questo oggetto!";
-          } else {
-            inventory.add(object);
-            for (String item : object.getRecipe()) {
-              inventory.remove(inventory.findGameObject(item));
-            }
-            return "L'oggetto e' stato aggiunto nel tuo inventario!";
           }
         }
+        inventory.add(object);
+        for (String item : object.getRecipe()) {
+          inventory.remove(inventory.findGameObject(item));
+        }
+        return "L'oggetto e' stato aggiunto nel tuo inventario!";
       }
     }
 

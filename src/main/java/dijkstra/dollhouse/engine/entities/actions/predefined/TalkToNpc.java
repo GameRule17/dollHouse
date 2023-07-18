@@ -10,7 +10,7 @@ import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
  */
 public class TalkToNpc extends GameScriptedAction {
 
-  private boolean isRunning;
+  protected boolean isRunning;
   // private Exception exception;
 
   /**
@@ -43,7 +43,7 @@ public class TalkToNpc extends GameScriptedAction {
       }
     } else {
       isRunning = true;
-      output = entity.getStringDialogues() + "0) Smetti di parlare con " + entity.getName();
+      output = "0) Smetti di parlare con " + entity.getName() + "\n" + entity.getStringDialogues();
     }
 
     return output;

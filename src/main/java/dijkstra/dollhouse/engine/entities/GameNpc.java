@@ -2,6 +2,7 @@ package dijkstra.dollhouse.engine.entities;
 
 import dijkstra.dollhouse.engine.entities.details.GameDialogue;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -33,6 +34,10 @@ public class GameNpc extends GameEntity {
     return dialogues.get(position);
   }
 
+  public int getNumberOfDialogues() {
+    return dialogues.size();
+  }
+
   /**
    * Returns all dialogues to be printed.
    *
@@ -41,9 +46,11 @@ public class GameNpc extends GameEntity {
   public String getStringDialogues() {
     StringBuilder s = new StringBuilder();
     int i = 1;
-    for (GameDialogue dialogue : dialogues) {
-      s.append(i++);
-      s.append(") " + dialogue.getQuestion() + "\n");
+    Iterator<GameDialogue> it = dialogues.iterator();
+    s.append(i + ") " + it.next().getQuestion());
+    while (it.hasNext()) {
+      s.append("\n" + ++i);
+      s.append(") " + it.next().getQuestion());
     }
     return s.toString();
   }
@@ -51,9 +58,10 @@ public class GameNpc extends GameEntity {
   @Override
   public String toString() {
     StringBuilder s = new StringBuilder(super.toString());
-    s.append("\nDialogues: \n");
+    s.append("\nDialogues:");
     for (GameDialogue dialogue : dialogues) {
-      s.append(dialogue.toString() + "\n");
+      s.append("\n");
+      s.append(dialogue.toString());
     }
     return s.toString();
   }
