@@ -1,0 +1,572 @@
+{
+    "name": "Piano Terra",
+    "gamerooms": [
+      {
+        "name": "Salotto",
+        "description": "L'ambiente e' caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalita' calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza e' arredata con mobili antichi e un caminetto, che aggiungono un tocco di eleganza.\nNoti inoltre un pianoforte e una sedia a dondolo.",
+        "adjacentRooms": ["Corridoio"],
+        "objects": [
+          {
+            "name": "Sedia",
+            "aliases": ["sedia a dondolo, sedia, dondolo"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nE' invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato li' forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilita' dello shampo a casa di Claudio Bisio."
+              },
+              {
+                "aliases":["siediti","sedersi","seduto"],
+                "output":"Non appena ti siedi sulla sedia, cadi immediatamente in un sonno profondo, come se essa avesse il potere di indurre un sonno istantaneo e irresistibile.\n(ti svegli dopo 5 secondi) Ti risveglia da un sonno che sembra essere durato 5 secondi e 50 anni contemporaneamente, confuso e disorientato dalla sensazione di aver vissuto un'intera epoca in un breve istante."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Sebbene sia incredibilmente comoda, non puoi portare con te la sedia a dondolo. Sarebbe troppo ingombrante. Potresti farci un pensierino se avessi un camioncino per il trasloco."
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+          },
+          {
+            "name": "Gomitolo",
+            "aliases": ["gomitolo di lana, gomitolo"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio."
+              },
+              {
+                "aliases":["lancia","lanciare","getta","gettare","butta","buttare"],
+                "output":"Lanci il gomitolo con convinzione, sperando che un gatto lo inseguira'. Tuttavia, il gomitolo rotola sul pavimento senza suscitare alcun interesse felino.",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Hai preso il gomitolo di lana, ora e' nel tuo inventario.",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto e' rimosso dall'inventario",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
+              }
+            ]
+          },
+          {
+            "name": "Pianoforte",
+            "aliases": ["piano","tastiera","pianoforte"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Al centro del salotto, trovi un maestoso pianoforte a coda.\nLe sue eleganti tastiere invitano a produrre meravigliose melodie.\nPotresti scoprire qualcosa di speciale interagendo con il pianoforte o sperimentando con le sue note. Ma non crederti il nuovo Mozart."
+              },
+              {
+                "aliases":["suona","suonare","interagisci","interagire"],
+                "output": "Seleziona quale melodia suonare:\n1) Melodia Uno\n2) Melodia Due",
+                "script": "dijkstra.dollhouse.engine.entities.actions.extra.PlayPiano"
+              },
+              {
+                "aliases":["rompi","rompere","distruggi","distruggere"],
+                "output":"Non puoi distruggere uno strumento musicale cosi' bello. Non sei un mostro."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Il pianoforte sarebbe molto utile se messo nel soggiorno di casa tua, ma non puoi portarlo con te."
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }              
+            ]
+          },
+          {
+            "name": "Finestra",
+            "aliases": ["finestra"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Il buio della notte inonda la stanza attraverso una grande finestra.\nOsservi l'esterno e noti che la luna e' piena e luminosa."
+              },
+              {
+                "aliases":["apri","aprire"],
+                "output":"La finestra che stai cercando di aprire e' irremovibilmente bloccata da un incantesimo, sfidando ogni tentativo di aprirla, come se fosse sigillata da una magia inespugnabile."
+              },
+              {
+                "aliases":["chiudi","chiudere"],
+                "output":"La finestra e' gia' chiusa."
+              },
+              {
+                "aliases":["rompi","rompere","distruggi","distruggere"],
+                "output":"Nonostante l'impiego di tutta la forza disponibile, la finestra rimane intatta e immutabile, come se fosse protetta da un incantesimo che la rende intangibile, sfidando ogni tentativo di danneggiarla."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"A cosa potrebbe mai servirti una finestra?"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+          },
+          {
+            "name": "Caminetto",
+            "aliases": ["camino","caminetto","focolare"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Il caminetto e' un punto focale del salotto, emanando un calore accogliente.\nPotresti sentirne il crepitio dei tronchi bruciati e ammirare le fiamme danzanti.\nA sinistra del caminetto, puoi notare un ramoscello secco posizionato con cura."
+              },
+              {
+                "aliases":["accendi","accendere"],
+                "output":"Il fuoco del caminetto e' gia' acceso."
+              },
+              {
+                "aliases":["spegni","spegnere","soffia","soffiare"],
+                "output":"Non puoi spegnere il fuoco del caminetto. Non hai gli strumenti adatti per farlo."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Come sarebbe fisicamente possibile portare con se' un caminetto?"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+          },
+          {
+            "name": "Ramoscello",
+            "aliases": ["ramo","ramoscello","rametto"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Un ramoscello secco, probabilmente caduto da un albero.\nNon sembra avere alcun valore."
+              },
+              {
+                "aliases":["usa","usare","utilizza","utilizzare","agita","agitare"],
+                "output":"Dopo aver preso il ramoscello, lo agiti speranzoso, come se stessi facendo un'esibizione magica da 'Il mago incapace', ma alla fine rimani deluso nel vedere che il solo effetto magico ottenuto era far tremare qualche foglia spaventata."
+              },
+              {
+                "aliases":["accendi","accendere"],
+                "output":"Avvicini il ramoscello al caminetto e in poco tempo questo prende fuoco. Ora hai un bastoncino infuocato."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Hai preso il ramoscello, ora e' nel tuo inventario.",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto e' rimosso dall'inventario",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
+              }              
+            ]
+          },
+          {
+            "name": "Corridoio",
+            "aliases": ["corridoio"],
+            "actions": [
+              {
+                "aliases": ["vai", "apri","aprire","entra","entrare"],
+                "output": "",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
+              }
+            ]
+          },
+          {
+            "name": "./res/maps/piano_seminterrato.json Scantinato",
+            "aliases": ["seminterrato", "piano di sotto", "sotto", "botola"],
+            "actions": [
+              {
+                "aliases": ["vai", "scendi","scendere", "apri","aprire"],
+                "output": "",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cucina",
+        "description": "E' un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magico' al cibo. Sei sicuro di voler accettare l'invito a cena?\nGuardando meglio, puoi notare: un tagliere su cui e' poggiato un manico di coltello, un fornello, una bottiglia di whisky, un lavabo.\nNell'angolo a sinistra si erge un grande armadio ripieno di cibo ormai andato in malora.",
+        "adjacentRooms": ["Corridoio"],
+        "objects": [
+          {
+            "name": "Tavolo",
+            "aliases": ["tavolo"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Attorno al tavolo, sedute in silenzio, ci sono tre bambole dall'aspetto inquietante.\nLe loro espressioni di porcellana sembrano custodire segreti oscuri e gli occhi di vetro sembrano scrutare ogni movimento."
+              },
+              {
+                "aliases":["usa","usare","utilizza","sedersi"],
+                "output":"Sarebbe piacevole sedersi al tavolo, ma tutti i posti sono gia' occupati."
+              },
+              {
+                "aliases":["rompi","rompere","distruggi","distruggere"],
+                "output":"Meglio non toccare il tavolo, la bambole portrebbero farti a pezzi"
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Meglio non toccare il tavolo, le bambole potrebbero prendersela con te"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              } 
+            ]
+          },
+          {
+            "name": "Tagliere",
+            "aliases": ["tagliere","tagliere di legno","tagliere in legno"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Il tagliere e' fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche.\nLa tua attenzione e' attirata dal manico di un coltello senza lama, piantato nel tagliere come se fosse un piccolo trofeo.\nE' come se il/la padrone/a avesse un senso dell'umorismo strano e un po' tagliente, lasciando che il manico di coltello svolga un ruolo puramente decorativo nella cucina.\nForse e' una forma di deterrente per i visitatori troppo curiosi o una strana scelta di design che solo pochi potrebbero comprendere appieno."
+              },
+              {
+                "aliases":["usa","usare","utilizza"],
+                "output":"Senza un coltello affilato, il tagliere non e' molto utile."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Hai preso il tagliere, ora e' nel tuo inventario.",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto e' rimosso dall'inventario",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
+              }
+            ]
+          },
+          {
+            "name": "Manico",
+            "aliases": ["manico coltello","manico","manico di coltello"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Cio' che resta di un vecchio coltello usato dal padrone di casa. La lama e' stata rimossa, lasciando solo il manico di legno."
+              },
+              {
+                "aliases":["usa","usare","utilizza"],
+                "output":"Dopo aver preso in mano il manico del coltello, ti senti quasi come il famoso chef Cannavacciuolo.\nTuttavia, senza una lama affilata, le tue abilita' culinarie si riducono a un semplice gesto teatrale, lasciando le pietanze tagliate in maniera piu' simile a un'opera d'arte astratta che a un piatto prelibato."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Hai preso il manico del coltello, ora e' nel tuo inventario.",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto e' rimosso dall'inventario",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
+              }
+            ]
+          },
+          {
+            "name": "Fornello",
+            "aliases": ["fornello","fornetto","fornellino","forno"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Il fornello sembra essere un pezzo di arredamento 'vintage' dall'aspetto un po' trasandato.\nLe sue superfici arrugginite conferiscono un tocco di charme rustico, ma potrebbe essere meglio tenerlo come elemento decorativo anziche' cucinare su di esso."
+              },
+              {
+                "aliases":["accendi","accendere"],
+                "output":"Non appena accendi il fornello, questo emette un flebile bagliore di vita per soli due istanti, come se volesse fare un'ultima chiamata prima di lasciare questo mondo."
+              },
+              {
+                "aliases":["spegni","spegnere"],
+                "output":"Il fornello e' gia' spento"
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Anche se con evidente difficolta', riusciresti a prendere il fornello, ma non sembra una buona idea."
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+          },
+          {
+            "name": "Bottiglia",
+            "aliases": ["bottiglia whisky","bottiglia di whisky","bottiglia","bottiglia di alcool","whisky","alcool"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Questa bottiglia e' un'aggiunta sorprendente. Il suo aspetto elegante e invitante sembra fuori luogo tra pozioni e ingredienti magici.\nForse il padrone di casa apprezza un buon sorso di whisky per rilassarsi dopo una lunga giornata."
+              },
+              {
+                "aliases":["bevi","bevuto","bevuta","bevete","bevuti","bevute"],
+                "output":"Pur cercando di bere dalla bottiglia di whisky, nonostante sembri piena fino all'orlo, ogni sorso si rivela una mera illusione.\nE' come se il suo contenuto si nascondesse, sfuggendo al palato come un mago che gioca con le papille gustative, lasciandoti con la frustrazione di un desiderio non soddisfatto e la bocca piu' secca del deserto del Sahara."
+              },
+              {
+                "aliases":["rompi","rompere","distruggi","distruggere"],
+                "output":"Perché dovresti rompere un oggetto cosi' bello? Potrebbe servirti per qualcosa."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Hai preso la bottiglia di whisky, ora e' nel tuo inventario.",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto e' rimosso dall'inventario",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
+              }
+            ]
+          },
+          {
+            "name": "Lavabo",
+            "aliases": ["lavabo","lavandino"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Il lavabo e' come un'oasi magica per lavare le mani, con un tocco di incantesimi che rende ogni lavaggio un'esperienza indimenticabile."
+              },
+              {
+                "aliases":["usa","usare","utilizza","utilizzare","apri","aprire"],
+                "output":"Ogni tentativo di utilizzare il lavabo per lavarsi le mani si traduce in un'esperienza futile, poiché l'acqua sembra evitare con astuzia di scorrere dal rubinetto, come se il lavabo fosse stato creato per sfidare le leggi della fisica e rendere impossibile ogni forma di pulizia."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Non e' possibile prendere il lavabo, e' troppo pesante."
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+          },
+          {
+            "name": "Armadio",
+            "aliases": ["armadio","armadio di cibo","armadio con cibo","dispensa"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"L'armadio che ti si presenta davanti e' una dispensa incantata, ricolma di prelibatezze magiche.\nOgni porta che si apre rivela un'esplosione di sapori e profumi che incantano il palato. Appare come un tesoro gastronomico che sfida ogni norma culinaria. Le ante sono appena aperte."
+              },
+              {
+                "aliases":["mangia","mangiare","assaggia","assaggiare"],
+                "output":"Riesci a prendere qualcosa dall'armadio. Dopo averlo assaggiato, il sapore si rivela un autentico insulto al palato. Il cibo li' dentro rivela avere un gusto cosi' orrendo che farebbe venire l'acquolina solo a un cestino dell'immondizia."
+              },
+              {
+                "aliases":["apri","aprire"],
+                "output":"L'armadio non riesce ad aprirsi, come se fosse bloccato da un incantesimo del padrone per evitare che qualcuno rubi il suo cibo."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Non riusciresti a spostare un armadio cosi' ricolmo di cibo neanche di un centimetro!"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+          },
+          {
+            "name": "Corridoio",
+            "aliases": ["corridoio"],
+            "actions": [
+              {
+                "aliases": ["vai", "apri","aprire","entra","entrare"],
+                "output": "",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
+              }
+            ]
+          }
+        ],
+          "npcs": [
+            {
+              "name": "Ciro",
+              "aliases": ["Ciruzzo","bambola ciro","bambola ciruzzo", "Ciro"],
+              "behavior": "dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase",
+              "actions": [
+                {
+                  "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],
+                  "output": "",
+                  "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
+                }
+              ],
+              "dialogues": [
+                {
+                  "question": "Chi sei?",
+                  "answer": "Ij so' ciruzzo 'umbriacone. Chella maledetta me ha trasformato a bambola assaij tempo fa."
+                },
+                {
+                  "question": "Come posso scappare da qui?",
+                  "answer": "Nun se pote. L'uneca manera è accidere chella maledetta ma s'è chiusa nt'a' sua stanza. Però ogni vota ca sale ncoppa, senghe na melodia ca però mo nun me ricorde. Forse na bottiglia e wisky putesse aiutarmi! A cambio e 'chess te putess da 'cchiu informazioni. Daje guaglione!"
+                }
+              ]
+            },
+            {
+              "name": "Ann",
+              "aliases": ["bambola Ann","Ann"],
+              "actions": [
+                {
+                  "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],
+                  "output":"",
+                  "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
+                }
+              ],
+              "dialogues": [
+                {
+                  "question": "Bambola, come posso uscire da questa casa?",
+                  "answer": "Sono qui da così tanto tempo che ho dimenticato come fare per uscire."
+                },
+                {
+                  "question": "Come hai fatto a finire in questa situazione? Puoi aiutarmi in qualche modo?",
+                  "answer": "In realtà, non sono sempre stata una bambola. C'era un tempo in cui ero una giovane donna, ma un giorno una strega mi ha trasformato in una bambola e mi ha portato qui. All'inizio ho cercato un modo per fuggire, ma ogni volta la strega me lo impediva."
+                },
+                {
+                  "question":"Cosa fai ogni giorno nella casa della strega?",
+                  "answer":"Ogni giorno aiuto la strega a creare nuovi incantesimi e pozioni magiche nel suo calderone. A volte usa ingredienti molto strani come occhi di rospo e artigli di corvo, altre volte usa erbe e radici magiche."
+                },
+                {
+                  "question":"Conosci un modo per battere la strega?",
+                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. MALEDETTO, sei riuscito a liberarti! Presto, il destino ci mettera' di fronte l'uno all'altro. Sara' una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perché i miei poteri NON HANNO LIMITI!"
+                }
+              ]
+            },
+            {
+              "name": "Mery",
+              "aliases": ["bambola Mery","Mery"],
+              "actions": [
+                {
+                  "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],
+                  "output":"",
+                  "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
+                }
+              ],
+              "dialogues": [
+                {
+                  "question": "Cosa stai disegnando su quel foglio?",
+                  "answer": "Ho deciso di sperimentare con colori vivaci e forme astratte. Mi piace esplorare l'arte in ogni sua forma. Ogni tratto che faccio e' una piccola parte di me che prende vita sulle pagine di questo foglio."
+                },
+                {
+                  "question": "Conosci una modo per battere la strega?",
+                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfigge lei e la sua potentissima magia."
+                },
+                {
+                  "question":"Cosa mi consigli di fare?",
+                  "answer":"Scappa appena puoi, se la strega scoprisse che sei fuggito dallo scantinato andrebbe su tutte le furie! E questa volta non farebbe l'errore di lasciarti incatenato, ti trasformerebbe subito in una bambola."
+                },
+                {
+                  "question":"C'è qualcosa che posso fare per rompere l'incantesimo?",
+                  "answer":"L'unico modo per farci tornare normali è uccidere la strega. Buona fortuna!"
+
+                }
+              ]
+            }
+          ]
+      },
+      {
+        "name": "Corridoio",
+        "description": "Un labirinto di oscurita' e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.\nGuardando meglio, puoi notare: un attaccapanni, un tris di quadri raffiguranti la strega e delle scale in fondo al corridoio bloccate da un cancello.",
+        "adjacentRooms": ["Salotto","Cucina"],
+        "objects": [
+          {
+            "name": "Attaccapanni",
+            "aliases": ["appendino","attaccapanni","appendiabiti"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"L'attaccapanni sembra essere un'ombra di abiti appesi, emanando un'aura tetro e malinconica."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"L'attaccapanni sembra essere fissato a terra, non riesci a spostarlo."
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+          },
+          {
+            "name": "Quadri",
+            "aliases": ["quadro","quadro strega","quadri","quadri della strega","quadri con strega"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Nel primo quadreo la strega e' raffigurata in tutta la sua maestosita', con un'espressione maliziosa e uno sguardo penetrante.\nLa sua figura si staglia contro un cielo tempestoso, mentre tiene in mano un calderone ribollente. E' un'immagine che trasmette un senso di potere oscuro e mistero.\nNel secondo quadro la strega e' circondata da una foresta cosi' fitta che nemmeno il suo gatto nero riesce a trovarla.\nCon un libro in mano e uno sguardo da 'non disturbare, sto incantando', sembra che stia cercando disperatamente di ricordare la formula giusta per far funzionare la sua scopa volante.\nForse dovrebbe prendere un po' di lezioni da Mary Poppins! Nell'ultimo quadro la strega e' ritratta mentre vola su una scopa sopra un paesaggio montuoso.\nIl suo cappello"
+              },
+              {
+                "aliases":["rompi","rompere","distruggi","distruggere"],
+                "output":"Nonostante i ripetuti tentativi di rompere i quadri, questi una volta danneggiati, magicamente ritornano al loro stato originale."
+              },
+              {
+                "aliases":["stacca","staccare"],
+                "output":"Pur provandoci con tutte le tue forze non riesci a staccare i quadri dalla parete. Sembra che siano incollati con un incantesimo potente."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Meglio non prendere questi quadri. La strega potrebbe andare su tutte le furie!"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              }
+            ]
+          },
+          {
+            "name": "Cucina",
+            "aliases": ["cucina"],
+            "actions": [
+              {
+                "aliases": ["vai", "apri","aprire","entra","entrare"],
+                "output": "",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
+              }
+            ]
+          },
+          {
+            "name": "Salotto",
+            "aliases": ["salotto"],
+            "actions": [
+              {
+                "aliases": ["vai", "apri","aprire","entra","entrare"],
+                "output": "",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
+              }
+            ]
+          },
+          {
+            "name": "./res/maps/primo_piano.json Corridoio",
+            "aliases": ["cancello","cancello di ferro","cancello di metallo"],
+            "actions": [
+              {
+                "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e la', testimone degli anni trascorsi, ma cio' non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di la'."
+              },
+              {
+                "aliases":["usa","usare","utilizza","apri","aprire"]
+              },
+              {
+                "aliases":["rompi","rompere","distruggi","distruggere"],
+                "output":"Il cancello e' troppo solido per essere rotto con le tue mani."
+              },
+              {
+                "aliases":["prendi","prendere","raccogli","raccogliere"],
+                "output":"Non e' possibile prendere il cancello"
+              },
+              {
+                "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+                "output":"L'oggetto non e' contenuto nell'inventario"
+              },
+              {
+                "aliases": ["vai", "apri","aprire","entra","entrare", "usa"],
+                "output": "",
+                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

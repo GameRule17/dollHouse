@@ -1,0 +1,221 @@
+{
+  "name": "Piano Seminterrato",
+  "gamerooms": [
+    {
+      "name": "Scantinato",
+      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nGuardando meglio puoi notare: delle gabbie, una botola, un calderone, un grande tavolo in legno, un libro incantato, una lanterna spenta e una maschera.",
+      "objects": [
+        {
+          "name": "Maschera",
+          "aliases":["maschera"],
+          "actions": [
+            {
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Scolpita con maestria, presenta dettagli intricati che si intrecciano tra loro, evocando un senso di magia e incanto."
+            },
+            {
+              "aliases":["indossa","indossare","metti","mettere"],
+              "output":"Dopo aver indossato la maschera, si avverte una sensazione di forza crescente, pronti a fronteggiare qualsiasi nemico che si manifesti, sicuri di poterli sconfiggere senza esitazione."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Dopo aver preso la maschera, la tua mano ha cominciato a muoversi autonomamente, come se fosse controllata da una forza misteriosa.\nSenza poter resistere, la mano ha avvicinato la maschera al volto del protagonista, quasi imitando il gesto iconico di Jim Carrey in The Mask, invitandolo a indossarla con una simpatia irresistibile.",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"La maschera indossata si e' ormai fusa con il viso, impedendo qualsiasi tentativo di rimozione.\nE' come se fosse stata forgiata appositamente per proteggere colui che la porta dai pericoli magici che lo circondano, diventando una parte indivisibile del suo volto."
+            }
+          ]
+        },
+        {
+          "name": "Gabbie",
+          "aliases": ["gabbia","gabbie","gabbia di metallo","gabbie di metallo","gabbia in metallo","gabbie in metallo"],
+          "actions": [
+            {
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Le gabbie vuote emanano un'atmosfera inquietante, come se fossero state recentemente abitate da creature misteriose.\nLe sbarre di ferro sono arrugginite e mostrano segni di utilizzo."
+            },
+            {
+              "aliases":["rompi","rompere","distruggi","distruggere"],
+              "output":"Dai un calcio alle gabbie con tutte le tue forze, ma non riesci a romperle."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Non riesci a prendere le gabbie. Non hai le spalle da gorilla per portarle!"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto non e' contenuto nell'inventario."
+            }
+          ]
+        },
+        {
+          "name": "Botola",
+          "aliases": ["botola","botola segreta","botola per piano terra"],
+          "actions": [
+            {
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"La botola nel centro dello scantinato e' un'entrata vetusta e logora verso l'ignoto.\nRealizzata in legno consunto, offre un passaggio misterioso al piano superiore, suggerendo segreti sinistri e avventure inquietanti."
+            },
+            {
+              "aliases":["apri","aprire","entra","entrare","usa","usare","utilizza"],
+              "output":"Stai salendo verso il piano superiore..."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Ma come potrebbe mai essere possibile prendere una botola?!"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto non e' contenuto nell'inventario."
+            }
+          ]
+        },
+        {
+          "name": "Calderone",
+          "aliases": ["calderone"],
+          "actions": [
+            {
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Il calderone emana un'aria di mistero e potere oscuro. E' un imponente recipiente di ferro nero, con pareti robuste e segni di bruciature passate.\nResidui di fumo secco si insinuano tra le sue crepe, evocando immagini di incantesimi e pozioni magiche. Attorno al calderone, boccette vuote giacciono a terra, testimoni di antichi elisir e miscele misteriose."
+            },
+            {
+              "aliases":["usa","usare","utilizza"],
+              "output":"Ti accorgi che e' vuoto! Sembra che qualcuno abbia gia' fatto incantesimi di sparizione sulla pozione che conteneva!"
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Provi a prendere il calderone ma decidi subito di lasciarlo. Meglio lasciar perdere e risparmiare le energie per altre imprese!"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto non e' contenuto nell'inventario."
+            }
+          ]
+        },
+        {
+          "name": "Tavolo",
+          "aliases": ["tavolo","tavolo nello scantinato","tavolo dello scantinato","tavolo di legno","tavolo in legno"],
+          "actions": [
+            {
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Antico mobile di legno intagliato, segnato dal passare del tempo.\nLa sua superficie e' cosi' ben coperta che potrebbe essere un concorrente al titolo di 'Miglior tavolo coperto di polvere del decennio'."
+            },
+            {
+              "aliases":["muovi","muovere","sposta","spostare","spingi","spingere","trascina","trascinare"],
+              "output":"Il tavolo e' cosi' carico di oggetti che anche un leggero spostamento potrebbe scatenare una catastrofe a effetto domino! Meglio lasciarlo stare!"
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Il tavolo e' fissato a terra, non puo' essere spostato."
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto non e' contenuto nell'inventario."
+            },
+            {
+              "aliases":["siediti","sedersi","seduto"],
+              "output":"Purtroppo non c'e' una sedia..."
+            }
+          ]
+        },
+        {
+          "name": "Libro Incantato",
+          "aliases": ["libro","libro magico","libro incantato"],
+          "actions": [
+            {
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Posizionato al centro del tavolo ha un aspetto usurato, con pagine ingiallite e bordi consumati, testimoni del suo utilizzo intenso nel corso degli anni.\nForse bisognerebbe sfogliarlo..."
+            },
+            {
+              "aliases":["apri","aprire","leggi","leggere","usa","usare","utilizza"],
+              "output":"Man mano che si sfoglia il libro, diventa evidente che i caratteri utilizzati per la scrittura sono del tutto incomprensibili, come se appartenessero a una lingua sconosciuta."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Questo potrebbe essere utile in seguito, il libro e' inserito nell'inventario.",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto e' rimosso dall'inventario.",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
+            }
+          ]
+        },
+        {
+          "name": "Lanterna Spenta",
+          "aliases": ["lanterna","lanterna spenta"],
+          "actions": [
+            {
+              "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+              "output":"Questa lanterna appare come un oggetto ormai dimenticato, coperto di polvere.\nI suoi vetri opachi nascondono una luce che non brilla piu'."
+            },
+            {
+              "aliases":["accendi","accendere","usa","usare","utilizza"],
+              "output":"Cerchi di accendere la lanterna, ma non hai alcuno strumento per farlo."
+            },
+            {
+              "aliases":["spegni","spegnere"],
+              "output":"La lanterna e' gia' spenta."
+            },
+            {
+              "aliases":["prendi","prendere","raccogli","raccogliere"],
+              "output":"Anche se spenta, potrebbe tornare utile in seguito, la lanterna e' inserita nell'inventario.",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
+            },
+            {
+              "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+              "output":"L'oggetto e' rimosso dall'inventario.",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
+            }
+          ]
+        },
+        {
+          "name": "./res/maps/piano_terra.json Salotto",
+          "aliases": ["piano terra", "piano di sopra", "sopra", "botola","botola per il piano superiore","botola per il piano di sopra"],
+          "actions": [
+            {
+              "aliases": ["vai", "sali","salire","apri","aprire"],
+              "output": "",
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
+            }
+          ]
+        }
+      ],
+      "npcs": [
+        {
+          "name": "Guardiano",
+          "aliases": ["figura umanoide","figura","guardiano","guardiano dello scantinato","mostro"],
+          "dialogues": [
+            {
+              "question": "Qual è il tuo vero nome",
+              "answer": "Il mio vero nome e' Albus"
+            },
+            {
+              "question": "Da quanti anni ti trovi qui?",
+              "answer": "Da 127 anni..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Finto Scantinato",
+      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nNoti una strana figura umanoide che ti fissa.",
+      "npcs": [
+        {
+          "name": "Guardiano",
+          "aliases": ["figura umanoide","figura","guardiano","guardiano dello scantinato","mostro"],
+          "actions": [
+            {
+              "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
