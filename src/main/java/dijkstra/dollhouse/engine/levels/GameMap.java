@@ -8,6 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Stack;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -71,7 +72,7 @@ public class GameMap implements Serializable {
                       IllegalArgumentException, InvocationTargetException {
     if (jsonNpcs != null) {
       for (Object npc : jsonNpcs) {
-        if (((JSONObject) npc).get("script") == null) {
+        if (((JSONObject) npc).get("behavior") == null) {
           room.addEntity(JSONLoader.getGameNpc((JSONObject) npc));
         } else {
           room.addBehavioralNpc(JSONLoader.getGameBehavioralNpc((JSONObject) npc));
@@ -140,6 +141,32 @@ public class GameMap implements Serializable {
   }
 
   /**
+   * Returns the room that have an Entity called "name".
+   *
+   * @param name - the name of the entity.
+   * @return GameRoom
+   */
+  public GameRoom getBehavioralNpcRoom(final String name) {
+    Stack<GameRoom> toBeProcessed = new Stack<>();
+    Collection<GameRoom> processed = new HashSet<>();
+    GameRoom gameRoom;
+    toBeProcessed.add(currentRoom);
+    while (!toBeProcessed.isEmpty()) {
+      gameRoom = toBeProcessed.pop();
+      processed.add(gameRoom);
+      if (gameRoom.findBehavioralNpc(name) != null) {
+        return gameRoom;
+      }
+      for (GameRoom adjacent : gameRoom.getAdjacentRooms()) {
+        if (!processed.contains(adjacent)) {
+          toBeProcessed.add(adjacent);
+        }
+      }
+    }
+    return null;
+  }
+
+  /**
    * Returns the room with name "name".
    *
    * @param name - the name of room to find.
@@ -156,7 +183,7 @@ public class GameMap implements Serializable {
       if (gameRoom.getName().compareToIgnoreCase(name) == 0) {
         return gameRoom;
       }
-      for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
+      for (GameRoom adjacent : gameRoom.getAdjacentRooms()) {
         if (!processed.contains(adjacent)) {
           toBeProcessed.add(adjacent);
         }
@@ -173,14 +200,19 @@ public class GameMap implements Serializable {
     Stack<GameRoom> toBeProcessed = new Stack<>();
     Collection<GameRoom> processed = new HashSet<>();
     GameRoom gameRoom;
+    Collection<GameRoom> adjacentRooms;
+    Iterator<GameRoom> it;
     toBeProcessed.add(currentRoom);
     while (!toBeProcessed.isEmpty()) {
       gameRoom = toBeProcessed.pop();
       processed.add(gameRoom);
       gameRoom.runBehavioralNpcs();
-      for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
-        if (!processed.contains(adjacent)) {
-          toBeProcessed.add(adjacent);
+      adjacentRooms = gameRoom.getAdjacentRooms();
+      it = adjacentRooms.iterator();
+      while (it.hasNext()) {
+        gameRoom = it.next();
+        if (!processed.contains(gameRoom)) {
+          toBeProcessed.add(gameRoom);
         }
       }
     }
@@ -194,16 +226,21 @@ public class GameMap implements Serializable {
     Stack<GameRoom> toBeProcessed = new Stack<>();
     Collection<GameRoom> processed = new HashSet<>();
     GameRoom gameRoom;
+    Collection<GameRoom> adjacentRooms;
+    Iterator<GameRoom> it;
     toBeProcessed.add(currentRoom);
     while (!toBeProcessed.isEmpty()) {
       gameRoom = toBeProcessed.pop();
+      processed.add(gameRoom);
       gameRoom.stopBehavioralNpcs();
-      for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
-        if (!processed.contains(adjacent)) {
-          toBeProcessed.add(adjacent);
+      adjacentRooms = gameRoom.getAdjacentRooms();
+      it = adjacentRooms.iterator();
+      while (it.hasNext()) {
+        gameRoom = it.next();
+        if (!processed.contains(gameRoom)) {
+          toBeProcessed.add(gameRoom);
         }
       }
-      processed.add(gameRoom);
     }
   }
 

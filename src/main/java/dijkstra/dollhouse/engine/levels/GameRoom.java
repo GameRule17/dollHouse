@@ -104,8 +104,9 @@ public class GameRoom implements Serializable {
    * in this room.
    */
   public void runBehavioralNpcs() {
-    for (GameBehavioralNpc npc : npcs) {
-      npc.start();
+    Iterator<GameBehavioralNpc> it = npcs.iterator();
+    while (it.hasNext()) {
+      it.next().start();
     }
   }
 
@@ -114,8 +115,9 @@ public class GameRoom implements Serializable {
    * in this room.
    */
   public void stopBehavioralNpcs() {
-    for (GameBehavioralNpc npc : npcs) {
-      npc.stop();
+    Iterator<GameBehavioralNpc> it = npcs.iterator();
+    while (it.hasNext()) {
+      it.next().stop();
     }
   }
 

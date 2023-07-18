@@ -26,6 +26,10 @@ public class GameCraftableObject extends GameEntity {
     recipe.add(item);
   }
 
+  public List<String> getRecipe() {
+    return recipe;
+  }
+
   @Override
   public String toString() {
     StringBuilder s = new StringBuilder(super.toString());

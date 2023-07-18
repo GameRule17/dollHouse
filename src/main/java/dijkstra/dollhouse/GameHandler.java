@@ -4,7 +4,6 @@ import dijkstra.dollhouse.engine.Game;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GamePlayer;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.io.File;
@@ -21,7 +20,7 @@ import java.util.Scanner;
  * per ottenere le informazioni necesarie per la loro esecuzione.
  */
 public final class GameHandler {
-  private static final String initUrl = "./res/maps/primo_piano.json";
+  private static final String initUrl = "./res/maps/piano_terra.json";
   private static final String savedGameUrl = "./res/savings/saved_game.dat";
   private static Game game = null;
   private static GameEntity currentEntity = null;
@@ -64,6 +63,12 @@ public final class GameHandler {
     return currentAction;
   }
 
+  /**
+   * .
+   *
+   * @param command
+   * @return
+   */
   public static String executeCommand(final String command) {
     parsedInput = parser.parse(command);
     GameRoom room = game.getMap().getCurrentRoom();
@@ -186,13 +191,14 @@ public final class GameHandler {
       GameHandler.saveGame();
       initParser();
       // GameHandler.loadGame();
+      GameHandler.getGame().getMap().runAllBehavioralNpcs();
       do {
         // System.out.println(GameHandler.getGame().getMap().toString());
-        // System.out.print("\033[44m$ ");
+        // System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "\033[44m$ ");
         System.out.println(GameHandler.getGame().getMap().getCurrentRoom().getAdjacentRooms());
-        System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "~$ "); 
-        input = in.nextLine();
+        System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "~$ ");
         // System.out.print("\033[0m");
+        input = in.nextLine();
         System.out.print(executeCommand(input));
       } while (input.compareTo("exit") != 0);
     } catch (Exception e) {

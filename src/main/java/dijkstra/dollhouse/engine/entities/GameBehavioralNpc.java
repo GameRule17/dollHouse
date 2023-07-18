@@ -1,7 +1,12 @@
 package dijkstra.dollhouse.engine.entities;
 
+import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
+import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.lang.Thread;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * All istances of GameBehavioralNpc represent npcs that have a script been executed
@@ -11,9 +16,15 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
 
   protected transient Thread thread;
   private GameScript script;
+  protected List<String> rooms;
 
   public GameBehavioralNpc(String name) {
     super(name);
+    rooms = new ArrayList<>();
+  }
+
+  public void addRoom(final String room) {
+    rooms.add(room);
   }
 
   public void setGameScript(final GameScript script) {
@@ -30,6 +41,7 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
   public void start() {
     thread = new Thread(this, name);
     thread.start();
+    System.out.println("Runnato: " + name);
   }
 
   /**
@@ -37,18 +49,45 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
    */
   public void stop() {
     thread.interrupt();
+    System.out.println("Stoppato: " + name);
+  }
+
+  private String executeRandomBehavior() {
+    Random random = new Random();
+    int index = random.nextInt(0, 2);
+    String output = "";
+
+    if (index == 0) {
+      index = random.nextInt(0, rooms.size());
+      output = name + " entra in " + rooms.get(index);
+      GameRoom newRoom = GameHandler.getGame().getMap().getRoom(rooms.get(index));
+      GameRoom oldRoom = GameHandler.getGame().getMap().getBehavioralNpcRoom(name);
+      oldRoom.removeBehavioralNpc(this);
+      newRoom.addBehavioralNpc(this);
+    } else {
+      output = script.execute();
+    }
+
+    return output;
   }
 
   @Override
   public void run() {
     boolean isRunning = true;
+    String output;
+
+    
     while (isRunning) {
       try {
-        Thread.sleep((long) 5e3);
-        System.out.print(this.getName() + ": ");
+        Thread.sleep((long) 1e3);
         do {
-          script.execute();
-          // print the output
+          output = executeRandomBehavior();
+          if (GameHandler.getGame().getMap().getCurrentRoom().findBehavioralNpc(name) != null) {
+            System.out.println("\n" + this.getName() + "> " + output);
+          }
+          if (script.getException() != null) {
+            script.getException().printStackTrace();
+          }
         } while (!script.isOver());
       } catch (InterruptedException e) {
         isRunning = false;

@@ -8,6 +8,8 @@ import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
 import dijkstra.dollhouse.engine.entities.details.GameDialogue;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
+import dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import org.json.simple.JSONArray;
@@ -139,9 +141,11 @@ public class JSONLoader {
     JSONArray jsonArray = (JSONArray) ((JSONObject) jsonNpc).get("dialogues");
     String question;
     String answer;
-    String script = (String) ((JSONObject) jsonNpc).get("script");
+    String script = (String) ((JSONObject) jsonNpc).get("behavior");
+    RandomPhrase npcScript;
+    GameScript gameScript = getGameScript(script);
 
-    gameNpc.setGameScript(getGameScript(script));
+    gameNpc.setGameScript(gameScript);
 
     for (Object dialogue : jsonArray) {
       question = ((JSONObject) dialogue).get("question").toString();
@@ -158,6 +162,19 @@ public class JSONLoader {
     jsonArray = (JSONArray) ((JSONObject) jsonNpc).get("actions");
     for (Object action : jsonArray) {
       gameNpc.addAction(getGameAction((JSONObject) action));
+    }
+
+    jsonArray = (JSONArray) ((JSONObject) jsonNpc).get("phrases");
+    if (jsonArray != null) {
+      npcScript = (RandomPhrase) gameScript;
+      for (Object phrase : jsonArray) {
+        npcScript.addPhrase(phrase.toString());
+      }
+    }
+
+    jsonArray = (JSONArray) ((JSONObject) jsonNpc).get("rooms");
+    for (Object room : jsonArray) {
+      gameNpc.addRoom(room.toString());
     }
 
     return gameNpc;

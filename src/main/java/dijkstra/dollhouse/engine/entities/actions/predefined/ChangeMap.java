@@ -23,7 +23,9 @@ public class ChangeMap extends GameScriptedAction {
     String[] input = entity.getName().split("\\s+");
     String output = null;
     try {
+      GameHandler.getGame().getMap().stopAllBehavioralNpcs();
       GameHandler.getGame().setMap(input[0]);
+      GameHandler.getGame().getMap().runAllBehavioralNpcs();
       GameRoom room = GameHandler.getGame().getMap().getRoom(input[1]);
       if (room != null) {
         GameHandler.getGame().getMap().setCurrentRoom(room);
