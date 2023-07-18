@@ -1,13 +1,9 @@
 {
-<<<<<<< HEAD
     "name": "Piano Terra",
-=======
->>>>>>> 4371abd600c060436cba6adb1c1ec38db489611d
     "gamerooms": [
       {
         "name": "Salotto",
         "description": "L'ambiente e' caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalita' calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza e' arredata con mobili antichi e un caminetto, che aggiungono un tocco di eleganza.\nNoti inoltre un pianoforte e una sedia a dondolo.",
-<<<<<<< HEAD
         "adjacentRooms": ["Corridoio"],
         "objects": [
           {
@@ -29,35 +25,10 @@
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto non e' contenuto nell'inventario"
-=======
-        "adjacentRooms": [0],
-        "objects": [
-          {
-            "name": "Sedia a Dondolo",
-            "aliases": ["sedia"],
-            "recipe": null,
-            "actions": [
-              {
-                "aliases": ["esamina"],
-                "output": "Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nE' invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato li' forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilita' dello shampo a casa di Claudio Bisio."
-              },
-              {
-                "aliases": ["siediti"],
-                "output": "Non appena ti siedi sulla sedia, cadi immediatamente in un sonno profondo, come se essa avesse il potere di indurre un sonno istantaneo e irresistibile.\n(ti svegli dopo 5 secondi) Ti risveglia da un sonno che sembra essere durato 5 secondi e 50 anni contemporaneamente, confuso e disorientato dalla sensazione di aver vissuto un'intera epoca in un breve istante."
-              },
-              {
-                "aliases": ["prendi"],
-                "output": "Sebbene sia incredibilmente comoda, non puoi portare con te la sedia a dondolo. Sarebbe troppo ingombrante. Potresti farci un pensierino se avessi un camioncino per il trasloco."
-              },
-              {
-                "aliases": ["rimuovi"],
-                "output": "L'oggetto non e' contenuto nell'inventario"
->>>>>>> 4371abd600c060436cba6adb1c1ec38db489611d
               }
             ]
           },
           {
-<<<<<<< HEAD
             "name": "Gomitolo",
             "aliases": ["gomitolo di lana, gomitolo"],
             "actions": [
@@ -78,36 +49,12 @@
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto e' rimosso dall'inventario",
-=======
-            "name": "Gomitolo di Lana",
-            "aliases": ["gomitolo"],
-            "recipe": null,
-            "actions": [
-              {
-                "aliases": ["esamina"],
-                "output": "Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio."
-              },
-              {
-                "aliases": ["lancia"],
-                "output": "Lanci il gomitolo con convinzione, sperando che un gatto lo inseguira'. Tuttavia, il gomitolo rotola sul pavimento senza suscitare alcun interesse felino.",
-                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
-              },
-              {
-                "aliases": ["prendi"],
-                "output": "Hai preso il gomitolo di lana, ora e' nel tuo inventario.",
-                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
-              },
-              {
-                "aliases": ["rimuovi"],
-                "output": "L'oggetto e' rimosso dall'inventario",
->>>>>>> 4371abd600c060436cba6adb1c1ec38db489611d
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
           },
           {
             "name": "Pianoforte",
-<<<<<<< HEAD
             "aliases": ["piano","tastiera","pianoforte"],
             "actions": [
               {
@@ -116,22 +63,10 @@
               },
               {
                 "aliases":["suona","suonare","interagisci","interagire"],
-=======
-            "aliases": ["pianoforte"],
-            "recipe": null,
-            "actions": [
-              {
-                "aliases": ["esamina"],
-                "output": "Al centro del salotto, trovi un maestoso pianoforte a coda.\nLe sue eleganti tastiere invitano a produrre meravigliose melodie.\nPotresti scoprire qualcosa di speciale interagendo con il pianoforte o sperimentando con le sue note. Ma non crederti il nuovo Mozart."
-              },
-              {
-                "aliases": ["suona"],
->>>>>>> 4371abd600c060436cba6adb1c1ec38db489611d
                 "output": "Seleziona quale melodia suonare:\n1) Melodia Uno\n2) Melodia Due",
                 "script": "dijkstra.dollhouse.engine.entities.actions.extra.PlayPiano"
               },
               {
-<<<<<<< HEAD
                 "aliases":["rompi","rompere","distruggi","distruggere"],
                 "output":"Non puoi distruggere uno strumento musicale cosi' bello. Non sei un mostro."
               },
@@ -172,35 +107,10 @@
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto non e' contenuto nell'inventario"
-=======
-                "aliases": ["prendi"],
-                "output": "Il pianoforte sarebbe molto utile se messo nel soggiorno di casa tua, ma non puoi portarlo con te."
-              },
-              {
-                "aliases": ["rimuovi"],
-                "output": "L'oggetto non e' contenuto nell'inventario"
-              },
-              {
-                "aliases": ["rompi"],
-                "output": "Non puoi distruggere uno strumento musicale cosi' bello. Non sei un mostro."
               }
             ]
           },
           {
-            "name": "./res/maps/primo_piano.json",
-            "aliases": ["primo piano", "piano di sopra", "sopra", "porta"],
-            "recipe": null,
-            "actions": [
-              {
-                "aliases": ["vai", "sali", "apri"],
-                "output": "",
-                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
->>>>>>> 4371abd600c060436cba6adb1c1ec38db489611d
-              }
-            ]
-          },
-          {
-<<<<<<< HEAD
             "name": "Caminetto",
             "aliases": ["camino","caminetto","focolare"],
             "actions": [
@@ -648,39 +558,6 @@
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
                 "output":"L'oggetto non e' contenuto nell'inventario"
-=======
-            "name": "<id della GameRoom in cui si vuole entrare>",
-            "aliases": ["<aliases della GameRoom in cui si vuole entrare>"],
-            "actions": [
-              {
-                "aliases": ["vai", "apri"],
-                "output": "",
-                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeRoom"
-              }
-            ]
-          }
-        ],
-        "npcs": [
-          {
-            "name": "Ciro",
-            "aliases": ["Ciruzzo"],
-            "script": "dijkstra.dollhouse.engine.entities.scripts.extra.CiroScript",
-            "actions": [
-              {
-                "aliases": ["parla", "discuti"],
-                "output": "",
-                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
-              }
-            ],
-            "dialogues": [
-              {
-                "question": "Cos'hai oggi?",
-                "answer": "Sono triste :("
-              },
-              {
-                "question": "Ciao",
-                "answer": "Ue uagliù"
->>>>>>> 4371abd600c060436cba6adb1c1ec38db489611d
               }
             ]
           }
