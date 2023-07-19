@@ -63,7 +63,7 @@
               },
               {
                 "aliases":["suona","suonare","interagisci","interagire"],
-                "output": "Seleziona quale melodia suonare:\n1) Melodia Uno\n2) Melodia Due",
+                "output": "Seleziona quale melodia suonare:\n0)Smetti di suonare\n1) Melodia Uno\n2) Melodia Due",
                 "script": "dijkstra.dollhouse.engine.entities.actions.extra.PlayPiano"
               },
               {
@@ -543,15 +543,12 @@
             ]
           },
           {
-            "name": "./res/maps/primo_piano.json Corridoio",
+            "name": "Cancello",
             "aliases": ["cancello","cancello di ferro","cancello di metallo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
                 "output":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e la', testimone degli anni trascorsi, ma cio' non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di la'."
-              },
-              {
-                "aliases":["usa","usare","utilizza","apri","aprire"]
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -566,9 +563,8 @@
                 "output":"L'oggetto non e' contenuto nell'inventario"
               },
               {
-                "aliases": ["vai", "apri","aprire","entra","entrare", "usa"],
-                "output": "",
-                "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
+                "aliases": ["vai", "apri","aprire","entra","entrare", "usa","usare","utilizza"],
+                "output": "Il cancello non può essere aperto. Sembra essere bloccato da una magia potentissima, come se la strega non volesse intrusi al piano superiore."
               }
             ]
           }
