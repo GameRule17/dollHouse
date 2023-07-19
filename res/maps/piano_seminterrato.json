@@ -96,7 +96,7 @@
         },
         {
           "name": "Tavolo",
-          "aliases": ["tavolo","tavolo nello scantinato","tavolo dello scantinato","tavolo di legno","tavolo in legno"],
+          "aliases": ["tavolo","tavolo nello scantinato","tavolo dello scantinato","tavolo di legno","tavolo in legno","gran tavolo in legno","gran tavolo di legno"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
