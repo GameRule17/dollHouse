@@ -1,5 +1,6 @@
 package dijkstra.dollhouse.engine.entities.actions.predefined;
 
+import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.JSONLoader;
 import dijkstra.dollhouse.engine.entities.GameCraftableObject;
@@ -70,8 +71,10 @@ public class CraftItem extends GameScriptedAction {
           }
         }
         inventory.add(object);
+        GUIHandler.addInventory(object.getName());
         for (String item : object.getRecipe()) {
           inventory.remove(inventory.findGameObject(item));
+          GUIHandler.removeInventory(item);
         }
         return "L'oggetto e' stato aggiunto nel tuo inventario!";
       }

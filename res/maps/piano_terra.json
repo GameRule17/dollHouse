@@ -8,7 +8,7 @@
         "objects": [
           {
             "name": "Sedia",
-            "aliases": ["sedia a dondolo, sedia, dondolo"],
+            "aliases": ["sedia a dondolo", "sedia", "dondolo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -30,7 +30,7 @@
           },
           {
             "name": "Gomitolo",
-            "aliases": ["gomitolo di lana, gomitolo"],
+            "aliases": ["gomitolo di lana", "gomitolo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],

@@ -27,7 +27,8 @@ public class TalkToNpc extends GameScriptedAction {
   @Override
   public String execute() {
     GameNpc entity = (GameNpc) GameHandler.getCurrentEntity();
-    String output = "Opzione non disponibile!";
+    String output = "Stai ancora parlando con " + entity.getName() + "!"
+                    + "Premi l'opzione 0) per smettere di parlare con " + entity.getName();
     if (isRunning) {
       ParsedInput input = GameHandler.getParsedInput();
       try {

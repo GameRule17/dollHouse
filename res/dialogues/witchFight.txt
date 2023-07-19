@@ -1,4 +1,4 @@
-SCONTROFINALE Tu: (Dopo aver sentito la porta della camera della strega aprirsi ed esserti fiondato lì) Buongiorno, signora strega.
+Tu: (Dopo aver aperto la porta della camera della strega) Buongiorno, signora strega.
 Sono qui per sfidare il suo potere e liberare tutte le persone che ha trasformato in bambole!
 
 Strega: (Sorride maliziosamente) Oh, salve maledetto intruso. Ho trovato una soluzione al potere di quella maschera e finalmente ora posso sconfiggerti.
@@ -38,9 +38,8 @@ Anne: (Ridendo) Sono tornata! Grazie, eroe, per averci salvato!
 
 Mery: (Abbracciando il protagonista) Non saprò mai come ringraziarti abbastanza!
 
-Tu: (Sorride soddisfatto) Non c'è bisogno di ringraziarmi. Ho solo fatto ciò che era giusto.
+Tu: (Sorridi soddisfatto) Non c'è bisogno di ringraziarmi. Ho solo fatto ciò che era giusto.
 Ora possiamo tutti vivere in pace, senza la minaccia della strega.
 
 (E così, hai sconfitto la strega e hai restituito la normalità alle persone che erano state trasformate in bambole.
 Con il loro aiuto, il mondo tornerà a splendere senza l'ombra del male.)
-#

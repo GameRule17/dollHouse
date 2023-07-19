@@ -7,6 +7,7 @@ import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GameNpc;
 import dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -15,6 +16,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**
+ * Script for Ciro
+ */
 public class CiroScript extends TalkToNpc {
 
   private Exception exception;
@@ -43,7 +47,7 @@ public class CiroScript extends TalkToNpc {
   @Override
   public String execute() {
     GameInventory inventory = GameHandler.getGame().getPlayer().getGameInventory();
-    GameEntity bottle = inventory.findGameObject("coltello");
+    GameEntity bottle = inventory.findGameObject("bottiglia");
     GameNpc entity = (GameNpc) GameHandler.getCurrentEntity();
     String output = "Opzione non disponibile!";
     if (isRunning) {

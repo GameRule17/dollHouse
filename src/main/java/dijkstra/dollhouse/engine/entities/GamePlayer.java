@@ -3,6 +3,7 @@ package dijkstra.dollhouse.engine.entities;
 import dijkstra.dollhouse.engine.JSONLoader;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
+import dijkstra.dollhouse.engine.entities.details.GameStatistics;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -20,7 +21,7 @@ import org.json.simple.parser.ParseException;
 public class GamePlayer extends GameEntity {
   private static final String actionsUrl = "./res/actions/player_actions.json";
   private GameInventory inventory;
-  // statistiche di gioco
+  private GameStatistics statistics;
 
   /**
    * Public constructor for GamePlayer.
@@ -52,6 +53,8 @@ public class GamePlayer extends GameEntity {
       for (Object object : jsonActions) {
         actions.add(JSONLoader.getGameAction((JSONObject) object));
       }
+
+      statistics = new GameStatistics();
     } catch (Exception e) {
       throw e;
     } finally {
@@ -59,6 +62,10 @@ public class GamePlayer extends GameEntity {
         fileReader.close();
       }
     }
+  }
+
+  public GameStatistics getGameStatistics() {
+    return statistics;
   }
 
   public GameInventory getGameInventory() {
@@ -76,6 +83,8 @@ public class GamePlayer extends GameEntity {
     for (GameAction action : actions) {
       s.append(action.toString());
     }
+
+    s.append("\n" + statistics.toString());
     return s.toString();
   }
 

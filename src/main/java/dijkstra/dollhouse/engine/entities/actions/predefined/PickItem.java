@@ -1,5 +1,6 @@
 package dijkstra.dollhouse.engine.entities.actions.predefined;
 
+import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
@@ -41,6 +42,7 @@ public class PickItem extends GameScriptedAction {
       }
       isExecutable = false;
       output = this.output;
+      GUIHandler.addInventory(entity.getName());
     } else {
       output = "Questa entita' e' già presente nell'inventario!";
     }

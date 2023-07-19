@@ -6,6 +6,7 @@ import dijkstra.dollhouse.engine.entities.GamePlayer;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,11 +28,19 @@ public final class GameHandler {
   private static GameAction currentAction = null;
   private static ParsedInput parsedInput = null;
   private static GameParser parser;
-  // parser
-  // stato attuale del comando
 
   public static void initParser() throws FileNotFoundException {
     parser = new GameParser();
+  }
+  
+  public static void init() throws FileNotFoundException {
+    parser = new GameParser();
+    game.getPlayer().getGameStatistics().getTimer().startTimer();
+    // run threads
+  }
+
+  public static void onClose() {
+    GameHandler.getGame().getPlayer().getGameStatistics().getTimer().updateGameTime();
   }
 
   /**
@@ -79,6 +88,8 @@ public final class GameHandler {
     Exception exception;
 
     // System.out.println(parsedInput);
+
+    player.getGameStatistics().incrementsNumberOfExecutedActions();
 
     if (currentAction == null) {
       currentEntity = room.findEntity(entityName);
@@ -135,6 +146,8 @@ public final class GameHandler {
         file = new FileInputStream(new File(savedGameUrl));
         input = new ObjectInputStream(file);
         game = (Game) input.readObject();
+      } catch (Exception e) {
+        throw e;
       } finally {
         if (input != null) {
           input.close();
@@ -188,19 +201,25 @@ public final class GameHandler {
     String input;
     try {
       GameHandler.newGame();
-      GameHandler.saveGame();
-      initParser();
+      // GameHandler.saveGame();
       // GameHandler.loadGame();
+      init();
+      // System.out.println(GameHandler.getGame().getPlayer().toString());
       // GameHandler.getGame().getMap().runAllBehavioralNpcs();
       do {
         // System.out.println(GameHandler.getGame().getMap().toString());
         // System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "\033[44m$ ");
+        System.out.println(GameHandler.getGame().getPlayer().getGameStatistics().toString());
         System.out.println(GameHandler.getGame().getMap().getCurrentRoom().getAdjacentRooms());
         System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "~$ ");
         // System.out.print("\033[0m");
         input = in.nextLine();
         System.out.print(executeCommand(input));
       } while (input.compareTo("exit") != 0);
+      
+      System.out.println(GameHandler.getGame().getPlayer().getGameStatistics().toString());
+      onClose();
+      GameHandler.saveGame();
     } catch (Exception e) {
       e.printStackTrace();
     }

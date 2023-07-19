@@ -48,8 +48,10 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
    * Stop the thread associated with this istance.
    */
   public void stop() {
-    thread.interrupt();
-    System.out.println("Stoppato: " + name);
+    if (thread != null) {
+      thread.interrupt();
+      System.out.println("Stoppato: " + name);
+    }
   }
 
   private String executeRandomBehavior() {
