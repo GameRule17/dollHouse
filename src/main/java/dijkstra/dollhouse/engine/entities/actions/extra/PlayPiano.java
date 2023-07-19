@@ -1,14 +1,5 @@
 package dijkstra.dollhouse.engine.entities.actions.extra;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.nio.charset.Charset;
-
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.ParsedInput;
 import dijkstra.dollhouse.engine.JSONLoader;
@@ -17,6 +8,13 @@ import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
 import dijkstra.dollhouse.engine.levels.GameRoom;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.nio.charset.Charset;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  * .
@@ -26,6 +24,11 @@ public class PlayPiano extends GameScriptedAction {
   private boolean isRunning;
   private Exception exception;
 
+  /**
+   * Public Constructor.
+   *
+   * @param output .
+   */
   public PlayPiano(String output) {
     super(output);
     isRunning = false;
@@ -53,13 +56,11 @@ public class PlayPiano extends GameScriptedAction {
 
     String output = "Opzione non disponibile!";
     String msg = "";
-
-    //System.out.println(setOutputMsg() + "\n");
-
     GameAction action = GameHandler.getCurrentAction();
     GameInventory inventory = GameHandler.getGame().getPlayer().getGameInventory();
     GameEntity melody = inventory.findGameObject("melodia");
     String newMelody = "\n3. Melodia segreta \n";
+
     if (melody != null) {
       msg = action.getOutput() + newMelody;
     } else {
@@ -70,12 +71,12 @@ public class PlayPiano extends GameScriptedAction {
 
       ParsedInput input = GameHandler.getParsedInput();
       try {
-         int choice = Integer.valueOf(input.getAction());
+        int choice = Integer.valueOf(input.getAction());
 
         if (choice == 0) {
           isRunning = false;
           output = "Hai smesso di suonare il pianoforte!";
-        } else if (choice == 1 || choice == 2){
+        } else if (choice == 1 || choice == 2) {
           output = "Hai suonato la melodia " + choice + "\n";
           output += msg;
         } else if (choice == 3 && melody != null) {

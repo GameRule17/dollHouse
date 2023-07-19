@@ -76,7 +76,7 @@ public class CraftItem extends GameScriptedAction {
           inventory.remove(inventory.findGameObject(item));
           GUIHandler.removeInventory(item);
         }
-        return "L'oggetto e' stato aggiunto nel tuo inventario!";
+        return this.output + "L'oggetto e' stato aggiunto nel tuo inventario!";
       }
     }
 

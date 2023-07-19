@@ -27,20 +27,21 @@ public class TalkToNpc extends GameScriptedAction {
   @Override
   public String execute() {
     GameNpc entity = (GameNpc) GameHandler.getCurrentEntity();
-    String output = "Stai ancora parlando con " + entity.getName() + "!"
-                    + "Premi l'opzione 0) per smettere di parlare con " + entity.getName();
+    String output = "Opzione non disponibile!";
     if (isRunning) {
       ParsedInput input = GameHandler.getParsedInput();
       try {
         int choice = Integer.valueOf(input.getAction());
         if (choice == 0) {
           isRunning = false;
-          output = "Hai smesso di parlare con " + entity.getName();
+          output = this.output + "Hai smesso di parlare con " + entity.getName();
         } else {
           output = entity.getDialogue(choice - 1).getAnswer();
+          output += "\n" + entity.getStringDialogues();
         }
       } catch (NumberFormatException | IndexOutOfBoundsException e) {
-        // exception = e;
+        output = "Stai ancora parlando con " + entity.getName() + "\n";
+        output += "Premi 0) per smettere di parlare con " + entity.getName();
       }
     } else {
       isRunning = true;

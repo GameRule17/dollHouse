@@ -7,7 +7,6 @@ import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GameNpc;
 import dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -17,7 +16,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * Script for Ciro
+ * Script for Ciro .
  */
 public class CiroScript extends TalkToNpc {
 
@@ -56,7 +55,7 @@ public class CiroScript extends TalkToNpc {
         int choice = Integer.valueOf(input.getAction());
         if (choice == 0) {
           isRunning = false;
-          output = "Hai smesso di parlare con " + entity.getName();
+          output = this.output + "Hai smesso di parlare con " + entity.getName();
         } else {
           if (choice == entity.getNumberOfDialogues() + 1) {
             if (bottle != null) {
@@ -76,9 +75,11 @@ public class CiroScript extends TalkToNpc {
           } else {
             output = entity.getDialogue(choice - 1).getAnswer();
           }
+          output += "\n" + entity.getStringDialogues();
         }
       } catch (NumberFormatException | IndexOutOfBoundsException e) {
-        // exception = e;
+        output = "Stai ancora parlando con " + entity.getName() + "\n";
+        output += "Premi 0) per smettere di parlare con " + entity.getName();
       }
     } else {
       isRunning = true;

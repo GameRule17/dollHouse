@@ -2,6 +2,26 @@
   "name": "Piano Seminterrato",
   "gamerooms": [
     {
+      "name": "Finto Scantinato",
+      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nNoti una strana figura umanoide che ti fissa.",
+      "adjacentRooms": ["Scantinato"],
+      "objects": [],
+      "npcs": [
+        {
+          "name": "Guardiano",
+          "aliases": ["figura umanoide","figura","guardiano","guardiano dello scantinato","mostro"],
+          "actions": [
+            {
+              "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
+              "output": "Salve viandante, sei nella casa della strega Aradia, la strega che detiene il record di maggior numero di persone trasformate in bambole: 500! Finalmente dopo 3 giorni ti sei svegliato, preparati perché fra poco la strega verrà qui per trasformare anche te in una bambola. Smettila di dimenarti, la strega mi ha ordinato di non farti scappare ed è quello che farò ... a meno che ... non risponderai correttamente a queste due domande. Sai sono molti anni che la strega mi usa come suo servo e la mia pazienza è ormai giunta al limite. Sto cercando qualcuno che possa finalmente ucciderla. Avanti con le domande:",
+              "script": "dijkstra.dollhouse.engine.entities.actions.extra.GuardianScript"
+            }
+          ],
+          "dialogues": []
+        }
+      ]
+    },
+    {
       "name": "Scantinato",
       "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nGuardando meglio puoi notare: delle gabbie, una botola, un calderone, un grande tavolo in legno, un libro incantato, una lanterna spenta e una maschera.",
       "objects": [
@@ -188,6 +208,12 @@
         {
           "name": "Guardiano",
           "aliases": ["figura umanoide","figura","guardiano","guardiano dello scantinato","mostro"],
+          "actions": [
+            {
+              "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
+              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
+            }
+          ],
           "dialogues": [
             {
               "question": "Qual è il tuo vero nome",
@@ -196,22 +222,6 @@
             {
               "question": "Da quanti anni ti trovi qui?",
               "answer": "Da 127 anni..."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Finto Scantinato",
-      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nNoti una strana figura umanoide che ti fissa.",
-      "npcs": [
-        {
-          "name": "Guardiano",
-          "aliases": ["figura umanoide","figura","guardiano","guardiano dello scantinato","mostro"],
-          "actions": [
-            {
-              "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
-              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
             }
           ]
         }

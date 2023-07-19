@@ -21,7 +21,7 @@ import java.util.Scanner;
  * per ottenere le informazioni necesarie per la loro esecuzione.
  */
 public final class GameHandler {
-  private static final String initUrl = "./res/maps/piano_terra.json";
+  private static final String initUrl = "./res/maps/piano_seminterrato.json";
   private static final String savedGameUrl = "./res/savings/saved_game.dat";
   private static Game game = null;
   private static GameEntity currentEntity = null;
