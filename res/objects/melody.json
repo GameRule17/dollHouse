@@ -1,6 +1,6 @@
 {
   "name": "Melodia di Ciro",
-  "aliases": ["melodia"],
+  "aliases": ["melodia","melodia segreta"],
   "actions": [
     {
       "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],

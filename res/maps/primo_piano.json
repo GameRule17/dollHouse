@@ -1,6 +1,5 @@
 {
   "name": "Primo piano",
-  "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
   "gamerooms": [
     {
       "name": "Bagno",
@@ -141,7 +140,7 @@
     {
       "name": "Corridoio",
       "adjacentRooms": ["Bagno"],
-      "description": "Noti due porte intorno a te: la porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
+      "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
       "objects": [
         {
           "name": "Bagno",
