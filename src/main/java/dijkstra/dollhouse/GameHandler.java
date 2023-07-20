@@ -34,13 +34,22 @@ public final class GameHandler {
   }
   
   public static void init() throws FileNotFoundException {
-    parser = new GameParser();
     game.getPlayer().getGameStatistics().getTimer().startTimer();
     // run threads
   }
 
   public static void onClose() {
     GameHandler.getGame().getPlayer().getGameStatistics().getTimer().updateGameTime();
+  }
+
+  private static void deleteDir(final File file) {
+    File[] contents = file.listFiles();
+    if (contents != null) {
+      for (File f : contents) {
+        deleteDir(f);
+      }
+    }
+    file.delete();
   }
 
   /**
@@ -51,6 +60,7 @@ public final class GameHandler {
   public static void newGame() throws Exception {
     if (game == null) {
       game = new Game(initUrl, null);
+      deleteDir(new File("./res/savings"));
     } else {
       throw new Exception("The game has already started.");
     }
@@ -75,8 +85,8 @@ public final class GameHandler {
   /**
    * .
    *
-   * @param command
-   * @return
+   * @param command .
+   * @return .
    */
   public static String executeCommand(final String command) {
     parsedInput = parser.parse(command);
@@ -84,7 +94,7 @@ public final class GameHandler {
     String entityName = parsedInput.getEntity();
     String actionName = parsedInput.getAction();
     GamePlayer player = game.getPlayer();
-    String output = "Comando inesistente!";
+    String output = "Questa azione non può essere effettuata!";
     Exception exception;
 
     // System.out.println(parsedInput);

@@ -1,5 +1,6 @@
 package dijkstra.dollhouse.engine.entities;
 
+import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
@@ -85,7 +86,7 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
         do {
           output = executeRandomBehavior();
           if (GameHandler.getGame().getMap().getCurrentRoom().findBehavioralNpc(name) != null) {
-            System.out.println("\n" + this.getName() + "> " + output);
+            GUIHandler.print("\n" + this.getName() + "> " + output + "\n");
           }
           if (script.getException() != null) {
             script.getException().printStackTrace();

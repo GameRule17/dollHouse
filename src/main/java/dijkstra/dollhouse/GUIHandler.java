@@ -1,14 +1,18 @@
 package dijkstra.dollhouse;
 
-// import dijkstra.dollhouse.gui.GUI;
+import dijkstra.dollhouse.gui.GamePanel;
 
 public class GUIHandler {
 
   public static void addInventory(final String name) {
-    // GUI.addInventory(name);
+    GamePanel.addInventory(name);
   }
 
   public static void removeInventory(final String name) {
-    // GUI.removeInventory(name);
+    GamePanel.removeInventory(name);
+  }
+
+  public static void print(final String msg) {
+    GamePanel.printMessage(msg);
   }
 }

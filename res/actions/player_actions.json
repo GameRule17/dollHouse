@@ -4,6 +4,11 @@
             "aliases": ["costruisci", "crafta"],
             "output": "hai craftato l'oggetto",
             "script": "dijkstra.dollhouse.engine.entities.actions.predefined.CraftItem"
+        },
+        {
+            "aliases": ["esamina", "osserva", "osservati", "guarda"],
+            "output": "",
+            "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ExamineScript"
         }
     ]
 }

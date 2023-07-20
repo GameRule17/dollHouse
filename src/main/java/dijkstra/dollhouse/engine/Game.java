@@ -33,6 +33,10 @@ public class Game implements Serializable {
     map = new GameMap(mapUrl);
   }
 
+  public void setMap(final GameMap map) {
+    this.map = map;
+  }
+
   public GameMap getMap() {
     return map;
   }

@@ -42,6 +42,14 @@ public class GameRoom implements Serializable {
     return adjacentRooms;
   }
 
+  public Collection<GameEntity> getEntities() {
+    return entities;
+  }
+
+  public Collection<GameBehavioralNpc> getGameBehavioralNpc() {
+    return npcs;
+  }
+
   /**
    * Finds a GameRoom with the name specified by "name" argument.
    * If this GameRoom does not exist, returns null.

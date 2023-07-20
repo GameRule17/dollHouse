@@ -29,8 +29,8 @@ public class GuardianScript extends GameScriptedAction {
       {"1) Uccidero' te e la strega che mi ha intrappolato!",
         "2) Cerchero' di salvare le vittime della strega e ti liberero'! \n"},
       {"1) Io non sono come le altre persone che hanno fallito prima di me. Sono determinato"
-        + "a sconfiggere la strega e liberare tutti quelli che ha trasformato in bambole."
-        + "Se mi liberi adesso, ti prometto che non te ne pentirai. ",
+          + "a sconfiggere la strega e liberare tutti quelli che ha trasformato in bambole."
+          + "Se mi liberi adesso, ti prometto che non te ne pentirai. ",
         "2) Daro' il meglio di me per poter uccidere quella maledetta!"}
     };
     correctAnswers = new String[] {

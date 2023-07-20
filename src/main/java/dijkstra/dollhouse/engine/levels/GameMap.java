@@ -22,6 +22,7 @@ import org.json.simple.parser.JSONParser;
 public class GameMap implements Serializable {
 
   private GameRoom currentRoom;
+  private String name;
 
   private void setAdjacentRooms(final JSONObject jsonRoom, final GameRoom room,
                                 final GameRoom[] rooms) {
@@ -113,6 +114,8 @@ public class GameMap implements Serializable {
       int numberOfGameRooms = jsonRooms.size();
       GameRoom[] rooms = getInitializedGameRooms(numberOfGameRooms, jsonRooms);
 
+      name = jsonMap.get("name").toString();
+
       for (int i = 0; i < numberOfGameRooms; i++) {
         jsonRoom = (JSONObject) jsonRooms.get(i);
         rooms[i].setName((String) jsonRoom.get("name"));
@@ -130,6 +133,10 @@ public class GameMap implements Serializable {
         fileReader.close();
       }
     }
+  }
+
+  public String getName() {
+    return name;
   }
 
   public GameRoom getCurrentRoom() {

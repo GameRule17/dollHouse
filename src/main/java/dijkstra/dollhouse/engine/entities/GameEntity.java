@@ -33,6 +33,21 @@ public class GameEntity implements Serializable {
   }
 
   /**
+   * Get the alias at position "position".
+   *
+   * @param position - the position of the alias
+   * @return String
+   */
+  public String getAlias(final int position) {
+    Iterator<String> it = aliases.iterator();
+    int i = 0;
+    while (it.hasNext() && i < position) {
+      it.next();
+    }
+    return it.next();
+  }
+
+  /**
    * Checks if the parameter is an alias of this GameAction object.
    *
    * @param alias - the alias to check

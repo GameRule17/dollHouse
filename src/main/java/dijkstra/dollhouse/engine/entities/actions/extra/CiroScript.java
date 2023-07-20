@@ -56,6 +56,7 @@ public class CiroScript extends TalkToNpc {
         if (choice == 0) {
           isRunning = false;
           output = this.output + "Hai smesso di parlare con " + entity.getName();
+          GameHandler.getGame().getMap().runAllBehavioralNpcs();
         } else {
           if (choice == entity.getNumberOfDialogues() + 1) {
             if (bottle != null) {
@@ -82,6 +83,7 @@ public class CiroScript extends TalkToNpc {
         output += "Premi 0) per smettere di parlare con " + entity.getName();
       }
     } else {
+      GameHandler.getGame().getMap().stopAllBehavioralNpcs();
       isRunning = true;
       output = "0) Smetti di parlare con " + entity.getName() + "\n" + entity.getStringDialogues();
       if (bottle != null) {

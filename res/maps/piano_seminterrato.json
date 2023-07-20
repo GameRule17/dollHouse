@@ -1,5 +1,5 @@
 {
-  "name": "Piano Seminterrato",
+  "name": "piano_seminterrato",
   "gamerooms": [
     {
       "name": "Finto Scantinato",
@@ -35,7 +35,8 @@
             },
             {
               "aliases":["indossa","indossare","metti","mettere"],
-              "output":"Dopo aver indossato la maschera, si avverte una sensazione di forza crescente, pronti a fronteggiare qualsiasi nemico che si manifesti, sicuri di poterli sconfiggere senza esitazione."
+              "output":"Dopo aver indossato la maschera, si avverte una sensazione di forza crescente, pronti a fronteggiare qualsiasi nemico che si manifesti, sicuri di poterli sconfiggere senza esitazione.",
+              "script": "dijkstra.dollhouse.engine.entities.actions.extra.MaskScript"
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -72,7 +73,7 @@
         },
         {
           "name": "Botola",
-          "aliases": ["botola","botola segreta","botola per piano terra"],
+          "aliases": ["Botola","botola segreta","botola per piano terra"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -80,7 +81,7 @@
             },
             {
               "aliases":["apri","aprire","entra","entrare","usa","usare","utilizza"],
-              "output":"Stai salendo verso il piano superiore..."
+              "output":"Guardiano: Ehi viandante, per salire al piano superiore ed essere sicuro che la strega non possa farti del male, c'e' ancora un oggetto che devi prendere."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -191,17 +192,6 @@
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
-        },
-        {
-          "name": "./res/maps/piano_terra.json Salotto",
-          "aliases": ["piano terra", "piano di sopra", "sopra", "botola","botola per il piano superiore","botola per il piano di sopra"],
-          "actions": [
-            {
-              "aliases": ["vai", "sali","salire","apri","aprire"],
-              "output": "",
-              "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
-            }
-          ]
         }
       ],
       "npcs": [
@@ -211,6 +201,7 @@
           "actions": [
             {
               "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
+              "output": "",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc"
             }
           ],

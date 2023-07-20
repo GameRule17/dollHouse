@@ -1,6 +1,6 @@
 {
     "name": "./res/maps/primo_piano.json Corridoio",
-    "aliases": ["cancello","cancello di ferro","cancello di metallo"],
+    "aliases": ["Cancello","cancello di ferro","cancello di metallo"],
     "actions": [
       {
         "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],

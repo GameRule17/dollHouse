@@ -76,6 +76,7 @@ public class PlayPiano extends GameScriptedAction {
         if (choice == 0) {
           isRunning = false;
           output = "Hai smesso di suonare il pianoforte!";
+          GameHandler.getGame().getMap().runAllBehavioralNpcs();
         } else if (choice == 1 || choice == 2) {
           output = "Hai suonato la melodia " + choice + "\n";
           output += msg;
@@ -89,6 +90,7 @@ public class PlayPiano extends GameScriptedAction {
         output = "Stai ancora suonando il pianoforte!";
       }
     } else {
+      GameHandler.getGame().getMap().stopAllBehavioralNpcs();
       isRunning = true;
       output = msg;
     }

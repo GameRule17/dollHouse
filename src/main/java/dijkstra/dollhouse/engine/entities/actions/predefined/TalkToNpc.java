@@ -2,6 +2,7 @@ package dijkstra.dollhouse.engine.entities.actions.predefined;
 
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.ParsedInput;
+import dijkstra.dollhouse.engine.entities.GameBehavioralNpc;
 import dijkstra.dollhouse.engine.entities.GameNpc;
 import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
 
@@ -35,9 +36,11 @@ public class TalkToNpc extends GameScriptedAction {
         if (choice == 0) {
           isRunning = false;
           output = this.output + "Hai smesso di parlare con " + entity.getName();
+          GameHandler.getGame().getMap().runAllBehavioralNpcs();
         } else {
           output = entity.getDialogue(choice - 1).getAnswer();
-          output += "\n" + entity.getStringDialogues();
+          output += "\n0) Smetti di parlare con " + entity.getName()
+                    + "\n" + entity.getStringDialogues();
         }
       } catch (NumberFormatException | IndexOutOfBoundsException e) {
         output = "Stai ancora parlando con " + entity.getName() + "\n";
@@ -46,6 +49,7 @@ public class TalkToNpc extends GameScriptedAction {
     } else {
       isRunning = true;
       output = "0) Smetti di parlare con " + entity.getName() + "\n" + entity.getStringDialogues();
+      GameHandler.getGame().getMap().stopAllBehavioralNpcs();
     }
 
     return output;

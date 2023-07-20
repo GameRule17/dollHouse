@@ -1,5 +1,5 @@
 {
-    "name": "Piano Terra",
+    "name": "piano_terra",
     "gamerooms": [
       {
         "name": "Salotto",
@@ -177,7 +177,7 @@
           },
           {
             "name": "./res/maps/piano_seminterrato.json Scantinato",
-            "aliases": ["seminterrato", "piano di sotto", "sotto", "botola"],
+            "aliases": ["Botola", "seminterrato", "piano di sotto", "sotto"],
             "actions": [
               {
                 "aliases": ["vai", "scendi","scendere", "apri","aprire"],
