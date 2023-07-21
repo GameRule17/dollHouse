@@ -1,7 +1,7 @@
 {
     "actions": [
         {
-            "aliases": ["costruisci", "crafta"],
+            "aliases": ["costruisci", "crafta", "costruire", "craftare"],
             "output": "hai craftato l'oggetto",
             "script": "dijkstra.dollhouse.engine.entities.actions.predefined.CraftItem"
         },

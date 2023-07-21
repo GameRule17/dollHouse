@@ -73,10 +73,12 @@ public class CraftItem extends GameAction implements GameScript {
         }
         inventory.add(object);
         GUIHandler.addInventory(object.getName());
-        for (String item : object.getRecipe()) {
-          inventory.remove(inventory.findGameObject(item));
-          GUIHandler.removeInventory(item);
-        }
+        object.getRecipe().stream()
+                          .map(item -> inventory.findGameObject(item))
+                          .forEach(item -> {
+                            inventory.remove(item);
+                            GUIHandler.removeInventory(item.getName());
+                          });
         return this.output + "\nL'oggetto e' stato aggiunto nel tuo inventario!";
       }
     }
@@ -95,14 +97,4 @@ public class CraftItem extends GameAction implements GameScript {
     return exception;
   }
   
-  // public static void main(String[] args) {
-  //   try {
-  //     CraftItem j = new CraftItem("craftato");
-  //     for (GameCraftableObject object : craftableItems) {
-  //     System.out.println(object.toString());
-  //   }
-  //   } catch (Exception e) {
-  //     e.printStackTrace();
-  //   }
-  // }
 }

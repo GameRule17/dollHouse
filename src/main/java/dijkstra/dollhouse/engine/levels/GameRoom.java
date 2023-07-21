@@ -112,10 +112,8 @@ public class GameRoom implements Serializable {
    * in this room.
    */
   public void runBehavioralNpcs() {
-    Iterator<GameBehavioralNpc> it = npcs.iterator();
-    while (it.hasNext()) {
-      it.next().start();
-    }
+    npcs.stream()
+        .forEach(npc -> npc.start());
   }
 
   /**
@@ -123,10 +121,8 @@ public class GameRoom implements Serializable {
    * in this room.
    */
   public void stopBehavioralNpcs() {
-    Iterator<GameBehavioralNpc> it = npcs.iterator();
-    while (it.hasNext()) {
-      it.next().stop();
-    }
+    npcs.stream()
+        .forEach(npc -> npc.stop());
   }
 
   public void addEntity(final GameEntity entity) {
@@ -163,16 +159,11 @@ public class GameRoom implements Serializable {
 
   @Override
   public String toString() {
-    // StringBuilder s = new StringBuilder("Puoi vedere "
-    //                                    + entities.size() + " entità, ossia: \n\n");
-    // for (GameEntity entity : entities) {
-    //   s.append(entity.toString() + "\n");
-    // }
-    // for (GameBehavioralNpc npc : npcs) {
-    //   s.append(npc.toString() + "\n");
-    // }
-    // return s.toString();
-    return name;
+    StringBuilder s = new StringBuilder("Puoi vedere "
+                                       + entities.size() + " entità, ossia: \n\n");
+    entities.stream().forEach(entity -> s.append(entity.toString() + "\n"));
+    npcs.stream().forEach(npc -> s.append(npc.toString() + "\n"));
+    return s.toString();
   }
 
 }

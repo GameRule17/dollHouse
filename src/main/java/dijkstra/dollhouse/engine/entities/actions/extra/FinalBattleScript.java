@@ -29,6 +29,7 @@ public class FinalBattleScript extends GameAction implements GameScript {
       }
       GameHandler.saveGame();
       // carica statistiche
+      Thread.sleep((long) 10e3);
       GUIHandler.popUpMessage("Complimenti! Hai finito Dollhouse!\n"
                               + "Per vedere le tue statistiche di gioco torna al menu principale"
                               + " e clicca sulla voce \"Statistiche\".");
