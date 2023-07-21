@@ -14,7 +14,7 @@ import java.sql.Time;
 public final class DataBaseLoader {
   private static Connection conn = null;
   private static final String url = "jdbc:h2:./database/statistics;"
-                                    + "DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE";
+      + "DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE";
 
   private DataBaseLoader() {
   }
@@ -37,8 +37,8 @@ public final class DataBaseLoader {
     try {
       Statement stmt = conn.createStatement();
       stmt.executeUpdate("CREATE TABLE IF NOT EXISTS statistics"
-                        + "(id INT PRIMARY KEY AUTO_INCREMENT,"
-                        + "username VARCHAR(255), points INT, time TIME)");
+          + "(id INT PRIMARY KEY AUTO_INCREMENT,"
+          + "username VARCHAR(255), points INT, time TIME)");
       stmt.close();
     } catch (SQLException ex) {
       System.out.println("Errore: " + ex.getMessage());
@@ -46,14 +46,14 @@ public final class DataBaseLoader {
   }
 
   /**
-   * Check if a user with that nickname already exists in the table, 
-   * if so, update the statistics values ​​by verifying that the new values 
+   * Check if a user with that nickname already exists in the table,
+   * if so, update the statistics values ​​by verifying that the new values
    * ​are better than the previous ones either for the number of points
    * or for a new shorter time.
    *
    * @param username - the player username.
-   * @param points - the player points.
-   * @param time - the palyer game time.
+   * @param points   - the player points.
+   * @param time     - the palyer game time.
    */
   public static void updateStatistics(String username, int points, Time time) {
     try {
@@ -111,8 +111,30 @@ public final class DataBaseLoader {
       }
       while (rs.next()) {
         result += "<tr> <td>" + rs.getString("username")
-                + "</td> <td>" + rs.getInt("points")
-                + "</td><td>" + rs.getTime("time") + "</td> </tr>";
+            + "</td> <td>" + rs.getInt("points")
+            + "</td><td>" + rs.getTime("time") + "</td> </tr>";
+      }
+      stmt.close();
+    } catch (SQLException ex) {
+      System.out.println("Errore: " + ex.getMessage());
+    }
+    return result;
+  }
+
+  /**
+   * .
+   *
+   * @param username .
+   * @return .
+   */
+  public static boolean usernameAlreadyUsed(String username) {
+    boolean result = false;
+    try {
+      PreparedStatement stmt = conn.prepareStatement("SELECT * FROM statistics WHERE username = ?");
+      stmt.setString(1, username);
+      ResultSet rs = stmt.executeQuery();
+      if (rs.next()) {
+        result = true;
       }
       stmt.close();
     } catch (SQLException ex) {

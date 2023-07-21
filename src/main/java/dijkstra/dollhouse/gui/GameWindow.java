@@ -1,5 +1,6 @@
 package dijkstra.dollhouse.gui;
 
+import dijkstra.dollhouse.DataBaseLoader;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.MusicPlayer;
 import java.awt.Dimension;
@@ -29,6 +30,9 @@ public class GameWindow extends JFrame implements WindowListener {
     musicPlayer.playMusic(filePath);
     musicPlayer.setVolume(0.03);
     setContentPane(new MenuPanel());
+
+    DataBaseLoader.initializeDbConnection();
+    DataBaseLoader.createTable();
   }
 
   public static GameWindow getInstance() {

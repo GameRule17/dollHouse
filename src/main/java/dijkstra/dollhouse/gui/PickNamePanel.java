@@ -1,5 +1,6 @@
 package dijkstra.dollhouse.gui;
 
+import dijkstra.dollhouse.DataBaseLoader;
 import dijkstra.dollhouse.GameHandler;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -110,8 +111,11 @@ public class PickNamePanel extends JPanel implements ActionListener, KeyListener
   private void startGame() {
     String username = insertNameField.getText();
     wrongNicknameLabel.setText("");
-    if (username != null && username.length() > 0
-        && !username.equals("Inserisci il tuo nickname")) {
+    if (username != null
+        && username.length() > 0
+        && !username.equals("Inserisci il tuo nickname")
+        && !username.contains(" ")
+        && !DataBaseLoader.usernameAlreadyUsed(username)) {
       GameWindow.getInstance().updatePanel(new GamePanel());
       try {
         GameHandler.initParser();
@@ -123,7 +127,7 @@ public class PickNamePanel extends JPanel implements ActionListener, KeyListener
         // e.printStackTrace();
       }
     } else {
-      wrongNicknameLabel.setText("Username non valido!");
+      wrongNicknameLabel.setText("Username non valido o già usato!");
     }
   }
 
@@ -144,10 +148,9 @@ public class PickNamePanel extends JPanel implements ActionListener, KeyListener
 
   @Override
   public void keyTyped(KeyEvent e) {
-    if (insertNameField.getText().equals("Inserisci comando")) {
+    if (insertNameField.getText().equals("Inserisci il tuo nickname")) {
       insertNameField.setText("");
     }
-
   }
 
   @Override

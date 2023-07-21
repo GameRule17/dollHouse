@@ -1,6 +1,8 @@
 package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.GameHandler;
+import dijkstra.dollhouse.gui.socket.JChatClient;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -9,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -86,45 +90,43 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     this.setLayout(gamePanelLayout);
     gamePanelLayout.setHorizontalGroup(
         gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-        .addGroup(gamePanelLayout.createSequentialGroup()
-          .addContainerGap()
-          .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
             .addGroup(gamePanelLayout.createSequentialGroup()
-              .addComponent(inputCommandField, GroupLayout.DEFAULT_SIZE,
-                      64, Short.MAX_VALUE)
-              .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(sendCommandButton, GroupLayout.PREFERRED_SIZE,
-                      111, GroupLayout.PREFERRED_SIZE)
-              .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(openGlobalChatButton, GroupLayout.PREFERRED_SIZE,
-                      61, GroupLayout.PREFERRED_SIZE)))
-          .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-          .addComponent(listObjectsInventory, GroupLayout.PREFERRED_SIZE,
-                  138, GroupLayout.PREFERRED_SIZE)
-          .addContainerGap())
-    );
+                .addContainerGap()
+                .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                    .addGroup(gamePanelLayout.createSequentialGroup()
+                        .addComponent(inputCommandField, GroupLayout.DEFAULT_SIZE,
+                            64, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sendCommandButton, GroupLayout.PREFERRED_SIZE,
+                            111, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(openGlobalChatButton, GroupLayout.PREFERRED_SIZE,
+                            61, GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(listObjectsInventory, GroupLayout.PREFERRED_SIZE,
+                    138, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()));
     gamePanelLayout.setVerticalGroup(
         gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-        .addGroup(GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
-          .addContainerGap()
-          .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-            .addComponent(listObjectsInventory, GroupLayout.DEFAULT_SIZE,
-            GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(gamePanelLayout.createSequentialGroup()
-              .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE,
-              227, Short.MAX_VALUE)
-              .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-              .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                  .addComponent(inputCommandField, GroupLayout.PREFERRED_SIZE,
-                  33, GroupLayout.PREFERRED_SIZE)
-                  .addComponent(openGlobalChatButton, GroupLayout.PREFERRED_SIZE,
-                  35, GroupLayout.PREFERRED_SIZE))
-                .addComponent(sendCommandButton, GroupLayout.DEFAULT_SIZE,
-                GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-          .addGap(10, 10, 10))
-    );
+            .addGroup(GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                    .addComponent(listObjectsInventory, GroupLayout.DEFAULT_SIZE,
+                        GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(gamePanelLayout.createSequentialGroup()
+                        .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE,
+                            227, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                            .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(inputCommandField, GroupLayout.PREFERRED_SIZE,
+                                    33, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(openGlobalChatButton, GroupLayout.PREFERRED_SIZE,
+                                    35, GroupLayout.PREFERRED_SIZE))
+                            .addComponent(sendCommandButton, GroupLayout.DEFAULT_SIZE,
+                                GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(10, 10, 10)));
   }
 
   public static void addInventory(final String name) {
@@ -144,7 +146,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
       outputCommandArea.append(GameHandler.executeCommand(inputCommandField.getText()));
     } catch (Exception e) {
       JOptionPane.showMessageDialog(this, e.getMessage(),
-                                        "Esecuzione fallita!", JOptionPane.ERROR_MESSAGE);
+          "Esecuzione fallita!", JOptionPane.ERROR_MESSAGE);
     }
   }
 
@@ -168,6 +170,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     }
   }
 
+  
+
   @Override
   public void actionPerformed(ActionEvent arg0) {
     String action = arg0.getActionCommand();
@@ -176,8 +180,13 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         executeCommand();
         break;
       case "chat":
-        GameHandler.getGame().getMap().stopAllBehavioralNpcs();
-        GameWindow.getInstance().updatePanel(new GlobalChatPanel());
+        try {
+          GlobalChatPanel panel = new GlobalChatPanel();
+          GameWindow.getInstance().updatePanel(panel);
+        } catch (IOException e) {
+          JOptionPane.showMessageDialog(this, "Non è stata avviata la connessione con il server!",
+            "Errore di connessione", JOptionPane.ERROR_MESSAGE);
+        }
         break;
       default:
         break;
