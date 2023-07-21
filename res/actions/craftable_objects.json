@@ -3,7 +3,7 @@
         {
             "name": "Coltello magico",
             "aliases": ["coltello"],
-            "recipe": ["Manico", "Scheggia", "Gomitolo", "Libro"],
+            "recipe": ["Manico", "Scheggia", "Gomitolo", "Libro Incantato"],
             "actions": [
               {
                 "aliases": ["esamina"],

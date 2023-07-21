@@ -3,7 +3,8 @@ package dijkstra.dollhouse.engine.entities.actions.extra;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.JSONLoader;
 import dijkstra.dollhouse.engine.entities.GameEntity;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,7 +14,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class MaskScript extends GameScriptedAction {
+/**
+ * .
+ */
+public class MaskScript extends GameAction implements GameScript {
 
   private Exception exception;
 

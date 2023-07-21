@@ -1,15 +1,15 @@
 package dijkstra.dollhouse.engine.entities.actions.predefined;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.ParsedInput;
-import dijkstra.dollhouse.engine.entities.GameBehavioralNpc;
+import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameNpc;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 
 /**
  * .
  */
-public class TalkToNpc extends GameScriptedAction {
+public class TalkToNpc extends GameAction implements GameScript {
 
   protected boolean isRunning;
   // private Exception exception;

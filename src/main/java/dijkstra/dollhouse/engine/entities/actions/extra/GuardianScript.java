@@ -1,14 +1,15 @@
 package dijkstra.dollhouse.engine.entities.actions.extra;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.ParsedInput;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
+import dijkstra.dollhouse.engine.ParsedInput;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 
 /**
  * .
  */
-public class GuardianScript extends GameScriptedAction {
+public class GuardianScript extends GameAction implements GameScript {
 
   protected boolean isRunning;
   private String[] questions;
@@ -27,7 +28,7 @@ public class GuardianScript extends GameScriptedAction {
     };
     answers = new String[][] {
       {"1) Uccidero' te e la strega che mi ha intrappolato!",
-        "2) Cerchero' di salvare le vittime della strega e ti liberero'! \n"},
+        "2) Cerchero' di salvare le vittime della strega e ti liberero'!"},
       {"1) Io non sono come le altre persone che hanno fallito prima di me. Sono determinato"
           + "a sconfiggere la strega e liberare tutti quelli che ha trasformato in bambole."
           + "Se mi liberi adesso, ti prometto che non te ne pentirai. ",
@@ -65,7 +66,7 @@ public class GuardianScript extends GameScriptedAction {
         if (index >= size) {
           isRunning = false;
           output = "Va bene mi hai convinto. Cerca di non morire"
-            + "e ricordati di liberarmi una volta uccisa la strega!";
+            + " e ricordati di liberarmi una volta uccisa la strega!";
           GameRoom room = GameHandler.getGame().getMap().getRoom("Scantinato");
           GameHandler.getGame().getMap().setCurrentRoom(room);
         } else {

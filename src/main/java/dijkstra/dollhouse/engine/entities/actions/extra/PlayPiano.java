@@ -1,12 +1,12 @@
 package dijkstra.dollhouse.engine.entities.actions.extra;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.ParsedInput;
 import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import org.json.simple.parser.ParseException;
 /**
  * .
  */
-public class PlayPiano extends GameScriptedAction {
+public class PlayPiano extends GameAction implements GameScript {
 
   private boolean isRunning;
   private Exception exception;

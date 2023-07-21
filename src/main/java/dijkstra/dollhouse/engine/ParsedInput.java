@@ -1,5 +1,8 @@
-package dijkstra.dollhouse;
+package dijkstra.dollhouse.engine;
 
+/**
+ * .
+ */
 public class ParsedInput {
   private String action;
   private String entity;

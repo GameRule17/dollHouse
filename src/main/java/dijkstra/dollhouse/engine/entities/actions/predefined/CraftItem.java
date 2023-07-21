@@ -4,8 +4,9 @@ import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.JSONLoader;
 import dijkstra.dollhouse.engine.entities.GameCraftableObject;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -21,7 +22,7 @@ import org.json.simple.parser.ParseException;
 /**
  * .
  */
-public class CraftItem extends GameScriptedAction {
+public class CraftItem extends GameAction implements GameScript {
 
   private static final String url = "./res/actions/craftable_objects.json";
   private static List<GameCraftableObject> craftableItems;

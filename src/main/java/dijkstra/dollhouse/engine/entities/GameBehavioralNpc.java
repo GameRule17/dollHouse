@@ -82,11 +82,11 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
     
     while (isRunning) {
       try {
-        Thread.sleep((long) 1e3);
+        Thread.sleep((long) 5e3);
         do {
           output = executeRandomBehavior();
           if (GameHandler.getGame().getMap().getCurrentRoom().findBehavioralNpc(name) != null) {
-            GUIHandler.print("\n" + this.getName() + "> " + output + "\n");
+            GUIHandler.print("\n" + this.getName() + ": " + output + "\n");
           }
           if (script.getException() != null) {
             script.getException().printStackTrace();

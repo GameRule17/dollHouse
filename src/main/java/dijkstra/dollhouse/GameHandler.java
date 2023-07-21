@@ -1,19 +1,19 @@
 package dijkstra.dollhouse;
 
 import dijkstra.dollhouse.engine.Game;
+import dijkstra.dollhouse.engine.GameParser;
+import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GamePlayer;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Scanner;
 
 /**
  * L'ActionListener avrà un gamehandler.
@@ -28,6 +28,10 @@ public final class GameHandler {
   private static GameAction currentAction = null;
   private static ParsedInput parsedInput = null;
   private static GameParser parser;
+
+  public static void resetGame() {
+    game = null;
+  }
 
   public static void initParser() throws FileNotFoundException {
     parser = new GameParser();
@@ -87,8 +91,9 @@ public final class GameHandler {
    *
    * @param command .
    * @return .
+   * @throws Exception .
    */
-  public static String executeCommand(final String command) {
+  public static String executeCommand(final String command) throws Exception {
     parsedInput = parser.parse(command);
     GameRoom room = game.getMap().getCurrentRoom();
     String entityName = parsedInput.getEntity();
@@ -96,8 +101,6 @@ public final class GameHandler {
     GamePlayer player = game.getPlayer();
     String output = "Questa azione non può essere effettuata!";
     Exception exception;
-
-    // System.out.println(parsedInput);
 
     player.getGameStatistics().incrementsNumberOfExecutedActions();
 
@@ -118,13 +121,11 @@ public final class GameHandler {
       }
     }
 
-    // System.out.println(currentEntity);
-
     if (currentAction instanceof GameScript) {
       output = ((GameScript) currentAction).execute();
       exception = ((GameScript) currentAction).getException();
       if (exception != null) {
-        exception.printStackTrace();
+        throw exception;
       }
       if (((GameScript) currentAction).isOver()) {
         currentAction = null;
@@ -138,8 +139,10 @@ public final class GameHandler {
       currentEntity = null;
     }
 
-    return output + "\n";
-    // return player.getName() + "> " + command + "\n" + output + "\n";
+    System.out.println(player.getGameStatistics().toString());
+    System.out.println(room.getAdjacentRooms());
+    return "\n" + room.getName() + ":" + player.getName()
+            + "~$" + command + "\n" + output + "\n";
   }
 
   /**
@@ -157,6 +160,7 @@ public final class GameHandler {
         input = new ObjectInputStream(file);
         game = (Game) input.readObject();
       } catch (Exception e) {
+        // e.printStackTrace();
         throw e;
       } finally {
         if (input != null) {
@@ -200,42 +204,4 @@ public final class GameHandler {
       throw new Exception("The game hasn't started yet");
     }
   }
-
-  /**
-   * .
-   *
-   * @param args .
-   */
-  public static void main(String[] args) {
-    Scanner in = new Scanner(System.in);
-    String input;
-    try {
-      GameHandler.newGame();
-      // GameHandler.saveGame();
-      // GameHandler.loadGame();
-      init();
-      // System.out.println(GameHandler.getGame().getPlayer().toString());
-      // GameHandler.getGame().getMap().runAllBehavioralNpcs();
-      do {
-        // System.out.println(GameHandler.getGame().getMap().toString());
-        // System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "\033[44m$ ");
-        System.out.println(GameHandler.getGame().getPlayer().getGameStatistics().toString());
-        System.out.println(GameHandler.getGame().getMap().getCurrentRoom().getAdjacentRooms());
-        System.out.print(GameHandler.getGame().getMap().getCurrentRoom().getName() + "~$ ");
-        // System.out.print("\033[0m");
-        input = in.nextLine();
-        System.out.print(executeCommand(input));
-      } while (input.compareTo("exit") != 0);
-      
-      System.out.println(GameHandler.getGame().getPlayer().getGameStatistics().toString());
-      onClose();
-      GameHandler.saveGame();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    in.close();
-  }
-
-  // get stats
 }

@@ -1,4 +1,4 @@
-package dijkstra.dollhouse;
+package dijkstra.dollhouse.engine;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,6 +41,12 @@ public class GameParser {
     
   }
 
+  /**
+   * .
+   *
+   * @param input .
+   * @return .
+   */
   public ParsedInput parse(final String input) {
     
     String[] tokens = input.split("\\s+");
@@ -72,22 +78,5 @@ public class GameParser {
     }
     
     return new ParsedInput(action, s.toString());
-  }
-
-  public static void main(String[] args) {
-    String s;
-    Scanner in = new Scanner(System.in, "UTF-8");
-    try {
-      GameParser p = new GameParser();
-      do {
-        System.out.println("> ");
-        s = in.nextLine();
-        System.out.println(p.parse(s));
-      } while (s.compareTo("exit") != 0);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    in.close();
   }
 }

@@ -4,15 +4,15 @@ import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 
 /**
  * GameScriptedAction that remove the entity from the current room
  * and add it in the player inventory.
  */
-public class PickItem extends GameScriptedAction {
+public class PickItem extends GameAction implements GameScript {
 
   private boolean isExecutable;
 

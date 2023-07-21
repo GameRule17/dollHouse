@@ -1,5 +1,11 @@
 package dijkstra.dollhouse.engine.entities.actions.predefined;
 
+import dijkstra.dollhouse.GameHandler;
+import dijkstra.dollhouse.engine.entities.GameEntity;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
+import dijkstra.dollhouse.engine.levels.GameMap;
+import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,19 +13,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationTargetException;
-
 import org.json.simple.parser.ParseException;
-
-import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.engine.entities.GameEntity;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
-import dijkstra.dollhouse.engine.levels.GameMap;
-import dijkstra.dollhouse.engine.levels.GameRoom;
 
 /**
  * .
  */
-public class ChangeMap extends GameScriptedAction {
+public class ChangeMap extends GameAction implements GameScript {
 
   private Exception exception;
 

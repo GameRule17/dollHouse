@@ -1,8 +1,8 @@
 package dijkstra.dollhouse.engine.entities.actions.extra;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.ParsedInput;
 import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GameNpc;
 import dijkstra.dollhouse.engine.entities.actions.predefined.TalkToNpc;
@@ -76,7 +76,8 @@ public class CiroScript extends TalkToNpc {
           } else {
             output = entity.getDialogue(choice - 1).getAnswer();
           }
-          output += "\n" + entity.getStringDialogues();
+          output += "\n0) Smetti di parlare con " + entity.getName()
+                  + "\n" + entity.getStringDialogues();
         }
       } catch (NumberFormatException | IndexOutOfBoundsException e) {
         output = "Stai ancora parlando con " + entity.getName() + "\n";

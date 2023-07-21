@@ -154,6 +154,17 @@
           ]
         },
         {
+          "name": "Camera da Letto",
+          "aliases": ["camera strega", "camera", "stanza strega", "camera da letto"],
+          "actions": [
+            {
+              "aliases": ["vai", "apri","aprire","entra","entrare"],
+              "output": "",
+              "script": "dijkstra.dollhouse.engine.entities.actions.extra.FinalBattleScript"
+            }
+          ]
+        },
+        {
           "name": "./res/maps/piano_terra.json Corridoio",
           "aliases": ["Cancello","piano terra", "piano di sotto", "sotto", "scale","scale per il piano inferiore"],
           "actions": [

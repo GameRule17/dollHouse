@@ -5,7 +5,6 @@ import dijkstra.dollhouse.engine.entities.GameCraftableObject;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GameNpc;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
 import dijkstra.dollhouse.engine.entities.details.GameDialogue;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase;
@@ -45,8 +44,8 @@ public class JSONLoader {
     Class<?> classScript = Class.forName(className);
     Constructor<?> constructor = classScript.getDeclaredConstructor(String.class);
     Object script = constructor.newInstance(output);
-    if (script instanceof GameScriptedAction) {
-      return (GameScriptedAction) script;
+    if (script instanceof GameAction) {
+      return (GameAction) script;
     }
     throw new ClassNotFoundException("The action is not an istance of GameAction!\n");
 

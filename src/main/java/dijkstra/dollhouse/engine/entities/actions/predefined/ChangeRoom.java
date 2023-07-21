@@ -2,13 +2,14 @@ package dijkstra.dollhouse.engine.entities.actions.predefined;
 
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.entities.GameEntity;
-import dijkstra.dollhouse.engine.entities.actions.GameScriptedAction;
+import dijkstra.dollhouse.engine.entities.actions.GameAction;
+import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 
 /**
  * .
  */
-public class ChangeRoom extends GameScriptedAction {
+public class ChangeRoom extends GameAction implements GameScript {
 
   private Exception exception;
 
