@@ -404,7 +404,7 @@
                 }
               ],
               "phrases": [
-                "Ue ugaliu", "pisello", "CIROOOO"
+                "Ue uagliu'", "Ogni bambola è bella a mamma soja.", "O' malamente", "Si 'o viento se ne porta 'a voce e 'o mare se ne porta 'a reta.", "M' serv' 'nu cuttèllo p' accidere chella maledetta."
               ],
               "rooms": [
                 "Cucina", "Salotto", "Corridoio"
@@ -427,7 +427,7 @@
                 },
                 {
                   "question": "Come hai fatto a finire in questa situazione? Puoi aiutarmi in qualche modo?",
-                  "answer": "In realtà, non sono sempre stata una bambola. C'era un tempo in cui ero una giovane donna, ma un giorno una strega mi ha trasformato in una bambola e mi ha portato qui. All'inizio ho cercato un modo per fuggire, ma ogni volta la strega me lo impediva."
+                  "answer": "In realta', non sono sempre stata una bambola. C'era un tempo in cui ero una giovane donna, ma un giorno una strega mi ha trasformato in una bambola e mi ha portato qui. All'inizio ho cercato un modo per fuggire, ma ogni volta la strega me lo impediva."
                 },
                 {
                   "question":"Cosa fai ogni giorno nella casa della strega?",
@@ -435,8 +435,14 @@
                 },
                 {
                   "question":"Conosci un modo per battere la strega?",
-                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. MALEDETTO, sei riuscito a liberarti! Presto, il destino ci mettera' di fronte l'uno all'altro. Sara' una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perché i miei poteri NON HANNO LIMITI!"
+                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. MALEDETTO, sei riuscito a liberarti! Presto, il destino ci mettera' di fronte l'uno all'altro. Sara' una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perche' i miei poteri NON HANNO LIMITI!"
                 }
+              ],
+              "phrases": [
+                "Buongiorno bambole!", "Mi serve una zampa di rospo per aiutare la strega con i suoi incantesimi!", "Chissà quanto ci mettera la strega per uscire dalla sua stanza.", "Strega: preparati intruso, tra poco ti sconfiggero'."
+              ],
+              "rooms": [
+                "Cucina", "Salotto", "Corridoio"
               ]
             },
             {
@@ -456,16 +462,22 @@
                 },
                 {
                   "question": "Conosci una modo per battere la strega?",
-                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfigge lei e la sua potentissima magia."
+                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfiggere lei e la sua potentissima magia."
                 },
                 {
                   "question":"Cosa mi consigli di fare?",
                   "answer":"Scappa appena puoi, se la strega scoprisse che sei fuggito dallo scantinato andrebbe su tutte le furie! E questa volta non farebbe l'errore di lasciarti incatenato, ti trasformerebbe subito in una bambola."
                 },
                 {
-                  "question":"C'è qualcosa che posso fare per rompere l'incantesimo?",
-                  "answer":"L'unico modo per farci tornare normali è uccidere la strega. Buona fortuna!"
+                  "question":"C'e' qualcosa che posso fare per rompere l'incantesimo?",
+                  "answer":"L'unico modo per farci tornare normali e' uccidere la strega. Buona fortuna!"
                 }
+              ],
+              "phrases": [
+                "Voglio un nuovo foglio per disegnare!", "Voglio disegnare un coltello magico.", "Voglio disegnare un bel ritratto da regalare alla strega."
+              ],
+              "rooms": [
+                "Cucina", "Salotto", "Corridoio"
               ]
             }
           ]
