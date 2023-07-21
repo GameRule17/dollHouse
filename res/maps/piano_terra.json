@@ -3,7 +3,7 @@
     "gamerooms": [
       {
         "name": "Salotto",
-        "description": "L'ambiente e' caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalita' calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza e' arredata con mobili antichi e un caminetto, che aggiungono un tocco di eleganza.\nNoti inoltre un pianoforte e una sedia a dondolo.",
+        "description": "L'ambiente e' caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalita' calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza e' arredata con mobili antichi che aggiungono un tocco di eleganza.",
         "adjacentRooms": ["Corridoio"],
         "objects": [
           {
@@ -190,7 +190,7 @@
       },
       {
         "name": "Cucina",
-        "description": "E' un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magico' al cibo. Sei sicuro di voler accettare l'invito a cena?\nGuardando meglio, puoi notare: un tagliere su cui e' poggiato un manico di coltello, un fornello, una bottiglia di whisky, un lavabo.\nNell'angolo a sinistra si erge un grande armadio ripieno di cibo ormai andato in malora.",
+        "description": "E' un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magico' al cibo. Sei sicuro di voler accettare l'invito a cena?",
         "adjacentRooms": ["Corridoio"],
         "objects": [
           {
@@ -465,7 +465,6 @@
                 {
                   "question":"C'è qualcosa che posso fare per rompere l'incantesimo?",
                   "answer":"L'unico modo per farci tornare normali è uccidere la strega. Buona fortuna!"
-
                 }
               ]
             }
@@ -473,7 +472,7 @@
       },
       {
         "name": "Corridoio",
-        "description": "Un labirinto di oscurita' e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.\nGuardando meglio, puoi notare: un attaccapanni, un tris di quadri raffiguranti la strega e delle scale in fondo al corridoio bloccate da un cancello.",
+        "description": "Un labirinto di oscurita' e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.",
         "adjacentRooms": ["Salotto","Cucina"],
         "objects": [
           {
