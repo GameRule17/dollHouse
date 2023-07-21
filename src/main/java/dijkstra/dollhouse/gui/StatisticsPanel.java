@@ -32,8 +32,6 @@ public class StatisticsPanel extends JPanel implements ActionListener {
    * Public Constructor.
    */
   public StatisticsPanel() {
-    DataBaseLoader.initializeDbConnection();
-    DataBaseLoader.createTable();
     initComponents();
   }
 
