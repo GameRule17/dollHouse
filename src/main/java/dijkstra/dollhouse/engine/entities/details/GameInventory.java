@@ -16,6 +16,10 @@ public class GameInventory implements Serializable {
     inventory = new ArrayList<>();
   }
 
+  public List<GameEntity> getObjects() {
+    return inventory;
+  }
+
   /**
    * Finds a GameObject with the name specified by "name" argument.
    * If this GameObject does not exist, returns null

@@ -34,15 +34,7 @@ public class StatisticsPanel extends JPanel implements ActionListener {
    * Public Constructor.
    */
   public StatisticsPanel() {
-    try {
-      DataBaseLoader.initializeDbConnection();
-      DataBaseLoader.createTable();
-      initComponents();
-    } catch (SQLException e) {
-      JOptionPane.showMessageDialog(this, e,
-                                    "Connessione al database fallita!", JOptionPane.ERROR_MESSAGE);
-      GameWindow.getInstance().updatePanel(new MenuPanel());
-    }
+    initComponents();
   }
 
   private void initComponents() {

@@ -28,13 +28,12 @@ public class MusicPlayer {
 
     // Aggiungi un gestore di eventi per rilasciare le risorse del media player dopo la riproduzione
     mediaPlayer.setOnEndOfMedia(() -> {
-      mediaPlayer.stop();
-      mediaPlayer.dispose();
-      System.out.println("Riproduzione terminata.");
+      playMusic(filePath);
+      setVolume(0.03);
     });
 
     mediaPlayer.play();
-    System.out.println("Riproduzione iniziata.");
+    // System.out.println("Riproduzione iniziata.");
   }
 
   /**
@@ -44,7 +43,7 @@ public class MusicPlayer {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
       mediaPlayer.dispose();
-      System.out.println("Riproduzione interrotta.");
+      // System.out.println("Riproduzione interrotta.");
     }
   }
 
@@ -56,7 +55,7 @@ public class MusicPlayer {
   public void setVolume(double volume) {
     if (mediaPlayer != null) {
       mediaPlayer.setVolume(volume);
-      System.out.println("Volume impostato a: " + (volume * 100) + "%");
+      // System.out.println("Volume impostato a: " + (volume * 100) + "%");
     }
   }
 }

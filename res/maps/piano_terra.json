@@ -413,6 +413,7 @@
             {
               "name": "Ann",
               "aliases": ["bambola Ann","Ann"],
+              "behavior": "dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase",
               "actions": [
                 {
                   "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],
@@ -448,6 +449,7 @@
             {
               "name": "Mery",
               "aliases": ["bambola Mery","Mery"],
+              "behavior": "dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase",
               "actions": [
                 {
                   "aliases": ["parla","parlare","discuti","discutere","interagisci","interagire"],

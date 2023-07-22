@@ -6,14 +6,18 @@ import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GamePlayer;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
+import dijkstra.dollhouse.engine.entities.details.GameInventory;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * L'ActionListener avrà un gamehandler.
@@ -28,6 +32,11 @@ public final class GameHandler {
   private static GameAction currentAction = null;
   private static ParsedInput parsedInput = null;
   private static GameParser parser;
+  private static boolean isEnded = false;
+
+  public static void endGame() throws InterruptedException {
+    isEnded = true;
+  }
 
   public static void resetGame() {
     game = null;
@@ -61,8 +70,15 @@ public final class GameHandler {
    */
   public static void newGame() throws Exception {
     if (game == null) {
+      isEnded = false;
       game = new Game(initUrl, null);
       deleteDir(new File("./res/savings"));
+      File file = new File("./res/initialOutput.txt");
+      Scanner scanner = new Scanner(file);
+      while (scanner.hasNextLine()) {
+        GUIHandler.print(scanner.nextLine() + "\n");
+      }
+      scanner.close();
     } else {
       throw new Exception("The game has already started.");
     }
@@ -86,6 +102,16 @@ public final class GameHandler {
 
   /**
    * .
+   */
+  public static void updateInventoryGui() {
+    List<GameEntity> inventory = game.getPlayer().getGameInventory().getObjects();
+    for (GameEntity gameEntity : inventory) {
+      GUIHandler.addInventory(gameEntity.getName());
+    }
+  }
+
+  /**
+   * .
    *
    * @param command .
    * @return .
@@ -99,6 +125,15 @@ public final class GameHandler {
     GamePlayer player = game.getPlayer();
     String output = "Questa azione non può essere effettuata!";
     Exception exception;
+
+    if (isEnded) {
+      GUIHandler.popUpMessage("Complimenti! Hai finito Dollhouse!\n"
+          + "Per vedere le tue statistiche di gioco torna al menu principale"
+          + " e clicca sulla voce \"Statistiche\".");
+      GUIHandler.returnMenu();
+      GameHandler.resetGame();
+      return null;
+    }
 
     player.getGameStatistics().incrementsNumberOfExecutedActions();
 
@@ -153,6 +188,7 @@ public final class GameHandler {
     ObjectInputStream input = null;
 
     if (game == null) {
+      isEnded = false;
       try {
         file = new FileInputStream(new File(savedGameUrl));
         input = new ObjectInputStream(file);

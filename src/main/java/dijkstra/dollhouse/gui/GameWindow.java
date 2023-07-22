@@ -1,10 +1,12 @@
 package dijkstra.dollhouse.gui;
 
+import dijkstra.dollhouse.DataBaseLoader;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.MusicPlayer;
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.sql.SQLException;
 import javax.swing.GroupLayout;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -17,18 +19,21 @@ import javax.swing.WindowConstants;
 public class GameWindow extends JFrame implements WindowListener {
 
   private static final GameWindow instance = new GameWindow();
-  private MusicPlayer musicPlayer;
 
   /**
    * Creates new form GUI.
    */
   private GameWindow() {
-    String filePath = "./res/songs/menuStart.mp3";
-    initComponents();
-    musicPlayer = new MusicPlayer();
-    musicPlayer.playMusic(filePath);
-    musicPlayer.setVolume(0.03);
-    setContentPane(new MenuPanel());
+    try {
+      initComponents();
+      setContentPane(new MenuPanel());
+      DataBaseLoader.initializeDbConnection();
+      DataBaseLoader.createTable();
+    } catch (SQLException e) {
+      JOptionPane.showMessageDialog(this, e,
+                                    "Connessione al database fallita!", JOptionPane.ERROR_MESSAGE);
+      GameWindow.getInstance().updatePanel(new MenuPanel());
+    }
   }
 
   public static GameWindow getInstance() {
