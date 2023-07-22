@@ -30,7 +30,7 @@
           },
           {
             "name": "Gomitolo",
-            "aliases": ["gomitolo di lana", "gomitolo"],
+            "aliases": ["gomitolo di lana","gomitolo lana","gomitolo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -195,14 +195,14 @@
         "objects": [
           {
             "name": "Tavolo",
-            "aliases": ["tavolo"],
+            "aliases": ["tavolo","tavolo di legno","tavolo in legno"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
                 "output":"Attorno al tavolo, sedute in silenzio, ci sono tre bambole dall'aspetto inquietante.\nLe loro espressioni di porcellana sembrano custodire segreti oscuri e gli occhi di vetro sembrano scrutare ogni movimento."
               },
               {
-                "aliases":["usa","usare","utilizza","sedersi"],
+                "aliases":["usa","usare","utilizza","sedersi","siediti","seduto"],
                 "output":"Sarebbe piacevole sedersi al tavolo, ma tutti i posti sono gia' occupati."
               },
               {
@@ -345,7 +345,7 @@
           },
           {
             "name": "Armadio",
-            "aliases": ["armadio","armadio di cibo","armadio con cibo","dispensa"],
+            "aliases": ["armadio","armadio di cibo","armadio con cibo","dispensa","cibo"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],

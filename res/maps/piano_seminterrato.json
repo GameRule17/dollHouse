@@ -45,7 +45,7 @@
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"La maschera indossata si e' ormai fusa con il viso, impedendo qualsiasi tentativo di rimozione.\nE' come se fosse stata forgiata appositamente per proteggere colui che la porta dai pericoli magici che lo circondano, diventando una parte indivisibile del suo volto."
+              "output":"La maschera sembra non voler essere lasciata. E' come se fosse stata costruita per essere indossata, non per essere lasciata a terra come un oggetto qualsiasi."
             }
           ]
         },
@@ -73,7 +73,7 @@
         },
         {
           "name": "Botola",
-          "aliases": ["Botola","botola segreta","botola per piano terra"],
+          "aliases": ["botola","botola segreta","botola per piano terra","botola per il piano terra","botola per piano superiore","botola per il piano superiore"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -95,7 +95,7 @@
         },
         {
           "name": "Calderone",
-          "aliases": ["calderone"],
+          "aliases": ["calderone","calderone magico"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -117,7 +117,7 @@
         },
         {
           "name": "Tavolo",
-          "aliases": ["tavolo","tavolo nello scantinato","tavolo dello scantinato","tavolo di legno","tavolo in legno","gran tavolo in legno","gran tavolo di legno"],
+          "aliases": ["tavolo","tavolo nello scantinato","tavolo dello scantinato","tavolo di legno","tavolo in legno"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
@@ -143,7 +143,7 @@
         },
         {
           "name": "Libro Incantato",
-          "aliases": ["libro","libro magico","libro incantato"],
+          "aliases": ["libro","libro magico","libro incantato","libro degli incantesimi"],
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
