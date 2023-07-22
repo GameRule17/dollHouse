@@ -1,8 +1,6 @@
 package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.gui.socket.JChatClient;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -12,7 +10,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
-
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -118,8 +115,10 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
                         .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE,
                             227, Short.MAX_VALUE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                            .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addGroup(gamePanelLayout
+                          .createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                            .addGroup(gamePanelLayout
+                              .createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(inputCommandField, GroupLayout.PREFERRED_SIZE,
                                     33, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(openGlobalChatButton, GroupLayout.PREFERRED_SIZE,
@@ -183,9 +182,10 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         try {
           GlobalChatPanel panel = new GlobalChatPanel();
           GameWindow.getInstance().updatePanel(panel);
+          GameHandler.getGame().getMap().stopAllBehavioralNpcs();
         } catch (IOException e) {
           JOptionPane.showMessageDialog(this, "Non è stata avviata la connessione con il server!",
-            "Errore di connessione", JOptionPane.ERROR_MESSAGE);
+              "Errore di connessione", JOptionPane.ERROR_MESSAGE);
         }
         break;
       default:

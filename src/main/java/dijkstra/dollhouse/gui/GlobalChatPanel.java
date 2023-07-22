@@ -1,23 +1,22 @@
 package dijkstra.dollhouse.gui;
 
+import dijkstra.dollhouse.GameHandler;
+import dijkstra.dollhouse.gui.socket.JChatClient;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
-
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.SwingConstants;
-
-import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.gui.socket.JChatClient;
 
 /**
  * Class for GlobalChatPanel.
@@ -27,17 +26,21 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
   private JLabel globalChatTitleLabel;
   private JTextField inputGlobalChatField;
   private JScrollPane scrollPane;
-  public static JTextArea outputGlobalChatArea;
   private JButton returnGame;
   private JButton sendGlobalChatButton;
+  public static JTextArea outputGlobalChatArea;
 
-  private String message;
-  private String messageCompleted;
   private static String username = GameHandler.getGame().getPlayer().getName();
-
   private static JChatClient client;
-  private static boolean isClientConnected;
-  private static Thread rcvThread;
+
+  static {
+    outputGlobalChatArea = new JTextArea();
+    outputGlobalChatArea.setEditable(false);
+    outputGlobalChatArea.setBackground(new java.awt.Color(88, 91, 93));
+    outputGlobalChatArea.setColumns(20);
+    outputGlobalChatArea.setRows(5);
+    outputGlobalChatArea.setPreferredSize(null);
+  }
 
   public GlobalChatPanel() throws IOException {
     initComponents();
@@ -47,7 +50,6 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
   private void initComponents() {
 
     scrollPane = new JScrollPane();
-    outputGlobalChatArea = new JTextArea();
     globalChatTitleLabel = new JLabel();
     inputGlobalChatField = new JTextField();
     sendGlobalChatButton = new JButton();
@@ -59,11 +61,6 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
     this.setBackground(new java.awt.Color(45, 47, 48));
     this.setPreferredSize(new java.awt.Dimension(730, 515));
 
-    outputGlobalChatArea.setEditable(false);
-    outputGlobalChatArea.setBackground(new java.awt.Color(88, 91, 93));
-    outputGlobalChatArea.setColumns(20);
-    outputGlobalChatArea.setRows(5);
-    outputGlobalChatArea.setPreferredSize(null);
     scrollPane.setViewportView(outputGlobalChatArea);
 
     globalChatTitleLabel.setBackground(new java.awt.Color(255, 255, 255));
@@ -92,12 +89,14 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
             .addGroup(globalChatPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(globalChatPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, globalChatPanelLayout.createSequentialGroup()
+                    .addGroup(GroupLayout.Alignment.TRAILING,
+                              globalChatPanelLayout.createSequentialGroup()
                         .addComponent(returnGame)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(scrollPane)
                     .addGroup(globalChatPanelLayout.createSequentialGroup()
-                        .addComponent(inputGlobalChatField, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                        .addComponent(inputGlobalChatField, GroupLayout.DEFAULT_SIZE,
+                                      259, Short.MAX_VALUE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sendGlobalChatButton, GroupLayout.PREFERRED_SIZE,
                             111, GroupLayout.PREFERRED_SIZE))
@@ -108,7 +107,8 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
         globalChatPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(globalChatPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(returnGame, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                .addComponent(returnGame, GroupLayout.PREFERRED_SIZE,
+                              23, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(globalChatTitleLabel, GroupLayout.PREFERRED_SIZE,
                     47, GroupLayout.PREFERRED_SIZE)
@@ -122,20 +122,6 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
                     .addComponent(sendGlobalChatButton, GroupLayout.PREFERRED_SIZE,
                         35, GroupLayout.PREFERRED_SIZE))
                 .addContainerGap()));
-  }
-
-  public void sendMessage() {
-    message = inputGlobalChatField.getText();
-    if (message != null && message.trim().length() > 0) {
-      try {
-        // Il client invia il messaggio al Server e ripulisce il campo txtMessage
-        messageCompleted = username + ": " + message;
-        client.sendMessage(messageCompleted);
-        inputGlobalChatField.setText("");
-      } catch (IOException ex) {
-        ex.printStackTrace();
-      }
-    }
   }
 
   @Override
@@ -165,7 +151,6 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
         break;
       case "return":
         GameWindow.getInstance().updatePanel(new GamePanel());
-        // Faccio ripartire i movimenti degli npc
         GameHandler.getGame().getMap().runAllBehavioralNpcs();
         break;
       default:
@@ -173,46 +158,39 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
     }
   }
 
-  public class ParallelClient implements Runnable {
-    @Override
-    public void run() {
-      String strReceived;
-      while (isClientConnected) {
+  private void sendMessage() {
+    String message = inputGlobalChatField.getText();
+    if (message != null && message.trim().length() > 0) {
+      try {
+        client.sendMessage(username + ": " + message);
+        inputGlobalChatField.setText("");
+      } catch (IOException ex) {
+        // ex.printStackTrace();
         try {
-          strReceived = client.receiveMessage();
-          GlobalChatPanel.outputGlobalChatArea.append(strReceived + "\n");
-        } catch (IOException exc) {
-          exc.printStackTrace();
+          client.close();
+          JOptionPane.showMessageDialog(this, "Il server non è più in esecuzione!",
+                                        "Errore", JOptionPane.ERROR_MESSAGE);
+          client = null;
+          GameWindow.getInstance().updatePanel(new GamePanel());
+        } catch (IOException e) {
+          JOptionPane.showMessageDialog(this, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
         }
+        // esci dalla chat globale
       }
     }
   }
 
-  private void startReceiveThread() {
-    ParallelClient toRun = new ParallelClient();
-    rcvThread = new Thread(toRun);
-    rcvThread.start();
-  }
+
 
   private void joinToChat() throws IOException {
     if (client == null) {
       client = new JChatClient();
       try {
-        // Il client instaura una connessione con il Server (JChatServer)
         client.start();
-        isClientConnected = true;
-
-        GameHandler.getGame().getMap().stopAllBehavioralNpcs();
-        // GameWindow.getInstance().updatePanel(new GlobalChatPanel());
-        startReceiveThread();
       } catch (IOException exc) {
         client = null;
         throw exc;
       }
-    } else {
-      GameHandler.getGame().getMap().stopAllBehavioralNpcs();
-      // GameWindow.getInstance().updatePanel(new GlobalChatPanel());
-      // startReceiveThread();
     }
   }
 }

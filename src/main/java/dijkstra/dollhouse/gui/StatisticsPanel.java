@@ -7,9 +7,11 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle;
@@ -32,7 +34,15 @@ public class StatisticsPanel extends JPanel implements ActionListener {
    * Public Constructor.
    */
   public StatisticsPanel() {
-    initComponents();
+    try {
+      DataBaseLoader.initializeDbConnection();
+      DataBaseLoader.createTable();
+      initComponents();
+    } catch (SQLException e) {
+      JOptionPane.showMessageDialog(this, e,
+                                    "Connessione al database fallita!", JOptionPane.ERROR_MESSAGE);
+      GameWindow.getInstance().updatePanel(new MenuPanel());
+    }
   }
 
   private void initComponents() {
@@ -44,8 +54,14 @@ public class StatisticsPanel extends JPanel implements ActionListener {
     statisticsLabel = new JLabel();
     scrollPane = new JScrollPane();
     userData = new JLabel();
-    userData.setText(TablePrefixSuffix.tablePrefix + DataBaseLoader.printUserData("")
-                    + TablePrefixSuffix.tableSuffix);
+    try {
+      userData.setText(TablePrefixSuffix.tablePrefix + DataBaseLoader.printUserData("")
+                      + TablePrefixSuffix.tableSuffix);
+    } catch (SQLException e) {
+      JOptionPane.showMessageDialog(this, e,
+                                    "Non è possibile accedere ai dati!", JOptionPane.ERROR_MESSAGE);
+      GameWindow.getInstance().updatePanel(new MenuPanel());
+    }
 
     //Make scrollPane background transparent
     scrollPane.getViewport().setOpaque(false);
@@ -140,14 +156,26 @@ public class StatisticsPanel extends JPanel implements ActionListener {
     String action = e.getActionCommand();
     switch (action) {
       case "points":
-        userData.setText(TablePrefixSuffix.tablePrefix
-                        + DataBaseLoader.printUserData("points")
-                        + TablePrefixSuffix.tableSuffix);
+        try {
+          userData.setText(TablePrefixSuffix.tablePrefix
+                          + DataBaseLoader.printUserData("points")
+                          + TablePrefixSuffix.tableSuffix);
+        } catch (SQLException e1) {
+          JOptionPane.showMessageDialog(this, e,
+                                    "Non è possibile accedere ai dati!", JOptionPane.ERROR_MESSAGE);
+          GameWindow.getInstance().updatePanel(new MenuPanel());
+        }
         break;
       case "time":
-        userData.setText(TablePrefixSuffix.tablePrefix
-                        + DataBaseLoader.printUserData("time")
-                        + TablePrefixSuffix.tableSuffix);
+        try {
+          userData.setText(TablePrefixSuffix.tablePrefix
+                          + DataBaseLoader.printUserData("time")
+                          + TablePrefixSuffix.tableSuffix);
+        } catch (SQLException e1) {
+          JOptionPane.showMessageDialog(this, e,
+                                    "Non è possibile accedere ai dati!", JOptionPane.ERROR_MESSAGE);
+          GameWindow.getInstance().updatePanel(new MenuPanel());
+        }
         break;
       case "return":
         GameWindow.getInstance().updatePanel(new MenuPanel());

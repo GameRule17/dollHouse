@@ -1,6 +1,5 @@
 package dijkstra.dollhouse.gui;
 
-import dijkstra.dollhouse.DataBaseLoader;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.MusicPlayer;
 import java.awt.Dimension;
@@ -18,7 +17,7 @@ import javax.swing.WindowConstants;
 public class GameWindow extends JFrame implements WindowListener {
 
   private static final GameWindow instance = new GameWindow();
-  MusicPlayer musicPlayer;
+  private MusicPlayer musicPlayer;
 
   /**
    * Creates new form GUI.
@@ -30,9 +29,6 @@ public class GameWindow extends JFrame implements WindowListener {
     musicPlayer.playMusic(filePath);
     musicPlayer.setVolume(0.03);
     setContentPane(new MenuPanel());
-
-    DataBaseLoader.initializeDbConnection();
-    DataBaseLoader.createTable();
   }
 
   public static GameWindow getInstance() {
@@ -77,23 +73,18 @@ public class GameWindow extends JFrame implements WindowListener {
     GameWindow.getInstance().repaint();
   }
 
-  public static void main(String[] args) {
-    GameWindow.getInstance().setVisible(true);
-  }
-
   @Override
   public void windowOpened(WindowEvent e) {}
 
   @Override
   public void windowClosing(WindowEvent e) {
     try {
-      GameHandler.getGame().getMap().stopAllBehavioralNpcs();
-      GameHandler.saveGame();
-    } catch (Exception e1) {
       if (GameHandler.getGame() != null) {
-        JOptionPane.showMessageDialog(this, e1.getMessage(),
-                                "Salvataggio fallito!", JOptionPane.ERROR_MESSAGE);
+        GameHandler.onClose();
       }
+    } catch (Exception e1) {
+      JOptionPane.showMessageDialog(this, e1.getMessage(),
+                              "Salvataggio fallito!", JOptionPane.ERROR_MESSAGE);
     }
   }
 
@@ -111,4 +102,8 @@ public class GameWindow extends JFrame implements WindowListener {
 
   @Override
   public void windowDeactivated(WindowEvent e) {}
+
+  public static void main(String[] args) {
+    GameWindow.getInstance().setVisible(true);
+  }
 }

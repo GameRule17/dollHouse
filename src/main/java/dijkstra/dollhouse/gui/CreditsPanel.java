@@ -2,8 +2,6 @@ package dijkstra.dollhouse.gui;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -32,11 +30,6 @@ public class CreditsPanel extends JPanel {
 
     returnMenuFromCredits.setText("Indietro");
     returnMenuFromCredits.setEnabled(true);
-    // returnMenuFromCredits.addActionListener(new ActionListener() {
-    //     public void actionPerformed(ActionEvent evt) {
-    //         GameWindow.getInstance().updatePanel(new MenuPanel());
-    //     }
-    // });
     returnMenuFromCredits.addActionListener((ActionEvent event) ->
                                             GameWindow.getInstance().updatePanel(new MenuPanel()));
 

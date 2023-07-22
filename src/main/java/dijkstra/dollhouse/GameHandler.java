@@ -33,17 +33,15 @@ public final class GameHandler {
     game = null;
   }
 
-  public static void initParser() throws FileNotFoundException {
+  public static void onOpen() throws FileNotFoundException {
     parser = new GameParser();
-  }
-  
-  public static void init() throws FileNotFoundException {
     game.getPlayer().getGameStatistics().getTimer().startTimer();
-    // run threads
   }
 
-  public static void onClose() {
-    GameHandler.getGame().getPlayer().getGameStatistics().getTimer().updateGameTime();
+  public static void onClose() throws Exception {
+    game.getMap().stopAllBehavioralNpcs();
+    game.getPlayer().getGameStatistics().getTimer().updateGameTime();
+    saveGame();
   }
 
   private static void deleteDir(final File file) {

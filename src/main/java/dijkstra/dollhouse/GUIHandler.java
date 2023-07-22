@@ -1,7 +1,6 @@
 package dijkstra.dollhouse;
 
 import javax.swing.JOptionPane;
-
 import dijkstra.dollhouse.gui.GamePanel;
 import dijkstra.dollhouse.gui.GameWindow;
 import dijkstra.dollhouse.gui.MenuPanel;
@@ -24,7 +23,8 @@ public class GUIHandler {
   }
 
   public static void popUpMessage(final String msg) {
-    JOptionPane.showMessageDialog(GameWindow.getInstance(), msg, "Fine gioco", JOptionPane.PLAIN_MESSAGE);
+    JOptionPane.showMessageDialog(GameWindow.getInstance(), msg,
+                                  "Fine gioco", JOptionPane.PLAIN_MESSAGE);
   }
 
   public static void returnMenu() {

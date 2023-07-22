@@ -41,7 +41,25 @@ public class GameTimer implements Serializable {
     long seconds = getElapsedTimeInSeconds();
     long hour = (long) ((seconds / SECONDS_TO_MINUTES) / SECONDS_TO_MINUTES);
     long minutes = (long) ((seconds / SECONDS_TO_MINUTES) % SECONDS_TO_MINUTES);
+    String hh;
+    String mm;
+    String ss;
     seconds %= SECONDS_TO_MINUTES;
-    return Long.toString(hour) + ":" + Long.toString(minutes) + ":" + Long.toString(seconds);
+    if (hour < 10) {
+      hh = "0" + Long.toString(hour);
+    } else {
+      hh = Long.toString(hour);
+    }
+    if (minutes < 10) {
+      mm = "0" + Long.toString(minutes);
+    } else {
+      mm = Long.toString(minutes);
+    }
+    if (seconds < 10) {
+      ss = "0" + Long.toString(seconds);
+    } else {
+      ss = Long.toString(seconds);
+    }
+    return hh + ":" + mm + ":" + ss;
   }
 }

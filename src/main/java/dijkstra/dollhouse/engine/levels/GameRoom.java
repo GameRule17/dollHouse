@@ -159,11 +159,12 @@ public class GameRoom implements Serializable {
 
   @Override
   public String toString() {
-    StringBuilder s = new StringBuilder("Puoi vedere "
-                                       + entities.size() + " entità, ossia: \n\n");
-    entities.stream().forEach(entity -> s.append(entity.toString() + "\n"));
-    npcs.stream().forEach(npc -> s.append(npc.toString() + "\n"));
-    return s.toString();
+    // StringBuilder s = new StringBuilder("Puoi vedere "
+    //                                    + entities.size() + " entità, ossia: \n\n");
+    // entities.stream().forEach(entity -> s.append(entity.toString() + "\n"));
+    // npcs.stream().forEach(npc -> s.append(npc.toString() + "\n"));
+    // return s.toString();
+    return name;
   }
 
 }

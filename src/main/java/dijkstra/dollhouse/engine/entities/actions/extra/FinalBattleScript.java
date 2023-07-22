@@ -1,5 +1,6 @@
 package dijkstra.dollhouse.engine.entities.actions.extra;
 
+import dijkstra.dollhouse.DataBaseLoader;
 import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.engine.entities.GamePlayer;
@@ -20,6 +21,7 @@ public class FinalBattleScript extends GameAction implements GameScript {
   @Override
   public String execute() {
     String output = null;
+
     try {
       GamePlayer player = GameHandler.getGame().getPlayer();
       if (player.getGameInventory().findGameObject("coltello") != null) {
@@ -28,8 +30,10 @@ public class FinalBattleScript extends GameAction implements GameScript {
         output = "Non conviene andare senza coltello!";
       }
       GameHandler.saveGame();
-      // carica statistiche
-      Thread.sleep((long) 10e3);
+      DataBaseLoader.updateStatistics(player.getName(),
+                                      player.getGameStatistics().getPoints(),
+                                      java.sql.Time.valueOf(player.getGameStatistics().getTimer().getGameTime()));
+      // Thread.sleep((long) 10e3);
       GUIHandler.popUpMessage("Complimenti! Hai finito Dollhouse!\n"
                               + "Per vedere le tue statistiche di gioco torna al menu principale"
                               + " e clicca sulla voce \"Statistiche\".");

@@ -115,9 +115,8 @@ public class MenuPanel extends JPanel implements ActionListener {
         break;
       case "load game":
         try {
-          GameHandler.initParser();
           GameHandler.loadGame();
-          GameHandler.init();
+          GameHandler.onOpen();
           GameWindow.getInstance().updatePanel(new GamePanel());
         } catch (Exception e) {
           JOptionPane.showMessageDialog(this, e.getMessage(),

@@ -111,23 +111,27 @@ public class PickNamePanel extends JPanel implements ActionListener, KeyListener
   private void startGame() {
     String username = insertNameField.getText();
     wrongNicknameLabel.setText("");
-    if (username != null
-        && username.length() > 0
-        && !username.equals("Inserisci il tuo nickname")
-        && !username.contains(" ")
-        && !DataBaseLoader.usernameAlreadyUsed(username)) {
-      GameWindow.getInstance().updatePanel(new GamePanel());
-      try {
-        GameHandler.initParser();
-        GameHandler.newGame();
-        GameHandler.getGame().getPlayer().setName(username);
-        GameHandler.init();
-      } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, e.getMessage());
-        // e.printStackTrace();
+    try {
+      if (username != null
+          && username.length() > 0
+          && !username.equals("Inserisci il tuo nickname")
+          && !username.contains(" ")
+          && !DataBaseLoader.usernameAlreadyUsed(username)) {
+        GameWindow.getInstance().updatePanel(new GamePanel());
+        try {
+          GameHandler.newGame();
+          GameHandler.getGame().getPlayer().setName(username);
+          GameHandler.onOpen();
+        } catch (Exception e) {
+          JOptionPane.showMessageDialog(this, e.getMessage(), "ERRORE",
+                                        JOptionPane.ERROR_MESSAGE);
+        }
+      } else {
+        wrongNicknameLabel.setText("Username non valido o già usato!");
       }
-    } else {
-      wrongNicknameLabel.setText("Username non valido o già usato!");
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(this, e.getMessage(), "Non è possibile accedere ai dati!",
+                                        JOptionPane.ERROR_MESSAGE);
     }
   }
 

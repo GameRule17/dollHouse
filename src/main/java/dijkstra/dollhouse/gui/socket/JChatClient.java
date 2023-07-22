@@ -1,36 +1,65 @@
 package dijkstra.dollhouse.gui.socket;
 
-import java.net.*;
-import java.io.*;
+import dijkstra.dollhouse.gui.GlobalChatPanel;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
 
-public class JChatClient {
-    private DataOutputStream os;
-    private BufferedReader is;
-    private Socket socket;
-    
-    public void start() throws IOException {
-        //Connessione della Socket con il Server
-        socket = new Socket("0.0.0.0", 7777);
-        
-        //Stream di byte da passare al Socket
-        os = new DataOutputStream(socket.getOutputStream());
-        is = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+/**
+ * .
+ */
+public class JChatClient implements Runnable {
+  private static final String ipAddress = "127.0.0.1";
+  private static final int port = 7777;
+  private DataOutputStream output;
+  private BufferedReader input;
+  private Socket socket;
+  private Thread receivingThread;
+
+  /**
+   * .
+   *
+   * @throws IOException .
+   */
+  public void start() throws IOException {
+    socket = new Socket(ipAddress, port);
+    output = new DataOutputStream(socket.getOutputStream());
+    input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+    receivingThread = new Thread(this);
+    receivingThread.start();
+  }
+
+  public void sendMessage(String strMessage) throws IOException {
+    output.writeBytes(strMessage + '\n');
+  }
+
+  /**
+   * .
+   *
+   * @throws IOException .
+   */
+  public void close() throws IOException {
+    System.out.println("Chiusura client");
+    output.close();
+    input.close();
+    socket.close();
+  }
+
+  public void stop() {
+    receivingThread.interrupt();
+    receivingThread = null;
+  }
+
+  @Override
+  public void run() {
+    while (receivingThread != null) {
+      try {
+        GlobalChatPanel.outputGlobalChatArea.append(input.readLine() + "\n");
+      } catch (IOException exc) {
+        stop();
+      }
     }
-    
-    public void sendMessage(String strMessage)throws IOException {
-        os.writeBytes(strMessage + '\n');
-    }
-    
-    
-    public String receiveMessage() throws IOException {
-        String strReceived = is.readLine();
-        return strReceived;
-    }
-    
-    public void close() throws IOException {
-        System.out.println("Chiusura client");
-        os.close();
-        is.close();
-        socket.close();
-    }
+  }
 }
