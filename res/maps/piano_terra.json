@@ -16,7 +16,7 @@
               },
               {
                 "aliases":["siediti","sedersi","seduto"],
-                "output":"Non appena ti siedi sulla sedia, cadi immediatamente in un sonno profondo, come se essa avesse il potere di indurre un sonno istantaneo e irresistibile.\n(ti svegli dopo 5 secondi) Ti risveglia da un sonno che sembra essere durato 5 secondi e 50 anni contemporaneamente, confuso e disorientato dalla sensazione di aver vissuto un'intera epoca in un breve istante."
+                "output":"Non appena ti siedi sulla sedia, cadi immediatamente in un sonno profondo, come se essa avesse il potere di indurre un sonno istantaneo e irresistibile.\n(ti svegli dopo 5 secondi) Ti risvegli da un sonno che sembra essere durato 5 secondi e 50 anni contemporaneamente, confuso e disorientato dalla sensazione di aver vissuto un'intera epoca in un breve istante."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -34,7 +34,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio."
+                "output":"Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio. Potrebbe risultare utile in seguito.."
               },
               {
                 "aliases":["lancia","lanciare","getta","gettare","butta","buttare"],
@@ -146,7 +146,7 @@
               },
               {
                 "aliases":["usa","usare","utilizza","utilizzare","agita","agitare"],
-                "output":"Dopo aver preso il ramoscello, lo agiti speranzoso, come se stessi facendo un'esibizione magica da 'Il mago incapacè, ma alla fine rimani deluso nel vedere che il solo effetto magico ottenuto era far tremare qualche foglia spaventata."
+                "output":"Dopo aver preso il ramoscello, lo agiti speranzoso, come se stessi facendo un'esibizione magica da 'Il mago incapace', ma alla fine rimani deluso nel vedere che il solo effetto magico ottenuto era far tremare qualche foglia spaventata."
               },
               {
                 "aliases":["accendi","accendere"],
@@ -199,19 +199,19 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Attorno al tavolo, sedute in silenzio, ci sono tre bambole dall'aspetto inquietante.\nLe loro espressioni di porcellana sembrano custodire segreti oscuri e gli occhi di vetro sembrano scrutare ogni movimento."
+                "output":"Si tratta di un tavolo in legno massiccio fortemente usurato con evidenti segni di utilizzo."
               },
               {
                 "aliases":["usa","usare","utilizza","sedersi","siediti","seduto"],
-                "output":"Sarebbe piacevole sedersi al tavolo, ma tutti i posti sono già occupati."
+                "output":"Sarebbe piacevole sedersi al tavolo, ma non è questo il momento. Hai una missione da portare a termine!"
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
-                "output":"Meglio non toccare il tavolo, la bambole portrebbero farti a pezzi"
+                "output":"Il tavolo è così spesso che non riusciresti a romperlo neanche con un'ascia da guerra."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Meglio non toccare il tavolo, le bambole potrebbero prendersela con te"
+                "output":"Meglio non toccare il tavolo, le bambole potrebbero prendersela con te."
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
@@ -225,7 +225,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il tagliere è fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche.\nLa tua attenzione è attirata dal manico di un coltello senza lama, piantato nel tagliere come se fosse un piccolo trofeo.\nÈ come se il/la padrone/a avesse un senso dell'umorismo strano e un pò tagliente, lasciando che il manico di coltello svolga un ruolo puramente decorativo nella cucina.\nForse è una forma di deterrente per i visitatori troppo curiosi o una strana scelta di design che solo pochi potrebbero comprendere appieno."
+                "output":"Il tagliere è fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche.\nLa tua attenzione è attirata dal manico di un coltello senza lama piantato nel tagliere. Potrebbe davvero risultare utile in futuro.."
               },
               {
                 "aliases":["usa","usare","utilizza"],
@@ -273,7 +273,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il fornello sembra essere un pezzo di arredamento 'vintagè dall'aspetto un pò trasandato.\nLe sue superfici arrugginite conferiscono un tocco di charme rustico, ma potrebbe essere meglio tenerlo come elemento decorativo anzichè cucinare su di esso."
+                "output":"Il fornello sembra essere un pezzo di arredamento vintage dall'aspetto un pò trasandato.\nLe sue superfici arrugginite conferiscono un tocco di charme rustico, ma potrebbe essere meglio tenerlo come elemento decorativo anzichè cucinare su di esso."
               },
               {
                 "aliases":["accendi","accendere"],
@@ -423,7 +423,7 @@
               ],
               "dialogues": [
                 {
-                  "question": "Bambola, come posso uscire da questa casa?",
+                  "question": "Hey tu! Come posso uscire da questa casa?",
                   "answer": "Sono qui da così tanto tempo che ho dimenticato come fare per uscire."
                 },
                 {
@@ -436,7 +436,7 @@
                 },
                 {
                   "question":"Conosci un modo per battere la strega?",
-                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. MALEDETTO, sei riuscito a liberarti! Presto, il destino ci metterà di fronte l'uno all'altro. Sarà una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perchè i miei poteri NON HANNO LIMITI!"
+                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. Sembra sia possessata dalla strega!\nMALEDETTO, sei riuscito a liberarti! Presto, il destino ci metterà di fronte l'uno all'altro. Sarà una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perchè i miei poteri NON HANNO LIMITI!"
                 }
               ],
               "phrases": [
@@ -464,7 +464,7 @@
                 },
                 {
                   "question": "Conosci una modo per battere la strega?",
-                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfiggere lei e la sua potentissima magia."
+                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfiggere lei e la sua potentissima magia. Anche se una volta ho sentito parlare di un coltello magico.."
                 },
                 {
                   "question":"Cosa mi consigli di fare?",
@@ -476,7 +476,7 @@
                 }
               ],
               "phrases": [
-                "Voglio un nuovo foglio per disegnare!", "Voglio disegnare un coltello magico.", "Voglio disegnare un bel ritratto da regalare alla strega."
+                "Voglio un nuovo foglio per disegnare!", "Voglio disegnare un coltello magico.", "Voglio disegnare un bel ritratto da regalare alla strega, magari mi libererà..."
               ],
               "rooms": [
                 "Cucina", "Salotto", "Corridoio"
@@ -495,7 +495,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"L'attaccapanni sembra essere un'ombra di abiti appesi, emanando un'aura tetro e malinconica."
+                "output":"L'attaccapanni sembra essere un'ombra di abiti appesi, emanando un'aura tetra e malinconica."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -513,7 +513,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Nel primo quadreo la strega è raffigurata in tutta la sua maestosità, con un'espressione maliziosa e uno sguardo penetrante.\nLa sua figura si staglia contro un cielo tempestoso, mentre tiene in mano un calderone ribollente. È un'immagine che trasmette un senso di potere oscuro e mistero.\nNel secondo quadro la strega è circondata da una foresta così fitta che nemmeno il suo gatto nero riesce a trovarla.\nCon un libro in mano e uno sguardo da 'non disturbare, sto incantandò, sembra che stia cercando disperatamente di ricordare la formula giusta per far funzionare la sua scopa volante.\nForse dovrebbe prendere un pò di lezioni da Mary Poppins! Nell'ultimo quadro la strega è ritratta mentre vola su una scopa sopra un paesaggio montuoso.\nIl suo cappello"
+                "output":"Nel primo quadreo la strega è raffigurata in tutta la sua maestosità, con un'espressione maliziosa e uno sguardo penetrante.\nLa sua figura si staglia contro un cielo tempestoso, mentre tiene in mano un calderone ribollente. È un'immagine che trasmette un senso di potere oscuro e mistero.\nNel secondo quadro la strega è circondata da una foresta così fitta che nemmeno il suo gatto nero riesce a trovarla.\nCon un libro in mano e uno sguardo da 'non disturbare, sto incantandò, sembra che stia cercando disperatamente di ricordare la formula giusta per far funzionare la sua scopa volante.\nForse dovrebbe prendere un pò di lezioni da Mary Poppins! Nell'ultimo quadro la strega è ritratta mentre vola su una scopa sopra un paesaggio montuoso."
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],

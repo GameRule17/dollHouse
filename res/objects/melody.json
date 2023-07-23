@@ -4,7 +4,7 @@
   "actions": [
     {
       "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-      "output":"Melodia figa"
+      "output":"Cerchi di riprodurre le note della melodia a voce e ne riconosci le potenzialità. Andrebbe suonata ad uno strumento musicale.."
     }
   ]
 }
