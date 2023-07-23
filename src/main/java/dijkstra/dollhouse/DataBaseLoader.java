@@ -138,6 +138,7 @@ public final class DataBaseLoader {
     if (rs.next()) {
       result = true;
     }
+    rs.close();
     stmt.close();
     return result;
   }

@@ -4,7 +4,7 @@
     {
       "name": "Bagno",
       "adjacentRooms": ["Corridoio"],
-      "description": "Fai molta attenzione perche' un bagno cosi' decadente difficilmente lo rivedrai nella tua vita! Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro.",
+      "description": "Fai molta attenzione perchè un bagno così decadente difficilmente lo rivedrai nella tua vita! Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro.",
       "objects": [
         {
           "name": "Secchio",
@@ -16,7 +16,7 @@
             },
             {
               "aliases":["riempi","riempire"],
-              "output":"Pur cercando di riempire il secchio dal rubinetto della vasca, sembra che l'acqua scorra inesorabilmente da qualche via di fuga segreta. E' come se il secchio avesse acquisito il potere di evitare qualsiasi tentativo di riempimento, lasciandoti con un senso di frustrazione idraulica."
+              "output":"Pur cercando di riempire il secchio dal rubinetto della vasca, sembra che l'acqua scorra inesorabilmente da qualche via di fuga segreta. È come se il secchio avesse acquisito il potere di evitare qualsiasi tentativo di riempimento, lasciandoti con un senso di frustrazione idraulica."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -25,7 +25,7 @@
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto e' rimosso dall'inventario",
+              "output":"L'oggetto è rimosso dall'inventario",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
@@ -40,19 +40,19 @@
             },
             {
               "aliases":["accendi","accendere","riaccendi","riaccendere"],
-              "output":"La caldaia, ormai cosi' vecchia e arrugginita, si rifiuta categoricamente di essere riportata in vita."
+              "output":"La caldaia, ormai così vecchia e arrugginita, si rifiuta categoricamente di essere riportata in vita."
             },
             {
               "aliases":["spegni","spegnere"],
-              "output":"La caldaia e' gia' spenta."
+              "output":"La caldaia è già spenta."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
-              "output":"La caldaia e' fissata alla parete e non puo' essere rimossa."
+              "output":"La caldaia è fissata alla parete e non può essere rimossa."
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto non e' contenuto nell'inventario."
+              "output":"L'oggetto non è contenuto nell'inventario."
             }
           ]
         },
@@ -62,23 +62,23 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Una vasca da bagno colma di acqua fredda e stagnante. Le sue dimensioni imponenti e il bordo logoro danno l'impressione di un luogo che e' stato testimone di eventi sconvolgenti."
+              "output":"Una vasca da bagno colma di acqua fredda e stagnante. Le sue dimensioni imponenti e il bordo logoro danno l'impressione di un luogo che è stato testimone di eventi sconvolgenti."
             },
             {
               "aliases":["entra","entrare","immergiti","immergere"],
-              "output":"Pur immergendosi nella vasca, non si ha la sensazione di fare un vero bagno, come se l'acqua avesse un'affinita' speciale solo con la padrona di casa. Deluso decidi di uscire dalla vasca. Mai una gioia."
+              "output":"Pur immergendosi nella vasca, non si ha la sensazione di fare un vero bagno, come se l'acqua avesse un'affinità speciale solo con la padrona di casa. Deluso decidi di uscire dalla vasca. Mai una gioia."
             },
             {
               "aliases":["riempi","riempire"],
-              "output":"La vasca e' talmente piena che sembra sfidare ogni legge di fisica. Il rubinetto appare come bloccato, come se temesse di innescare una catastrofe acquatica e preferisse rimanere saggio e asciutto."
+              "output":"La vasca è talmente piena che sembra sfidare ogni legge di fisica. Il rubinetto appare come bloccato, come se temesse di innescare una catastrofe acquatica e preferisse rimanere saggio e asciutto."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
-              "output":"In quale mondo una vasca da bagno puo' essere raccolta?"
+              "output":"In quale mondo una vasca da bagno può essere raccolta?"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto non e' contenuto nell'inventario."
+              "output":"L'oggetto non è contenuto nell'inventario."
             }
           ]
         },
@@ -88,7 +88,7 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Uno specchio scheggiato con una grande scheggia rimovibile che puo' essere sollevata per ripristinare l'integrita' della superficie riflettente."
+              "output":"Uno specchio scheggiato con una grande scheggia rimovibile che può essere sollevata per ripristinare l'integrità della superficie riflettente."
             },
             {
               "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -100,7 +100,7 @@
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto non e' contenuto nell'inventario."
+              "output":"L'oggetto non è contenuto nell'inventario."
             }
           ]
         },
@@ -110,7 +110,7 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Una scheggia di vetro cosi' affilata che potrebbe essere usata come arma."
+              "output":"Una scheggia di vetro così affilata che potrebbe essere usata come arma."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -119,7 +119,7 @@
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto e' rimosso dall'inventario.",
+              "output":"L'oggetto è rimosso dall'inventario.",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
@@ -140,7 +140,7 @@
     {
       "name": "Corridoio",
       "adjacentRooms": ["Bagno"],
-      "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra e' chiusa a chiave, mentre quella a sinistra e' aperta, sembra essere un bagno.",
+      "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra è chiusa a chiave, mentre quella a sinistra è aperta, sembra essere un bagno.",
       "objects": [
         {
           "name": "Bagno",
@@ -159,7 +159,7 @@
           "actions": [
             {
               "aliases": ["vai", "apri","aprire","entra","entrare"],
-              "output": "Tu: (Dopo aver aperto la porta della camera della strega) Buongiorno, signora strega. Sono qui per sfidare il suo potere e liberare tutte le persone che ha trasformato in bambole!\nStrega: (Sorride maliziosamente) Oh, salve maledetto intruso. Ho trovato una soluzione al potere di quella maschera e finalmente ora posso sconfiggerti. Diventerai solo una piccola marionetta nelle mie mani!\nTu: (Prendi fiato e ti prepari mentalmente) Non sottovalutarmi, strega! Ho trovato un'arma segreta che puo' sconfiggerti.\nStrega: (Alza un sopracciglio con curiosita') E che arma sarebbe mai? Non credo che nulla possa contrastare la mia potente magia.\nTu: (Estrai il pugnale) Questo e' il pugnale magico che ho creato utilizzando un incantesimo tratto da uno dei tuoi libri. e' potente abbastanza da annullare la tua magia e liberare tutte le persone che hai imprigionato.\nStrega: (Sorride ironicamente) Che sia magico o meno, non avra' alcun effetto su di me. Sarai solo un'altra vittima del mio potere.\nTu: (Ti lanci all'attacco con determinazione, sferrando colpi rapidi contro il nemico) Ti stai sbagliando strega! Questo pugnale e' il simbolo della mia volonta' di liberare tutti le persone a cui hai fatto del male.\nStrega: (Impressionata, cerca di respingere i tuoi attacchi) Non puoi sconfiggere il potere della magia con un semplice oggetto! La mia dominazione non puo' essere fermata!\nTu: (Pronunci le parole magiche incise sul pugnale) Magia contro magia, incantesimi annullati. Le tue bambole torneranno ad essere persone, le tue arti saranno sconfitte!\nStrega: (Inizia a indebolirsi, mentre gli incantesimi si sciolgono intorno a lei) No, no! Non puo' essere! Come hai fatto?\nTu: (Continui ad attaccare con ferocia) Ho imparato che la vera forza non risiede solo nei poteri, ma nella volonta' di proteggere gli altri. E ora, strega, il tuo regno di terrore giunge al termine!\nStrega: (Crolla a terra, esausta e sconfitta) Hai vinto, maledetto. Ma ricorda, la magia non puo' essere sconfitta per sempre. Ci incontreremo di nuovo e ti sconfiggero'!\nTu: (Con tono minaccioso) Ora va via, prima che ponga fine alla tua vita!\n(Nel frattempo, tutte le bambole si trasformano nuovamente in persone)\nAnne: (Ridendo) Sono tornata! Grazie, eroe, per averci salvato!\nMery: (Abbracciando il protagonista) Non sapro' mai come ringraziarti abbastanza!\nTu: (Sorridi soddisfatto) Non c'e' bisogno di ringraziarmi. Ho solo fatto cio' che era giusto. Ora possiamo tutti vivere in pace, senza la minaccia della strega.\n(E cosi', hai sconfitto la strega e hai restituito la normalita' alle persone che erano state trasformate in bambole. Con il loro aiuto, il mondo tornera' a splendere senza l'ombra del male.)",
+              "output": "Tu: (Dopo aver aperto la porta della camera della strega) Buongiorno, signora strega. Sono qui per sfidare il suo potere e liberare tutte le persone che ha trasformato in bambole!\nStrega: (Sorride maliziosamente) Oh, salve maledetto intruso. Ho trovato una soluzione al potere di quella maschera e finalmente ora posso sconfiggerti. Diventerai solo una piccola marionetta nelle mie mani!\nTu: (Prendi fiato e ti prepari mentalmente) Non sottovalutarmi, strega! Ho trovato un'arma segreta che può sconfiggerti.\nStrega: (Alza un sopracciglio con curiosità) E che arma sarebbe mai? Non credo che nulla possa contrastare la mia potente magia.\nTu: (Estrai il pugnale) Questo è il pugnale magico che ho creato utilizzando un incantesimo tratto da uno dei tuoi libri. è potente abbastanza da annullare la tua magia e liberare tutte le persone che hai imprigionato.\nStrega: (Sorride ironicamente) Che sia magico o meno, non avrà alcun effetto su di me. Sarai solo un'altra vittima del mio potere.\nTu: (Ti lanci all'attacco con determinazione, sferrando colpi rapidi contro il nemico) Ti stai sbagliando strega! Questo pugnale è il simbolo della mia volontà di liberare tutti le persone a cui hai fatto del male.\nStrega: (Impressionata, cerca di respingere i tuoi attacchi) Non puoi sconfiggere il potere della magia con un semplice oggetto! La mia dominazione non può essere fermata!\nTu: (Pronunci le parole magiche incise sul pugnale) Magia contro magia, incantesimi annullati. Le tue bambole torneranno ad essere persone, le tue arti saranno sconfitte!\nStrega: (Inizia a indebolirsi, mentre gli incantesimi si sciolgono intorno a lei) No, no! Non può essere! Come hai fatto?\nTu: (Continui ad attaccare con ferocia) Ho imparato che la vera forza non risiede solo nei poteri, ma nella volontà di proteggere gli altri. E ora, strega, il tuo regno di terrore giunge al termine!\nStrega: (Crolla a terra, esausta e sconfitta) Hai vinto, maledetto. Ma ricorda, la magia non può essere sconfitta per sempre. Ci incontreremo di nuovo e ti sconfiggerò!\nTu: (Con tono minaccioso) Ora va via, prima che ponga fine alla tua vita!\n(Nel frattempo, tutte le bambole si trasformano nuovamente in persone)\nAnne: (Ridendo) Sono tornata! Grazie, eroe, per averci salvato!\nMery: (Abbracciando il protagonista) Non saprò mai come ringraziarti abbastanza!\nTu: (Sorridi soddisfatto) Non c'è bisogno di ringraziarmi. Ho solo fatto ciò che era giusto. Ora possiamo tutti vivere in pace, senza la minaccia della strega.\n(E così, hai sconfitto la strega e hai restituito la normalità alle persone che erano state trasformate in bambole. Con il loro aiuto, il mondo tornerà a splendere senza l'ombra del male.)",
               "script": "dijkstra.dollhouse.engine.entities.actions.extra.FinalBattleScript"
             }
           ]

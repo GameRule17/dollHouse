@@ -3,7 +3,7 @@
   "gamerooms": [
     {
       "name": "Finto Scantinato",
-      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nNoti una strana figura umanoide che ti fissa.",
+      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta è coperto di polvere e tracce di umidità.\nNoti una strana figura umanoide che ti fissa.",
       "adjacentRooms": ["Scantinato"],
       "objects": [],
       "npcs": [
@@ -23,7 +23,7 @@
     },
     {
       "name": "Scantinato",
-      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.",
+      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta è coperto di polvere e tracce di umidità.",
       "objects": [
         {
           "name": "Maschera",
@@ -45,7 +45,7 @@
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"La maschera sembra non voler essere lasciata. E' come se fosse stata costruita per essere indossata, non per essere lasciata a terra come un oggetto qualsiasi."
+              "output":"La maschera sembra non voler essere lasciata. È come se fosse stata costruita per essere indossata, non per essere lasciata a terra come un oggetto qualsiasi."
             }
           ]
         },
@@ -67,7 +67,7 @@
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto non e' contenuto nell'inventario."
+              "output":"L'oggetto non è contenuto nell'inventario."
             }
           ]
         },
@@ -77,11 +77,11 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"La botola nel centro dello scantinato e' un'entrata vetusta e logora verso l'ignoto.\nRealizzata in legno consunto, offre un passaggio misterioso al piano superiore, suggerendo segreti sinistri e avventure inquietanti."
+              "output":"La botola nel centro dello scantinato è un'entrata vetusta e logora verso l'ignoto.\nRealizzata in legno consunto, offre un passaggio misterioso al piano superiore, suggerendo segreti sinistri e avventure inquietanti."
             },
             {
               "aliases":["apri","aprire","entra","entrare","usa","usare","utilizza"],
-              "output":"Guardiano: Ehi viandante, per salire al piano superiore ed essere sicuro che la strega non possa farti del male, c'e' ancora un oggetto che devi prendere."
+              "output":"Guardiano: Ehi viandante, per salire al piano superiore ed essere sicuro che la strega non possa farti del male, c'è ancora un oggetto che devi prendere."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -89,7 +89,7 @@
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto non e' contenuto nell'inventario."
+              "output":"L'oggetto non è contenuto nell'inventario."
             }
           ]
         },
@@ -99,11 +99,11 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Il calderone emana un'aria di mistero e potere oscuro. E' un imponente recipiente di ferro nero, con pareti robuste e segni di bruciature passate.\nResidui di fumo secco si insinuano tra le sue crepe, evocando immagini di incantesimi e pozioni magiche. Attorno al calderone, boccette vuote giacciono a terra, testimoni di antichi elisir e miscele misteriose."
+              "output":"Il calderone emana un'aria di mistero e potere oscuro. È un imponente recipiente di ferro nero, con pareti robuste e segni di bruciature passate.\nResidui di fumo secco si insinuano tra le sue crepe, evocando immagini di incantesimi e pozioni magiche. Attorno al calderone, boccette vuote giacciono a terra, testimoni di antichi elisir e miscele misteriose."
             },
             {
               "aliases":["usa","usare","utilizza"],
-              "output":"Ti accorgi che e' vuoto! Sembra che qualcuno abbia gia' fatto incantesimi di sparizione sulla pozione che conteneva!"
+              "output":"Ti accorgi che è vuoto! Sembra che qualcuno abbia già fatto incantesimi di sparizione sulla pozione che conteneva!"
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -111,7 +111,7 @@
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto non e' contenuto nell'inventario."
+              "output":"L'oggetto non è contenuto nell'inventario."
             }
           ]
         },
@@ -121,23 +121,23 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Antico mobile di legno intagliato, segnato dal passare del tempo.\nLa sua superficie e' cosi' ben coperta che potrebbe essere un concorrente al titolo di 'Miglior tavolo coperto di polvere del decennio'."
+              "output":"Antico mobile di legno intagliato, segnato dal passare del tempo.\nLa sua superficie è così ben coperta che potrebbe essere un concorrente al titolo di 'Miglior tavolo coperto di polvere del decenniò."
             },
             {
               "aliases":["muovi","muovere","sposta","spostare","spingi","spingere","trascina","trascinare"],
-              "output":"Il tavolo e' cosi' carico di oggetti che anche un leggero spostamento potrebbe scatenare una catastrofe a effetto domino! Meglio lasciarlo stare!"
+              "output":"Il tavolo è così carico di oggetti che anche un leggero spostamento potrebbe scatenare una catastrofe a effetto domino! Meglio lasciarlo stare!"
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
-              "output":"Il tavolo e' fissato a terra, non puo' essere spostato."
+              "output":"Il tavolo è fissato a terra, non può essere spostato."
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto non e' contenuto nell'inventario."
+              "output":"L'oggetto non è contenuto nell'inventario."
             },
             {
               "aliases":["siediti","sedersi","seduto"],
-              "output":"Purtroppo non c'e' una sedia..."
+              "output":"Purtroppo non c'è una sedia..."
             }
           ]
         },
@@ -155,12 +155,12 @@
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
-              "output":"Questo potrebbe essere utile in seguito, il libro e' inserito nell'inventario.",
+              "output":"Questo potrebbe essere utile in seguito, il libro è inserito nell'inventario.",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto e' rimosso dall'inventario.",
+              "output":"L'oggetto è rimosso dall'inventario.",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
@@ -171,7 +171,7 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Questa lanterna appare come un oggetto ormai dimenticato, coperto di polvere.\nI suoi vetri opachi nascondono una luce che non brilla piu'."
+              "output":"Questa lanterna appare come un oggetto ormai dimenticato, coperto di polvere.\nI suoi vetri opachi nascondono una luce che non brilla più."
             },
             {
               "aliases":["accendi","accendere","usa","usare","utilizza"],
@@ -179,16 +179,16 @@
             },
             {
               "aliases":["spegni","spegnere"],
-              "output":"La lanterna e' gia' spenta."
+              "output":"La lanterna è già spenta."
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
-              "output":"Anche se spenta, potrebbe tornare utile in seguito, la lanterna e' inserita nell'inventario.",
+              "output":"Anche se spenta, potrebbe tornare utile in seguito, la lanterna è inserita nell'inventario.",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto e' rimosso dall'inventario.",
+              "output":"L'oggetto è rimosso dall'inventario.",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
@@ -208,7 +208,7 @@
           "dialogues": [
             {
               "question": "Qual è il tuo vero nome",
-              "answer": "Il mio vero nome e' Albus"
+              "answer": "Il mio vero nome è Albus"
             },
             {
               "question": "Da quanti anni ti trovi qui?",

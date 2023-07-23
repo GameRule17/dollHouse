@@ -3,7 +3,7 @@
     "gamerooms": [
       {
         "name": "Salotto",
-        "description": "L'ambiente e' caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalita' calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza e' arredata con mobili antichi che aggiungono un tocco di eleganza.",
+        "description": "L'ambiente è caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalità calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza è arredata con mobili antichi che aggiungono un tocco di eleganza.",
         "adjacentRooms": ["Corridoio"],
         "objects": [
           {
@@ -12,7 +12,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nE' invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato li' forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilita' dello shampo a casa di Claudio Bisio."
+                "output":"Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nÈ invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato lì forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilità dello shampo a casa di Claudio Bisio."
               },
               {
                 "aliases":["siediti","sedersi","seduto"],
@@ -24,7 +24,7 @@
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }
             ]
           },
@@ -38,17 +38,17 @@
               },
               {
                 "aliases":["lancia","lanciare","getta","gettare","butta","buttare"],
-                "output":"Lanci il gomitolo con convinzione, sperando che un gatto lo inseguira'. Tuttavia, il gomitolo rotola sul pavimento senza suscitare alcun interesse felino.",
+                "output":"Lanci il gomitolo con convinzione, sperando che un gatto lo inseguirà. Tuttavia, il gomitolo rotola sul pavimento senza suscitare alcun interesse felino.",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Hai preso il gomitolo di lana, ora e' nel tuo inventario.",
+                "output":"Hai preso il gomitolo di lana, ora è nel tuo inventario.",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto e' rimosso dall'inventario",
+                "output":"L'oggetto è rimosso dall'inventario",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
@@ -68,7 +68,7 @@
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
-                "output":"Non puoi distruggere uno strumento musicale cosi' bello. Non sei un mostro."
+                "output":"Non puoi distruggere uno strumento musicale così bello. Non sei un mostro."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -76,7 +76,7 @@
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }              
             ]
           },
@@ -86,15 +86,15 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il buio della notte inonda la stanza attraverso una grande finestra.\nOsservi l'esterno e noti che la luna e' piena e luminosa."
+                "output":"Il buio della notte inonda la stanza attraverso una grande finestra.\nOsservi l'esterno e noti che la luna è piena e luminosa."
               },
               {
                 "aliases":["apri","aprire"],
-                "output":"La finestra che stai cercando di aprire e' irremovibilmente bloccata da un incantesimo, sfidando ogni tentativo di aprirla, come se fosse sigillata da una magia inespugnabile."
+                "output":"La finestra che stai cercando di aprire è irremovibilmente bloccata da un incantesimo, sfidando ogni tentativo di aprirla, come se fosse sigillata da una magia inespugnabile."
               },
               {
                 "aliases":["chiudi","chiudere"],
-                "output":"La finestra e' gia' chiusa."
+                "output":"La finestra è già chiusa."
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -106,7 +106,7 @@
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }
             ]
           },
@@ -116,11 +116,11 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il caminetto e' un punto focale del salotto, emanando un calore accogliente.\nPotresti sentirne il crepitio dei tronchi bruciati e ammirare le fiamme danzanti.\nA sinistra del caminetto, puoi notare un ramoscello secco posizionato con cura."
+                "output":"Il caminetto è un punto focale del salotto, emanando un calore accogliente.\nPotresti sentirne il crepitio dei tronchi bruciati e ammirare le fiamme danzanti.\nA sinistra del caminetto, puoi notare un ramoscello secco posizionato con cura."
               },
               {
                 "aliases":["accendi","accendere"],
-                "output":"Il fuoco del caminetto e' gia' acceso."
+                "output":"Il fuoco del caminetto è già acceso."
               },
               {
                 "aliases":["spegni","spegnere","soffia","soffiare"],
@@ -128,11 +128,11 @@
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Come sarebbe fisicamente possibile portare con se' un caminetto?"
+                "output":"Come sarebbe fisicamente possibile portare con sè un caminetto?"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }
             ]
           },
@@ -146,7 +146,7 @@
               },
               {
                 "aliases":["usa","usare","utilizza","utilizzare","agita","agitare"],
-                "output":"Dopo aver preso il ramoscello, lo agiti speranzoso, come se stessi facendo un'esibizione magica da 'Il mago incapace', ma alla fine rimani deluso nel vedere che il solo effetto magico ottenuto era far tremare qualche foglia spaventata."
+                "output":"Dopo aver preso il ramoscello, lo agiti speranzoso, come se stessi facendo un'esibizione magica da 'Il mago incapacè, ma alla fine rimani deluso nel vedere che il solo effetto magico ottenuto era far tremare qualche foglia spaventata."
               },
               {
                 "aliases":["accendi","accendere"],
@@ -154,12 +154,12 @@
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Hai preso il ramoscello, ora e' nel tuo inventario.",
+                "output":"Hai preso il ramoscello, ora è nel tuo inventario.",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto e' rimosso dall'inventario",
+                "output":"L'oggetto è rimosso dall'inventario",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }              
             ]
@@ -190,7 +190,7 @@
       },
       {
         "name": "Cucina",
-        "description": "E' un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magico' al cibo. Sei sicuro di voler accettare l'invito a cena?",
+        "description": "È un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magicò al cibo. Sei sicuro di voler accettare l'invito a cena?",
         "adjacentRooms": ["Corridoio"],
         "objects": [
           {
@@ -203,7 +203,7 @@
               },
               {
                 "aliases":["usa","usare","utilizza","sedersi","siediti","seduto"],
-                "output":"Sarebbe piacevole sedersi al tavolo, ma tutti i posti sono gia' occupati."
+                "output":"Sarebbe piacevole sedersi al tavolo, ma tutti i posti sono già occupati."
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -215,7 +215,7 @@
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               } 
             ]
           },
@@ -225,20 +225,20 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il tagliere e' fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche.\nLa tua attenzione e' attirata dal manico di un coltello senza lama, piantato nel tagliere come se fosse un piccolo trofeo.\nE' come se il/la padrone/a avesse un senso dell'umorismo strano e un po' tagliente, lasciando che il manico di coltello svolga un ruolo puramente decorativo nella cucina.\nForse e' una forma di deterrente per i visitatori troppo curiosi o una strana scelta di design che solo pochi potrebbero comprendere appieno."
+                "output":"Il tagliere è fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche.\nLa tua attenzione è attirata dal manico di un coltello senza lama, piantato nel tagliere come se fosse un piccolo trofeo.\nÈ come se il/la padrone/a avesse un senso dell'umorismo strano e un pò tagliente, lasciando che il manico di coltello svolga un ruolo puramente decorativo nella cucina.\nForse è una forma di deterrente per i visitatori troppo curiosi o una strana scelta di design che solo pochi potrebbero comprendere appieno."
               },
               {
                 "aliases":["usa","usare","utilizza"],
-                "output":"Senza un coltello affilato, il tagliere non e' molto utile."
+                "output":"Senza un coltello affilato, il tagliere non è molto utile."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Hai preso il tagliere, ora e' nel tuo inventario.",
+                "output":"Hai preso il tagliere, ora è nel tuo inventario.",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto e' rimosso dall'inventario",
+                "output":"L'oggetto è rimosso dall'inventario",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
@@ -249,20 +249,20 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Cio' che resta di un vecchio coltello usato dal padrone di casa. La lama e' stata rimossa, lasciando solo il manico di legno."
+                "output":"Ciò che resta di un vecchio coltello usato dal padrone di casa. La lama è stata rimossa, lasciando solo il manico di legno."
               },
               {
                 "aliases":["usa","usare","utilizza"],
-                "output":"Dopo aver preso in mano il manico del coltello, ti senti quasi come il famoso chef Cannavacciuolo.\nTuttavia, senza una lama affilata, le tue abilita' culinarie si riducono a un semplice gesto teatrale, lasciando le pietanze tagliate in maniera piu' simile a un'opera d'arte astratta che a un piatto prelibato."
+                "output":"Dopo aver preso in mano il manico del coltello, ti senti quasi come il famoso chef Cannavacciuolo.\nTuttavia, senza una lama affilata, le tue abilità culinarie si riducono a un semplice gesto teatrale, lasciando le pietanze tagliate in maniera più simile a un'opera d'arte astratta che a un piatto prelibato."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Hai preso il manico del coltello, ora e' nel tuo inventario.",
+                "output":"Hai preso il manico del coltello, ora è nel tuo inventario.",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto e' rimosso dall'inventario",
+                "output":"L'oggetto è rimosso dall'inventario",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
@@ -273,7 +273,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il fornello sembra essere un pezzo di arredamento 'vintage' dall'aspetto un po' trasandato.\nLe sue superfici arrugginite conferiscono un tocco di charme rustico, ma potrebbe essere meglio tenerlo come elemento decorativo anziche' cucinare su di esso."
+                "output":"Il fornello sembra essere un pezzo di arredamento 'vintagè dall'aspetto un pò trasandato.\nLe sue superfici arrugginite conferiscono un tocco di charme rustico, ma potrebbe essere meglio tenerlo come elemento decorativo anzichè cucinare su di esso."
               },
               {
                 "aliases":["accendi","accendere"],
@@ -281,15 +281,15 @@
               },
               {
                 "aliases":["spegni","spegnere"],
-                "output":"Il fornello e' gia' spento"
+                "output":"Il fornello è già spento"
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Anche se con evidente difficolta', riusciresti a prendere il fornello, ma non sembra una buona idea."
+                "output":"Anche se con evidente difficoltà, riusciresti a prendere il fornello, ma non sembra una buona idea."
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }
             ]
           },
@@ -299,24 +299,24 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Questa bottiglia e' un'aggiunta sorprendente. Il suo aspetto elegante e invitante sembra fuori luogo tra pozioni e ingredienti magici.\nForse il padrone di casa apprezza un buon sorso di whisky per rilassarsi dopo una lunga giornata."
+                "output":"Questa bottiglia è un'aggiunta sorprendente. Il suo aspetto elegante e invitante sembra fuori luogo tra pozioni e ingredienti magici.\nForse il padrone di casa apprezza un buon sorso di whisky per rilassarsi dopo una lunga giornata."
               },
               {
                 "aliases":["bevi","bevuto","bevuta","bevete","bevuti","bevute"],
-                "output":"Pur cercando di bere dalla bottiglia di whisky, nonostante sembri piena fino all'orlo, ogni sorso si rivela una mera illusione.\nE' come se il suo contenuto si nascondesse, sfuggendo al palato come un mago che gioca con le papille gustative, lasciandoti con la frustrazione di un desiderio non soddisfatto e la bocca piu' secca del deserto del Sahara."
+                "output":"Pur cercando di bere dalla bottiglia di whisky, nonostante sembri piena fino all'orlo, ogni sorso si rivela una mera illusione.\nÈ come se il suo contenuto si nascondesse, sfuggendo al palato come un mago che gioca con le papille gustative, lasciandoti con la frustrazione di un desiderio non soddisfatto e la bocca più secca del deserto del Sahara."
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
-                "output":"Perché dovresti rompere un oggetto cosi' bello? Potrebbe servirti per qualcosa."
+                "output":"Perché dovresti rompere un oggetto così bello? Potrebbe servirti per qualcosa."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Hai preso la bottiglia di whisky, ora e' nel tuo inventario.",
+                "output":"Hai preso la bottiglia di whisky, ora è nel tuo inventario.",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto e' rimosso dall'inventario",
+                "output":"L'oggetto è rimosso dall'inventario",
                 "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
               }
             ]
@@ -327,7 +327,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il lavabo e' come un'oasi magica per lavare le mani, con un tocco di incantesimi che rende ogni lavaggio un'esperienza indimenticabile."
+                "output":"Il lavabo è come un'oasi magica per lavare le mani, con un tocco di incantesimi che rende ogni lavaggio un'esperienza indimenticabile."
               },
               {
                 "aliases":["usa","usare","utilizza","utilizzare","apri","aprire"],
@@ -335,11 +335,11 @@
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Non e' possibile prendere il lavabo, e' troppo pesante."
+                "output":"Non è possibile prendere il lavabo, è troppo pesante."
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }
             ]
           },
@@ -349,11 +349,11 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"L'armadio che ti si presenta davanti e' una dispensa incantata, ricolma di prelibatezze magiche.\nOgni porta che si apre rivela un'esplosione di sapori e profumi che incantano il palato. Appare come un tesoro gastronomico che sfida ogni norma culinaria. Le ante sono appena aperte."
+                "output":"L'armadio che ti si presenta davanti è una dispensa incantata, ricolma di prelibatezze magiche.\nOgni porta che si apre rivela un'esplosione di sapori e profumi che incantano il palato. Appare come un tesoro gastronomico che sfida ogni norma culinaria. Le ante sono appena aperte."
               },
               {
                 "aliases":["mangia","mangiare","assaggia","assaggiare"],
-                "output":"Riesci a prendere qualcosa dall'armadio. Dopo averlo assaggiato, il sapore si rivela un autentico insulto al palato. Il cibo li' dentro rivela avere un gusto cosi' orrendo che farebbe venire l'acquolina solo a un cestino dell'immondizia."
+                "output":"Riesci a prendere qualcosa dall'armadio. Dopo averlo assaggiato, il sapore si rivela un autentico insulto al palato. Il cibo lì dentro rivela avere un gusto così orrendo che farebbe venire l'acquolina solo a un cestino dell'immondizia."
               },
               {
                 "aliases":["apri","aprire"],
@@ -361,11 +361,11 @@
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Non riusciresti a spostare un armadio cosi' ricolmo di cibo neanche di un centimetro!"
+                "output":"Non riusciresti a spostare un armadio così ricolmo di cibo neanche di un centimetro!"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }
             ]
           },
@@ -396,15 +396,15 @@
               "dialogues": [
                 {
                   "question": "Chi sei?",
-                  "answer": "Ij so' ciruzzo 'umbriacone. Chella maledetta me ha trasformato a bambola assaij tempo fa."
+                  "answer": "Ij sò ciruzzo 'umbriacone. Chella maledetta me ha trasformato a bambola assaij tempo fa."
                 },
                 {
                   "question": "Come posso scappare da qui?",
-                  "answer": "Nun se pote. L'uneca manera è accidere chella maledetta ma s'è chiusa nt'a' sua stanza. Però ogni vota ca sale ncoppa, senghe na melodia ca però mo nun me ricorde. Forse na bottiglia e wisky putesse aiutarmi! A cambio e 'chess te putess da 'cchiu informazioni. Daje guaglione!"
+                  "answer": "Nun se pote. L'uneca manera è accidere chella maledetta ma s'è chiusa nt'à sua stanza. Però ogni vota ca sale ncoppa, senghe na melodia ca però mo nun me ricorde. Forse na bottiglia e wisky putesse aiutarmi! A cambio e 'chess te putess da 'cchiu informazioni. Daje guaglione!"
                 }
               ],
               "phrases": [
-                "Ue uagliu'", "Ogni bambola è bella a mamma soja.", "O' malamente", "Si 'o viento se ne porta 'a voce e 'o mare se ne porta 'a reta.", "M' serv' 'nu cuttèllo p' accidere chella maledetta."
+                "Ue uagliù", "Ogni bambola è bella a mamma soja.", "O' malamente", "Si 'o viento se ne porta 'a voce e 'o mare se ne porta 'a reta.", "M' serv' 'nu cuttèllo p' accidere chella maledetta."
               ],
               "rooms": [
                 "Cucina", "Salotto", "Corridoio"
@@ -428,7 +428,7 @@
                 },
                 {
                   "question": "Come hai fatto a finire in questa situazione? Puoi aiutarmi in qualche modo?",
-                  "answer": "In realta', non sono sempre stata una bambola. C'era un tempo in cui ero una giovane donna, ma un giorno una strega mi ha trasformato in una bambola e mi ha portato qui. All'inizio ho cercato un modo per fuggire, ma ogni volta la strega me lo impediva."
+                  "answer": "In realtà, non sono sempre stata una bambola. C'era un tempo in cui ero una giovane donna, ma un giorno una strega mi ha trasformato in una bambola e mi ha portato qui. All'inizio ho cercato un modo per fuggire, ma ogni volta la strega me lo impediva."
                 },
                 {
                   "question":"Cosa fai ogni giorno nella casa della strega?",
@@ -436,11 +436,11 @@
                 },
                 {
                   "question":"Conosci un modo per battere la strega?",
-                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. MALEDETTO, sei riuscito a liberarti! Presto, il destino ci mettera' di fronte l'uno all'altro. Sara' una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perche' i miei poteri NON HANNO LIMITI!"
+                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. MALEDETTO, sei riuscito a liberarti! Presto, il destino ci metterà di fronte l'uno all'altro. Sarà una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perchè i miei poteri NON HANNO LIMITI!"
                 }
               ],
               "phrases": [
-                "Buongiorno bambole!", "Mi serve una zampa di rospo per aiutare la strega con i suoi incantesimi!", "Chissà quanto ci mettera la strega per uscire dalla sua stanza.", "Strega: preparati intruso, tra poco ti sconfiggero'."
+                "Buongiorno bambole!", "Mi serve una zampa di rospo per aiutare la strega con i suoi incantesimi!", "Chissà quanto ci mettera la strega per uscire dalla sua stanza.", "Strega: preparati intruso, tra poco ti sconfiggerò."
               ],
               "rooms": [
                 "Cucina", "Salotto", "Corridoio"
@@ -460,7 +460,7 @@
               "dialogues": [
                 {
                   "question": "Cosa stai disegnando su quel foglio?",
-                  "answer": "Ho deciso di sperimentare con colori vivaci e forme astratte. Mi piace esplorare l'arte in ogni sua forma. Ogni tratto che faccio e' una piccola parte di me che prende vita sulle pagine di questo foglio."
+                  "answer": "Ho deciso di sperimentare con colori vivaci e forme astratte. Mi piace esplorare l'arte in ogni sua forma. Ogni tratto che faccio è una piccola parte di me che prende vita sulle pagine di questo foglio."
                 },
                 {
                   "question": "Conosci una modo per battere la strega?",
@@ -471,8 +471,8 @@
                   "answer":"Scappa appena puoi, se la strega scoprisse che sei fuggito dallo scantinato andrebbe su tutte le furie! E questa volta non farebbe l'errore di lasciarti incatenato, ti trasformerebbe subito in una bambola."
                 },
                 {
-                  "question":"C'e' qualcosa che posso fare per rompere l'incantesimo?",
-                  "answer":"L'unico modo per farci tornare normali e' uccidere la strega. Buona fortuna!"
+                  "question":"C'è qualcosa che posso fare per rompere l'incantesimo?",
+                  "answer":"L'unico modo per farci tornare normali è uccidere la strega. Buona fortuna!"
                 }
               ],
               "phrases": [
@@ -486,7 +486,7 @@
       },
       {
         "name": "Corridoio",
-        "description": "Un labirinto di oscurita' e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.",
+        "description": "Un labirinto di oscurità e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.",
         "adjacentRooms": ["Salotto","Cucina"],
         "objects": [
           {
@@ -503,7 +503,7 @@
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }
             ]
           },
@@ -513,7 +513,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Nel primo quadreo la strega e' raffigurata in tutta la sua maestosita', con un'espressione maliziosa e uno sguardo penetrante.\nLa sua figura si staglia contro un cielo tempestoso, mentre tiene in mano un calderone ribollente. E' un'immagine che trasmette un senso di potere oscuro e mistero.\nNel secondo quadro la strega e' circondata da una foresta cosi' fitta che nemmeno il suo gatto nero riesce a trovarla.\nCon un libro in mano e uno sguardo da 'non disturbare, sto incantando', sembra che stia cercando disperatamente di ricordare la formula giusta per far funzionare la sua scopa volante.\nForse dovrebbe prendere un po' di lezioni da Mary Poppins! Nell'ultimo quadro la strega e' ritratta mentre vola su una scopa sopra un paesaggio montuoso.\nIl suo cappello"
+                "output":"Nel primo quadreo la strega è raffigurata in tutta la sua maestosità, con un'espressione maliziosa e uno sguardo penetrante.\nLa sua figura si staglia contro un cielo tempestoso, mentre tiene in mano un calderone ribollente. È un'immagine che trasmette un senso di potere oscuro e mistero.\nNel secondo quadro la strega è circondata da una foresta così fitta che nemmeno il suo gatto nero riesce a trovarla.\nCon un libro in mano e uno sguardo da 'non disturbare, sto incantandò, sembra che stia cercando disperatamente di ricordare la formula giusta per far funzionare la sua scopa volante.\nForse dovrebbe prendere un pò di lezioni da Mary Poppins! Nell'ultimo quadro la strega è ritratta mentre vola su una scopa sopra un paesaggio montuoso.\nIl suo cappello"
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -529,7 +529,7 @@
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               }
             ]
           },
@@ -561,19 +561,19 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e la', testimone degli anni trascorsi, ma cio' non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di la'."
+                "output":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e là, testimone degli anni trascorsi, ma ciò non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di là."
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
-                "output":"Il cancello e' troppo solido per essere rotto con le tue mani."
+                "output":"Il cancello è troppo solido per essere rotto con le tue mani."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
-                "output":"Non e' possibile prendere il cancello"
+                "output":"Non è possibile prendere il cancello"
               },
               {
                 "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-                "output":"L'oggetto non e' contenuto nell'inventario"
+                "output":"L'oggetto non è contenuto nell'inventario"
               },
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare", "usa","usare","utilizza"],

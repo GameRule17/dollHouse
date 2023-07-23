@@ -4,7 +4,7 @@
     "actions": [
       {
         "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-        "output":"La botola nel centro dello scantinato e' un'entrata vetusta e logora verso l'ignoto.\nRealizzata in legno consunto, offre un passaggio misterioso al piano superiore, suggerendo segreti sinistri e avventure inquietanti."
+        "output":"La botola nel centro dello scantinato è un'entrata vetusta e logora verso l'ignoto.\nRealizzata in legno consunto, offre un passaggio misterioso al piano superiore, suggerendo segreti sinistri e avventure inquietanti."
       },
       {
         "aliases":["apri","aprire","entra","entrare","usa","usare","utilizza"],
@@ -17,7 +17,7 @@
       },
       {
         "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-        "output":"L'oggetto non e' contenuto nell'inventario."
+        "output":"L'oggetto non è contenuto nell'inventario."
       }
     ]
   }
