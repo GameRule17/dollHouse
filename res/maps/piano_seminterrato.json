@@ -13,7 +13,7 @@
           "actions": [
             {
               "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
-              "output": "Salve viandante, sei nella casa della strega Aradia, la strega che detiene il record di maggior numero di persone trasformate in bambole: 500! Finalmente dopo 3 giorni ti sei svegliato, preparati perché fra poco la strega verrà qui per trasformare anche te in una bambola. Smettila di dimenarti, la strega mi ha ordinato di non farti scappare ed è quello che farò ... a meno che ... non risponderai correttamente a queste due domande. Sai sono molti anni che la strega mi usa come suo servo e la mia pazienza è ormai giunta al limite. Sto cercando qualcuno che possa finalmente ucciderla. Avanti con le domande:",
+              "output": "Salve viandante, sei nella casa della strega Aradia, la strega che detiene il record di maggior numero di persone trasformate in bambole: 500! Finalmente dopo 3 giorni ti sei svegliato, preparati perché fra poco la strega verrà qui per trasformare anche te in una bambola. Smettila di dimenarti, la strega mi ha ordinato di non farti scappare ed è quello che farò ... a meno che ... non risponderai correttamente a queste due domande. Sai sono molti anni che la strega mi usa come suo servo e la mia pazienza è ormai giunta al limite. Sto cercando qualcuno che possa finalmente ucciderla.\nGuardiano: Avanti con le domande:\n",
               "script": "dijkstra.dollhouse.engine.entities.actions.extra.GuardianScript"
             }
           ],
@@ -31,16 +31,16 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Scolpita con maestria, presenta dettagli intricati che si intrecciano tra loro, evocando un senso di magia e incanto."
+              "output":"Scolpita con maestria, presenta dettagli intricati che si intrecciano tra loro, evocando un senso di magia e incanto.\nForse prenderla potrebbe tornare utile."
             },
             {
-              "aliases":["indossa","indossare","metti","mettere"],
-              "output":"Dopo aver indossato la maschera, si avverte una sensazione di forza crescente, pronti a fronteggiare qualsiasi nemico che si manifesti, sicuri di poterli sconfiggere senza esitazione.",
+              "aliases":["indossa","indossare","metti","mettere", "usa"],
+              "output":"Dopo aver indossato la maschera, si avverte una sensazione di forza crescente, pronti a fronteggiare qualsiasi nemico che si manifesti, sicuri di poterli sconfiggere senza esitazione.\nGuardiano: Con quella maschera potrai salire al piano superiore in totale sicurezza!\nGuardiano: La strega non potrà farti nulla finchè avrai la maschera indossata!\nGuardiano: Usa la botola per salira al piano superiore!",
               "script": "dijkstra.dollhouse.engine.entities.actions.extra.MaskScript"
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
-              "output":"Dopo aver preso la maschera, la tua mano ha cominciato a muoversi autonomamente, come se fosse controllata da una forza misteriosa.\nSenza poter resistere, la mano ha avvicinato la maschera al volto del protagonista, quasi imitando il gesto iconico di Jim Carrey in The Mask, invitandolo a indossarla con una simpatia irresistibile.",
+              "output":"Senza poter resistere, la mano ha avvicinato la maschera al volto del protagonista, quasi imitando il gesto iconico di Jim Carrey in The Mask, invitandolo a indossarla con una simpatia irresistibile.\nForse indossarla potrebbe tornare utile!",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
@@ -81,11 +81,11 @@
             },
             {
               "aliases":["apri","aprire","entra","entrare","usa","usare","utilizza"],
-              "output":"Guardiano: Ehi viandante, per salire al piano superiore ed essere sicuro che la strega non possa farti del male, c'è ancora un oggetto che devi prendere."
+              "output":"Guardiano: Ehi viandante, per salire al piano superiore ed essere sicuro che la strega non possa farti del male, indossa la maschera sul tavolo.\nGuardiano: Grazie a quella maschera la strega non potrà farti nulla!"
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
-              "output":"Ma come potrebbe mai essere possibile prendere una botola?!"
+              "output":"Ma come potresti mai prendere una botola?! Non siamo mica su Minecraft!"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
@@ -147,20 +147,20 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Posizionato al centro del tavolo ha un aspetto usurato, con pagine ingiallite e bordi consumati, testimoni del suo utilizzo intenso nel corso degli anni.\nForse bisognerebbe sfogliarlo..."
+              "output":"Posizionato al centro del tavolo ha un aspetto usurato, con pagine ingiallite e bordi consumati, testimoni del suo utilizzo intenso nel corso degli anni.\nForse prenderlo e sfogliarlo potrebbe tornare utile . . ."
             },
             {
-              "aliases":["apri","aprire","leggi","leggere","usa","usare","utilizza"],
-              "output":"Man mano che si sfoglia il libro, diventa evidente che i caratteri utilizzati per la scrittura sono del tutto incomprensibili, come se appartenessero a una lingua sconosciuta."
+              "aliases":["apri","aprire","leggi","leggere","usa","usare","utilizza", "sfoglia", "sfogliare"],
+              "output":"Leggendo le pagine del libro capisci che serve per poter incantare un arma. Forse usato in combinazione con altri oggetti potrebbe essere la chiave per sconfiggere la strega!"
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
-              "output":"Questo potrebbe essere utile in seguito, il libro è inserito nell'inventario.",
+              "output":"Forse sfogliarlo potrebbe tornare utile!\nIl libro è stato inserito nell'inventario.",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.PickItem"
             },
             {
               "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-              "output":"L'oggetto è rimosso dall'inventario.",
+              "output":"L'oggetto è stato rimosso dall'inventario.",
               "script": "dijkstra.dollhouse.engine.entities.actions.predefined.DropItem"
             }
           ]
@@ -208,11 +208,15 @@
           "dialogues": [
             {
               "question": "Qual è il tuo vero nome",
-              "answer": "Il mio vero nome è Albus"
+              "answer": "Il mio vero nome è Albus, sono qui da 127 anni . . ."
             },
             {
-              "question": "Da quanti anni ti trovi qui?",
-              "answer": "Da 127 anni..."
+              "question": "Come posso sconfiggere la strega?",
+              "answer": "Per poter sconfiggere la strega è necessario un coltello magico con una lama di vetro che possa constrastare la sua magia\ntuttavia un tale oggetto non è presente nella casa della strega.\nSul tavolo c'è il libro incantato della strega.\nForse potrebbe tornarti utile!\nPrima di usare la botola per salire al piano superiore prendi e indossa la maschera sul tavolo.\nCon quella maschera la strega non potrà farti del male!"
+            },
+            {
+              "question": "Ci sono altre entità come te che possono parlare?",
+              "answer": "Sì, oltre me ci sono altre tre bambole che hanno mantenuto la capacità di parlare.\nSi chiamano Ciro, Ann e Mery!\nForse parlare con loro potrebbe aiutarti a sapere di più su come sconfiggere la strega!"
             }
           ]
         }

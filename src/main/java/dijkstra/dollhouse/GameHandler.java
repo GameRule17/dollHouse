@@ -43,6 +43,7 @@ public final class GameHandler {
   public static void onOpen() throws FileNotFoundException {
     parser = new GameParser();
     game.getPlayer().getGameStatistics().getTimer().startTimer();
+    game.getMap().runAllBehavioralNpcs();
   }
 
   /**

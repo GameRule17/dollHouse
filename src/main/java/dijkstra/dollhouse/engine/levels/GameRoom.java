@@ -95,12 +95,12 @@ public class GameRoom implements Serializable {
    * @param name - the name of the GameBehavioralNpc to find.
    * @return - the GameBehavioralNpc to find or null instead.
    */
-  public GameEntity findBehavioralNpc(final String name) {
+  public synchronized GameEntity findBehavioralNpc(final String name) {
     Iterator<GameBehavioralNpc> iterator = npcs.iterator();
     GameBehavioralNpc npc;
     while (iterator.hasNext()) {
       npc = iterator.next();
-      if (npc != null && npc.isAliasOf(name)) {
+      if (npc.isAliasOf(name)) {
         return npc;
       }
     }
@@ -133,11 +133,11 @@ public class GameRoom implements Serializable {
     entities.remove(entity);
   }
 
-  public void addBehavioralNpc(final GameBehavioralNpc npc) {
+  public synchronized void addBehavioralNpc(final GameBehavioralNpc npc) {
     npcs.add(npc);
   }
 
-  public void removeBehavioralNpc(final GameBehavioralNpc npc) {
+  public synchronized void removeBehavioralNpc(final GameBehavioralNpc npc) {
     npcs.remove(npc);
   }
 

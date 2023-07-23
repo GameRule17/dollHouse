@@ -1,6 +1,6 @@
 #FileLock
-#Sun Jul 23 14:00:08 CEST 2023
-hostName=NATAN-PC.homenet.telecomitalia.it
-id=189829f01f70e1da307b3975a7441dbfc21a0bc80ee
+#Sun Jul 23 18:01:24 CEST 2023
+hostName=legion.wind3.hub
+id=189837be4227d0962115c8aa3351b7da8635c1aed74
 method=file
-server=192.168.1.8\:57098
+server=192.168.1.226\:62989

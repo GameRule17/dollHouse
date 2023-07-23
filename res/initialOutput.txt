@@ -17,3 +17,6 @@ Lo scricchiolio delle assi di legno del pavimento ti fanno intuire che qualcuno 
 Non riesci a ben definire la figura umanoide. Ai tuoi occhi appare sproporzionata con gli arti nettamente più lunghi
 rispetto al suo torso. Ne riesci a cogliere solo la sua silhouette decisamente fuori dal normale. Ad un tratto ti accorgi
 di un tanfo pestilenziale che permea l’intera stanza. Senti del borbottio provenire dalla figura umanoide.
+La figura umanoide sembra volerti parlare!
+
+Digita "help" per vedere i comandi possibili.

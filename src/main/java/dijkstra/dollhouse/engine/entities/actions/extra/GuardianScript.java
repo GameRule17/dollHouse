@@ -65,12 +65,15 @@ public class GuardianScript extends GameAction implements GameScript {
         index++;
         if (index >= size) {
           isRunning = false;
-          output = "Va bene mi hai convinto. Cerca di non morire"
-            + " e ricordati di liberarmi una volta uccisa la strega!";
+          output = "Guardiano: Va bene mi hai convinto. Cerca di non morire"
+            + " e ricordati di liberarmi una volta uccisa la strega!\n"
+            + "Guardiano: Torna a parlare con me quando vuoi!\n"
+            + "* Ora sei libero di muoverti ed interagire con le entità della stanza. *\n"
+            + "* Digita \"esamina\" per esaminare la stanza corrente. *";
           GameRoom room = GameHandler.getGame().getMap().getRoom("Scantinato");
           GameHandler.getGame().getMap().setCurrentRoom(room);
         } else {
-          output = questions[index];
+          output = "Guardiano: " + questions[index];
           for (String answer : answers[index]) {
             output += "\n" + answer;
           }
@@ -78,11 +81,11 @@ public class GuardianScript extends GameAction implements GameScript {
       } else {
         index = 0;
         isRunning = false;
-        output = "Mi hai rotto il ca<<o\n";
+        output = "Guardiano: Mi hai rotto il ca<<o\n";
       }
     } else {
       isRunning = true;
-      output = this.output + "\n" + questions[index];
+      output = "Guardiano: " + this.output + "\n" + questions[index];
       for (String answer : answers[index]) {
         output += "\n" + answer;
       }
