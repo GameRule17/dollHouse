@@ -4,19 +4,19 @@
     "actions": [
       {
         "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-        "output":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e la', testimone degli anni trascorsi, ma cio' non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di la'."
+        "output":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e là, testimone degli anni trascorsi, ma ciò non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di là."
       },
       {
         "aliases":["rompi","rompere","distruggi","distruggere"],
-        "output":"Il cancello e' troppo solido per essere rotto con le tue mani."
+        "output":"Il cancello è troppo solido per essere rotto con le tue mani."
       },
       {
         "aliases":["prendi","prendere","raccogli","raccogliere"],
-        "output":"Non e' possibile prendere il cancello"
+        "output":"Non è possibile prendere il cancello"
       },
       {
         "aliases":["rimuovi","rimuovere","lascia","lasciare"],
-        "output":"L'oggetto non e' contenuto nell'inventario"
+        "output":"L'oggetto non è contenuto nell'inventario"
       },
       {
         "aliases": ["vai", "apri","aprire","entra","entrare", "usa","usare","utilizza"],

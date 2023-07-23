@@ -177,14 +177,14 @@ public final class GameHandler {
 
     System.out.println(player.getGameStatistics().toString());
     System.out.println(room.getAdjacentRooms());
-    return "\n" + room.getName() + ":" + player.getName()
-            + "~$" + command + "\n" + output + "\n";
+    return "\n[" + room.getName() + "] " + player.getName()
+            + " > " + command + "\n" + output + "\n";
   }
 
   /**
    * Load a game run started yet.
    *
-   * @throws Exception - ciao
+   * @throws Exception .
    */
   public static void loadGame() throws Exception {
     FileInputStream file = null;
