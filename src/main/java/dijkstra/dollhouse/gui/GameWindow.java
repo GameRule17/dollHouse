@@ -106,8 +106,4 @@ public class GameWindow extends JFrame implements WindowListener {
 
   @Override
   public void windowDeactivated(WindowEvent e) {}
-
-  public static void main(String[] args) {
-    GameWindow.getInstance().setVisible(true);
-  }
 }

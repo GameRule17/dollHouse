@@ -6,7 +6,7 @@
             "script": "dijkstra.dollhouse.engine.entities.actions.predefined.CraftItem"
         },
         {
-            "aliases": ["esamina", "osserva", "osservati", "guarda"],
+            "aliases": ["esamina", "osserva", "osservati", "guarda", "guardati attorno"],
             "output": "",
             "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ExamineScript"
         }
