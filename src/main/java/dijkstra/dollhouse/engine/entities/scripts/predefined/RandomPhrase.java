@@ -11,9 +11,11 @@ import java.util.Random;
  */
 public class RandomPhrase implements GameScript, Serializable {
   private List<String> phrases;
+  private Random random;
   
   public RandomPhrase() {
     phrases = new ArrayList<>();
+    random = new Random();
   }
 
   public void addPhrase(final String phrase) {
@@ -26,9 +28,7 @@ public class RandomPhrase implements GameScript, Serializable {
 
   @Override
   public String execute() {
-    Random random = new Random();
-    int index = random.nextInt(0, phrases.size());
-    return phrases.get(index);
+    return phrases.get(random.nextInt(0, phrases.size()));
   }
 
   @Override

@@ -62,6 +62,7 @@ public final class DataBaseLoader {
     ResultSet rs = stmt.executeQuery();
     if (rs.next()) {
       if (rs.getInt("points") < points) {
+        stmt.close();
         stmt = conn.prepareStatement("UPDATE statistics SET points = ? WHERE username = ?");
         stmt.setInt(1, points);
         stmt.setString(2, username);
@@ -69,6 +70,7 @@ public final class DataBaseLoader {
         stmt.close();
       }
       if (rs.getTime("time").getTime() > time.getTime()) {
+        stmt.close();
         stmt = conn.prepareStatement("UPDATE statistics SET time = ? WHERE username = ?");
         stmt.setTime(1, time);
         stmt.setString(2, username);
@@ -76,6 +78,7 @@ public final class DataBaseLoader {
         stmt.close();
       }
     } else {
+      stmt.close();
       stmt = conn.prepareStatement("INSERT INTO statistics"
                                   + "(username, points, time) VALUES (?, ?, ?)");
       stmt.setString(1, username);
@@ -115,6 +118,7 @@ public final class DataBaseLoader {
           + "</td> <td>" + rs.getInt("points")
           + "</td><td>" + rs.getTime("time") + "</td> </tr>";
     }
+    rs.close();
     stmt.close();
     return result;
   }

@@ -117,11 +117,11 @@ public class PickNamePanel extends JPanel implements ActionListener, KeyListener
           && !username.equals("Inserisci il tuo nickname")
           && !username.contains(" ")
           && !DataBaseLoader.usernameAlreadyUsed(username)) {
-        GameWindow.getInstance().updatePanel(new GamePanel());
         try {
           GameHandler.newGame();
           GameHandler.getGame().getPlayer().setName(username);
           GameHandler.onOpen();
+          GameWindow.getInstance().updatePanel(new GamePanel());
         } catch (Exception e) {
           JOptionPane.showMessageDialog(this, e.getMessage(), "ERRORE",
                                         JOptionPane.ERROR_MESSAGE);

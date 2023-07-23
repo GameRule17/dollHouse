@@ -18,10 +18,17 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
   protected transient Thread thread;
   private GameScript script;
   protected List<String> rooms;
+  private Random random;
 
+  /**
+   * .
+   *
+   * @param name .
+   */
   public GameBehavioralNpc(String name) {
     super(name);
     rooms = new ArrayList<>();
+    random = new Random();
   }
 
   public void addRoom(final String room) {
@@ -56,7 +63,6 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
   }
 
   private String executeRandomBehavior() {
-    Random random = new Random();
     int index = random.nextInt(0, 2);
     String output = "";
 

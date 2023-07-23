@@ -100,7 +100,7 @@ public class GameRoom implements Serializable {
     GameBehavioralNpc npc;
     while (iterator.hasNext()) {
       npc = iterator.next();
-      if (npc.isAliasOf(name)) {
+      if (npc != null && npc.isAliasOf(name)) {
         return npc;
       }
     }

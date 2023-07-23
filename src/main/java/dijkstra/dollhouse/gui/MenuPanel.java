@@ -2,7 +2,6 @@ package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.MusicPlayer;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -25,14 +24,17 @@ public class MenuPanel extends JPanel implements ActionListener {
   private JButton newGameButton;
   private JButton openStatisticsButton;
   private JLabel titleMenu;
-  private MusicPlayer musicPlayer;
+  private static MusicPlayer musicPlayer;
 
+  static {
+    musicPlayer = new MusicPlayer("./res/songs/menuStart.mp3");
+  }
+
+  /**
+   * .
+   */
   public MenuPanel() {
     initComponents();
-    String filePath = "./res/songs/menuStart.mp3";
-    musicPlayer = new MusicPlayer();
-    musicPlayer.playMusic(filePath);
-    musicPlayer.setVolume(0.03);
   }
 
   private void initComponents() {
@@ -118,17 +120,21 @@ public class MenuPanel extends JPanel implements ActionListener {
     String action = event.getActionCommand();
     switch (action) {
       case "new game":
+        musicPlayer.stopMusic();
         GameWindow.getInstance().updatePanel(new PickNamePanel());
         GamePanel.cleanOutputArea();
-        musicPlayer.stopMusic();
         break;
       case "load game":
         try {
           GameHandler.loadGame();
           GameHandler.onOpen();
           GameWindow.getInstance().updatePanel(new GamePanel());
-          GameHandler.updateInventoryGui();
           musicPlayer.stopMusic();
+          // update the gui inventory only the first time
+          if (!GamePanel.isGuiUpdated()) {
+            GameHandler.updateInventoryGui();
+            GamePanel.setIsGuiUpdated(true);
+          }
         } catch (Exception e) {
           JOptionPane.showMessageDialog(this, e.getMessage(),
                                         "Caricamento fallito!", JOptionPane.ERROR_MESSAGE);

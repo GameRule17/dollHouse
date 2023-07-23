@@ -11,7 +11,7 @@ all: $(CLASSES) | spotbugs
 spotbugs:
 	@echo "Running Spotbugs . . ."
 	@echo -n "\033[31m"
-	@java -jar ./tools/spotbugs-4.7.3/lib/spotbugs.jar -textui $(CLASSES)
+	@java -jar ./tools/spotbugs-4.7.3/lib/spotbugs.jar -textui -cp ./target/classes dijkstra.dollhouse.DataBaseLoader
 	@echo -n "\033[0m"
 
 checkstyle:

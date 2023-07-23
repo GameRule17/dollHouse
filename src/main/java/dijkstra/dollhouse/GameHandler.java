@@ -6,14 +6,12 @@ import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GamePlayer;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
-import dijkstra.dollhouse.engine.entities.details.GameInventory;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
@@ -47,6 +45,11 @@ public final class GameHandler {
     game.getPlayer().getGameStatistics().getTimer().startTimer();
   }
 
+  /**
+   * .
+   *
+   * @throws Exception .
+   */
   public static void onClose() throws Exception {
     game.getMap().stopAllBehavioralNpcs();
     game.getPlayer().getGameStatistics().getTimer().updateGameTime();

@@ -1,9 +1,9 @@
 package dijkstra.dollhouse;
 
-import javax.swing.JOptionPane;
 import dijkstra.dollhouse.gui.GamePanel;
 import dijkstra.dollhouse.gui.GameWindow;
 import dijkstra.dollhouse.gui.MenuPanel;
+import javax.swing.JOptionPane;
 
 /**
  * .

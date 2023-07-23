@@ -12,6 +12,15 @@ import javafx.scene.media.MediaPlayer;
 public class MusicPlayer {
   private MediaPlayer mediaPlayer;
 
+  public MusicPlayer() {
+    
+  }
+
+  public MusicPlayer(final String url) {
+    playMusic(url);
+    setVolume(0.03);
+  }
+
   /**
    * .
    *
@@ -43,7 +52,7 @@ public class MusicPlayer {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
       mediaPlayer.dispose();
-      // System.out.println("Riproduzione interrotta.");
+      System.out.println("Riproduzione interrotta.");
     }
   }
 

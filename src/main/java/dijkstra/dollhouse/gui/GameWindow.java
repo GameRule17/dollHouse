@@ -2,7 +2,6 @@ package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.DataBaseLoader;
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.MusicPlayer;
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
