@@ -4,7 +4,7 @@
     "actions": [
       {
         "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-        "output":"Ti trovi davanti a un imponente cancello di ferro, alto e solido, che blocca l'accesso alle scale che conducono al primo piano.\nUna leggera patina di ruggine si fa notare qua e là, testimone degli anni trascorsi, ma ciò non intacca la sua imponenza.\nL'intera struttura del cancello sembra emanare un'aura di mistero e segretezza, invitando chiunque a scoprire cosa si nasconde al di là."
+        "output":"Ora che hai suonato la melodia magica il cancello si è sbloccato! Prova ad aprirlo.."
       },
       {
         "aliases":["rompi","rompere","distruggi","distruggere"],
