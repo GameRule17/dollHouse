@@ -1,7 +1,7 @@
 package dijkstra.dollhouse.engine.entities;
 
-import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
+import dijkstra.dollhouse.GuiHandler;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 import java.lang.Thread;
@@ -21,9 +21,11 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
   private Random random;
 
   /**
-   * .
+   * Public constructo for GameBehavioralNpc.
+   * It initializes an empty list of rooms in which this
+   * NPC can move.
    *
-   * @param name .
+   * @param name - the name of the NPC.
    */
   public GameBehavioralNpc(String name) {
     super(name);
@@ -88,11 +90,11 @@ public class GameBehavioralNpc extends GameNpc implements Runnable {
     
     while (isRunning) {
       try {
-        Thread.sleep((long) 1e3);
+        Thread.sleep((long) 25e3);
         do {
           output = executeRandomBehavior();
           if (GameHandler.getGame().getMap().getCurrentRoom().findBehavioralNpc(name) != null) {
-            GUIHandler.print("\n" + this.getName() + ": " + output + "\n");
+            GuiHandler.print("\n" + this.getName() + ": " + output + "\n");
           }
           if (script.getException() != null) {
             script.getException().printStackTrace();

@@ -7,23 +7,25 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 /**
- *  .
+ *  An istance of this class represents a server
+ *  thread that satisfies all the corresponding client requests.
  */
 public class ServerThread implements Runnable {
-  private JChatServer server;
+  private ChatServer server;
   private Socket client;
   private BufferedReader input;
   private DataOutputStream output;
   private Thread thread;
 
   /**
-   * .
+   * Public Constructor for ServerThread.
    *
-   * @param client .
-   * @param server .
-   * @throws IOException .
+   * @param client - the socket corresponding to the client to be served.
+   * @param server - the server instance it belongs from.
+   * @throws IOException if an I/O error occurs when creating
+   *                       the output stream or if the socket is not connected.
    */
-  public ServerThread(final Socket client, final JChatServer server) throws IOException {
+  public ServerThread(final Socket client, final ChatServer server) throws IOException {
     this.client = client;
     this.server = server;
     input = new BufferedReader(new InputStreamReader(client.getInputStream()));

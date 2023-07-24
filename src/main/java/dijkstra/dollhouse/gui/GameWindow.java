@@ -13,14 +13,16 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 /**
- * .
+ * Class for the game window.
  */
 public class GameWindow extends JFrame implements WindowListener {
 
   private static final GameWindow instance = new GameWindow();
 
   /**
-   * Creates new form GUI.
+   * Public constructor for GameWindow.
+   * It tries to connect to the database and creates all needed table if
+   * there aren't any tables.
    */
   private GameWindow() {
     try {

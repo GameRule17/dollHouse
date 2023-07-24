@@ -3,7 +3,7 @@
   "gamerooms": [
     {
       "name": "Scantinato (incatenato)",
-      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nNoti una strana figura umanoide che ti fissa.",
+      "description": "Lo scantinato appare come un luogo oscuro e angusto, con pareti di pietra umida ricoperte di sporche ragnatele.\nUna debole luce penetra attraverso una minuscola finestra, offrendo appena un barlume di illuminazione.\nIl pavimento di terra battuta e' coperto di polvere e tracce di umidita'.\nLa figura umanoide sembra volerti parlare!",
       "adjacentRooms": ["Scantinato"],
       "objects": [],
       "npcs": [
@@ -13,7 +13,7 @@
           "actions": [
             {
               "aliases":["parla","parlare","discuti","discutere","interagisci","interagire"],
-              "output": "Salve viandante, sei nella casa della strega Aradia, la strega che detiene il record di maggior numero di persone trasformate in bambole: 500! Finalmente dopo 3 giorni ti sei svegliato, preparati perché fra poco la strega verrà qui per trasformare anche te in una bambola. Smettila di dimenarti, la strega mi ha ordinato di non farti scappare ed è quello che farò ... a meno che ... non risponderai correttamente a queste due domande. Sai sono molti anni che la strega mi usa come suo servo e la mia pazienza è ormai giunta al limite. Sto cercando qualcuno che possa finalmente ucciderla.\nGuardiano: Avanti con le domande:\nLa figura umanoide sembra volerti parlare!",
+              "output": "Salve viandante, sei nella casa della strega Aradia, la strega che detiene il record di maggior numero di persone trasformate in bambole: 500! Finalmente dopo 3 giorni ti sei svegliato, preparati perché fra poco la strega verrà qui per trasformare anche te in una bambola. Smettila di dimenarti, la strega mi ha ordinato di non farti scappare ed è quello che farò ... a meno che ... non risponderai correttamente a queste tre domande. Sai sono molti anni che la strega mi usa come suo servo e la mia pazienza è ormai giunta al limite. Sto cercando qualcuno che possa finalmente ucciderla.\nGuardiano: Avanti con le domande:",
               "script": "dijkstra.dollhouse.engine.entities.actions.extra.GuardianScript"
             }
           ],

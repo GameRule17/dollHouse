@@ -7,7 +7,7 @@ import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 
 /**
- * .
+ * The script that allows the player to examine the current room.
  */
 public class ExamineScript extends GameAction implements GameScript {
 

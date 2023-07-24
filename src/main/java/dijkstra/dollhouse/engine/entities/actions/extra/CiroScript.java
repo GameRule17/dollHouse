@@ -1,7 +1,7 @@
 package dijkstra.dollhouse.engine.entities.actions.extra;
 
-import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
+import dijkstra.dollhouse.GuiHandler;
 import dijkstra.dollhouse.engine.JSONLoader;
 import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameEntity;
@@ -17,7 +17,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * Script for Ciro .
+ * Script for Ciro.
  */
 public class CiroScript extends TalkToNpc {
 
@@ -62,10 +62,10 @@ public class CiroScript extends TalkToNpc {
           if (choice == entity.getNumberOfDialogues() + 1) {
             if (bottle != null) {
               inventory.remove(bottle);
-              GUIHandler.removeInventory(bottle.getName());
+              GuiHandler.removeInventory(bottle.getName());
               // System.out.println(getMelody());
               inventory.add(getMelody());
-              GUIHandler.addInventory(getMelody().getName());
+              GuiHandler.addInventory(getMelody().getName());
               output = "Ciro: Brav uagliu!\n* Ciro ti ha donato una melodia *";
             }
             String msg = "Eh ma guarda stuquia', proprio 'na"

@@ -16,7 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.json.simple.parser.ParseException;
 
 /**
- * .
+ * The Script that change the game current map.
  */
 public class ChangeMap extends GameAction implements GameScript {
 
@@ -27,11 +27,6 @@ public class ChangeMap extends GameAction implements GameScript {
     exception = null;
   }
 
-  /**
-   * Save this current game run.
-   *
-   * @throws Exception .
-   */
   private void saveMap() throws Exception {
     final String url = "./res/savings/" + GameHandler.getGame().getMap().getName() + ".dat";
     File file = new File(url);

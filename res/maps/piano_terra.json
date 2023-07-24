@@ -4,7 +4,7 @@
       {
         "name": "Salotto",
         "description": "L'ambiente è caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalità calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza è arredata con mobili antichi che aggiungono un tocco di eleganza.",
-        "adjacentRooms": ["Corridoio (Piano Terra)"],
+        "adjacentRooms": ["Corridoio"],
         "objects": [
           {
             "name": "Sedia",
@@ -12,7 +12,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nÈ invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato lì forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilità dello shampo a casa di Claudio Bisio."
+                "output":"Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nÈ invitante, con morbidi cuscini e braccioli intagliati con cura."
               },
               {
                 "aliases":["siediti","sedersi","seduto"],
@@ -34,7 +34,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio. Potrebbe risultare utile in seguito.."
+                "output":"Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio. Potrebbe risultare utile in seguito..."
               },
               {
                 "aliases":["lancia","lanciare","getta","gettare","butta","buttare"],
@@ -116,7 +116,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il caminetto è un punto focale del salotto, emanando un calore accogliente.\nPotresti sentirne il crepitio dei tronchi bruciati e ammirare le fiamme danzanti.\nA sinistra del caminetto, puoi notare un ramoscello secco posizionato con cura."
+                "output":"Il caminetto è un punto focale del salotto, emanando un calore accogliente.\nPotresti sentirne il crepitio dei tronchi bruciati e ammirare le fiamme danzanti."
               },
               {
                 "aliases":["accendi","accendere"],
@@ -165,7 +165,7 @@
             ]
           },
           {
-            "name": "Corridoio (Piano Terra)",
+            "name": "Corridoio",
             "aliases": ["corridoio", "porta del corridoio", "porta corridoio"],
             "actions": [
               {
@@ -190,8 +190,8 @@
       },
       {
         "name": "Cucina",
-        "description": "È un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magicò al cibo. Sei sicuro di voler accettare l'invito a cena?",
-        "adjacentRooms": ["Corridoio (Piano Terra)"],
+        "description": "È un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magicò al cibo.",
+        "adjacentRooms": ["Corridoio"],
         "objects": [
           {
             "name": "Tavolo",
@@ -225,7 +225,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il tagliere è fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche.\nLa tua attenzione è attirata dal manico di un coltello senza lama piantato nel tagliere. Potrebbe davvero risultare utile in futuro.."
+                "output":"Il tagliere è fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche."
               },
               {
                 "aliases":["usa","usare","utilizza"],
@@ -370,7 +370,7 @@
             ]
           },
           {
-            "name": "Corridoio (Piano Terra)",
+            "name": "Corridoio",
             "aliases": ["corridoio", "porta del corridoio", "porta corridoio"],
             "actions": [
               {
@@ -400,14 +400,14 @@
                 },
                 {
                   "question": "Come posso scappare da qui?",
-                  "answer": "Nun se pote. L'uneca manera è accidere chella maledetta ma s'è chiusa nt'à sua stanza. Però ogni vota ca sale ncoppa, senghe na melodia ca però mo nun me ricorde. Forse na bottiglia e wisky putesse aiutarmi! A cambio e 'chess te putess da 'cchiu informazioni. Daje guaglione!"
+                  "answer": "Nun se pote. L'uneca manera è accidere chella maledetta ma s'è chiusa nt'à sua stanza. Però ogni vota ca sale ncoppa, senghe na melodia ca però mo nun me ricorde. Forse na bottiglia e whisky putesse aiutarmi! A cambio e 'chess te putess da 'cchiu informazioni. Daje guaglione!"
                 }
               ],
               "phrases": [
                 "Ue uagliù", "Ogni bambola è bella a mamma soja.", "O' malamente", "Si 'o viento se ne porta 'a voce e 'o mare se ne porta 'a reta.", "M' serv' 'nu cuttèllo p' accidere chella maledetta."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio (Piano Terra)"
+                "Cucina", "Salotto", "Corridoio"
               ]
             },
             {
@@ -443,7 +443,7 @@
                 "Buongiorno bambole!", "Mi serve una zampa di rospo per aiutare la strega con i suoi incantesimi!", "Chissà quanto ci mettera la strega per uscire dalla sua stanza.", "Strega: preparati intruso, tra poco ti sconfiggerò."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio (Piano Terra)"
+                "Cucina", "Salotto", "Corridoio"
               ]
             },
             {
@@ -464,7 +464,7 @@
                 },
                 {
                   "question": "Conosci una modo per battere la strega?",
-                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfiggere lei e la sua potentissima magia. Anche se una volta ho sentito parlare di un coltello magico.."
+                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfiggere lei e la sua potentissima magia. Anche se una volta ho sentito parlare di un coltello magico capace di contrastare ogni sua magia.\nPurtroppo non sono abbastanza intelligente da costruirne uno!"
                 },
                 {
                   "question":"Cosa mi consigli di fare?",
@@ -479,13 +479,13 @@
                 "Voglio un nuovo foglio per disegnare!", "Voglio disegnare un coltello magico.", "Voglio disegnare un bel ritratto da regalare alla strega, magari mi libererà..."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio (Piano Terra)"
+                "Cucina", "Salotto", "Corridoio"
               ]
             }
           ]
       },
       {
-        "name": "Corridoio (Piano Terra)",
+        "name": "Corridoio",
         "description": "Un labirinto di oscurità e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.",
         "adjacentRooms": ["Salotto","Cucina"],
         "objects": [

@@ -2,6 +2,7 @@ package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.DataBaseLoader;
 import dijkstra.dollhouse.GameHandler;
+import dijkstra.dollhouse.MusicPlayer;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -118,6 +119,8 @@ public class PickNamePanel extends JPanel implements ActionListener, KeyListener
           && !username.contains(" ")
           && !DataBaseLoader.usernameAlreadyUsed(username)) {
         try {
+          MusicPlayer.stopMusic();
+          MusicPlayer.playMusic("./res/songs/game.mp3");
           GameHandler.newGame();
           GameHandler.getGame().getPlayer().setName(username);
           GameHandler.onOpen();

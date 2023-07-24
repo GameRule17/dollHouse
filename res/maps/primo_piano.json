@@ -3,7 +3,7 @@
   "gamerooms": [
     {
       "name": "Bagno",
-      "adjacentRooms": ["Corridoio (Primo Piano)"],
+      "adjacentRooms": ["Corridoio"],
       "description": "Fai molta attenzione perchè un bagno così decadente difficilmente lo rivedrai nella tua vita! Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro.",
       "objects": [
         {
@@ -88,7 +88,7 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Uno specchio scheggiato con una grande scheggia rimovibile che può essere sollevata per ripristinare l'integrità della superficie riflettente."
+              "output":"Uno specchio scheggiato. La sua superficie è così sporca che non riesci a vedere il tuo riflesso. Forse è possibile prendere qualche scheggia . . ."
             },
             {
               "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -138,7 +138,7 @@
       ]
     },
     {
-      "name": "Corridoio (Primo Piano)",
+      "name": "Corridoio",
       "adjacentRooms": ["Bagno"],
       "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra è chiusa a chiave, mentre quella a sinistra è aperta, sembra essere un bagno.",
       "objects": [
@@ -159,7 +159,7 @@
           "actions": [
             {
               "aliases": ["vai", "apri","aprire","entra","entrare"],
-              "output": "Tu: (Dopo aver aperto la porta della camera della strega) Buongiorno, signora strega. Sono qui per sfidare il suo potere e liberare tutte le persone che ha trasformato in bambole!\nStrega: (Sorride maliziosamente) Oh, salve maledetto intruso. Ho trovato una soluzione al potere di quella maschera e finalmente ora posso sconfiggerti. Diventerai solo una piccola marionetta nelle mie mani!\nTu: (Prendi fiato e ti prepari mentalmente) Non sottovalutarmi, strega! Ho trovato un'arma segreta che può sconfiggerti.\nStrega: (Alza un sopracciglio con curiosità) E che arma sarebbe mai? Non credo che nulla possa contrastare la mia potente magia.\nTu: (Estrai il pugnale) Questo è il pugnale magico che ho creato utilizzando un incantesimo tratto da uno dei tuoi libri. è potente abbastanza da annullare la tua magia e liberare tutte le persone che hai imprigionato.\nStrega: (Sorride ironicamente) Che sia magico o meno, non avrà alcun effetto su di me. Sarai solo un'altra vittima del mio potere.\nTu: (Ti lanci all'attacco con determinazione, sferrando colpi rapidi contro il nemico) Ti stai sbagliando strega! Questo pugnale è il simbolo della mia volontà di liberare tutti le persone a cui hai fatto del male.\nStrega: (Impressionata, cerca di respingere i tuoi attacchi) Non puoi sconfiggere il potere della magia con un semplice oggetto! La mia dominazione non può essere fermata!\nTu: (Pronunci le parole magiche incise sul pugnale) Magia contro magia, incantesimi annullati. Le tue bambole torneranno ad essere persone, le tue arti saranno sconfitte!\nStrega: (Inizia a indebolirsi, mentre gli incantesimi si sciolgono intorno a lei) No, no! Non può essere! Come hai fatto?\nTu: (Continui ad attaccare con ferocia) Ho imparato che la vera forza non risiede solo nei poteri, ma nella volontà di proteggere gli altri. E ora, strega, il tuo regno di terrore giunge al termine!\nStrega: (Crolla a terra, esausta e sconfitta) Hai vinto, maledetto. Ma ricorda, la magia non può essere sconfitta per sempre. Ci incontreremo di nuovo e ti sconfiggerò!\nTu: (Con tono minaccioso) Ora va via, prima che ponga fine alla tua vita!\n(Nel frattempo, tutte le bambole si trasformano nuovamente in persone)\nAnne: (Ridendo) Sono tornata! Grazie, eroe, per averci salvato!\nMery: (Abbracciando il protagonista) Non saprò mai come ringraziarti abbastanza!\nTu: (Sorridi soddisfatto) Non c'è bisogno di ringraziarmi. Ho solo fatto ciò che era giusto. Ora possiamo tutti vivere in pace, senza la minaccia della strega.\n(E così, hai sconfitto la strega e hai restituito la normalità alle persone che erano state trasformate in bambole. Con il loro aiuto, il mondo tornerà a splendere senza l'ombra del male.)",
+              "output": "Tu: (Dopo aver aperto la porta della camera della strega) Buongiorno, signora strega. Sono qui per sfidare il suo potere e liberare tutte le persone che ha trasformato in bambole!\nStrega: (Sorride maliziosamente) Oh, salve maledetto intruso. Ho trovato una soluzione al potere di quella maschera e finalmente ora posso sconfiggerti. Diventerai solo una piccola marionetta nelle mie mani!\nTu: (Prendi fiato e ti prepari mentalmente) Non sottovalutarmi, strega! Ho trovato un'arma segreta che può sconfiggerti.\nStrega: (Alza un sopracciglio con curiosità) E che arma sarebbe mai? Non credo che nulla possa contrastare la mia potente magia.\nTu: (Estrai il pugnale) Questo è il pugnale magico che ho creato utilizzando un incantesimo tratto da uno dei tuoi libri, è potente abbastanza da annullare la tua magia e liberare tutte le persone che hai imprigionato.\nStrega: (Sorride ironicamente) Che sia magico o meno, non avrà alcun effetto su di me. Sarai solo un'altra vittima del mio potere.\nTu: (Ti lanci all'attacco con determinazione, sferrando colpi rapidi contro il nemico) Ti stai sbagliando strega! Questo pugnale è il simbolo della mia volontà di liberare tutte le persone a cui hai fatto del male.\nStrega: (Impressionata, cerca di respingere i tuoi attacchi) Non puoi sconfiggere il potere della magia con un semplice oggetto! La mia dominazione non può essere fermata!\nTu: (Pronunci le parole magiche incise sul pugnale) Magia contro magia, incantesimi annullati. Le tue bambole torneranno ad essere persone, le tue arti saranno sconfitte!\nStrega: (Inizia a indebolirsi, mentre gli incantesimi si sciolgono intorno a lei) No, no! Non può essere! Come hai fatto?\nTu: (Continui ad attaccare con ferocia) Ho imparato che la vera forza non risiede solo nei poteri, ma nella volontà di proteggere gli altri. E ora, strega, il tuo regno di terrore giunge al termine!\nStrega: (Crolla a terra, esausta e sconfitta) Hai vinto, maledetto. Ma ricorda, la magia non può essere sconfitta per sempre. Ci incontreremo di nuovo e ti sconfiggerò!\nTu: (Con tono minaccioso) Ora va via, prima che ponga fine alla tua vita!\n(Nel frattempo, tutte le bambole si trasformano nuovamente in persone)\nAnne: Grazie, eroe, per averci salvato!\nMery: Non saprò mai come ringraziarti abbastanza!\nTu: (Sorridi soddisfatto) Non c'è bisogno di ringraziarmi. Ho solo fatto ciò che era giusto. Ora possiamo tutti vivere in pace, senza la minaccia della strega.\n(E così, hai sconfitto la strega e hai restituito la normalità alle persone che erano state trasformate in bambole. Con il loro aiuto, il mondo tornerà a splendere senza l'ombra del male).",
               "script": "dijkstra.dollhouse.engine.entities.actions.extra.FinalBattleScript"
             }
           ]

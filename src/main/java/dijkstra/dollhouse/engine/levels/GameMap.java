@@ -31,17 +31,13 @@ public class GameMap implements Serializable {
     if (adjacentRooms == null) {
       return;
     }
-    // System.out.println(rooms.length);
     int size = rooms.length;
     for (Object adjacentRoom : adjacentRooms) {
-      // index = Integer.valueOf(adjacentRoom.toString());
       for (index = 0; index < size; index++) {
-        // System.out.println(rooms[index].getName() + " " + adjacentRoom.toString());
         if (rooms[index].getName().compareToIgnoreCase(adjacentRoom.toString()) == 0) {
           room.addAdjacentRoom(rooms[index]);
         }
       }
-      // room.addAdjacentRoom(rooms[index]);
     }
   }
 

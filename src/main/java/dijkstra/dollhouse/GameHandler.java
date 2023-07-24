@@ -18,9 +18,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * L'ActionListener avrà un gamehandler.
- * GameHadler dovrà essere interrogato dagli script
- * per ottenere le informazioni necesarie per la loro esecuzione.
+ * Static class in order to manage GUI-Engine integration.
  */
 public final class GameHandler {
   private static final String initUrl = "./res/maps/piano_seminterrato.json";
@@ -40,6 +38,11 @@ public final class GameHandler {
     game = null;
   }
 
+  /**
+   * Initialize the GameHandler in order to play the game.
+   *
+   * @throws FileNotFoundException if the stopwords file is not found.
+   */
   public static void onOpen() throws FileNotFoundException {
     parser = new GameParser();
     game.getPlayer().getGameStatistics().getTimer().startTimer();
@@ -47,9 +50,9 @@ public final class GameHandler {
   }
 
   /**
-   * .
+   * Performs all needed operations before closing the game.
    *
-   * @throws Exception .
+   * @throws Exception exceptions during the operation.
    */
   public static void onClose() throws Exception {
     game.getMap().stopAllBehavioralNpcs();
@@ -68,9 +71,9 @@ public final class GameHandler {
   }
 
   /**
-   * .
+   * It starts a new game.
    *
-   * @throws Exception .
+   * @throws Exception exceptions during the execution.
    */
   public static void newGame() throws Exception {
     if (game == null) {
@@ -80,7 +83,7 @@ public final class GameHandler {
       File file = new File("./res/initialOutput.txt");
       Scanner scanner = new Scanner(file);
       while (scanner.hasNextLine()) {
-        GUIHandler.print(scanner.nextLine() + "\n");
+        GuiHandler.print(scanner.nextLine() + "\n");
       }
       scanner.close();
     } else {
@@ -105,21 +108,23 @@ public final class GameHandler {
   }
 
   /**
-   * .
+   * Updates the inventory GUI adding all objects in the player inventory.
    */
   public static void updateInventoryGui() {
     List<GameEntity> inventory = game.getPlayer().getGameInventory().getObjects();
     for (GameEntity gameEntity : inventory) {
-      GUIHandler.addInventory(gameEntity.getName());
+      GuiHandler.addInventory(gameEntity.getName());
     }
   }
 
   /**
-   * .
+   * This method executes the command inserted by the player.
+   * It returns the output of the command to be printed.
+   * If the flag isEnded equals true, this method returns the player to the menu.
    *
-   * @param command .
-   * @return .
-   * @throws Exception .
+   * @param command - the command to executes.
+   * @return String - the output of the command to print.
+   * @throws Exception if exceptions occurs during the execution.
    */
   public static String executeCommand(final String command) throws Exception {
     parsedInput = parser.parse(command);
@@ -131,11 +136,13 @@ public final class GameHandler {
     Exception exception;
 
     if (isEnded) {
-      GUIHandler.popUpMessage("Complimenti! Hai finito Dollhouse!\n"
+      GuiHandler.popUpMessage("Complimenti! Hai finito Dollhouse!\n"
           + "Per vedere le tue statistiche di gioco torna al menu principale"
           + " e clicca sulla voce \"Statistiche\".");
-      GUIHandler.returnMenu();
+      GuiHandler.returnMenu();
       GameHandler.resetGame();
+      MusicPlayer.stopMusic();
+      MusicPlayer.playMusic("./res/songs/menuStart.mp3");
       return null;
     }
 
@@ -185,7 +192,7 @@ public final class GameHandler {
   /**
    * Load a game run started yet.
    *
-   * @throws Exception .
+   * @throws Exception Any of the usual Input/Output related exceptions.
    */
   public static void loadGame() throws Exception {
     FileInputStream file = null;
@@ -198,7 +205,6 @@ public final class GameHandler {
         input = new ObjectInputStream(file);
         game = (Game) input.readObject();
       } catch (Exception e) {
-        // e.printStackTrace();
         throw e;
       } finally {
         if (input != null) {
@@ -216,7 +222,7 @@ public final class GameHandler {
   /**
    * Save this current game run.
    *
-   * @throws Exception .
+   * @throws Exception Any of the usual Input/Output related exceptions..
    */
   public static void saveGame() throws Exception {
     File file = new File(savedGameUrl);

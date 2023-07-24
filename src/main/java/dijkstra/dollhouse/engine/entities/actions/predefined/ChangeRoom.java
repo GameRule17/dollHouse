@@ -7,7 +7,7 @@ import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.levels.GameRoom;
 
 /**
- * .
+ * The script that changes the current game room.
  */
 public class ChangeRoom extends GameAction implements GameScript {
 

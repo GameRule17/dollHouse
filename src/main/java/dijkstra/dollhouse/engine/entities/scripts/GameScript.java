@@ -10,8 +10,6 @@ public interface GameScript {
 
   public abstract boolean isOver();
 
-  // public abstract String getOutput();
-
   public abstract Exception getException();
 
 }

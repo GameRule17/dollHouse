@@ -24,14 +24,13 @@ public class MenuPanel extends JPanel implements ActionListener {
   private JButton newGameButton;
   private JButton openStatisticsButton;
   private JLabel titleMenu;
-  private static MusicPlayer musicPlayer;
 
   static {
-    musicPlayer = new MusicPlayer("./res/songs/menuStart.mp3");
+    MusicPlayer.playMusic("./res/songs/menuStart.mp3");
   }
 
   /**
-   * .
+   * Public constructor for MenuPanel.
    */
   public MenuPanel() {
     initComponents();
@@ -120,7 +119,6 @@ public class MenuPanel extends JPanel implements ActionListener {
     String action = event.getActionCommand();
     switch (action) {
       case "new game":
-        musicPlayer.stopMusic();
         GameWindow.getInstance().updatePanel(new PickNamePanel());
         GamePanel.cleanOutputArea();
         break;
@@ -129,7 +127,8 @@ public class MenuPanel extends JPanel implements ActionListener {
           GameHandler.loadGame();
           GameHandler.onOpen();
           GameWindow.getInstance().updatePanel(new GamePanel());
-          musicPlayer.stopMusic();
+          MusicPlayer.stopMusic();
+          MusicPlayer.playMusic("./res/songs/game.mp3");
           // update the gui inventory only the first time
           if (!GamePanel.isGuiUpdated()) {
             GameHandler.updateInventoryGui();
@@ -138,7 +137,6 @@ public class MenuPanel extends JPanel implements ActionListener {
         } catch (Exception e) {
           JOptionPane.showMessageDialog(this, e.getMessage(),
                                         "Caricamento fallito!", JOptionPane.ERROR_MESSAGE);
-          // e.printStackTrace();
         }
         break;
       case "statistics":

@@ -6,9 +6,9 @@ import dijkstra.dollhouse.gui.MenuPanel;
 import javax.swing.JOptionPane;
 
 /**
- * .
+ * Static class in order to manage Engine-GUI integration.
  */
-public class GUIHandler {
+public class GuiHandler {
 
   public static void addInventory(final String name) {
     GamePanel.addInventory(name);

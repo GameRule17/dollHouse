@@ -6,22 +6,24 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 /**
- * .
+ * An istance of this class represents a server of the global chat.
  */
-public class JChatServer {
+public class ChatServer {
   private static final int clientPort = 7777;
   private ServerSocket serverSocket;
   private ArrayList<ServerThread> clients;
 
-  public JChatServer() throws IOException {
+  public ChatServer() throws IOException {
     clients = new ArrayList<>();
     serverSocket = new ServerSocket(clientPort);
   }
 
   /**
-   * .
+   * It starts the listening thread and every time a client
+   * tries to connect to this server, it creates a ServerThread and
+   * runs it in order to satisfy all its client requests.
    *
-   * @throws IOException .
+   * @throws IOException if an I/O error occurs when waiting for a connection.
    */
   public void start() throws IOException {
     Socket client;
@@ -38,10 +40,10 @@ public class JChatServer {
   }
 
   /**
-   * .
+   * Sends to all clients connected the corresponding message.
    *
-   * @param message .
-   * @throws IOException .
+   * @param message - the message to send.
+   * @throws IOException if an I/O error occurs during the operation.
    */
   public void sendBroadcastMessage(String message) throws IOException {
     for (ServerThread client : clients) {
@@ -55,13 +57,13 @@ public class JChatServer {
   }
 
   /**
-   * .
+   * Starts the server.
    *
    * @param args .
    */
   public static void main(String[] args) {
     try {
-      JChatServer server = new JChatServer();
+      ChatServer server = new ChatServer();
       server.start();
     } catch (Exception e) {
       e.printStackTrace();

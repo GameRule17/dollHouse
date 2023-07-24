@@ -87,13 +87,4 @@ public class GamePlayer extends GameEntity {
     s.append("\n" + statistics.toString());
     return s.toString();
   }
-
-  // public static void main(String[] args) {
-  //   try {
-  //     GamePlayer j = new GamePlayer("nico");
-  //     System.out.println(j.toString());
-  //   } catch (Exception e) {
-  //     e.printStackTrace();
-  //   }
-  // }
 }

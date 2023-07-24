@@ -1,7 +1,7 @@
 package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.gui.socket.JChatClient;
+import dijkstra.dollhouse.gui.socket.ChatClient;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -31,7 +31,7 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
   public static JTextArea outputGlobalChatArea;
 
   private static String username = GameHandler.getGame().getPlayer().getName();
-  private static JChatClient client;
+  private static ChatClient client;
 
   static {
     outputGlobalChatArea = new JTextArea();
@@ -165,7 +165,6 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
         client.sendMessage(username + ": " + message);
         inputGlobalChatField.setText("");
       } catch (IOException ex) {
-        // ex.printStackTrace();
         try {
           client.close();
           JOptionPane.showMessageDialog(this, "Il server non è più in esecuzione!",
@@ -175,7 +174,6 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
         } catch (IOException e) {
           JOptionPane.showMessageDialog(this, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
         }
-        // esci dalla chat globale
       }
     }
   }
@@ -184,7 +182,7 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
 
   private void joinToChat() throws IOException {
     if (client == null) {
-      client = new JChatClient();
+      client = new ChatClient();
       try {
         client.start();
       } catch (IOException exc) {

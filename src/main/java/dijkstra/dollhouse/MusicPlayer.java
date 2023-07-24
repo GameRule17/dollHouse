@@ -7,26 +7,17 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 /**
- * .
+ * Static class to play and stop music.
  */
 public class MusicPlayer {
-  private MediaPlayer mediaPlayer;
-
-  public MusicPlayer() {
-    
-  }
-
-  public MusicPlayer(final String url) {
-    playMusic(url);
-    setVolume(0.03);
-  }
+  private static MediaPlayer mediaPlayer;
 
   /**
-   * .
+   * Play the mp3 file in the file path.
    *
-   * @param filePath .
+   * @param filePath - the file path of the mp3.
    */
-  public void playMusic(String filePath) {
+  public static void playMusic(String filePath) {
     // Inizializza JavaFX solo se non è già stato inizializzato
     if (!Platform.isFxApplicationThread()) {
       new JFXPanel(); // Questo avvia l'ambiente JavaFX
@@ -34,6 +25,8 @@ public class MusicPlayer {
 
     Media media = new Media(new File(filePath).toURI().toString());
     mediaPlayer = new MediaPlayer(media);
+
+    setVolume(0.03);
 
     // Aggiungi un gestore di eventi per rilasciare le risorse del media player dopo la riproduzione
     mediaPlayer.setOnEndOfMedia(() -> {
@@ -46,9 +39,9 @@ public class MusicPlayer {
   }
 
   /**
-   * .
+   * Stops the music.
    */
-  public void stopMusic() {
+  public static void stopMusic() {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
       mediaPlayer.dispose();
@@ -57,11 +50,11 @@ public class MusicPlayer {
   }
 
   /**
-   * .
+   * Sets the volume.
    *
-   * @param volume .
+   * @param volume - the value of the volume.
    */
-  public void setVolume(double volume) {
+  public static void setVolume(double volume) {
     if (mediaPlayer != null) {
       mediaPlayer.setVolume(volume);
       // System.out.println("Volume impostato a: " + (volume * 100) + "%");

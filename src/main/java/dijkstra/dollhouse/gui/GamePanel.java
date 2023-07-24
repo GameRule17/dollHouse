@@ -1,7 +1,6 @@
 package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.MusicPlayer;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -32,13 +31,11 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
   private JButton openGlobalChatButton;
   private static JTextArea outputCommandArea;
   private JButton sendCommandButton;
-  private static MusicPlayer musicPlayer;
   private static boolean isGuiUpdated = false;
 
   static {
     outputCommandArea = new JTextArea();
     listObjectsInventory = new List();
-    musicPlayer = new MusicPlayer("./res/songs/game.mp3");
   }
 
   public GamePanel() {
@@ -75,7 +72,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 
     openGlobalChatButton.setBackground(new Color(0, 153, 153));
     openGlobalChatButton.setEnabled(true);
-    openGlobalChatButton.setLabel("🌐");
+    // openGlobalChatButton.setLabel("🌐");
+    openGlobalChatButton.setText("🌐");
     openGlobalChatButton.addActionListener(this);
 
     outputCommandArea.setBackground(new Color(88, 91, 93));

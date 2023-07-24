@@ -17,7 +17,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * .
+ * Script for the piano in the game.
  */
 public class PlayPiano extends GameAction implements GameScript {
 
@@ -27,7 +27,7 @@ public class PlayPiano extends GameAction implements GameScript {
   /**
    * Public Constructor.
    *
-   * @param output .
+   * @param output - the output of the action.
    */
   public PlayPiano(String output) {
     super(output);

@@ -7,22 +7,20 @@ import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 
 /**
- * .
+ * The script that allows the player to talk to a NPC.
  */
 public class TalkToNpc extends GameAction implements GameScript {
 
   protected boolean isRunning;
-  // private Exception exception;
 
   /**
    * Public Constructor for TalkToNpc.
    *
-   * @param output .
+   * @param output - the output of the action.
    */
   public TalkToNpc(final String output) {
     super(output);
     isRunning = false;
-    // exception = null;
   }
 
   @Override

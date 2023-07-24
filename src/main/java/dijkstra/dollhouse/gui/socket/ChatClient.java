@@ -8,9 +8,9 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 /**
- * .
+ * An istance of this class represents a client of the global chat.
  */
-public class JChatClient implements Runnable {
+public class ChatClient implements Runnable {
   private static final String ipAddress = "127.0.0.1";
   private static final int port = 7777;
   private DataOutputStream output;
@@ -19,9 +19,10 @@ public class JChatClient implements Runnable {
   private Thread receivingThread;
 
   /**
-   * .
+   * Tries to connect to the server, initializes all needed data and
+   * starts the corresponding thread.
    *
-   * @throws IOException .
+   * @throws IOException In case the connection to the server fails.
    */
   public void start() throws IOException {
     socket = new Socket(ipAddress, port);
@@ -36,9 +37,9 @@ public class JChatClient implements Runnable {
   }
 
   /**
-   * .
+   * Close the connection with the server and all other needed resources.
    *
-   * @throws IOException .
+   * @throws IOException In case the connection to the server fails.
    */
   public void close() throws IOException {
     System.out.println("Chiusura client");

@@ -54,7 +54,8 @@ public final class DataBaseLoader {
    * @param username - the player username.
    * @param points   - the player points.
    * @param time     - the palyer game time.
-   * @throws SQLException .
+   * @throws SQLException if a database access error occurs
+   *                      or this method is called on a closed connection.
    */
   public static void updateStatistics(String username, int points, Time time) throws SQLException {
     PreparedStatement stmt = conn.prepareStatement("SELECT * FROM statistics WHERE username = ?");
@@ -91,18 +92,18 @@ public final class DataBaseLoader {
   }
 
   /**
-   * .
+   * Returns the statistics of all players.
    *
-   * @param mode .
-   * @return .
-   * @throws SQLException .
+   * @param mode - it determines the order of data.
+   * @return String.
+   * @throws SQLException if a database access error occurs
+   *                      or this method is called on a closed connection.
    */
   public static String printUserData(String mode) throws SQLException {
     String result = "";
     ResultSet rs;
     Statement stmt = conn.createStatement();
     switch (mode) {
-      // This must be converted with lambda expressions
       case "time":
         rs = stmt.executeQuery("SELECT * FROM statistics ORDER BY time");
         break;
@@ -124,11 +125,12 @@ public final class DataBaseLoader {
   }
 
   /**
-   * .
+   * Cheks if an username is alredy used.
    *
-   * @param username .
-   * @return .
-   * @throws SQLException .
+   * @param username - the username to check.
+   * @return true if it is already used, flase otherwhise.
+   * @throws SQLException if a database access error occurs
+   *                      or this method is called on a closed connection.
    */
   public static boolean usernameAlreadyUsed(String username) throws SQLException {
     boolean result = false;

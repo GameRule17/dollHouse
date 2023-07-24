@@ -15,7 +15,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * .
+ * Script for the mask in the game.
  */
 public class MaskScript extends GameAction implements GameScript {
 

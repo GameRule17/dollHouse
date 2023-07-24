@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Si auto carica .
+ * Script for the random phrase behavior of NPCs.
  */
 public class RandomPhrase implements GameScript, Serializable {
   private List<String> phrases;

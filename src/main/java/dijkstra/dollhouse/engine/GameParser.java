@@ -14,9 +14,9 @@ public class GameParser {
   private Set<String> stopwords = new HashSet<String>();
 
   /**
-   * Constructor.
+   * Public constructor for GameParser.
    *
-   * @throws FileNotFoundException - if the file is not found.
+   * @throws FileNotFoundException - if the stopwords file is not found.
    */
   public GameParser() throws FileNotFoundException {
 
@@ -42,10 +42,14 @@ public class GameParser {
   }
 
   /**
-   * .
+   * Returns the parsed input.
+   * In the action attribute of the parsed input is saved the left most word
+   * of the input interpreted as an action.
+   * In the entity attribute of the parsed input is saved all the right most
+   * words of the input interpreted as an entity.
    *
-   * @param input .
-   * @return .
+   * @param input - the input to parse.
+   * @return - ParsedInput.
    */
   public ParsedInput parse(final String input) {
     
@@ -56,12 +60,10 @@ public class GameParser {
     String action = "";
     
     while (i < size && (stopwords.contains(tokens[i]) || tokens[i].compareTo("") == 0)) {
-      // System.out.println("Skipped: <" + tokens[i] + ">");
       i++;
     }
 
     if (i < size) {
-      // System.out.println("Added: <" + tokens[i] + ">");
       action = tokens[i];
     }
 

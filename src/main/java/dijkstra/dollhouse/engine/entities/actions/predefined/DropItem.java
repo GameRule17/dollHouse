@@ -1,7 +1,7 @@
 package dijkstra.dollhouse.engine.entities.actions.predefined;
 
-import dijkstra.dollhouse.GUIHandler;
 import dijkstra.dollhouse.GameHandler;
+import dijkstra.dollhouse.GuiHandler;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
@@ -42,7 +42,7 @@ public class DropItem extends GameAction implements GameScript {
       }
       isExecutable = false;
       output = this.output;
-      GUIHandler.removeInventory(entity.getName());
+      GuiHandler.removeInventory(entity.getName());
     } else {
       output = "L'entita' non è nel tuo inventario!";
     }
