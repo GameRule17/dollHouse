@@ -46,10 +46,7 @@ public final class DataBaseLoader {
   }
 
   /**
-   * Check if a user with that nickname already exists in the table,
-   * if so, update the statistics values ​​by verifying that the new values
-   * ​are better than the previous ones either for the number of points
-   * or for a new shorter time.
+   * Load statistics in the Database.
    *
    * @param username - the player username.
    * @param points   - the player points.
@@ -58,37 +55,46 @@ public final class DataBaseLoader {
    *                      or this method is called on a closed connection.
    */
   public static void updateStatistics(String username, int points, Time time) throws SQLException {
-    PreparedStatement stmt = conn.prepareStatement("SELECT * FROM statistics WHERE username = ?");
+    // PreparedStatement stmt = conn.prepareStatement("SELECT * FROM statistics WHERE username = ?");
+    // stmt.setString(1, username);
+    // ResultSet rs = stmt.executeQuery();
+
+    // if (rs.next()) {
+    //   if (rs.getInt("points") < points) {
+    //     stmt.close();
+    //     stmt = conn.prepareStatement("UPDATE statistics SET points = ? WHERE username = ?");
+    //     stmt.setInt(1, points);
+    //     stmt.setString(2, username);
+    //     stmt.executeUpdate();
+    //     stmt.close();
+    //   }
+    //   if (rs.getTime("time").getTime() > time.getTime()) {
+    //     stmt.close();
+    //     stmt = conn.prepareStatement("UPDATE statistics SET time = ? WHERE username = ?");
+    //     stmt.setTime(1, time);
+    //     stmt.setString(2, username);
+    //     stmt.executeUpdate();
+    //     stmt.close();
+    //   }
+    // } else {
+    //   stmt.close();
+    //   stmt = conn.prepareStatement("INSERT INTO statistics"
+    //                               + "(username, points, time) VALUES (?, ?, ?)");
+    //   stmt.setString(1, username);
+    //   stmt.setInt(2, points);
+    //   stmt.setTime(3, time);
+    //   stmt.executeUpdate();
+    //   stmt.close();
+    // }
+
+    PreparedStatement stmt;
+    stmt = conn.prepareStatement("INSERT INTO statistics"
+                                + "(username, points, time) VALUES (?, ?, ?)");
     stmt.setString(1, username);
-    ResultSet rs = stmt.executeQuery();
-    if (rs.next()) {
-      if (rs.getInt("points") < points) {
-        stmt.close();
-        stmt = conn.prepareStatement("UPDATE statistics SET points = ? WHERE username = ?");
-        stmt.setInt(1, points);
-        stmt.setString(2, username);
-        stmt.executeUpdate();
-        stmt.close();
-      }
-      if (rs.getTime("time").getTime() > time.getTime()) {
-        stmt.close();
-        stmt = conn.prepareStatement("UPDATE statistics SET time = ? WHERE username = ?");
-        stmt.setTime(1, time);
-        stmt.setString(2, username);
-        stmt.executeUpdate();
-        stmt.close();
-      }
-    } else {
-      stmt.close();
-      stmt = conn.prepareStatement("INSERT INTO statistics"
-                                  + "(username, points, time) VALUES (?, ?, ?)");
-      stmt.setString(1, username);
-      stmt.setInt(2, points);
-      stmt.setTime(3, time);
-      stmt.executeUpdate();
-      stmt.close();
-    }
-    rs.close();
+    stmt.setInt(2, points);
+    stmt.setTime(3, time);
+    stmt.executeUpdate();
+    // rs.close();
   }
 
   /**

@@ -2,7 +2,7 @@ package dijkstra.dollhouse.engine.entities.actions.extra;
 
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.GuiHandler;
-import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.JsonLoader;
 import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.GameNpc;
@@ -35,7 +35,7 @@ public class CiroScript extends TalkToNpc {
       fileReader = new FileReader("./res/objects/melody.json", Charset.defaultCharset());
       JSONParser parser = new JSONParser();
       JSONObject jsonMelody = (JSONObject) parser.parse(fileReader);
-      melody = JSONLoader.getGameEntity(jsonMelody);
+      melody = JsonLoader.getGameEntity(jsonMelody);
     } catch (IOException | ParseException | ClassNotFoundException | NoSuchMethodException
             | InstantiationException | IllegalAccessException | IllegalArgumentException
             | InvocationTargetException e) {

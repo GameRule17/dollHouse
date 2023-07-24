@@ -1,7 +1,7 @@
 package dijkstra.dollhouse.engine.entities.actions.extra;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.JsonLoader;
 import dijkstra.dollhouse.engine.ParsedInput;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
@@ -42,7 +42,7 @@ public class PlayPiano extends GameAction implements GameScript {
       fileReader = new FileReader("./res/objects/gate.json", Charset.defaultCharset());
       JSONParser parser = new JSONParser();
       JSONObject jsonGate = (JSONObject) parser.parse(fileReader);
-      gate = JSONLoader.getGameEntity(jsonGate);
+      gate = JsonLoader.getGameEntity(jsonGate);
     } catch (IOException | ParseException | ClassNotFoundException | NoSuchMethodException
             | InstantiationException | IllegalAccessException | IllegalArgumentException
             | InvocationTargetException e) {

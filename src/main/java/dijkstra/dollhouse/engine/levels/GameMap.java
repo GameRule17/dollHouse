@@ -1,6 +1,6 @@
 package dijkstra.dollhouse.engine.levels;
 
-import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.JsonLoader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
@@ -46,7 +46,7 @@ public class GameMap implements Serializable {
                               InstantiationException, IllegalAccessException,
                               IllegalArgumentException, InvocationTargetException {
     for (Object jsonObj : jsonObjects) {
-      room.addEntity(JSONLoader.getGameEntity((JSONObject) jsonObj));
+      room.addEntity(JsonLoader.getGameEntity((JSONObject) jsonObj));
     }
   }
 
@@ -70,9 +70,9 @@ public class GameMap implements Serializable {
     if (jsonNpcs != null) {
       for (Object npc : jsonNpcs) {
         if (((JSONObject) npc).get("behavior") == null) {
-          room.addEntity(JSONLoader.getGameNpc((JSONObject) npc));
+          room.addEntity(JsonLoader.getGameNpc((JSONObject) npc));
         } else {
-          room.addBehavioralNpc(JSONLoader.getGameBehavioralNpc((JSONObject) npc));
+          room.addBehavioralNpc(JsonLoader.getGameBehavioralNpc((JSONObject) npc));
         }
       }
     }

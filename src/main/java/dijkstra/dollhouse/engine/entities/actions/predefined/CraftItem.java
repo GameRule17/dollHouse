@@ -2,7 +2,7 @@ package dijkstra.dollhouse.engine.entities.actions.predefined;
 
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.GuiHandler;
-import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.JsonLoader;
 import dijkstra.dollhouse.engine.entities.GameCraftableObject;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
@@ -38,7 +38,7 @@ public class CraftItem extends GameAction implements GameScript {
       JSONArray jsonObjects = (JSONArray) jsonRecipes.get("craftable_objects");
 
       for (Object object : jsonObjects) {
-        craftableItems.add(JSONLoader.getGameCraftableObject((JSONObject) object));
+        craftableItems.add(JsonLoader.getGameCraftableObject((JSONObject) object));
       }
 
       if (fileReader != null) {

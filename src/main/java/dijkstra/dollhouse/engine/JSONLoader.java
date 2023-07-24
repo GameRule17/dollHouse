@@ -8,17 +8,16 @@ import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.details.GameDialogue;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
 import dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- * JSONLoader is an util class that is used to interpret data in a JSON file.
+ * JsonLoader is an util class that is used to interpret data in a JSON file.
  */
-public class JSONLoader {
-  
+public class JsonLoader {
+
   /**
    * This method returns a GameScriptedAction object of the class identified by
    * the parameter className with the output described by the parameter output.
@@ -51,6 +50,9 @@ public class JSONLoader {
 
   }
 
+  /**
+   * Returns the GameAction described in the JSONObject.
+   */
   public static final GameAction getGameAction(JSONObject jsonObject)
                                   throws ClassNotFoundException, NoSuchMethodException,
                                   InstantiationException, IllegalAccessException,
@@ -66,6 +68,9 @@ public class JSONLoader {
     return action;
   }
 
+  /**
+   * Returns the GameEntity described in the JSONObject.
+   */
   public static final GameEntity getGameEntity(JSONObject jsonObject)
                                   throws ClassNotFoundException,
                                   NoSuchMethodException, InstantiationException,
@@ -88,6 +93,9 @@ public class JSONLoader {
     return gameObject;
   }
 
+  /**
+   * Returns the GameNpc described in the JSONObject.
+   */
   public static GameNpc getGameNpc(final JSONObject jsonNpc)
                             throws ClassNotFoundException, NoSuchMethodException,
                             InstantiationException, IllegalAccessException,
@@ -118,6 +126,9 @@ public class JSONLoader {
     return gameNpc;
   }
 
+  /**
+   * Returns the GameScript with the name "classname".
+   */
   public static final GameScript getGameScript(final String className)
                                         throws ClassNotFoundException, NoSuchMethodException,
                                         InstantiationException, IllegalAccessException,
@@ -131,6 +142,9 @@ public class JSONLoader {
     throw new ClassNotFoundException("The script is not an istance of GameScript!\n");
   }
 
+  /**
+   * Returns the GameBehavioralNpc described in the JSONObject.
+   */
   public static GameBehavioralNpc getGameBehavioralNpc(final JSONObject jsonNpc)
                             throws ClassNotFoundException, NoSuchMethodException,
                             InstantiationException, IllegalAccessException,
@@ -179,6 +193,9 @@ public class JSONLoader {
     return gameNpc;
   }
 
+  /**
+   * Returns the GameCraftableObject described in the JSONObject.
+   */
   public static GameCraftableObject getGameCraftableObject(final JSONObject jsonObject)
                                               throws ClassNotFoundException, NoSuchMethodException,
                                               InstantiationException, IllegalAccessException,

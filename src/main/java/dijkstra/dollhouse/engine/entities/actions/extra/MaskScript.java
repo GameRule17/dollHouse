@@ -1,7 +1,7 @@
 package dijkstra.dollhouse.engine.entities.actions.extra;
 
 import dijkstra.dollhouse.GameHandler;
-import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.JsonLoader;
 import dijkstra.dollhouse.engine.entities.GameEntity;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.scripts.GameScript;
@@ -33,7 +33,7 @@ public class MaskScript extends GameAction implements GameScript {
       fileReader = new FileReader("./res/objects/trapdoor.json", Charset.defaultCharset());
       JSONParser parser = new JSONParser();
       JSONObject jsonTrapdoor = (JSONObject) parser.parse(fileReader);
-      trapdoor = JSONLoader.getGameEntity(jsonTrapdoor);
+      trapdoor = JsonLoader.getGameEntity(jsonTrapdoor);
     } catch (IOException | ParseException | ClassNotFoundException | NoSuchMethodException
             | InstantiationException | IllegalAccessException | IllegalArgumentException
             | InvocationTargetException e) {

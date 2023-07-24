@@ -1,6 +1,6 @@
 package dijkstra.dollhouse.engine.entities;
 
-import dijkstra.dollhouse.engine.JSONLoader;
+import dijkstra.dollhouse.engine.JsonLoader;
 import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
 import dijkstra.dollhouse.engine.entities.details.GameStatistics;
@@ -51,7 +51,7 @@ public class GamePlayer extends GameEntity {
       JSONArray jsonActions = (JSONArray) json.get("actions");
 
       for (Object object : jsonActions) {
-        actions.add(JSONLoader.getGameAction((JSONObject) object));
+        actions.add(JsonLoader.getGameAction((JSONObject) object));
       }
 
       statistics = new GameStatistics();
