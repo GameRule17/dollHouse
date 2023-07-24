@@ -81,7 +81,7 @@ public class GuardianScript extends GameAction implements GameScript {
       } else {
         index = 0;
         isRunning = false;
-        output = "Guardiano: Mi hai rotto il ca<<o\n";
+        output = "Guardiano: Non mi hai convinto!\n* Hai smesso di parlare con il guardiano *";
       }
     } else {
       isRunning = true;
@@ -89,7 +89,12 @@ public class GuardianScript extends GameAction implements GameScript {
       for (String answer : answers[index]) {
         output += "\n" + answer;
       }
-      this.output = "Dopo " + (count + 1) + " tentativi sarà la volta buona?!";
+      if (count + 1 > 1) {
+        this.output = "Dopo " + (count + 1) + " tentativi sarà la volta buona?!";
+      } else {
+        this.output = "Dopo un tentativo sarà la volta buona?!";
+      }
+      
       count++;
     }
 

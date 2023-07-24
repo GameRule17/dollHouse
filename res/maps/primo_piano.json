@@ -3,7 +3,7 @@
   "gamerooms": [
     {
       "name": "Bagno",
-      "adjacentRooms": ["Corridoio"],
+      "adjacentRooms": ["Corridoio (Primo Piano)"],
       "description": "Fai molta attenzione perchè un bagno così decadente difficilmente lo rivedrai nella tua vita! Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro.",
       "objects": [
         {
@@ -138,7 +138,7 @@
       ]
     },
     {
-      "name": "Corridoio",
+      "name": "Corridoio (Primo Piano)",
       "adjacentRooms": ["Bagno"],
       "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra è chiusa a chiave, mentre quella a sinistra è aperta, sembra essere un bagno.",
       "objects": [

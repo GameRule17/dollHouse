@@ -4,7 +4,7 @@
       {
         "name": "Salotto",
         "description": "L'ambiente è caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalità calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza è arredata con mobili antichi che aggiungono un tocco di eleganza.",
-        "adjacentRooms": ["Corridoio"],
+        "adjacentRooms": ["Corridoio (Piano Terra)"],
         "objects": [
           {
             "name": "Sedia",
@@ -62,7 +62,7 @@
                 "output":"Al centro del salotto, trovi un maestoso pianoforte a coda.\nLe sue eleganti tastiere invitano a produrre meravigliose melodie.\nPotresti scoprire qualcosa di speciale interagendo con il pianoforte o sperimentando con le sue note. Ma non crederti il nuovo Mozart."
               },
               {
-                "aliases":["suona","suonare","interagisci","interagire"],
+                "aliases":["suona","suonare","interagisci","interagire", "usa", "usare", "utilizza"],
                 "output": "Seleziona quale melodia suonare:\n0)Smetti di suonare\n1) Melodia Uno\n2) Melodia Due",
                 "script": "dijkstra.dollhouse.engine.entities.actions.extra.PlayPiano"
               },
@@ -165,7 +165,7 @@
             ]
           },
           {
-            "name": "Corridoio",
+            "name": "Corridoio (Piano Terra)",
             "aliases": ["corridoio", "porta del corridoio", "porta corridoio"],
             "actions": [
               {
@@ -191,7 +191,7 @@
       {
         "name": "Cucina",
         "description": "È un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magicò al cibo. Sei sicuro di voler accettare l'invito a cena?",
-        "adjacentRooms": ["Corridoio"],
+        "adjacentRooms": ["Corridoio (Piano Terra)"],
         "objects": [
           {
             "name": "Tavolo",
@@ -370,7 +370,7 @@
             ]
           },
           {
-            "name": "Corridoio",
+            "name": "Corridoio (Piano Terra)",
             "aliases": ["corridoio", "porta del corridoio", "porta corridoio"],
             "actions": [
               {
@@ -407,7 +407,7 @@
                 "Ue uagliù", "Ogni bambola è bella a mamma soja.", "O' malamente", "Si 'o viento se ne porta 'a voce e 'o mare se ne porta 'a reta.", "M' serv' 'nu cuttèllo p' accidere chella maledetta."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio"
+                "Cucina", "Salotto", "Corridoio (Piano Terra)"
               ]
             },
             {
@@ -443,7 +443,7 @@
                 "Buongiorno bambole!", "Mi serve una zampa di rospo per aiutare la strega con i suoi incantesimi!", "Chissà quanto ci mettera la strega per uscire dalla sua stanza.", "Strega: preparati intruso, tra poco ti sconfiggerò."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio"
+                "Cucina", "Salotto", "Corridoio (Piano Terra)"
               ]
             },
             {
@@ -479,13 +479,13 @@
                 "Voglio un nuovo foglio per disegnare!", "Voglio disegnare un coltello magico.", "Voglio disegnare un bel ritratto da regalare alla strega, magari mi libererà..."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio"
+                "Cucina", "Salotto", "Corridoio (Piano Terra)"
               ]
             }
           ]
       },
       {
-        "name": "Corridoio",
+        "name": "Corridoio (Piano Terra)",
         "description": "Un labirinto di oscurità e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.",
         "adjacentRooms": ["Salotto","Cucina"],
         "objects": [
@@ -556,7 +556,7 @@
             ]
           },
           {
-            "name": "Primo Piano",
+            "name": "Cancello",
             "aliases": ["cancello","cancello di ferro","cancello di metallo", "primo piano"],
             "actions": [
               {
