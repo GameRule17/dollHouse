@@ -1,7 +1,6 @@
 package dijkstra.dollhouse.engine.entities;
 
 import dijkstra.dollhouse.engine.JsonLoader;
-import dijkstra.dollhouse.engine.entities.actions.GameAction;
 import dijkstra.dollhouse.engine.entities.details.GameInventory;
 import dijkstra.dollhouse.engine.entities.details.GameStatistics;
 import java.io.FileReader;
@@ -76,13 +75,17 @@ public class GamePlayer extends GameEntity {
   public String toString() {
     StringBuilder s = new StringBuilder("Name: " + name + "\n");
     s.append("Aliases: ");
-    for (String alias : aliases) {
-      s.append(alias + " ");
-    }
-    // s.append("\nRecipe: " + recipe.toString() + "\n");
-    for (GameAction action : actions) {
-      s.append(action.toString());
-    }
+    // for (String alias : aliases) {
+    //   s.append(alias + " ");
+    // }
+    // s.append("\nActions:\n");
+    // for (GameAction action : actions) {
+    //   s.append(action.toString());
+    // }
+
+    aliases.stream().forEach(alias -> s.append(alias + " "));
+    s.append("\nActions:\n");
+    actions.stream().forEach(action -> s.append(action.toString()));
 
     s.append("\n" + statistics.toString());
     return s.toString();

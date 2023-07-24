@@ -257,7 +257,7 @@ public class GameMap implements Serializable {
     while (!toBeProcessed.isEmpty()) {
       gameRoom = toBeProcessed.pop();
       s.append(gameRoom.toString());
-      for (GameRoom adjacent : currentRoom.getAdjacentRooms()) {
+      for (GameRoom adjacent : gameRoom.getAdjacentRooms()) {
         if (!processed.contains(adjacent)) {
           toBeProcessed.add(adjacent);
         }
@@ -266,4 +266,13 @@ public class GameMap implements Serializable {
     }
     return s.toString();
   }
+
+  // public static void main(String[] args) {
+  //   try {
+  //     GameMap map = new GameMap("./res/maps/piano_terra.json");
+  //     System.out.println(map.toString());
+  //   } catch (Exception e) {
+  //     e.printStackTrace();
+  //   }
+  // }
 }

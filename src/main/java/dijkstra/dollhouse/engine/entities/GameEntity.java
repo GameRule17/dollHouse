@@ -104,14 +104,19 @@ public class GameEntity implements Serializable {
   @Override
   public String toString() {
     StringBuilder s = new StringBuilder("Name: " + name + "\n");
+    // s.append("Aliases: ");
+    // for (String alias : aliases) {
+    //   s.append(alias + " ");
+    // }
+    // s.append("\nActions:\n");
+    // for (GameAction action : actions) {
+    //   s.append("\n" + action.toString());
+    // }
+
     s.append("Aliases: ");
-    for (String alias : aliases) {
-      s.append(alias + " ");
-    }
-    s.append("\n");
-    for (GameAction action : actions) {
-      s.append("\n" + action.toString());
-    }
+    aliases.stream().forEach(alias -> s.append(alias + " "));
+    s.append("\nActions:\n");
+    actions.stream().forEach(action -> s.append("\n" + action.toString()));
     return s.toString();
   }
   

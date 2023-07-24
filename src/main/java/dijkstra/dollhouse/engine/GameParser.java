@@ -77,8 +77,7 @@ public class GameParser {
 
     if (s.length() > 0) {
       s.deleteCharAt(s.length() - 1);
-    }
-    
+    }    
     return new ParsedInput(action, s.toString());
   }
 }
