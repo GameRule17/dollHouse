@@ -37,7 +37,7 @@ public class GuardianScript extends GameAction implements GameScript {
           + "Se mi liberi adesso, ti prometto che non te ne pentirai. ",
         "2) Daro' il meglio di me per poter uccidere quella maledetta!"},
         {
-          "1) Si, sacrificherò la mia vita pur di uccidere la strega e salvare le sue vittime.",
+          "1) Si, sacrificherei la mia vita pur di uccidere la strega e salvare le sue vittime.",
           "2) Farò in modo che la strega muoia e lo farò senza rischiare la pelle"
         }
     };
