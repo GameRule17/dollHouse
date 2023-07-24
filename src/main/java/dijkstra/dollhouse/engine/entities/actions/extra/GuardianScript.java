@@ -24,25 +24,18 @@ public class GuardianScript extends GameAction implements GameScript {
   private void init() {
     questions = new String[] {
       "Viandante, cosa faresti nel caso in cui ti liberassi?",
-      "Ma sei veramente convinto di poter uccidere la strega?",
-      "Per ucciderla potrebbe essere necessario l'utilizzo della magia."
-        + " Questo comporta degli effetti collaterali e in rari casi anche la morte."
-        + "Sei disposto a sacrificare la tua vita per questa causa?"
+      "Sei veramente convinto di poter uccidere la strega?"
     };
     answers = new String[][] {
-      {"1) Cercherei di scappare facendo fuori chiunque mi intralci la strada!",
-        "2) Cercherei di salvare le vittime della strega, compreso te!"},
+      {"1) Uccidero' te e la strega che mi ha intrappolato!",
+        "2) Cerchero' di salvare le vittime della strega e ti liberero'!"},
       {"1) Io non sono come le altre persone che hanno fallito prima di me. Sono determinato"
           + "a sconfiggere la strega e liberare tutti quelli che ha trasformato in bambole."
           + "Se mi liberi adesso, ti prometto che non te ne pentirai. ",
-        "2) Daro' il meglio di me per poter uccidere quella maledetta!"},
-        {
-          "1) Si, sacrificherei la mia vita pur di uccidere la strega e salvare le sue vittime.",
-          "2) Farò in modo che la strega muoia e lo farò senza rischiare la pelle"
-        }
+        "2) Daro' il meglio di me per poter uccidere quella maledetta!"}
     };
     correctAnswers = new String[] {
-      "2", "1", "1"
+      "2", "1"
     };
   }
 

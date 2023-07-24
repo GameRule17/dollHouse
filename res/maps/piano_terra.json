@@ -4,7 +4,7 @@
       {
         "name": "Salotto",
         "description": "L'ambiente è caratterizzato da un'atmosfera che sembra essere accogliente e familiare.\nLe pareti sono adornate con tonalità calde e rilassanti, che creano un'armoniosa sensazione di comfort, o quasi.\nLa stanza è arredata con mobili antichi che aggiungono un tocco di eleganza.",
-        "adjacentRooms": ["Corridoio"],
+        "adjacentRooms": ["Corridoio (Piano Terra)"],
         "objects": [
           {
             "name": "Sedia",
@@ -12,7 +12,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nÈ invitante, con morbidi cuscini e braccioli intagliati con cura."
+                "output":"Una magnifica sedia a dondolo posizionata strategicamente vicino alla finestra.\nÈ invitante, con morbidi cuscini e braccioli intagliati con cura. Sulla sedia, trovi un gomitolo di lana colorata, lasciato lì forse da qualcuno che ha trascorso del tempo qui.\nPotrebbe esserci un mistero da svelare dietro quel gomitolo, oppure potrebbe avere la stessa utilità dello shampo a casa di Claudio Bisio."
               },
               {
                 "aliases":["siediti","sedersi","seduto"],
@@ -34,7 +34,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio. Potrebbe risultare utile in seguito..."
+                "output":"Un gomitolo di lana mezzo aggrovigliato con un colore simile al grigio. Potrebbe risultare utile in seguito.."
               },
               {
                 "aliases":["lancia","lanciare","getta","gettare","butta","buttare"],
@@ -62,7 +62,7 @@
                 "output":"Al centro del salotto, trovi un maestoso pianoforte a coda.\nLe sue eleganti tastiere invitano a produrre meravigliose melodie.\nPotresti scoprire qualcosa di speciale interagendo con il pianoforte o sperimentando con le sue note. Ma non crederti il nuovo Mozart."
               },
               {
-                "aliases":["suona","suonare","interagisci","interagire"],
+                "aliases":["suona","suonare","interagisci","interagire", "usa", "usare", "utilizza"],
                 "output": "Seleziona quale melodia suonare:\n0)Smetti di suonare\n1) Melodia Uno\n2) Melodia Due",
                 "script": "dijkstra.dollhouse.engine.entities.actions.extra.PlayPiano"
               },
@@ -116,7 +116,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il caminetto è un punto focale del salotto, emanando un calore accogliente.\nPotresti sentirne il crepitio dei tronchi bruciati e ammirare le fiamme danzanti."
+                "output":"Il caminetto è un punto focale del salotto, emanando un calore accogliente.\nPotresti sentirne il crepitio dei tronchi bruciati e ammirare le fiamme danzanti.\nA sinistra del caminetto, puoi notare un ramoscello secco posizionato con cura."
               },
               {
                 "aliases":["accendi","accendere"],
@@ -150,7 +150,7 @@
               },
               {
                 "aliases":["accendi","accendere"],
-                "output":"Avvicini il ramoscello al caminetto e in poco tempo questo prende fuoco. Ora hai un inutile bastoncino infuocato e rischierai di prendere anche tu fuoco."
+                "output":"Meglio non diventare dei piromani."
               },
               {
                 "aliases":["prendi","prendere","raccogli","raccogliere"],
@@ -165,8 +165,8 @@
             ]
           },
           {
-            "name": "Corridoio",
-            "aliases": ["corridoio"],
+            "name": "Corridoio (Piano Terra)",
+            "aliases": ["corridoio", "porta del corridoio", "porta corridoio"],
             "actions": [
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -177,7 +177,7 @@
           },
           {
             "name": "./res/maps/piano_seminterrato.json Scantinato",
-            "aliases": ["Botola", "seminterrato", "piano di sotto", "sotto"],
+            "aliases": ["Botola", "seminterrato", "piano di sotto", "sotto", "scantinato", "seminterrato", "piano seminterrato"],
             "actions": [
               {
                 "aliases": ["vai", "scendi","scendere", "apri","aprire"],
@@ -191,7 +191,7 @@
       {
         "name": "Cucina",
         "description": "È un misto di antico e magico, con una decorazione che sembra provenire da un negozio di accessori per Halloween.\nLe pareti sono rivestite di mattoni spettrali e le pentole appese sembrano minacciare chiunque si avvicini troppo. Un aroma di pozioni e incantesimi si mescola nell'aria, dando un tocco 'magicò al cibo. Sei sicuro di voler accettare l'invito a cena?",
-        "adjacentRooms": ["Corridoio"],
+        "adjacentRooms": ["Corridoio (Piano Terra)"],
         "objects": [
           {
             "name": "Tavolo",
@@ -225,7 +225,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Il tagliere è fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche."
+                "output":"Il tagliere è fatto di un robusto legno scuro, con segni di utilizzo e macchie misteriose che sembrano raccontare storie di antiche ricette magiche.\nLa tua attenzione è attirata dal manico di un coltello senza lama piantato nel tagliere. Potrebbe davvero risultare utile in futuro.."
               },
               {
                 "aliases":["usa","usare","utilizza"],
@@ -249,7 +249,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Ciò che resta di un vecchio coltello usato dal padrone di casa. La lama è stata rimossa, lasciando solo il manico di legno.\nPotrebbe davvero risultare utile in futuro..."
+                "output":"Ciò che resta di un vecchio coltello usato dal padrone di casa. La lama è stata rimossa, lasciando solo il manico di legno."
               },
               {
                 "aliases":["usa","usare","utilizza"],
@@ -370,8 +370,8 @@
             ]
           },
           {
-            "name": "Corridoio",
-            "aliases": ["corridoio"],
+            "name": "Corridoio (Piano Terra)",
+            "aliases": ["corridoio", "porta del corridoio", "porta corridoio"],
             "actions": [
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -384,7 +384,7 @@
           "npcs": [
             {
               "name": "Ciro",
-              "aliases": ["Ciruzzo","bambola ciro","bambola ciruzzo","bambola Ciro","bambola Ciruzzo","Ciro","ciro"],
+              "aliases": ["Ciruzzo","bambola ciro","bambola ciruzzo", "Ciro"],
               "behavior": "dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase",
               "actions": [
                 {
@@ -407,12 +407,12 @@
                 "Ue uagliù", "Ogni bambola è bella a mamma soja.", "O' malamente", "Si 'o viento se ne porta 'a voce e 'o mare se ne porta 'a reta.", "M' serv' 'nu cuttèllo p' accidere chella maledetta."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio"
+                "Cucina", "Salotto", "Corridoio (Piano Terra)"
               ]
             },
             {
               "name": "Ann",
-              "aliases": ["bambola Ann","bambola ann","Ann","ann"],
+              "aliases": ["bambola Ann","Ann"],
               "behavior": "dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase",
               "actions": [
                 {
@@ -436,19 +436,19 @@
                 },
                 {
                   "question":"Conosci un modo per battere la strega?",
-                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. Sembra sia possessata dalla strega!\nMALEDETTO, sei riuscito a liberarti! Presto, il destino ci metterà di fronte l'uno all'altro. Sarà una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perchè i miei poteri NON HANNO LIMITI!"
+                  "answer":"La bambola con cui stai parlando si ferma per un attimo, e riprende a parlare con voce possente. Sembra sia posseduta dalla strega!\nMALEDETTO, sei riuscito a liberarti! Presto, il destino ci metterà di fronte l'uno all'altro. Sarà una battaglia epica in cui non sopravviverai. Ti conviene essere preparato, perchè i miei poteri NON HANNO LIMITI!"
                 }
               ],
               "phrases": [
                 "Buongiorno bambole!", "Mi serve una zampa di rospo per aiutare la strega con i suoi incantesimi!", "Chissà quanto ci mettera la strega per uscire dalla sua stanza.", "Strega: preparati intruso, tra poco ti sconfiggerò."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio"
+                "Cucina", "Salotto", "Corridoio (Piano Terra)"
               ]
             },
             {
               "name": "Mery",
-              "aliases": ["bambola Mery","bambola mery","Mery","mery"],
+              "aliases": ["bambola Mery","Mery"],
               "behavior": "dijkstra.dollhouse.engine.entities.scripts.predefined.RandomPhrase",
               "actions": [
                 {
@@ -464,7 +464,7 @@
                 },
                 {
                   "question": "Conosci una modo per battere la strega?",
-                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfiggere lei e la sua potentissima magia. Anche se una volta ho sentito parlare di un coltello magico..."
+                  "answer": "Purtroppo no. Quando aiuto la strega con le faccende domestiche, lei non fa altro che ripetere che non c'è nessuno in grado di sconfiggere lei e la sua potentissima magia. Anche se una volta ho sentito parlare di un coltello magico.."
                 },
                 {
                   "question":"Cosa mi consigli di fare?",
@@ -479,13 +479,13 @@
                 "Voglio un nuovo foglio per disegnare!", "Voglio disegnare un coltello magico.", "Voglio disegnare un bel ritratto da regalare alla strega, magari mi libererà..."
               ],
               "rooms": [
-                "Cucina", "Salotto", "Corridoio"
+                "Cucina", "Salotto", "Corridoio (Piano Terra)"
               ]
             }
           ]
       },
       {
-        "name": "Corridoio",
+        "name": "Corridoio (Piano Terra)",
         "description": "Un labirinto di oscurità e segreti, con pareti spettrali e un'atmosfera che ti fa gelare il sangue.",
         "adjacentRooms": ["Salotto","Cucina"],
         "objects": [
@@ -513,7 +513,7 @@
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-                "output":"Nel primo quadreo la strega è raffigurata in tutta la sua maestosità, con un'espressione maliziosa e uno sguardo penetrante.\nLa sua figura si staglia contro un cielo tempestoso, mentre tiene in mano un calderone ribollente. È un'immagine che trasmette un senso di potere oscuro e mistero.\nNel secondo quadro la strega è circondata da una foresta così fitta che nemmeno il suo gatto nero riesce a trovarla.\nCon un libro in mano e uno sguardo da 'non disturbare, sto incantandò, sembra che stia cercando disperatamente di ricordare la formula giusta per far funzionare la sua scopa volante. Forse dovrebbe prendere un pò di lezioni da Mary Poppins!\nNell'ultimo quadro la strega è ritratta mentre vola su una scopa sopra un paesaggio montuoso."
+                "output":"Nel primo quadreo la strega è raffigurata in tutta la sua maestosità, con un'espressione maliziosa e uno sguardo penetrante.\nLa sua figura si staglia contro un cielo tempestoso, mentre tiene in mano un calderone ribollente. È un'immagine che trasmette un senso di potere oscuro e mistero.\nNel secondo quadro la strega è circondata da una foresta così fitta che nemmeno il suo gatto nero riesce a trovarla.\nCon un libro in mano e uno sguardo da 'non disturbare, sto incantandò, sembra che stia cercando disperatamente di ricordare la formula giusta per far funzionare la sua scopa volante.\nForse dovrebbe prendere un pò di lezioni da Mary Poppins! Nell'ultimo quadro la strega è ritratta mentre vola su una scopa sopra un paesaggio montuoso."
               },
               {
                 "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -535,7 +535,7 @@
           },
           {
             "name": "Cucina",
-            "aliases": ["cucina"],
+            "aliases": ["cucina", "porta della cucina", "porta cucina"],
             "actions": [
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -546,7 +546,7 @@
           },
           {
             "name": "Salotto",
-            "aliases": ["salotto"],
+            "aliases": ["salotto", "porta del salotto", "porta salotto"],
             "actions": [
               {
                 "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -557,7 +557,7 @@
           },
           {
             "name": "Cancello",
-            "aliases": ["cancello","cancello di ferro","cancello di metallo"],
+            "aliases": ["cancello","cancello di ferro","cancello di metallo", "primo piano"],
             "actions": [
               {
                 "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
