@@ -3,7 +3,7 @@
   "gamerooms": [
     {
       "name": "Bagno",
-      "adjacentRooms": ["Corridoio"],
+      "adjacentRooms": ["Corridoio (Primo Piano)"],
       "description": "Fai molta attenzione perchè un bagno così decadente difficilmente lo rivedrai nella tua vita! Le pareti sono coperte di carta da parati sbiadita e screpolata, con disegni di teschi e scheletri che sembrano sorriderti in modo sinistro.",
       "objects": [
         {
@@ -88,7 +88,7 @@
           "actions": [
             {
               "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
-              "output":"Uno specchio scheggiato. La sua superficie è così sporca che non riesci a vedere il tuo riflesso."
+              "output":"Uno specchio scheggiato con una grande scheggia rimovibile che può essere sollevata per ripristinare l'integrità della superficie riflettente."
             },
             {
               "aliases":["rompi","rompere","distruggi","distruggere"],
@@ -126,7 +126,7 @@
         },
         {
           "name": "Corridoio",
-          "aliases": ["corridoio"],
+          "aliases": ["corridoio", "porta del corridoio", "porta corridoio"],
           "actions": [
             {
               "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -138,13 +138,13 @@
       ]
     },
     {
-      "name": "Corridoio",
+      "name": "Corridoio (Primo Piano)",
       "adjacentRooms": ["Bagno"],
       "description": "Salendo al primo piano noti due porte, una a destra e una a sinistra. La porta a destra è chiusa a chiave, mentre quella a sinistra è aperta, sembra essere un bagno.",
       "objects": [
         {
           "name": "Bagno",
-          "aliases": ["bagno"],
+          "aliases": ["bagno", "porta del bagno", "porta bagno", "porta a sinistra", "porta di sinistra", "porta sinistra"],
           "actions": [
             {
               "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -155,7 +155,7 @@
         },
         {
           "name": "Camera da Letto",
-          "aliases": ["camera strega", "camera", "stanza strega", "camera da letto","porta di destra","porta a destra","porta destra"],
+          "aliases": ["camera strega", "camera", "stanza strega", "camera da letto","porta di destra","porta a destra","porta destra", "porta camera", "porta della camera", "porta della camera della strega", "porta camera strega"],
           "actions": [
             {
               "aliases": ["vai", "apri","aprire","entra","entrare"],
@@ -166,7 +166,7 @@
         },
         {
           "name": "./res/maps/piano_terra.json Corridoio",
-          "aliases": ["cancello","piano terra", "piano di sotto", "sotto", "scale","scale per il piano inferiore","scale piano inferiore"],
+          "aliases": ["Scale" ,"Cancello","piano terra", "piano di sotto", "sotto","scale per il piano inferiore","scale piano inferiore"],
           "actions": [
             {
               "aliases": ["vai", "scendi","scendere","apri","aprire","usa","usare","utilizza"],
