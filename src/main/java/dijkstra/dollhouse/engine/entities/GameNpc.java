@@ -59,10 +59,6 @@ public class GameNpc extends GameEntity {
   public String toString() {
     StringBuilder s = new StringBuilder(super.toString());
     s.append("\nDialogues:");
-    // for (GameDialogue dialogue : dialogues) {
-    //   s.append("\n");
-    //   s.append(dialogue.toString());
-    // }
     dialogues.stream().forEach(dialogue -> s.append("\n" + dialogue.toString()));
     return s.toString();
   }

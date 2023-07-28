@@ -77,7 +77,6 @@ public class JsonLoader {
                                   IllegalAccessException, IllegalArgumentException,
                                   InvocationTargetException {
     String name = (String) ((JSONObject) jsonObject).get("name");
-    // System.out.println(name);
     GameEntity gameObject = new GameEntity(name);
     JSONArray jsonArray = (JSONArray) ((JSONObject) jsonObject).get("aliases");
 

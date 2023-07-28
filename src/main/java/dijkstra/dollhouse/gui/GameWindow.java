@@ -7,6 +7,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.sql.SQLException;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -42,6 +43,8 @@ public class GameWindow extends JFrame implements WindowListener {
   }
 
   private void initComponents() {
+
+    setIconImage((new ImageIcon("./res/images/icon.png")).getImage());
 
     addWindowListener(this);
     setMinimumSize(new Dimension(1000, 600));

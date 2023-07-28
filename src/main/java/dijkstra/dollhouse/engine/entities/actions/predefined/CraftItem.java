@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -60,31 +59,30 @@ public class CraftItem extends GameAction implements GameScript {
   public String execute() {
     String entity = GameHandler.getParsedInput().getEntity();
     GameInventory inventory = GameHandler.getGame().getPlayer().getGameInventory();
-    Iterator<GameCraftableObject> it = craftableItems.iterator();
     GameCraftableObject object;
 
-    while (it.hasNext()) {
-      object = it.next();
-      if (object.isAliasOf(entity)) {
-        for (String needed : object.getRecipe()) {
-          if (inventory.findGameObject(needed) == null) {
-            return "Mancano gli oggetti necessari per costruire questo oggetto!";
-          }
-        }
-        inventory.add(object);
-        GuiHandler.addInventory(object.getName());
-        object.getRecipe().stream()
-                          .map(item -> inventory.findGameObject(item))
-                          .forEach(item -> {
-                            inventory.remove(item);
-                            GuiHandler.removeInventory(item.getName());
-                          });
-        return this.output + "\nL'oggetto e' stato aggiunto nel tuo inventario!";
+    try {
+      object = craftableItems.stream()
+                             .filter(o -> o.isAliasOf(entity))
+                             .findAny()
+                             .get();
+      if (object.getRecipe()
+                .stream()
+                .anyMatch(needed -> inventory.findGameObject(needed) == null)) {
+        return "Mancano gli oggetti necessari per costruire questo oggetto!";
       }
+      inventory.add(object);
+      GuiHandler.addInventory(object.getName());
+      object.getRecipe().stream()
+                        .map(itemName -> inventory.findGameObject(itemName))
+                        .forEach(item -> {
+                          inventory.remove(item);
+                          GuiHandler.removeInventory(item.getName());
+                        });
+      return this.output + "\nL'oggetto e' stato aggiunto nel tuo inventario!";
+    } catch (Exception e) {
+      return "L'oggetto da costruire e' inesistente!";
     }
-
-    return "L'oggetto da costruire e' inesistente!";
-
   }
 
   @Override

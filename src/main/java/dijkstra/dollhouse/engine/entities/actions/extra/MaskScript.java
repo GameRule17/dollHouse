@@ -49,7 +49,6 @@ public class MaskScript extends GameAction implements GameScript {
     room.addEntity(getTrapdoor());
     GameHandler.getGame().getPlayer()
               .getGameInventory().findGameObject("Maschera").removeAction(this);
-    // rimuovi l'azione maskscript
     return this.output;
   }
 

@@ -52,9 +52,6 @@ public class GameAction implements Serializable {
   @Override
   public String toString() {
     StringBuilder s = new StringBuilder("Aliases: ");
-    // for (String string : aliases) {
-    //   s.append(string + " ");
-    // }
     aliases.stream().forEach(alias -> s.append(alias + " "));
     return s.toString();
   }

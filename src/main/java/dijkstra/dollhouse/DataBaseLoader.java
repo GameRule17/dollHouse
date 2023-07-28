@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Class for managing the game database.
@@ -55,38 +57,6 @@ public final class DataBaseLoader {
    *                      or this method is called on a closed connection.
    */
   public static void updateStatistics(String username, int points, Time time) throws SQLException {
-    // PreparedStatement stmt = conn.prepareStatement("SELECT * FROM statistics WHERE username = ?");
-    // stmt.setString(1, username);
-    // ResultSet rs = stmt.executeQuery();
-
-    // if (rs.next()) {
-    //   if (rs.getInt("points") < points) {
-    //     stmt.close();
-    //     stmt = conn.prepareStatement("UPDATE statistics SET points = ? WHERE username = ?");
-    //     stmt.setInt(1, points);
-    //     stmt.setString(2, username);
-    //     stmt.executeUpdate();
-    //     stmt.close();
-    //   }
-    //   if (rs.getTime("time").getTime() > time.getTime()) {
-    //     stmt.close();
-    //     stmt = conn.prepareStatement("UPDATE statistics SET time = ? WHERE username = ?");
-    //     stmt.setTime(1, time);
-    //     stmt.setString(2, username);
-    //     stmt.executeUpdate();
-    //     stmt.close();
-    //   }
-    // } else {
-    //   stmt.close();
-    //   stmt = conn.prepareStatement("INSERT INTO statistics"
-    //                               + "(username, points, time) VALUES (?, ?, ?)");
-    //   stmt.setString(1, username);
-    //   stmt.setInt(2, points);
-    //   stmt.setTime(3, time);
-    //   stmt.executeUpdate();
-    //   stmt.close();
-    // }
-
     PreparedStatement stmt;
     stmt = conn.prepareStatement("INSERT INTO statistics"
                                 + "(username, points, time) VALUES (?, ?, ?)");
@@ -94,7 +64,6 @@ public final class DataBaseLoader {
     stmt.setInt(2, points);
     stmt.setTime(3, time);
     stmt.executeUpdate();
-    // rs.close();
   }
 
   /**
@@ -106,28 +75,66 @@ public final class DataBaseLoader {
    *                      or this method is called on a closed connection.
    */
   public static String printUserData(String mode) throws SQLException {
-    String result = "";
+    StringBuilder result = new StringBuilder();
     ResultSet rs;
     Statement stmt = conn.createStatement();
+    String username;
+    String time;
+    int points;
+    rs = stmt.executeQuery("SELECT * FROM statistics");
+    Collection<Statistic> statistics = new ArrayList<>();
+    while (rs.next()) {
+      username = rs.getString("username");
+      points = rs.getInt("points");
+      time = rs.getString("time");
+      statistics.add(new Statistic(username, points, time));
+    }
     switch (mode) {
       case "time":
-        rs = stmt.executeQuery("SELECT * FROM statistics ORDER BY time");
+        statistics.stream()
+                  .sorted((s1, s2) -> {
+                    Time t1 = Time.valueOf(s1.getTime());
+                    Time t2 = Time.valueOf(s2.getTime());
+                    return t1.compareTo(t2);
+                  })
+                  .map(s -> {
+                    return "<tr> <td>" + s.getUsername()
+                      + "</td> <td>" + s.getPoints()
+                      + "</td><td>" + s.getTime() + "</td> </tr>";
+                  })
+                  .forEach(row -> result.append(row));
         break;
       case "points":
-        rs = stmt.executeQuery("SELECT * FROM statistics ORDER BY points DESC");
+        statistics.stream()
+                  .sorted((s1, s2) -> {
+                    if (s1.getPoints() > s2.getPoints()) {
+                      return -1;
+                    }
+                    if (s1.getPoints() < s2.getPoints()) {
+                      return 1;
+                    }
+                    return 0;
+                  })
+                  .map(s -> {
+                    return "<tr> <td>" + s.getUsername()
+                      + "</td> <td>" + s.getPoints()
+                      + "</td><td>" + s.getTime() + "</td> </tr>";
+                  })
+                  .forEach(row -> result.append(row));
         break;
       default:
-        rs = stmt.executeQuery("SELECT * FROM statistics");
+        statistics.stream()
+                  .map(s -> {
+                    return "<tr> <td>" + s.getUsername()
+                      + "</td> <td>" + s.getPoints()
+                      + "</td><td>" + s.getTime() + "</td> </tr>";
+                  })
+                  .forEach(row -> result.append(row));
         break;
-    }
-    while (rs.next()) {
-      result += "<tr> <td>" + rs.getString("username")
-          + "</td> <td>" + rs.getInt("points")
-          + "</td><td>" + rs.getTime("time") + "</td> </tr>";
     }
     rs.close();
     stmt.close();
-    return result;
+    return result.toString();
   }
 
   /**

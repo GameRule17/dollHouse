@@ -2,16 +2,21 @@ package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.GameHandler;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.List;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -27,19 +32,51 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 
   private JTextField inputCommandField;
   private JScrollPane scrollPane;
-  private static List listObjectsInventory;
+  private static JList<String> listObjectsInventory;
   private JButton openGlobalChatButton;
   private static JTextArea outputCommandArea;
   private JButton sendCommandButton;
+  private static DefaultListModel<String> model;
   private static boolean isGuiUpdated = false;
 
   static {
     outputCommandArea = new JTextArea();
-    listObjectsInventory = new List();
+    model = new DefaultListModel<>();
+    listObjectsInventory = new JList<String>(model);
   }
 
   public GamePanel() {
     initComponents();
+  }
+
+  private void setBackgroundToImageStyle() {
+    scrollPane.setOpaque(false);
+    scrollPane.getViewport().setOpaque(false);
+    scrollPane.setBorder(null);
+    scrollPane.setViewportBorder(null);
+    scrollPane.setBorder(null);
+    // scrollPane.setBackground(new Color(0, 0, 0, 0));
+    listObjectsInventory.setOpaque(false);
+    listObjectsInventory.setCellRenderer(new DefaultListCellRenderer() {
+      @Override
+        public Component getListCellRendererComponent(JList<?> list1, Object obj,
+                                                  int index, boolean isSelected, boolean isFocus) {
+            super.getListCellRendererComponent(list1, obj, index, isSelected, isFocus);
+            setForeground(Color.WHITE);
+            setOpaque(isSelected);
+            return this;
+        }
+    });
+    outputCommandArea.setOpaque(false);
+    // outputCommandArea.setForeground(new java.awt.Color(255, 255, 255, 255));
+    // scrollPane.setForeground(new java.awt.Color(255, 255, 255, 255));
+  }
+
+  private void setMinimalStyle() {
+    this.setBackground(new Color(45, 47, 48));
+    listObjectsInventory.setBackground(new Color(88, 91, 93));
+    outputCommandArea.setBackground(new Color(88, 91, 93));
+    outputCommandArea.setSelectionColor(new Color(255, 255, 255));
   }
 
   private void initComponents() {
@@ -55,15 +92,10 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     sendCommandButton.setActionCommand("execute");
     openGlobalChatButton.setActionCommand("chat");
 
-    this.setBackground(new Color(45, 47, 48));
     this.setPreferredSize(new Dimension(730, 515));
 
     inputCommandField.setText("Inserisci comando");
-    inputCommandField.setToolTipText("");
     inputCommandField.addKeyListener(this);
-
-    listObjectsInventory.setBackground(new Color(88, 91, 93));
-    listObjectsInventory.addActionListener(this);
 
     sendCommandButton.setBackground(new Color(0, 153, 153));
     sendCommandButton.setText("INVIA");
@@ -72,17 +104,15 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
 
     openGlobalChatButton.setBackground(new Color(0, 153, 153));
     openGlobalChatButton.setEnabled(true);
-    // openGlobalChatButton.setLabel("🌐");
     openGlobalChatButton.setText("🌐");
     openGlobalChatButton.addActionListener(this);
 
-    outputCommandArea.setBackground(new Color(88, 91, 93));
+    
     outputCommandArea.setColumns(20);
     outputCommandArea.setFont(new Font("Tahoma", 0, 14)); // NOI18N
     outputCommandArea.setLineWrap(true);
     outputCommandArea.setRows(5);
     outputCommandArea.setEnabled(false);
-    outputCommandArea.setSelectionColor(new Color(255, 255, 255));
     scrollPane.setViewportView(outputCommandArea);
 
     GroupLayout gamePanelLayout = new GroupLayout(this);
@@ -128,6 +158,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
                             .addComponent(sendCommandButton, GroupLayout.DEFAULT_SIZE,
                                 GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(10, 10, 10)));
+    // setBackgroundToImageStyle();
+    setMinimalStyle();
   }
 
   public static boolean isGuiUpdated() {
@@ -144,11 +176,11 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
   }
 
   public static void addInventory(final String name) {
-    listObjectsInventory.add(name);
+    model.addElement(name);
   }
 
   public static void removeInventory(final String name) {
-    listObjectsInventory.remove(name);
+    model.removeElement(name);
   }
 
   public static void printMessage(final String msg) {
@@ -207,4 +239,11 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
         break;
     }
   }
+
+  // @Override
+  // public void paintComponent(Graphics g) {
+  //   super.paintComponent(g);
+  //   ImageIcon img = new ImageIcon("./res/images/background.jpg");
+  //   g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
+  // }
 }

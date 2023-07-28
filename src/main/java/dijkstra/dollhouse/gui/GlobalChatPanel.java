@@ -2,12 +2,16 @@ package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.gui.socket.ChatClient;
+import javafx.scene.paint.Color;
+
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -35,16 +39,25 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
 
   static {
     outputGlobalChatArea = new JTextArea();
-    outputGlobalChatArea.setEditable(false);
-    outputGlobalChatArea.setBackground(new java.awt.Color(88, 91, 93));
-    outputGlobalChatArea.setColumns(20);
-    outputGlobalChatArea.setRows(5);
-    outputGlobalChatArea.setPreferredSize(null);
   }
 
   public GlobalChatPanel() throws IOException {
     initComponents();
     joinToChat();
+  }
+
+  private void setBackgroundToImageStyle() {
+    scrollPane.setOpaque(false);
+    scrollPane.getViewport().setOpaque(false);
+    scrollPane.setBorder(null);
+    scrollPane.setViewportBorder(null);
+    scrollPane.setBorder(null);
+    outputGlobalChatArea.setOpaque(false);
+  }
+
+  private void setMinimalStyle() {
+    outputGlobalChatArea.setBackground(new java.awt.Color(88, 91, 93));
+    this.setBackground(new java.awt.Color(45, 47, 48));
   }
 
   private void initComponents() {
@@ -55,10 +68,15 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
     sendGlobalChatButton = new JButton();
     returnGame = new JButton();
 
+    outputGlobalChatArea.setEditable(false);
+    outputGlobalChatArea.setForeground(new java.awt.Color(255, 255, 255));
+    outputGlobalChatArea.setColumns(20);
+    outputGlobalChatArea.setRows(5);
+    outputGlobalChatArea.setPreferredSize(null);
+
     sendGlobalChatButton.setActionCommand("send");
     returnGame.setActionCommand("return");
 
-    this.setBackground(new java.awt.Color(45, 47, 48));
     this.setPreferredSize(new java.awt.Dimension(730, 515));
 
     scrollPane.setViewportView(outputGlobalChatArea);
@@ -122,6 +140,7 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
                     .addComponent(sendGlobalChatButton, GroupLayout.PREFERRED_SIZE,
                         35, GroupLayout.PREFERRED_SIZE))
                 .addContainerGap()));
+    setBackgroundToImageStyle();
   }
 
   @Override
@@ -190,5 +209,12 @@ public class GlobalChatPanel extends JPanel implements KeyListener, ActionListen
         throw exc;
       }
     }
+  }
+
+  @Override
+  public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    ImageIcon img = new ImageIcon("./res/images/background.jpg");
+    g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
   }
 }

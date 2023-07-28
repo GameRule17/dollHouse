@@ -63,7 +63,6 @@ public class CiroScript extends TalkToNpc {
             if (bottle != null) {
               inventory.remove(bottle);
               GuiHandler.removeInventory(bottle.getName());
-              // System.out.println(getMelody());
               inventory.add(getMelody());
               GuiHandler.addInventory(getMelody().getName());
               output = "Ciro: Brav uagliu!\n* Ciro ti ha donato una melodia *";

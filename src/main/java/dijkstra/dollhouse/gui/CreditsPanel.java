@@ -1,8 +1,10 @@
 package dijkstra.dollhouse.gui;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -78,5 +80,12 @@ public class CreditsPanel extends JPanel {
             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(returnMenuFromCredits))
     );
-  }    
+  }
+
+  @Override
+  public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    ImageIcon img = new ImageIcon("./res/images/background.jpg");
+    g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
+  }
 }
