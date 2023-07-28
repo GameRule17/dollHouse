@@ -1,6 +1,6 @@
 #FileLock
-#Fri Jul 28 16:41:38 CEST 2023
+#Fri Jul 28 17:38:50 CEST 2023
+server=192.168.1.226\:56510
 hostName=legion.wind3.hub
-id=1899cf2aa1548a47b92f545427b1927dd9a89181f89
 method=file
-server=192.168.1.226\:55288
+id=1899d27097219be0816e73f6175f676dd6b74d8ee8b
