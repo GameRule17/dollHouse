@@ -2,8 +2,6 @@ package dijkstra.dollhouse.gui;
 
 import dijkstra.dollhouse.GameHandler;
 import dijkstra.dollhouse.gui.socket.ChatClient;
-import javafx.scene.paint.Color;
-
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

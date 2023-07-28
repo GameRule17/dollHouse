@@ -240,10 +240,10 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     }
   }
 
-  // @Override
-  // public void paintComponent(Graphics g) {
-  //   super.paintComponent(g);
-  //   ImageIcon img = new ImageIcon("./res/images/background.jpg");
-  //   g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
-  // }
+  @Override
+  public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    ImageIcon img = new ImageIcon("./res/images/background.jpg");
+    g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
+  }
 }
