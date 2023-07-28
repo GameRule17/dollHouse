@@ -45,7 +45,7 @@ public class MusicPlayer {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
       mediaPlayer.dispose();
-      System.out.println("Riproduzione interrotta.");
+      // System.out.println("Riproduzione interrotta.");
     }
   }
 
