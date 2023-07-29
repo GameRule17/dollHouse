@@ -52,9 +52,9 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
   private void setBackgroundToImageStyle() {
     scrollPane.setOpaque(false);
     scrollPane.getViewport().setOpaque(false);
-    scrollPane.setBorder(null);
-    scrollPane.setViewportBorder(null);
-    scrollPane.setBorder(null);
+    // scrollPane.setBorder(null);
+    // scrollPane.setViewportBorder(null);
+    // scrollPane.setBorder(null);
     // scrollPane.setBackground(new Color(0, 0, 0, 0));
     listObjectsInventory.setOpaque(false);
     listObjectsInventory.setCellRenderer(new DefaultListCellRenderer() {
@@ -159,8 +159,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
                             .addComponent(sendCommandButton, GroupLayout.DEFAULT_SIZE,
                                 GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(10, 10, 10)));
-    // setBackgroundToImageStyle();
-    setMinimalStyle();
+    setBackgroundToImageStyle();
+    // setMinimalStyle();
   }
 
   public static boolean isGuiUpdated() {

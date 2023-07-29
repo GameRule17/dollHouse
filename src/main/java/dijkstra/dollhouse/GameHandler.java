@@ -132,7 +132,7 @@ public final class GameHandler {
     String entityName = parsedInput.getEntity();
     String actionName = parsedInput.getAction();
     GamePlayer player = game.getPlayer();
-    String output = "Questa azione non può essere effettuata!";
+    String output = "Questa azione non puo' essere effettuata!";
     Exception exception;
 
     if (isEnded) {
