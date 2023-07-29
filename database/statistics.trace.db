@@ -503,3 +503,6 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection wa
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 47 more
+2023-07-29 16:01:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE FROM STATISTICS WHERE USERNAME LIKE PISELLO%[*]"; SQL statement:
+DELETE FROM statistics WHERE username LIKE pisello% [42000-200]
