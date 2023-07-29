@@ -1,0 +1,27 @@
+{
+    "name": "./res/maps/primo_piano.json Corridoio",
+    "aliases": ["Cancello","cancello di ferro","cancello di metallo"],
+    "actions": [
+      {
+        "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+        "output":"Ora che hai suonato la melodia magica il cancello si è sbloccato! Prova ad aprirlo.."
+      },
+      {
+        "aliases":["rompi","rompere","distruggi","distruggere"],
+        "output":"Il cancello è troppo solido per essere rotto con le tue mani."
+      },
+      {
+        "aliases":["prendi","prendere","raccogli","raccogliere"],
+        "output":"Non è possibile prendere il cancello"
+      },
+      {
+        "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+        "output":"L'oggetto non è contenuto nell'inventario"
+      },
+      {
+        "aliases": ["vai", "apri","aprire","entra","entrare", "usa","usare","utilizza"],
+        "output": "",
+        "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
+      }
+    ]
+  }

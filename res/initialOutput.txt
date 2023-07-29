@@ -1,0 +1,22 @@
+* plop *   . . .  * plop *  . . .  * PLOP *
+
+La caduta delle gocce sul tuo volto ti fa riacquistare i sensi, seppur con un po’ di confusione.
+La tua vista è leggermente annebbiata, la tua testa pesante e il tuo respiro affannoso.
+Dopo qualche secondo riesci a vedere nitidamente: sei in una stanza, di primo acchito, molto grezza e buia.
+Provi ad alzarti per cercare di capire meglio il luogo in cui ti trovi.
+
+* cling *
+
+D’un tratto vieni bloccato da qualcosa di freddo legato al collo: è una catena.
+Ispezionandola, col tatto, intuisci essere bloccata con un lucchetto.
+Ci metti qualche secondo per abituarti al buio ma, guardandoti intorno, riesci a scorgere sulla tua destra un tavolo di cui,
+per la poca visibilità, ne vedi l’inizio ma non la fine e un ammasso di oggetti che non riesci a riconoscere alla tua sinistra.
+La catena è direttamente collegata ad un perno attaccato al muro alle tue spalle dove, toccandolo e osservandolo, capisci essere
+di pietra grezza. Ad un tratto senti dei cigolii provenire dal centro della stanza.
+Lo scricchiolio delle assi di legno del pavimento ti fanno intuire che qualcuno si sta avvicinando.
+Non riesci a ben definire la figura umanoide. Ai tuoi occhi appare sproporzionata con gli arti nettamente più lunghi
+rispetto al suo torso. Ne riesci a cogliere solo la sua silhouette decisamente fuori dal normale. Ad un tratto ti accorgi
+di un tanfo pestilenziale che permea l’intera stanza. Senti del borbottio provenire dalla figura umanoide.
+La figura umanoide sembra volerti parlare!
+
+Digita "help" per vedere i comandi possibili.

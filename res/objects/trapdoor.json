@@ -1,0 +1,23 @@
+{
+    "name": "./res/maps/piano_terra.json Salotto",
+    "aliases": ["Botola","botola segreta","botola per piano terra","piano terra", "piano di sopra", "sopra","botola per il piano di sopra"],
+    "actions": [
+      {
+        "aliases":["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+        "output":"La botola nel centro dello scantinato è un'entrata vetusta e logora verso l'ignoto.\nRealizzata in legno consunto, offre un passaggio misterioso al piano superiore, suggerendo segreti sinistri e avventure inquietanti."
+      },
+      {
+        "aliases":["apri","aprire","entra","entrare","usa","usare","utilizza"],
+        "output": "",
+        "script": "dijkstra.dollhouse.engine.entities.actions.predefined.ChangeMap"
+      },
+      {
+        "aliases":["prendi","prendere","raccogli","raccogliere"],
+        "output":"Ma come potrebbe mai essere possibile prendere una botola?!"
+      },
+      {
+        "aliases":["rimuovi","rimuovere","lascia","lasciare"],
+        "output":"L'oggetto non è contenuto nell'inventario."
+      }
+    ]
+}

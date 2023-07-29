@@ -1,0 +1,15 @@
+{
+    "craftable_objects": [
+        {
+            "name": "Coltello magico",
+            "aliases": ["coltello"],
+            "recipe": ["Manico", "Scheggia", "Gomitolo", "Libro Incantato"],
+            "actions": [
+              {
+                "aliases": ["esamina","esaminare","osserva","osservare","ispeziona","ispezionare"],
+                "output": "Un'arma speciale, creata appositamente per uccidere la strega."
+              }
+            ]
+        }
+    ]
+}
