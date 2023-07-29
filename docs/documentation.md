@@ -173,7 +173,7 @@ Una delle classi fondamentali dell'engine è l'interfaccia `GameScript`. Essa de
 ## **4.1 Programmazione OO**
 
 ### Paradigma della Programmazione Orientata agli Oggetti (OO)
-Nello sviluppo del progetto è stato applicato il paradigma della **Programmazione Orientata agli Oggetti (Object Oriented, OO)**. Questo approccio organizza il codice intorno agli oggetti, che rappresentano entità del mondo reale o concetti astratti. I tre principi fondamentali della POO sono l'**Incapsulamento**, l'**Information Hiding**, l'**Ereditarietà** e il **Polimorfismo**.
+Nello sviluppo del progetto è stato applicato il paradigma della **Programmazione Orientata agli Oggetti (Object Oriented, OO)**. Questo approccio organizza il codice intorno agli oggetti, che rappresentano entità del mondo reale o concetti astratti. I quattro principi fondamentali della POO sono l'**Incapsulamento**, l'**Information Hiding**, l'**Ereditarietà** e il **Polimorfismo**.
 
 #### Incapsulamento e Information Hiding
 Incapsulamento e Information Hiding sono due dei principi cardine del paradigma orientato agli oggetti. Gli oggetti incapsulano uno stato e un comportamento. Lo stato è identificato da una certa area di memoria, mentre il comportamento è definito da un insieme di procedure e funzioni (metodi) che operano sulla rappresentazione dell'area di memoria associata all'oggetto.
