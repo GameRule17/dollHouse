@@ -113,6 +113,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener {
     outputCommandArea.setLineWrap(true);
     outputCommandArea.setRows(5);
     outputCommandArea.setEnabled(false);
+    outputCommandArea.getDocument().putProperty("charset", "UTF-8");
     scrollPane.setViewportView(outputCommandArea);
 
     GroupLayout gamePanelLayout = new GroupLayout(this);

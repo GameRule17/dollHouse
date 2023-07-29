@@ -185,8 +185,8 @@ public final class GameHandler {
 
     // System.out.println(player.getGameStatistics().toString());
     // System.out.println(room.getAdjacentRooms());
-    return "\n[" + room.getName() + "] " + player.getName()
-            + " > " + command + "\n" + output + "\n";
+    return new String(("\n[" + room.getName() + "] " + player.getName()
+            + " > " + command + "\n" + output + "\n").getBytes(), "UTF-8");
   }
 
   /**

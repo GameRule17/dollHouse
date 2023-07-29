@@ -38,7 +38,7 @@ public class GuardianScript extends GameAction implements GameScript {
         "2) Daro' il meglio di me per poter uccidere quella maledetta!"},
         {
           "1) Si, sacrificherei la mia vita pur di uccidere la strega e salvare le sue vittime.",
-          "2) Farò in modo che la strega muoia e lo farò senza rischiare la pelle"
+          "2) Faro' in modo che la strega muoia e lo faro' senza rischiare la pelle"
         }
     };
     correctAnswers = new String[] {
@@ -75,7 +75,7 @@ public class GuardianScript extends GameAction implements GameScript {
           output = "Guardiano: Va bene mi hai convinto. Cerca di non morire"
             + " e ricordati di liberarmi una volta uccisa la strega!\n"
             + "Guardiano: Torna a parlare con me quando vuoi!\n"
-            + "* Ora sei libero di muoverti ed interagire con le entità della stanza. *\n"
+            + "* Ora sei libero di muoverti ed interagire con le entita' della stanza. *\n"
             + "* Digita \"esamina\" per esaminare la stanza corrente. *";
           GameRoom room = GameHandler.getGame().getMap().getRoom("Scantinato");
           GameHandler.getGame().getMap().setCurrentRoom(room);
@@ -97,9 +97,9 @@ public class GuardianScript extends GameAction implements GameScript {
         output += "\n" + answer;
       }
       if (count + 1 > 1) {
-        this.output = "Dopo " + (count + 1) + " tentativi sarà la volta buona?!";
+        this.output = "Dopo " + (count + 1) + " tentativi sara' la volta buona?!";
       } else {
-        this.output = "Dopo un tentativo sarà la volta buona?!";
+        this.output = "Dopo un tentativo sara' la volta buona?!";
       }
       
       count++;

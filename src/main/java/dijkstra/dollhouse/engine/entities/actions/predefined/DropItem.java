@@ -44,7 +44,7 @@ public class DropItem extends GameAction implements GameScript {
       output = this.output;
       GuiHandler.removeInventory(entity.getName());
     } else {
-      output = "L'entita' non è nel tuo inventario!";
+      output = "L'entita' non e' nel tuo inventario!";
     }
 
     return output;

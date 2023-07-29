@@ -85,7 +85,7 @@ public class PlayPiano extends GameAction implements GameScript {
           room.removeEntity(room.findEntity("Cancello"));
           room.addEntity(getGate());
           output = "Hai suonato la melodia 3! Senti un rumore meccanico"
-                  + " provenire dal cancello, forse si è sbloccato..\n" + msg;
+                  + " provenire dal cancello, forse si e' sbloccato..\n" + msg;
         }
       } catch (NumberFormatException e) {
         output = "Stai ancora suonando il pianoforte!";

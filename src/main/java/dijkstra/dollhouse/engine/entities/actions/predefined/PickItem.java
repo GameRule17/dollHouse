@@ -44,7 +44,7 @@ public class PickItem extends GameAction implements GameScript {
       output = this.output;
       GuiHandler.addInventory(entity.getName());
     } else {
-      output = "Questa entita' e' già presente nell'inventario!";
+      output = "Questa entita' e' gia' presente nell'inventario!";
     }
 
     return output;
