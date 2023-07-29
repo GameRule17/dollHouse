@@ -3,9 +3,7 @@ package dijkstra.dollhouse;
 import dijkstra.dollhouse.gui.GamePanel;
 import dijkstra.dollhouse.gui.GameWindow;
 import dijkstra.dollhouse.gui.MenuPanel;
-
 import java.io.UnsupportedEncodingException;
-
 import javax.swing.JOptionPane;
 
 /**
@@ -21,11 +19,15 @@ public class GuiHandler {
     GamePanel.removeInventory(name);
   }
 
+  /**
+   * Print msg to the outputCommandArea of the GamePanel.
+   *
+   * @param msg - the message to print.
+   */
   public static void print(final String msg) {
     try {
       GamePanel.printMessage(new String(msg.getBytes(), "UTF-8"));
     } catch (UnsupportedEncodingException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
