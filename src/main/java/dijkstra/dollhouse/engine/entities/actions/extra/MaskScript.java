@@ -45,10 +45,16 @@ public class MaskScript extends GameAction implements GameScript {
   @Override
   public String execute() {
     GameRoom room = GameHandler.getGame().getMap().getCurrentRoom();
+    GameEntity mask;
     room.removeEntity(room.findEntity("Botola"));
     room.addEntity(getTrapdoor());
-    GameHandler.getGame().getPlayer()
-              .getGameInventory().findGameObject("Maschera").removeAction(this);
+    mask = GameHandler.getGame().getPlayer()
+              .getGameInventory().findGameObject("Maschera");
+    if (mask != null) {
+      mask.removeAction(this);
+    } else {
+      return "Cerchi di indossare la maschera ma ti accorgi di non averla mai presa!";
+    }
     return this.output;
   }
 

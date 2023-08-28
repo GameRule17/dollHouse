@@ -33,7 +33,7 @@ public class GuardianScript extends GameAction implements GameScript {
       {"1) Cercherei di scappare facendo fuori chiunque mi intralci la strada!",
         "2) Cercherei di salvare le vittime della strega, compreso te!"},
       {"1) Io non sono come le altre persone che hanno fallito prima di me. Sono determinato"
-          + "a sconfiggere la strega e liberare tutti quelli che ha trasformato in bambole."
+          + " a sconfiggere la strega e liberare tutti quelli che ha trasformato in bambole."
           + "Se mi liberi adesso, ti prometto che non te ne pentirai. ",
         "2) Daro' il meglio di me per poter uccidere quella maledetta!"},
         {

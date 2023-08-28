@@ -151,7 +151,7 @@
             },
             {
               "aliases":["apri","aprire","leggi","leggere","usa","usare","utilizza", "sfoglia", "sfogliare"],
-              "output":"Leggendo le pagine del libro capisci che serve per poter incantare un arma. Forse usato in combinazione con altri oggetti potrebbe essere la chiave per sconfiggere la strega!"
+              "output":"Leggendo le pagine del libro capisci che serve per poter incantare un'arma. Forse usato in combinazione con altri oggetti potrebbe essere la chiave per sconfiggere la strega!"
             },
             {
               "aliases":["prendi","prendere","raccogli","raccogliere"],
